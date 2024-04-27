@@ -1,0 +1,27 @@
+-- using shatur neovim-session-manager
+return {
+    --     'folke/persistence.nvim',
+    --     event = 'BufReadPre', -- this will only start session saving when an actual file was opened
+    --     keys = {
+    --         {
+    --             '<leader>Sl',
+    --             "<cmd>lua require('persistence').load({last = true})<cr>",
+    --             'n',
+    --             desc = 'load last session',
+    --         },
+    --         {
+    --             '<leader>SQ',
+    --             "<cmd>lua require('persistence').stop()<cr>",
+    --             'n',
+    --             desc = 'exit session no save',
+    --         },
+    --         {
+    --             '<leader>Sc',
+    --             "<cmd>lua require('persistence').load()<cr>",
+    --             'n',
+    --             desc = 'load session CWD',
+    --         },
+    --     },
+    --     opts = {},
+    --     -- config = function() end,
+}

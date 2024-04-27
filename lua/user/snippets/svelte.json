@@ -1,0 +1,115 @@
+{
+  "script": {
+    "prefix": "script",
+    "description": "Insert code for TypeScript script tag.",
+    "body": ["<script lang=\"ts\">", "\t$0", "</script>"]
+  },
+  "style": {
+    "prefix": "style",
+    "description": "Insert code for scss style tag.",
+    "body": ["<style lang=\"scss\">", "\t$0", "</style>"]
+  },
+  "s-script": {
+    "prefix": "script",
+    "body": "<script lang='ts'>\n\t$1\n</script>",
+    "description": "script ts"
+  },
+  "s-style": {
+    "prefix": "style",
+    "body": "<style lang='scss'>\n\t$1\n</style>",
+    "description": "style scss"
+  },
+  "use strict": {
+    "prefix": "strict",
+    "body": "'use strict'",
+    "description": "enables use strict"
+  },
+  "iife": {
+    "prefix": "iife",
+    "body": "(() => {\n\t$1\n})();$0"
+  },
+  "aife": {
+    "prefix": "aife",
+    "body": "(async () => {\n\t$1\n})();$0"
+  },
+  "separator": {
+    "prefix": "separator",
+    "body": "/*******************************\n* $1 \n/*******************************/\n$0"
+  },
+  "separatorBig": {
+    "prefix": "separatorBig",
+    "body": "/***********************************************\n* $1 \n/***********************************************/\n$0"
+  },
+  "tryCatchCustom": {
+    "prefix": "tryCatchCustom",
+    "body": "try {\n\t$1\n} catch (error) {\n\tconsole.error(error);\n}"
+  },
+  "blockAfterParenthesis": {
+    "prefix": "funcBlock",
+    "body": "() {$1}"
+  },
+  "string": {
+    "prefix": ":string",
+    "body": [": string"]
+  },
+  "number": {
+    "prefix": ":number",
+    "body": [": number"]
+  },
+  "boolean": {
+    "prefix": ":boolean",
+    "body": [": boolean"]
+  },
+  "any": {
+    "prefix": ":any",
+    "body": [": any"]
+  },
+  "unknown": {
+    "prefix": ":unknown",
+    "body": [": unknown"]
+  },
+  "never": {
+    "prefix": ":never",
+    "body": [": never"]
+  },
+  "Date": {
+    "prefix": ":Date",
+    "body": [": Date"]
+  },
+  "/*html*/": {
+    "prefix": "/*html",
+    "body": ["/*html*/"]
+  },
+  "/*css*/": {
+    "prefix": "/*css",
+    "body": ["/*css*/"]
+  },
+  "import custom": {
+    "prefix": "import",
+    "body": "import '$1';$0"
+  },
+  "breaklog": {
+    "prefix": "l#",
+    "body": "console.log('###########################$1')$0"
+  },
+  "return arrow funct 1 line": {
+    "prefix": "fas",
+    "body": "() => $1"
+  },
+  "return arrow funct 1 line params": {
+    "prefix": "fasp",
+    "body": "($1) => $0"
+  },
+  "ternary operator": {
+    "prefix": "tern",
+    "body": "${1:condition} ? ${2:ifTrue} : ${3:ifFalse} $0"
+  },
+  "generic T": {
+    "prefix": "<T",
+    "body": "<T$1>$0"
+  },
+  "comm": {
+    "prefix": "comm",
+    "body": "/**\n* ## $1\n*/"
+  }
+}

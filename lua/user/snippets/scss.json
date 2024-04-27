@@ -1,0 +1,7 @@
+{
+  "comm": {
+    "prefix": "comm",
+    "body": ["/* #######\n * $1\n */"],
+    "description": "Comment block"
+  }
+}

@@ -1,0 +1,156 @@
+local set_desc = require('user.utils.functions').set_keymap_desc
+
+vim.keymap.set('n', 'Q', '<cmd>Bdelete!<CR>', set_desc('Delete buffer netrw')) -- bbye plugin
+vim.keymap.set('n', 'q', '<c-^>', set_desc('go back netrw')) -- bbye plugin
+vim.keymap.set('n', '<c-c>', '<c-^>', set_desc('go back netrw')) -- bbye plugin
+--
+-- -- " Close Netrw window
+-- --   nmap <buffer> <leader>dd :Lexplore<CR>
+-- vim.keymap.set(
+--     'n',
+--     '<leader>dd',
+--     ':Lexplore<CR>',
+--     set_desc('Close Netrw window')
+-- )
+--
+-- --   " Go to file and close Netrw window
+-- --   nmap <buffer> L <CR>:Lexplore<CR>
+-- vim.keymap.set('n', 'L', ':Lexplore<CR>', set_desc('Close Netrw window'))
+--
+-- --   "h" Go up a directory
+-- --   nmap <buffer> h -^
+-- vim.keymap.set('n', 'h', '-^', set_desc('Go up a directory netrw'))
+--
+-- --   " Go down a directory / open file
+-- --   nmap <buffer> l <CR>
+-- vim.keymap.set(
+--     'n',
+--     'l',
+--     '<CR>',
+--     set_desc('Go down a directory / open file netrw')
+-- )
+--
+-- --   " Toggle dotfiles
+-- --   nmap <buffer> . gh
+-- vim.keymap.set('n', '.', 'gh', set_desc('Toggle dotfiles netrw'))
+--
+-- --   " Toggle the mark on a file
+-- --   nmap <buffer> <TAB> mf
+-- vim.keymap.set('n', '<TAB>', 'mf', set_desc('Toggle the mark on a file netrw'))
+--
+-- --   " Unmark all files in the buffer
+-- --   nmap <buffer> <S-TAB> mF
+-- vim.keymap.set(
+--     'n',
+--     '<S-TAB>',
+--     'mF',
+--     set_desc('Unmark all files in the buffer netrw')
+-- )
+--
+-- --   " Unmark all files
+-- --   nmap <buffer> <Leader><TAB> mu
+-- vim.keymap.set('n', '<Leader><TAB>', 'mu', set_desc('Unmark all files netrw'))
+--
+-- --   " 'Bookmark' a directory
+-- --   nmap <buffer> bb mb
+-- vim.keymap.set('n', 'bb', 'mb', set_desc('Bookmark a directory netrw'))
+--
+-- --   " Delete the most recent directory bookmark
+-- --   nmap <buffer> bd mB
+-- vim.keymap.set(
+--     'n',
+--     'bd',
+--     'mB',
+--     set_desc('Delete the most recent directory bookmark netrw')
+-- )
+--
+-- --   " Got to a directory on the most recent bookmark
+-- --   nmap <buffer> bl gb
+--
+-- --   " Create a file
+-- --   nmap <buffer> ff %:w<CR>:buffer #<CR>
+-- vim.keymap.set(
+--     'n',
+--     'ff',
+--     '%:w<CR>:buffer #<CR>',
+--     set_desc('Create a file netrw')
+-- )
+--
+-- --   " Rename a file
+-- --   nmap <buffer> fe R
+-- vim.keymap.set('n', 'fe', 'R', set_desc('Rename a file netrw'))
+--
+-- --   " Copy marked files
+-- --   nmap <buffer> fc mc
+-- vim.keymap.set('n', 'fc', 'mc', set_desc('Copy marked files netrw'))
+--
+-- --   " Copy marked files in the directory under cursor
+-- --   nmap <buffer> fC mtmc
+-- vim.keymap.set(
+--     'n',
+--     'fC',
+--     'mtmc',
+--     set_desc('Copy marked files in the directory under cursor netrw')
+-- )
+--
+-- --   " Move marked files
+-- --   nmap <buffer> fx mm
+-- vim.keymap.set('n', 'fx', 'mm', set_desc('Move marked files netrw'))
+--
+-- --   " Move marked files in the directory under cursor
+-- --   nmap <buffer> fX mtmm
+-- vim.keymap.set(
+--     'n',
+--     'fX',
+--     'mtmm',
+--     set_desc('Move marked files in the directory under cursor netrw')
+-- )
+--
+-- --   " Execute a command on marked files
+-- --   nmap <buffer> f; mx
+-- vim.keymap.set(
+--     'n',
+--     'f;',
+--     'mx',
+--     set_desc('Execute a command on marked files netrw')
+-- )
+--
+-- --   " Show the list of marked files
+-- --   nmap <buffer> fl :echo join(netrw#Expose("netrwmarkfilelist"), "\n")<CR>
+-- vim.keymap.set(
+--     'n',
+--     'fl',
+--     ':echo join(netrw#Expose("netrwmarkfilelist"), "\n")<CR>',
+--     set_desc('Show the list of marked files netrw')
+-- )
+--
+-- --   " Show the current target directory
+-- --   nmap <buffer> fq :echo 'Target:' . netrw#Expose("netrwmftgt")<CR>
+-- vim.keymap.set(
+--     'n',
+--     'fq',
+--     ':echo "Target:" . netrw#Expose("netrwmftgt")<CR>',
+--     set_desc('Show the current target directory netrw')
+-- )
+--
+-- --   " Set the directory under the cursor as the current target
+-- --   nmap <buffer> fd mtfq
+-- vim.keymap.set(
+--     'n',
+--     'fd',
+--     'mtfq',
+--     set_desc('Set the directory under the cursor as the current target netrw')
+-- )
+--
+-- --   " Delete a file
+-- --   nmap <buffer> FF :call NetrwRemoveRecursive()<CR>
+-- vim.keymap.set(
+--     'n',
+--     'FF',
+--     ':call NetrwRemoveRecursive()<CR>',
+--     set_desc('Delete a file netrw')
+-- )
+--
+-- --   " Close the preview window
+-- --   nmap <buffer> P <C-w>z
+-- vim.keymap.set('n', 'P', '<C-w>z', set_desc('Close the preview window netrw'))
