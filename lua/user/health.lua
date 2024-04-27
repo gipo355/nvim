@@ -33,6 +33,7 @@ local required_bins = {
     'npm',
     'curl',
     'exa',
+    'bat',
 }
 
 local check_version = function()
