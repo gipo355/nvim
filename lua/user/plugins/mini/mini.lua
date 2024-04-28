@@ -1,6 +1,6 @@
 -- TODO: ftplugin
 -- TODO: split this up
--- local icons = require('user.utils.icons')
+local icons = require('user.utils.icons')
 local set_desc = require('user.utils.functions').set_keymap_desc
 local merge_tables = require('user.utils.functions').merge_tables
 local opts = require('user.utils.options').global_keymap_opts
@@ -96,27 +96,25 @@ return {
             -- restore cursor position
             mini_misc.setup_restore_cursor()
 
-            -- using shatur neovim-session-manager
+            -- using shatur neovim-session-manager instead
             -- require('mini.sessions').setup({
             --     autoread = true,
             --     autowrite = true,
             -- })
 
-            -- require('mini.completion').setup()
-
             -- indentline for current scope, not needed(indent-blankline does it)
-            -- local mini_indent = require('mini.indentscope')
-            -- mini_indent.setup({
-            --     draw = {
-            --         delay = 20,
-            --         animation = mini_indent.gen_animation.linear({
-            --             easing = 'in',
-            --             duration = 100,
-            --             unit = 'total',
-            --         }),
-            --     },
-            --     symbol = icons.ui.LineLeft,
-            -- })
+            local mini_indent = require('mini.indentscope')
+            mini_indent.setup({
+                draw = {
+                    delay = 20,
+                    animation = mini_indent.gen_animation.linear({
+                        easing = 'in',
+                        duration = 100,
+                        unit = 'total',
+                    }),
+                },
+                symbol = icons.ui.LineLeft,
+            })
 
             -- Better Around/Inside textobjects
             if _G.user.animate_scroll then
