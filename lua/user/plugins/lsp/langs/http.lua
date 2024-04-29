@@ -31,18 +31,18 @@ return {
             })
             vim.keymap.set(
                 'n',
-                '<leader>Rr',
+                '<leader>rr',
                 '<cmd>Rest run<cr>',
                 set_desc('[R]est [R]un')
             )
             vim.keymap.set(
                 'n',
-                '<leader>Rl',
+                '<leader>rl',
                 '<cmd>Rest run last<cr>',
                 set_desc('[R]est [L]ast query')
             )
 
-            vim.keymap.set('n', '<leader>Rt', function()
+            vim.keymap.set('n', '<leader>rt', function()
                 require('telescope').extensions.select_env()
             end, set_desc('[R]est [T]elescope'))
         end,

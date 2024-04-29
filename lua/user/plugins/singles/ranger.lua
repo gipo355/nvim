@@ -5,7 +5,7 @@ return {
     -- either add the keymaps in the keys prop or in the init fn
     keys = {
         {
-            '<leader>r',
+            '<leader>R',
             '<cmd>RnvimrToggle<cr>',
             'n',
             desc = 'toggle rnvimr',
