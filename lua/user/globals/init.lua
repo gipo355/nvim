@@ -59,7 +59,7 @@ _G.user.animate_scroll = false
 -- enable bufferline (bufferline plugin)
 _G.user.enable_bufferline = false
 
-_G.user.enable_lualine = false
+_G.user.enable_lualine = true
 
 -- enable minimap and scrollbar on the right (mini.map plugin)
 _G.user.enable_minimap = false
@@ -119,8 +119,8 @@ _G.user.theme = function()
 
     -- need this hack to disable unused themes for performance
     -- must hardcode
-    return 'monokai-pro'
-    -- return 'gruvbox-material'
+    -- return 'monokai-pro'
+    return 'gruvbox-material'
     -- return 'rose-pine'
     -- return 'gruvbox-baby'
     -- return 'catppuccin'

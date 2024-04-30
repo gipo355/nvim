@@ -31,8 +31,7 @@ vim.lsp.set_log_level('off') -- off, error, warn, info, debug
 
 vim.filetype.add({
     pattern = {
-        -- BUG: crashes nvim when enttering insert mode in class attribute
-        -- ['.*%.component%.html'] = 'angular.html', -- Sets the filetype to `angular.html` if it matches the pattern
+        ['.*%.component%.html'] = 'angular.html', -- Sets the filetype to `angular.html` if it matches the pattern
     },
     extension = {
         templ = 'templ', -- golang atempl
@@ -45,13 +44,12 @@ vim.filetype.add({
     },
 })
 
--- BUG: crashes nvim when enttering insert mode in class attribute
--- vim.api.nvim_create_autocmd('FileType', {
---     pattern = 'angular.html',
---     callback = function()
---         vim.treesitter.language.register('angular', 'angular.html') -- Register the filetype with treesitter for the `angular` language/parser
---     end,
--- })
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = 'angular.html',
+    callback = function()
+        vim.treesitter.language.register('angular', 'angular.html') -- Register the filetype with treesitter for the `angular` language/parser
+    end,
+})
 
 vim.g.markdown_fenced_languages = {
     'ts=typescript',
