@@ -2,6 +2,7 @@ local components = require('user.utils.lualine-components')
 local icons = require('user.utils.icons')
 return {
     'nvim-lualine/lualine.nvim',
+    enabled = _G.user.enable_lualine,
     dependencies = {
         { 'nvim-tree/nvim-web-devicons' },
         { 'AndreM222/copilot-lualine' },

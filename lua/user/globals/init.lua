@@ -59,6 +59,8 @@ _G.user.animate_scroll = false
 -- enable bufferline (bufferline plugin)
 _G.user.enable_bufferline = false
 
+_G.user.enable_lualine = false
+
 -- enable minimap and scrollbar on the right (mini.map plugin)
 _G.user.enable_minimap = false
 _G.user.minimap_width = 1 -- 1 for bar only or 10 for bar and map
