@@ -2,7 +2,10 @@ local components = require('user.utils.lualine-components')
 local icons = require('user.utils.icons')
 return {
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    dependencies = {
+        { 'nvim-tree/nvim-web-devicons' },
+        { 'AndreM222/copilot-lualine' },
+    },
     event = 'BufReadPre',
     opts = {
         options = {
@@ -40,6 +43,11 @@ return {
             lualine_x = {
                 components.diagnostics,
                 components.lsp,
+                {
+                    'copilot',
+                    show_colors = true,
+                    show_loading = true,
+                },
                 components.spaces,
                 components.filetype,
             },

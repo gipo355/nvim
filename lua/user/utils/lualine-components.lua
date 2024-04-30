@@ -118,7 +118,7 @@ return {
 
             local buf_ft = vim.bo.filetype
             local buf_client_names = {}
-            local copilot_active = false
+            -- local copilot_active = false
 
             -- add client
             for _, client in pairs(buf_clients) do
@@ -126,9 +126,9 @@ return {
                     table.insert(buf_client_names, client.name)
                 end
 
-                if client.name == 'copilot' then
-                    copilot_active = true
-                end
+                -- if client.name == 'copilot' then
+                --     copilot_active = true
+                -- end
             end
 
             -- add formatter

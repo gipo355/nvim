@@ -72,7 +72,7 @@ _G.user.enable_satellite_scrollbar = true
 -- enable tailwindcss lspconfig start (huge lag)
 -- BUG: enabling tailwind requires didChangeWatchedFiles capabilities to false to work (lspconfig)
 -- TODO: check if fixed
-_G.user.enable_tailwindcss = true
+_G.user.enable_tailwindcss = false
 -- enable CSS intellisense (nvim-html-css plugin) pretty heavy, only when needed
 _G.user.enable_css_intellisense_in_html = false
 
