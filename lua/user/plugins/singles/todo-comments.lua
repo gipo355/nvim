@@ -74,6 +74,11 @@ return {
                         color = 'error',
                         alt = { 'INPUT' },
                     },
+                    VULNERABILITY = {
+                        icon = '❗',
+                        color = 'error',
+                        alt = { 'VULN' },
+                    },
                     TEST = {
                         icon = '⏲ ',
                         color = 'test',
