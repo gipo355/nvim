@@ -69,6 +69,11 @@ return {
                         color = 'warning',
                         alt = { 'NOW' },
                     },
+                    USERINPUT = {
+                        icon = '❗',
+                        color = 'error',
+                        alt = { 'INPUT' },
+                    },
                     TEST = {
                         icon = '⏲ ',
                         color = 'test',
