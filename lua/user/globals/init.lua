@@ -102,7 +102,7 @@ _G.user.use_lsp_signature = false
 _G.user.mini_completion_lsp_signature = true
 
 -- enable auto save
-_G.user.enable_auto_save = true
+_G.user.enable_auto_save = false
 
 --[[ theme settings 
 ]]
