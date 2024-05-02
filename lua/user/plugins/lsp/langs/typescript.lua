@@ -5,7 +5,7 @@ return {
         -- setup below
         'pmizio/typescript-tools.nvim',
         event = 'BufEnter',
-        enabled = not _G.user.use_deno_disable_ts,
+        -- enabled = not _G.user.use_deno_disable_ts,
         dependencies = {
             'nvim-lua/plenary.nvim',
             'neovim/nvim-lspconfig',
@@ -37,11 +37,11 @@ return {
                 -- on_attach = require("lvim.lsp").common_on_attach,
 
                 -- for format-ts-errors.nvim
+                single_file_support = false,
                 root_dir = require('lspconfig').util.root_pattern(
-                    '!deno.json',
-                    'tsconfig.json',
-                    'jsconfig.json',
-                    '.git'
+                    'package.json',
+                    'node_modules',
+                    'jsconfig.json'
                 ),
                 on_attach = function(client, bufnr)
                     -- NOTE: prevent tsserver denols collision
@@ -69,7 +69,10 @@ return {
                                 client_.stop()
                             end
                         end
-                    elseif client.name == 'typescript-tools' then
+                    elseif
+                        client.name == 'typescript-tools'
+                        or client.name == 'tsserver'
+                    then
                         for _, client_ in pairs(active_clients) do
                             -- prevent tsserver from starting if denols is already active
                             if client_.name == 'denols' then

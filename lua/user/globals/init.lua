@@ -61,6 +61,9 @@ _G.user.enable_bufferline = false
 
 _G.user.enable_lualine = true
 
+-- show function scope at the top of the window (nvim-treesitter)
+_G.user.enable_treesitter_context = true
+
 -- enable minimap and scrollbar on the right (mini.map plugin)
 _G.user.enable_minimap = false
 _G.user.minimap_width = 1 -- 1 for bar only or 10 for bar and map
@@ -95,7 +98,7 @@ _G.user.enable_buffer_intellisense_in_cmp = false
 
 -- TODO: finish this, must alternate between deno and typescript tools
 -- use denolsp
-_G.user.use_deno_disable_ts = false
+-- _G.user.use_deno_disable_ts = false
 
 -- use signatures when entering a function (pretty laggy), we are using mini.completion, faster
 _G.user.use_lsp_signature = false

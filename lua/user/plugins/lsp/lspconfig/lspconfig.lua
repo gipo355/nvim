@@ -952,6 +952,14 @@ return {
                     ),
                 },
 
+                denols = {
+                    single_file_support = false,
+                    root_dir = require('lspconfig').util.root_pattern(
+                        'deno.json',
+                        'import_map.json'
+                    ),
+                },
+
                 -- using plugin tailwind-tools
                 tailwindcss = {
                     filetypes = {
@@ -1120,7 +1128,6 @@ return {
                 -- 'emmet_ls',
                 -- "go",
                 'graphql',
-                'denols',
                 -- "java",
                 -- "markdown",
                 'marksman',
@@ -1154,7 +1161,7 @@ return {
                 rust_analyzer = true, -- using rustacean plugin, not setting up
                 ['rust-analyzer'] = true, -- same as above
                 sqlls = true, -- buggy as hell
-                denols = true, -- deno-nvim plugin
+                -- denols = true, -- deno-nvim plugin
             }
 
             require('mason-lspconfig').setup({
