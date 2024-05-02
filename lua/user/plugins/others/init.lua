@@ -207,34 +207,29 @@ return {
     -- create beautiful images :Silicon
     {
         'segeljakt/vim-silicon',
-        -- event = 'BufRead',
-        keys = {
-            {
-                '<leader>hs',
-                ':Silicon<cr>',
-                'n',
-                desc = 'Silicon',
-            },
-            {
-                '<leader>hs',
-                ':Silicon<cr>',
-                'v',
-                desc = 'Silicon',
-            },
-        },
+        event = 'BufReadPre',
+        -- TODO: why doesn't this set the key in visual mode?
+        -- keys = {
+        --     {
+        --         '<leader>hs',
+        --         ':Silicon<cr>',
+        --         { 'n', 'v' },
+        --         desc = 'Silicon',
+        --     },
+        -- },
         config = function()
-            -- vim.keymap.set(
-            --     'n',
-            --     '<leader>hs',
-            --     '<cmd>Silicon<cr>',
-            --     set_desc('Take code snapshot')
-            -- )
-            -- vim.keymap.set(
-            --     'v',
-            --     '<leader>hs',
-            --     ':Silicon<cr>',
-            --     set_desc('Take visual code snapshot')
-            -- )
+            vim.keymap.set(
+                'n',
+                '<leader>hs',
+                '<cmd>Silicon<cr>',
+                set_desc('Take code snapshot')
+            )
+            vim.keymap.set(
+                'v',
+                '<leader>hs',
+                ':Silicon<cr>',
+                set_desc('Take visual code snapshot')
+            )
         end,
     },
 
