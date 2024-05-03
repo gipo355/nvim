@@ -1110,7 +1110,7 @@ return {
                 'svelte',
                 'sonarlint-language-server',
                 'rustywind',
-                'semgrep',
+                -- 'semgrep',
                 'astro',
                 'vimls',
                 'ltex',
