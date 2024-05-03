@@ -173,38 +173,6 @@ return {
     },
 
     {
-        'sindrets/diffview.nvim',
-        event = 'VeryLazy',
-        config = function()
-            require('diffview').setup()
-            vim.keymap.set(
-                'n',
-                '<leader>gdc',
-                '<cmd>DiffviewClose<cr>',
-                set_desc('Close DiffView')
-            )
-            vim.keymap.set(
-                'n',
-                '<leader>gdo',
-                '<cmd>DiffviewOpen<cr>',
-                set_desc('Open DiffView')
-            )
-            vim.keymap.set(
-                'n',
-                '<leader>gdf',
-                '<cmd>DiffviewFileHistory<cr>',
-                set_desc('DiffView File History')
-            )
-            vim.keymap.set(
-                'n',
-                '<leader>gdr',
-                '<cmd>DiffviewRefresh<cr>',
-                set_desc('Refresh DiffView')
-            )
-        end,
-    },
-
-    {
         'aaronhallaert/advanced-git-search.nvim',
         event = 'VeryLazy',
         config = function()
