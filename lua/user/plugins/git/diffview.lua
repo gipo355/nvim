@@ -45,11 +45,41 @@ return {
             '<cmd>DiffviewOpen<cr>',
             set_desc('Open DiffView')
         )
+        vim.keymap.set('n', '<leader>gda', function()
+            --  Examples:
+            -- :DiffviewOpen
+            -- :DiffviewOpen HEAD~2
+            -- :DiffviewOpen HEAD~4..HEAD~2
+            -- :DiffviewOpen d4a7b0d
+            -- :DiffviewOpen d4a7b0d^!
+            -- :DiffviewOpen d4a7b0d..519b30e
+            -- :DiffviewOpen origin/main...HEAD
+            -- :DiffviewOpen main..dev
+            -- ask for input for initial commit value, displaying auto-completion suggestion
+            local initial_commit =
+                vim.fn.input('Starting point (branch or commit): ')
+
+            -- ask for input for last commit value, displaying auto-completion suggestion
+            local last_commit =
+                vim.fn.input('Ending point (branch or commit): ')
+
+            if last_commit == '' then
+                return vim.cmd('DiffviewOpen ' .. initial_commit)
+            end
+
+            vim.cmd('DiffviewOpen ' .. initial_commit .. '..' .. last_commit)
+        end, set_desc('Open DiffView For Range'))
         vim.keymap.set(
-            'n',
+            { 'n', 'v' },
             '<leader>gdf',
             '<cmd>DiffviewFileHistory<cr>',
             set_desc('DiffView File History')
+        )
+        vim.keymap.set(
+            { 'n', 'v' },
+            '<leader>gdt',
+            '<cmd>DiffviewToggleFiles<cr>',
+            set_desc('Toggle DiffView Files panel')
         )
         vim.keymap.set(
             'n',
