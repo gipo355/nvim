@@ -50,15 +50,16 @@ vim.g.maplocalleader = '\\'
 -- Set to true if you have a Nerd Font installed
 _G.user.have_nerd_font = true
 
--- enable sessions autoload with alpha - neovim-session-manager
+-- enable sessions autoload with alpha - neovim-session-manager, buggy
 _G.user.enable_sessions_autoload = false
 
--- enable scroll animation and disable improved movements
+-- enable scroll animation and disable improved movements (laggy)
 _G.user.animate_scroll = false
 
 -- enable bufferline (bufferline plugin)
 _G.user.enable_bufferline = false
 
+-- lualine plugin
 _G.user.enable_lualine = true
 
 -- show function scope at the top of the window (nvim-treesitter)

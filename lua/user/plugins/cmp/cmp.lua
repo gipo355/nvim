@@ -287,19 +287,27 @@ return {
                     entry_filter = function(entry, ctx)
                         local kind =
                             cmp_types.lsp.CompletionItemKind[entry:get_kind()]
+
                         -- if kind == "Snippet" and (ctx.prev_context.filetype ~= "html" and ctx.prev_context.filetype ~= "svelte") then
+
+                        -- snippet is a huge noise in lsp, prefer luasnip and copilot
                         if
                             kind == 'Snippet'
-                            and ctx.prev_context.filetype == 'java'
+                            -- and ctx.prev_context.filetype == 'java'
                         then
                             return false
                         end
-                        -- if kind == 'Snippet' then
-                        --     return false
-                        -- end
-                        -- if kind == "Text" and (ctx.prev_context.filetype ~= "html" and ctx.prev_context.filetype ~= "svelte") then
-                        --     return false
-                        -- end
+
+                        -- text is a huge noise in lsp, prefer copilot and buffer source
+                        if
+                            kind == 'Text'
+                            -- and (
+                            --     ctx.prev_context.filetype ~= 'html'
+                            --     and ctx.prev_context.filetype ~= 'svelte'
+                            -- )
+                        then
+                            return false
+                        end
                         return true
                     end,
                 },
