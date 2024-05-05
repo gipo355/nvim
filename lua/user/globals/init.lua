@@ -94,7 +94,7 @@ CMP sources
  cmp ripgrep search in cmp (cmp plugin)
 ]]
 --
-_G.user.enable_rg_intellisense_in_cmp = false
+_G.user.enable_rg_intellisense_in_cmp = true
 _G.user.enable_buffer_intellisense_in_cmp = false
 
 -- TODO: finish this, must alternate between deno and typescript tools

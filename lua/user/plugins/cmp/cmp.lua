@@ -382,6 +382,10 @@ return {
                     -- Try it when you feel cmp performance is poor
                     keyword_length = 2,
                     max_item_count = 5,
+                    option = {
+                        -- additional_arguments = '--smart-case --hidden -g "!.git" -g "!pnpm-lock.yaml" -g "!package-lock.json" -g "!node_modules" -g "!*cache',
+                        additional_arguments = '--smart-case',
+                    },
                 },
             }
 
