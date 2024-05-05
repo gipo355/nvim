@@ -9,11 +9,14 @@ return {
         -- requires manual install of the vscode-debug-js
         -- requires installation of :MasonInstall node-debug2-adapter ( use mason nvim dap above )
         'mxsdev/nvim-dap-vscode-js', -- setup at the end in its file and in dap.lua
-        event = 'VeryLazy',
+        -- event = 'BufReadPre',
+        ft = {
+            'typescript',
+            'javascript',
+            'typescriptreact',
+            'javascriptreact',
+        },
         -- opts = {
-        --     debugger_path = os.getenv('HOME')
-        --         .. '/.local/share/lunarvim/site/pack/lazy/opt/vscode-js-debug',
-        --     -- debugger_path = vim.fn.stdpath("data") .. "/lazy/opt/vscode-js-debug",
         --     adapters = {
         --         'pwa-node',
         --         'pwa-chrome',
@@ -21,14 +24,22 @@ return {
         --         'node-terminal',
         --         'pwa-extensionHost',
         --     },
+        --
+        --     debugger_path = vim.fn.stdpath('data') .. '/lazy/vscode-js-debug',
+        --     -- debugger_path = os.getenv('HOME')
+        --     --     .. '/.local/share/nvim/lazy/vscode-js-debug',
         -- },
         dependencies = {
             {
                 'microsoft/vscode-js-debug',
-                lazy = true,
                 -- build = "npm install --legacy-peer-deps && npm run compile",
-                build = 'npm ci --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out',
+                build = 'npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out',
             },
+            -- {
+            --     'microsoft/vscode-js-debug',
+            --     -- opts = {},
+            --     build = 'npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out',
+            -- },
             'mfussenegger/nvim-dap',
             -- "rcarriga/nvim-dap-ui", -- built in lunarvim
             -- "mfussenegger/nvim-dap-python", -- don't need python
@@ -69,8 +80,10 @@ return {
                     'pwa-extensionHost',
                 },
 
-                debugger_path = os.getenv('HOME')
-                    .. '/.local/share/nvim/lazy/vscode-js-debug',
+                debugger_path = vim.fn.stdpath('data')
+                    .. '/lazy/vscode-js-debug',
+                -- debugger_path = os.getenv('HOME')
+                --     .. '/.local/share/nvim/lazy/vscode-js-debug',
             })
 
             for _, language in ipairs({ 'typescript', 'javascript' }) do
@@ -105,6 +118,13 @@ return {
                     },
                     {
                         type = 'pwa-node',
+                        request = 'attach',
+                        name = 'Auto Attach Node to --inspect',
+                        cwd = vim.fn.getcwd(),
+                        protocol = 'inspector',
+                    },
+                    {
+                        type = 'pwa-node',
                         request = 'launch',
                         name = 'Debug Jest Tests',
                         -- trace = true, -- include debugger info
@@ -118,21 +138,6 @@ return {
                         console = 'integratedTerminal',
                         internalConsoleOptions = 'neverOpen',
                     },
-                    {
-                        type = 'server',
-                        host = 'localhost',
-                        port = '${port}',
-                        executable = {
-                            command = 'node',
-                            -- 💀 Make sure to update this path to point to your installation
-                            args = {
-                                os.getenv('HOME')
-                                    .. '/.local/share/nvim/lazy/vscode-js-debug/out/src/debugAdapter.js',
-                                '${port}',
-                            },
-                        },
-                    },
-
                     {
                         type = 'pwa-node',
                         request = 'launch',
