@@ -17,55 +17,56 @@ return {
         version = false,
         event = 'BufReadPre',
         config = function()
-            local mini_diff = require('mini.diff')
-            mini_diff.setup({
-                -- Options for how hunks are visualized
-                view = {
-                    -- Visualization style. Possible values are 'sign' and 'number'.
-                    style = vim.o.number and 'number' or 'sign',
-                    -- Signs used for hunks with 'sign' view
-                    signs = { add = '▒', change = '▒', delete = '▒' },
-                    -- Priority of used visualization extmarks
-                    priority = vim.highlight.priorities.user - 1,
-                },
-                -- Source for how reference text is computed/updated/etc
-                -- Uses content from Git index by default
-                source = nil,
-                -- Delays (in ms) defining asynchronous processes
-                delay = {
-                    -- How much to wait before update following every text change
-                    text_change = 200,
-                },
-                -- Module mappings. Use `''` (empty string) to disable one.
-                mappings = {
-                    -- Apply hunks inside a visual/operator region
-                    apply = 'gh',
-                    -- Reset hunks inside a visual/operator region
-                    reset = 'gH',
-                    -- Hunk range textobject to be used inside operator
-                    textobject = 'gh',
-                    -- Go to hunk range in corresponding direction
-                    goto_first = '[H',
-                    goto_prev = '[h',
-                    goto_next = ']h',
-                    goto_last = ']H',
-                },
-                -- Various options
-                options = {
-                    -- Diff algorithm. See `:h vim.diff()`.
-                    algorithm = 'histogram',
-                    -- Whether to use "indent heuristic". See `:h vim.diff()`.
-                    indent_heuristic = true,
-                    -- The amount of second-stage diff to align lines (in Neovim>=0.9)
-                    linematch = 60,
-                },
-            })
-            vim.keymap.set(
-                'n',
-                '<leader>ge',
-                '<cmd>lua require("mini.diff").toggle_overlay()<CR>',
-                set_desc('MiniDiff toggle overlay')
-            )
+            -- BUG: neovim crash possibly?
+            -- local mini_diff = require('mini.diff')
+            -- mini_diff.setup({
+            --     -- Options for how hunks are visualized
+            --     view = {
+            --         -- Visualization style. Possible values are 'sign' and 'number'.
+            --         style = vim.o.number and 'number' or 'sign',
+            --         -- Signs used for hunks with 'sign' view
+            --         signs = { add = '▒', change = '▒', delete = '▒' },
+            --         -- Priority of used visualization extmarks
+            --         priority = vim.highlight.priorities.user - 1,
+            --     },
+            --     -- Source for how reference text is computed/updated/etc
+            --     -- Uses content from Git index by default
+            --     source = nil,
+            --     -- Delays (in ms) defining asynchronous processes
+            --     delay = {
+            --         -- How much to wait before update following every text change
+            --         text_change = 200,
+            --     },
+            --     -- Module mappings. Use `''` (empty string) to disable one.
+            --     mappings = {
+            --         -- Apply hunks inside a visual/operator region
+            --         apply = 'gh',
+            --         -- Reset hunks inside a visual/operator region
+            --         reset = 'gH',
+            --         -- Hunk range textobject to be used inside operator
+            --         textobject = 'gh',
+            --         -- Go to hunk range in corresponding direction
+            --         goto_first = '[H',
+            --         goto_prev = '[h',
+            --         goto_next = ']h',
+            --         goto_last = ']H',
+            --     },
+            --     -- Various options
+            --     options = {
+            --         -- Diff algorithm. See `:h vim.diff()`.
+            --         algorithm = 'histogram',
+            --         -- Whether to use "indent heuristic". See `:h vim.diff()`.
+            --         indent_heuristic = true,
+            --         -- The amount of second-stage diff to align lines (in Neovim>=0.9)
+            --         linematch = 60,
+            --     },
+            -- })
+            -- vim.keymap.set(
+            --     'n',
+            --     '<leader>ge',
+            --     '<cmd>lua require("mini.diff").toggle_overlay()<CR>',
+            --     set_desc('MiniDiff toggle overlay')
+            -- )
 
             -- set of useful functions
             -- interesting read: [https://www.reddit.com/r/neovim/comments/zy5s0l/you_dont_need_vimrooter_usually_or_how_to_set_up/]
