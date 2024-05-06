@@ -122,10 +122,6 @@ return {
                         name = 'Auto Attach Node to --inspect',
                         cwd = vim.fn.getcwd(),
                         protocol = 'inspector',
-                        resolveSourceMapLocations = {
-                            '${workspaceFolder}/**',
-                            '!**/node_modules/**',
-                        },
                     },
                     {
                         type = 'pwa-node',
