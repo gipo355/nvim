@@ -1100,7 +1100,7 @@ return {
                 'stylua', -- Used to format lua code
                 -- "google-java-format",
                 -- "sumneko_lua",
-                'grammarly',
+                -- 'grammarly',
                 'bufls',
                 'groovyls',
                 'pylsp',
@@ -1119,7 +1119,6 @@ return {
                 'rust-analyzer',
                 'tsserver', -- using plugin typescript-tools?
                 'pyright',
-                'grammarly',
                 'clangd',
                 'prosemd_lsp',
                 'dockerls',
