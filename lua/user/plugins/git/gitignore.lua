@@ -1,6 +1,6 @@
 return {
     'wintermute-cell/gitignore.nvim',
-    event = 'BufRead .gitignore',
+    ft = 'gitignore',
     dependencies = {
         'nvim-telescope/telescope.nvim',
     },
