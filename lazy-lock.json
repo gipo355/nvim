@@ -37,6 +37,7 @@
   "glow.nvim": { "branch": "main", "commit": "238070a686c1da3bccccf1079700eb4b5e19aea4" },
   "go.nvim": { "branch": "master", "commit": "d5e2b8cdd84afdb0c49c42a6e8972acc645e0283" },
   "grapple.nvim": { "branch": "main", "commit": "493f174a1ace3f2d55ba2191129e43b3875b9124" },
+  "grug-far.nvim": { "branch": "main", "commit": "da8b0d56d4d74982bd852b2baffec222b08adc75" },
   "guihua.lua": { "branch": "master", "commit": "5204646be15997ed101631d75df02512ecd6c2bb" },
   "gv.vim": { "branch": "master", "commit": "b6bb6664e2c95aa584059f195eb3a9f3cb133994" },
   "img-clip.nvim": { "branch": "main", "commit": "fc30500c35663aa1762697f5aba31d43b86028f0" },
