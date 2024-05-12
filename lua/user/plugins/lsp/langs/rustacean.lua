@@ -7,7 +7,7 @@ return {
             server = {
                 on_attach = function(client, bufnr)
                     -- vim.lsp.inlay_hint.enable(bufnr, true) -- uncomment to enable inlay hints for rust
-                    vim.lsp.codelens.refresh()
+                    -- vim.lsp.codelens.refresh()
                     -- vim.diagnostic.disable()
                 end,
                 default_settings = {
