@@ -203,3 +203,6 @@ _G.user.root_patterns = {
 -- enable autocompletion delay for cmp, buggy?
 _G.user.enable_autocomplete_delay = true -- trying performance throttle in cmp
 _G.user.autocomplete_delay = 200
+
+-- go plugin, shouldn't be needed
+_G.user.enable_go_plugin = true
