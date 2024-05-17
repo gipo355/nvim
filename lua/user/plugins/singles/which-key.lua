@@ -97,10 +97,12 @@ return {
                     name = '[g]it [g]ist',
                     _ = 'which_key_ignore',
                 },
+
                 ['<leader>O'] = {
                     name = 'git [O]cto',
                     _ = 'which_key_ignore',
                 },
+
                 -- ['<leader>G'] = { name = '[G]ithub', _ = 'which_key_ignore' },
                 ['<leader>gd'] = {
                     name = '[g]it [D]iffview',
