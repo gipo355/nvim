@@ -104,18 +104,20 @@ return {
             -- })
 
             -- indentline for current scope, not needed(indent-blankline does it)
-            local mini_indent = require('mini.indentscope')
-            mini_indent.setup({
-                draw = {
-                    delay = 20,
-                    animation = mini_indent.gen_animation.linear({
-                        easing = 'in',
-                        duration = 100,
-                        unit = 'total',
-                    }),
-                },
-                symbol = icons.ui.LineLeft,
-            })
+            if _G.user.enable_mini_indentscope then
+                local mini_indent = require('mini.indentscope')
+                mini_indent.setup({
+                    draw = {
+                        delay = 20,
+                        animation = mini_indent.gen_animation.linear({
+                            easing = 'in',
+                            duration = 100,
+                            unit = 'total',
+                        }),
+                    },
+                    symbol = icons.ui.LineLeft,
+                })
+            end
 
             -- Better Around/Inside textobjects
             if _G.user.animate_scroll then

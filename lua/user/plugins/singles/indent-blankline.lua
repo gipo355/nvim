@@ -1,55 +1,6 @@
 local icons = require('user.utils.icons')
 
-if _G.user.indent_blankline_color_bg then
-    vim.api.nvim_create_autocmd('ColorScheme', {
-        pattern = '*',
-        callback = function()
-            vim.cmd(
-                [[highlight IndentBlanklineIndent1 guifg=#2d2d1f guibg=#2d2d1f gui=nocombine]]
-            )
-            vim.cmd(
-                [[highlight IndentBlanklineIndent2 guifg=#242d24 guibg=#242d24 gui=nocombine]]
-            )
-            vim.cmd(
-                [[highlight IndentBlanklineIndent3 guifg=#2d242d guibg=#2d242d gui=nocombine]]
-            )
-            vim.cmd(
-                [[highlight IndentBlanklineIndent4 guifg=#202c2c guibg=#202c2c gui=nocombine]]
-            )
-            vim.cmd(
-                [[highlight IndentBlanklineIndentChar1 guifg=#2d2d1f  gui=nocombine]]
-            )
-            vim.cmd(
-                [[highlight IndentBlanklineIndentChar2 guifg=#242d24  gui=nocombine]]
-            )
-            vim.cmd(
-                [[highlight IndentBlanklineIndentChar3 guifg=#2d242d  gui=nocombine]]
-            )
-            vim.cmd(
-                [[highlight IndentBlanklineIndentChar4 guifg=#202c2c  gui=nocombine]]
-            )
-
-            -- vim.cmd(
-            --     [[highlight IndentBlanklineIndentChar1 guifg=#4b5563 guibg=#2d2d1f gui=nocombine]]
-            -- )
-            -- vim.cmd(
-            --     [[highlight IndentBlanklineIndentChar2 guifg=#4b5563 guibg=#242d24 gui=nocombine]]
-            -- )
-            -- vim.cmd(
-            --     [[highlight IndentBlanklineIndentChar3 guifg=#4b5563 guibg=#2d242d gui=nocombine]]
-            -- )
-            -- vim.cmd(
-            --     [[highlight IndentBlanklineIndentChar4 guifg=#4b5563 guibg=#202c2c gui=nocombine]]
-            -- )
-            --
-            -- vim.cmd(
-            --     [[highlight IndentBlanklineIndentContext guifg=blue guibg='none' gui=nocombine]]
-            -- )
-        end,
-    })
-end
-
-local blankline_config = {
+return {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
@@ -57,36 +8,122 @@ local blankline_config = {
     enabled = _G.user.enable_indent_blankline,
     main = 'ibl',
     event = 'BufReadPre',
-    opts = {
-        scope = {
-            enabled = true,
-        },
-        indent = {
-            smart_indent_cap = true,
-            -- highlight = {
-            --     'IndentBlanklineIndent1',
-            --     'IndentBlanklineIndent2',
-            --     'IndentBlanklineIndent3',
-            --     'IndentBlanklineIndent4',
-            -- },
-            char = icons.ui.LineLeft,
-        },
-    },
+
+    config = function()
+        local hooks = require('ibl.hooks')
+
+        -- hide first indent level
+        if _G.user.hide_first_indent_level then
+            hooks.register(
+                hooks.type.WHITESPACE,
+                hooks.builtin.hide_first_space_indent_level
+            )
+            hooks.register(
+                hooks.type.WHITESPACE,
+                hooks.builtin.hide_first_tab_indent_level
+            )
+        end
+
+        -- setup highlight colors
+        hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+            -- vim.api.nvim_set_hl(0, 'RainbowRed', { fg = '#E06C75' })
+            -- vim.api.nvim_set_hl(0, 'RainbowYellow', { fg = '#E5C07B' })
+            -- vim.api.nvim_set_hl(0, 'RainbowBlue', { fg = '#61AFEF' })
+            -- vim.api.nvim_set_hl(0, 'RainbowOrange', { fg = '#D19A66' })
+            -- vim.api.nvim_set_hl(0, 'RainbowGreen', { fg = '#98C379' })
+            -- vim.api.nvim_set_hl(0, 'RainbowViolet', { fg = '#C678DD' })
+            -- vim.api.nvim_set_hl(0, 'RainbowCyan', { fg = '#56B6C2' })
+            vim.api.nvim_set_hl(
+                0,
+                'IndentBlanklineIndent1',
+                { fg = '#2d2d1f', bg = '#2d2d1f' }
+            )
+            vim.api.nvim_set_hl(
+                0,
+                'IndentBlanklineIndent2',
+                { fg = '#2d242d', bg = '#2d242d' }
+            )
+            vim.api.nvim_set_hl(
+                0,
+                'IndentBlanklineIndent3',
+                { fg = '#242d24', bg = '#242d24' }
+            )
+            vim.api.nvim_set_hl(
+                0,
+                'IndentBlanklineIndent4',
+                { fg = '#202c2c', bg = '#202c2c' }
+            )
+
+            vim.api.nvim_set_hl(
+                0,
+                'IndentBlanklineIndentChar1',
+                { fg = '#6c6c57' }
+            )
+            vim.api.nvim_set_hl(
+                0,
+                'IndentBlanklineIndentChar2',
+                { fg = '#584658' }
+            )
+            vim.api.nvim_set_hl(
+                0,
+                'IndentBlanklineIndentChar3',
+                { fg = '#394239' }
+            )
+            vim.api.nvim_set_hl(
+                0,
+                'IndentBlanklineIndentChar4',
+                { fg = '#405858' }
+            )
+        end)
+
+        -- prepare highlights for bg and char
+        local highlight_bg = {
+            'IndentBlanklineIndent1',
+            'IndentBlanklineIndent2',
+            'IndentBlanklineIndent3',
+            'IndentBlanklineIndent4',
+        }
+
+        local highlight_char = {
+            'IndentBlanklineIndentChar1',
+            'IndentBlanklineIndentChar2',
+            'IndentBlanklineIndentChar3',
+            'IndentBlanklineIndentChar4',
+        }
+
+        local function set_highlight_bg()
+            if
+                _G.user.background ~= 'light'
+                and _G.user.indent_blankline_color_bg
+            then
+                return highlight_bg
+            else
+                return nil
+            end
+        end
+
+        local function set_highlight_char()
+            -- if _G.user.indent_blankline_color_bg then
+            --     return nil
+            -- else
+            return highlight_char
+            -- end
+        end
+
+        require('ibl').setup({
+
+            scope = {
+                enabled = true,
+            },
+            indent = {
+                smart_indent_cap = true,
+                highlight = set_highlight_char(),
+                char = icons.ui.LineLeft,
+            },
+            whitespace = {
+                highlight = set_highlight_bg(),
+                remove_blankline_trail = true,
+            },
+        })
+    end,
 }
-
--- disable highlight colors if light theme
-if _G.user.background ~= 'light' and _G.user.indent_blankline_color_bg then
-    local highlight = {
-        'IndentBlanklineIndent1',
-        'IndentBlanklineIndent2',
-        'IndentBlanklineIndent3',
-        'IndentBlanklineIndent4',
-    }
-
-    blankline_config.opts.whitespace = {
-        highlight = highlight,
-        remove_blankline_trail = true,
-    }
-end
-
-return blankline_config
