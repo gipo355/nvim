@@ -195,7 +195,7 @@ return {
 
                     -- TODO: inlay hints, codelens
                     -- ##### Here we can laod events when LSP has started #####
-                    vim.lsp.inlay_hint.enable()
+                    -- vim.lsp.inlay_hint.enable()
                     -- vim.lsp.codelens.refresh(event.buf)
                     -- vim.lsp.diagnostic.enable(event.buf)
 

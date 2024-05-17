@@ -7,7 +7,7 @@ return {
     -- See `:help ibl`
     enabled = _G.user.enable_indent_blankline,
     main = 'ibl',
-    event = 'BufReadPre',
+    event = 'VeryLazy',
 
     config = function()
         local hooks = require('ibl.hooks')

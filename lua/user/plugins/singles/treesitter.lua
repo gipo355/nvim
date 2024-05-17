@@ -7,6 +7,7 @@ return {
             {
                 'HiPhish/rainbow-delimiters.nvim',
                 url = 'https://gitlab.com/HiPhish/rainbow-delimiters.nvim.git',
+                event = 'BufReadPre',
                 enabled = _G.user.enable_rainbow_parens,
             },
         },
