@@ -197,10 +197,10 @@ M.toggle_hints = function()
 end
 
 M.toggle_diagnostics = function()
-    if vim.diagnostic.is_disabled() then
+    if not vim.diagnostic.is_enabled() then
         vim.diagnostic.enable()
     else
-        vim.diagnostic.disable()
+        vim.diagnostic.enable(false)
     end
 end
 
