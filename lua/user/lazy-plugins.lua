@@ -54,7 +54,8 @@ FOR LAZY LOADING
 
 USE NEOVIM EVENTS + VERYLAZY
 - event: Lazy-load on event. Events can be specified as BufEnter or with a pattern like BufEnter *.lua
-BufRead, BufEnter, BufEnter *.lua (or ft opt), VimEnter or VeryLazy
+- BufRead, BufReadPre, BufReadPost, BufEnter,
+BufEnter *.lua (or ft opt), VimEnter or VeryLazy, CmdlineEnter (for plugins that add commands)
 
 OR USE KEYS:
 - keys: Lazy-load on key mapping press
