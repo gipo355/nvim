@@ -114,6 +114,7 @@ return {
 
             scope = {
                 enabled = true,
+                show_start = false, -- show first line underline
             },
             indent = {
                 smart_indent_cap = true,
