@@ -119,6 +119,7 @@ return {
                 smart_indent_cap = true,
                 highlight = set_highlight_char(),
                 char = icons.ui.LineLeft,
+                tab_char = icons.ui.LineLeft,
             },
             whitespace = {
                 highlight = set_highlight_bg(),
