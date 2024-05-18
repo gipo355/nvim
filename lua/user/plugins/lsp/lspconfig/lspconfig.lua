@@ -623,86 +623,87 @@ return {
                 --     },
                 -- },
 
-                gopls = {
-                    -- https://github.com/Integralist/nvim/blob/main/lua/plugins/lsp.lua#L10-L92
-                    on_attach = function()
-                        -- vim.lsp.inlay_hint.enable() -- uncomment to enable inlay hints for go
-                    end,
-                    filetypes = { 'go', 'gomod', 'gowork', 'templ', 'gotmpl' },
-                    settings = {
-                        gopls = {
-                            completeUnimported = true,
-                            directoryFilters = {
-                                '-.git',
-                                '-.vscode',
-                                '-.idea',
-                                '-.vscode-test',
-                                '-node_modules',
-                            },
-                            semanticTokens = true,
-                            analyses = {
-                                fieldalignment = true,
-                                nilness = true,
-                                unusedparams = true,
-                                unusedwrite = true,
-                                useany = true,
-                            },
-                            hints = {
-                                -- which?
-                                assignVariableTypes = true,
-                                compositeLiteralFields = true,
-                                constantValues = true,
-                                parameterNames = true,
-                                compositeLiteralTypes = true,
-                                functionTypeParameters = true,
-                                rangeVariableTypes = true,
-                            },
-                            -- ['ui.inlayhint.hints'] = {
-                            --     assignVariableTypes = true,
-                            --     compositeLiteralFields = true,
-                            --     constantValues = true,
-                            --     parameterNames = true,
-                            --     compositeLiteralTypes = true,
-                            --     functionTypeParameters = true,
-                            --     rangeVariableTypes = true,
-                            -- },
-                            codelenses = {
-                                gc_details = false,
-                                generate = true,
-                                regenerate_cgo = true,
-                                run_govulncheck = true,
-                                test = true,
-                                tidy = true,
-                                upgrade_dependency = true,
-                                vendor = true,
-                            },
-                            experimentalPostfixCompletions = true,
-                            -- DISABLED: staticcheck
-                            --
-                            -- gopls doesn't invoke the staticcheck binary.
-                            -- Instead it imports the analyzers directly.
-                            -- This means it can report on issues the binary can't.
-                            -- But it's not a good thing (like it initially sounds).
-                            -- You can't then use line directives to ignore issues.
-                            --
-                            -- Instead of using staticcheck via gopls.
-                            -- We have golangci-lint execute it instead.
-                            --
-                            -- For more details:
-                            -- https://github.com/golang/go/issues/36373#issuecomment-570643870
-                            -- https://github.com/golangci/golangci-lint/issues/741#issuecomment-1488116634
-                            --
-                            -- staticcheck = true,
-                            gofumpt = true,
-                            usePlaceholders = true,
-                        },
-                    },
-                    -- settings = {
-                    --     hint = {
-                    --         enable = true,
-                    --     },
-                    -- }
-                },
+                -- using go.nvim lsp config
+                -- gopls = {
+                --     -- https://github.com/Integralist/nvim/blob/main/lua/plugins/lsp.lua#L10-L92
+                --     on_attach = function()
+                --         -- vim.lsp.inlay_hint.enable() -- uncomment to enable inlay hints for go
+                --     end,
+                --     filetypes = { 'go', 'gomod', 'gowork', 'templ', 'gotmpl' },
+                --     settings = {
+                --         gopls = {
+                --             completeUnimported = true,
+                --             directoryFilters = {
+                --                 '-.git',
+                --                 '-.vscode',
+                --                 '-.idea',
+                --                 '-.vscode-test',
+                --                 '-node_modules',
+                --             },
+                --             semanticTokens = true,
+                --             analyses = {
+                --                 fieldalignment = true,
+                --                 nilness = true,
+                --                 unusedparams = true,
+                --                 unusedwrite = true,
+                --                 useany = true,
+                --             },
+                --             hints = {
+                --                 -- which?
+                --                 assignVariableTypes = true,
+                --                 compositeLiteralFields = true,
+                --                 constantValues = true,
+                --                 parameterNames = true,
+                --                 compositeLiteralTypes = true,
+                --                 functionTypeParameters = true,
+                --                 rangeVariableTypes = true,
+                --             },
+                --             -- ['ui.inlayhint.hints'] = {
+                --             --     assignVariableTypes = true,
+                --             --     compositeLiteralFields = true,
+                --             --     constantValues = true,
+                --             --     parameterNames = true,
+                --             --     compositeLiteralTypes = true,
+                --             --     functionTypeParameters = true,
+                --             --     rangeVariableTypes = true,
+                --             -- },
+                --             codelenses = {
+                --                 gc_details = false,
+                --                 generate = true,
+                --                 regenerate_cgo = true,
+                --                 run_govulncheck = true,
+                --                 test = true,
+                --                 tidy = true,
+                --                 upgrade_dependency = true,
+                --                 vendor = true,
+                --             },
+                --             experimentalPostfixCompletions = true,
+                --             -- DISABLED: staticcheck
+                --             --
+                --             -- gopls doesn't invoke the staticcheck binary.
+                --             -- Instead it imports the analyzers directly.
+                --             -- This means it can report on issues the binary can't.
+                --             -- But it's not a good thing (like it initially sounds).
+                --             -- You can't then use line directives to ignore issues.
+                --             --
+                --             -- Instead of using staticcheck via gopls.
+                --             -- We have golangci-lint execute it instead.
+                --             --
+                --             -- For more details:
+                --             -- https://github.com/golang/go/issues/36373#issuecomment-570643870
+                --             -- https://github.com/golangci/golangci-lint/issues/741#issuecomment-1488116634
+                --             --
+                --             -- staticcheck = true,
+                --             gofumpt = true,
+                --             usePlaceholders = true,
+                --         },
+                --     },
+                --     -- settings = {
+                --     --     hint = {
+                --     --         enable = true,
+                --     --     },
+                --     -- }
+                -- },
 
                 -- golangci_lint_ls = {
                 --     filetypes = { 'go', 'gomod', 'gowork', 'templ', 'gotmpl' },

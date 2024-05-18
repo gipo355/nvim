@@ -151,10 +151,10 @@ return {
             -- protobuf
             null_ls.builtins.diagnostics.buf,
 
-            -- here or lspconfig, go
-            null_ls.builtins.diagnostics.golangci_lint.with({ -- lspconfig doesn't work
-                filetypes = { 'go', 'gomod', 'gowork', 'templ', 'gotempl' },
-            }),
+            -- here or lspconfig or go plugin, go
+            -- null_ls.builtins.diagnostics.golangci_lint.with({ -- lspconfig doesn't work
+            --     filetypes = { 'go', 'gomod', 'gowork', 'templ', 'gotempl' },
+            -- }),
 
             -- sql
             null_ls.builtins.diagnostics.sqlfluff.with({
@@ -240,9 +240,23 @@ return {
             -- many
             null_ls.builtins.code_actions.refactoring,
         }
+
+        -- Golang from go plugin
+        local ok, gonull = pcall(require, 'go.null_ls')
+        if ok then
+            local golangci_lint = gonull.golangci_lint()
+            local gotest = gonull.gotest()
+            local gotest_codeaction = gonull.gotest_action()
+            table.insert(sources, golangci_lint)
+            table.insert(sources, gotest)
+            table.insert(sources, gotest_codeaction)
+        end
+
         null_ls.setup({
             sources = sources,
             debug = false,
+            debounce = 1000,
+            default_timeout = 5000,
         })
 
         ----
