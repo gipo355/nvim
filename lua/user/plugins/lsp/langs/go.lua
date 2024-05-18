@@ -5,6 +5,7 @@ return {
         'ray-x/go.nvim',
         -- event = { 'CmdlineEnter' },
         ft = { 'go', 'gomod', 'gowork', 'tmpl', 'templ' },
+        -- enabled = false,
         build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
         dependencies = {
             -- optional packages
@@ -17,18 +18,21 @@ return {
                 -- disable_defaults = true,
                 -- go = 'go',
 
-                goimports = 'gopls',
+                goimports = 'gopls', -- if set to 'gopls' will use golsp format
                 comment_placeholder = '   ',
-                gofmt = 'gopls',
-                lsp_cfg = true,
-                lsp_gofumpt = true,
-                lsp_on_attach = true,
+                gofmt = 'gopls', -- if set to gopls will use golsp format
+                lsp_cfg = false, -- buggy, disabled and copied directly into lspconfig. false = use your own lspconfig
+                -- lsp_gofumpt = true, -- true = set default gofmt in gopls format to gofumpt, not needed if lsp_cfg = false
+                lsp_on_attach = false, -- use on_attach from go.nvim
                 dap_debug = true,
 
                 -- using built in
-                -- lsp_inlay_hints = {
-                --     enable = false,
-                -- },
+                lsp_inlay_hints = {
+                    enable = false, -- use built in
+                    -- style = 'inlay',
+                    -- only_current_line = false,
+                    -- only_current_line_autocmd = 'CursorHold',
+                },
                 -- lsp_codelens = false,
                 --
                 -- dap_debug = true,
