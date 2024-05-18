@@ -194,7 +194,8 @@ return {
                     -- TODO: split files
 
                     -- TODO: inlay hints, codelens
-                    -- ##### Here we can laod events when LSP has started #####
+                    -- ##### Here we can laod events when LSP has started globally for all FT #####
+                    -- note: it's recommended to laod per FT
                     -- vim.lsp.inlay_hint.enable()
                     -- vim.lsp.codelens.refresh(event.buf)
                     -- vim.lsp.diagnostic.enable(event.buf)
@@ -627,7 +628,7 @@ return {
                 gopls = {
                     -- https://github.com/Integralist/nvim/blob/main/lua/plugins/lsp.lua#L10-L92
                     on_attach = function()
-                        -- vim.lsp.inlay_hint.enable() -- uncomment to enable inlay hints for go
+                        vim.lsp.inlay_hint.enable() -- uncomment to enable inlay hints for go
                     end,
                     capabilities = {
                         textDocument = {
@@ -967,7 +968,7 @@ return {
                     -- filetypes { ...},
                     -- capabilities = {},
                     on_attach = function()
-                        -- vim.lsp.inlay_hint.enable()
+                        vim.lsp.inlay_hint.enable()
                     end,
                     settings = {
                         Lua = {
