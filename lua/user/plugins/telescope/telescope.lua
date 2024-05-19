@@ -141,7 +141,7 @@ return {
                         '.asdf',
                         '.vscode',
                         '.pnpm$',
-                        '.git$',
+                        '.git*',
                         -- '^.git$',
                         '%.jpg',
                         '%.jpeg',
