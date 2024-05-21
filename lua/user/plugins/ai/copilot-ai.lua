@@ -23,84 +23,104 @@ return {
             -- See Configuration section for rest
         },
         config = function()
-            require('CopilotChat').setup()
+            local chat = require('CopilotChat')
+
+            chat.setup()
+
             vim.keymap.set(
                 'n',
                 '<leader>md',
                 '<cmd>CopilotChatToggle<cr>',
                 set_desc('CopilotChat toggle')
             )
+
+            -- See Commands section for default commands if you want to lazy load on them
+            --         Commands
+            --
+            --     :CopilotChat <input>? - Open chat window with optional input
+            --     :CopilotChatOpen - Open chat window
+            --     :CopilotChatClose - Close chat window
+            --     :CopilotChatToggle - Toggle chat window
+            --     :CopilotChatReset - Reset chat window
+            --     :CopilotChatSave <name>? - Save chat history to file
+            --     :CopilotChatLoad <name>? - Load chat history from file
+            --     :CopilotChatDebugInfo - Show debug information
+            --
+            -- Commands coming from default prompts
+            --
+            --     :CopilotChatExplain - Explain how it works
+            vim.keymap.set(
+                { 'n', 'v' },
+                '<leader>mce',
+                '<cmd>CopilotChatExplain<cr>',
+                set_desc('CopilotChat explain')
+            )
+            --     :CopilotChatTests - Briefly explain how selected code works then generate unit tests
+            vim.keymap.set(
+                { 'n', 'v' },
+                '<leader>mct',
+                '<cmd>CopilotChatTests<cr>',
+                set_desc('CopilotChat tests')
+            )
+            --     :CopilotChatFix - There is a problem in this code. Rewrite the code to show it with the bug fixed.
+            vim.keymap.set(
+                { 'n', 'v' },
+                '<leader>mcf',
+                '<cmd>CopilotChatFix<cr>',
+                set_desc('CopilotChat fix')
+            )
+            --     :CopilotChatOptimize - Optimize the selected code to improve performance and readablilty.
+            vim.keymap.set(
+                { 'n', 'v' },
+                '<leader>mco',
+                '<cmd>CopilotChatOptimize<cr>',
+                set_desc('CopilotChat optimize')
+            )
+            --     :CopilotChatDocs - Write documentation for the selected code. The reply should be a codeblock containing the original code with the documentation added as comments. Use the most appropriate documentation style for the programming language used (e.g. JSDoc for JavaScript, docstrings for Python etc.
+            vim.keymap.set(
+                { 'n', 'v' },
+                '<leader>mcd',
+                '<cmd>CopilotChatDocs<cr>',
+                set_desc('CopilotChat docs')
+            )
+            --     :CopilotChatFixDiagnostic - Please assist with the following diagnostic issue in file
+            vim.keymap.set(
+                { 'n', 'v' },
+                '<leader>mci',
+                '<cmd>CopilotChatFixDiagnostic<cr>',
+                set_desc('CopilotChat fix diagnostic')
+            )
+            --     :CopilotChatCommit - Write commit message for the change with commitizen convention
+            vim.keymap.set(
+                'n',
+                '<leader>mcc',
+                '<cmd>CopilotChatCommit<cr>',
+                set_desc('CopilotChat commit')
+            )
+            --     :CopilotChatCommitStaged - Write commit message for the change with commitizen convention
+            vim.keymap.set(
+                'n',
+                '<leader>mcs',
+                '<cmd>CopilotChatCommitStaged<cr>',
+                set_desc('CopilotChat commit staged')
+            )
+
+            vim.keymap.set('v', '<leader>mca', function()
+                -- ask for user input
+                local input = vim.fn.input('Question: ')
+                -- call the command with the input
+                -- pass the visual lines
+                chat.ask(input)
+            end, set_desc('Copilot Ask'))
+
+            vim.keymap.set('n', '<leader>mca', function()
+                -- ask for user input
+                local input = vim.fn.input('Question: ')
+                -- call the command with the input
+                -- pass the visual lines
+                chat.ask(input)
+            end, set_desc('Copilot Ask'))
         end,
-        -- See Commands section for default commands if you want to lazy load on them
-        --         Commands
-        --
-        --     :CopilotChat <input>? - Open chat window with optional input
-        --     :CopilotChatOpen - Open chat window
-        --     :CopilotChatClose - Close chat window
-        --     :CopilotChatToggle - Toggle chat window
-        --     :CopilotChatReset - Reset chat window
-        --     :CopilotChatSave <name>? - Save chat history to file
-        --     :CopilotChatLoad <name>? - Load chat history from file
-        --     :CopilotChatDebugInfo - Show debug information
-        --
-        -- Commands coming from default prompts
-        --
-        --     :CopilotChatExplain - Explain how it works
-        vim.keymap.set(
-            { 'n', 'v' },
-            '<leader>mce',
-            '<cmd>CopilotChatExplain<cr>',
-            set_desc('CopilotChat explain')
-        ),
-        --     :CopilotChatTests - Briefly explain how selected code works then generate unit tests
-        vim.keymap.set(
-            { 'n', 'v' },
-            '<leader>mct',
-            '<cmd>CopilotChatTests<cr>',
-            set_desc('CopilotChat tests')
-        ),
-        --     :CopilotChatFix - There is a problem in this code. Rewrite the code to show it with the bug fixed.
-        vim.keymap.set(
-            { 'n', 'v' },
-            '<leader>mcf',
-            '<cmd>CopilotChatFix<cr>',
-            set_desc('CopilotChat fix')
-        ),
-        --     :CopilotChatOptimize - Optimize the selected code to improve performance and readablilty.
-        vim.keymap.set(
-            { 'n', 'v' },
-            '<leader>mco',
-            '<cmd>CopilotChatOptimize<cr>',
-            set_desc('CopilotChat optimize')
-        ),
-        --     :CopilotChatDocs - Write documentation for the selected code. The reply should be a codeblock containing the original code with the documentation added as comments. Use the most appropriate documentation style for the programming language used (e.g. JSDoc for JavaScript, docstrings for Python etc.
-        vim.keymap.set(
-            { 'n', 'v' },
-            '<leader>mcd',
-            '<cmd>CopilotChatDocs<cr>',
-            set_desc('CopilotChat docs')
-        ),
-        --     :CopilotChatFixDiagnostic - Please assist with the following diagnostic issue in file
-        vim.keymap.set(
-            { 'n', 'v' },
-            '<leader>mci',
-            '<cmd>CopilotChatFixDiagnostic<cr>',
-            set_desc('CopilotChat fix diagnostic')
-        ),
-        --     :CopilotChatCommit - Write commit message for the change with commitizen convention
-        vim.keymap.set(
-            'n',
-            '<leader>mcc',
-            '<cmd>CopilotChatCommit<cr>',
-            set_desc('CopilotChat commit')
-        ),
-        --     :CopilotChatCommitStaged - Write commit message for the change with commitizen convention
-        vim.keymap.set(
-            'n',
-            '<leader>mcs',
-            '<cmd>CopilotChatCommitStaged<cr>',
-            set_desc('CopilotChat commit staged')
-        ),
     },
 
     {

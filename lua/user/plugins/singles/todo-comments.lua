@@ -13,6 +13,18 @@ return {
             end
 
             comments.setup({
+                search = {
+                    command = 'rg',
+                    args = {
+                        '--color=never',
+                        '--no-heading',
+                        '--with-filename',
+                        '--line-number',
+                        '--column',
+                        '--hidden',
+                        '--smart-case',
+                    },
+                },
                 colors = {
                     error = { 'DiagnosticError', 'ErrorMsg', '#DC2626' },
                     warning = { 'DiagnosticWarn', 'WarningMsg', '#FBBF24' },
