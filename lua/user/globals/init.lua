@@ -191,6 +191,7 @@ _G.user.root_patterns = {
     'package.json',
     'vue.config.js',
     'go.mod',
+    'project.json',
     'Cargo.toml',
     '*.csproj',
     'pom.xml',
