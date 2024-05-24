@@ -98,7 +98,6 @@ require('lazy').setup({
         { import = 'user.plugins.themes' },
         { import = 'user.plugins.telescope' },
 
-        { import = 'user.plugins.nvim-tree' },
         { import = 'user.plugins.toggleterm' },
 
         { import = 'user.plugins.cmp' },

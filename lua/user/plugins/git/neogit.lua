@@ -2,7 +2,7 @@ local set_desc = require('user.utils.functions').set_keymap_desc
 
 return {
     'NeogitOrg/neogit',
-    branch = 'nightly',
+    -- branch = 'master',
     event = 'VeryLazy',
     dependencies = {
         'nvim-lua/plenary.nvim',
