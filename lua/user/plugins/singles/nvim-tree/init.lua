@@ -16,7 +16,7 @@ local icons = require('user.utils.icons')
 local set_desc = require('user.utils.functions').set_keymap_desc
 
 local nvim_tree_on_attach =
-    require('user.plugins.nvim-tree.utils.setups').on_attach
+    require('user.plugins.singles.nvim-tree.utils.setups').on_attach
 
 -- ##### auto cd: controlled by mini.misc to find root (it sets it to false) #####
 -- possible conflicts with vim-rooter and mini.misc autoroot
@@ -33,7 +33,7 @@ vim.keymap.set(
 )
 
 -- setup tabs keybinds and opts
-require('user.plugins.nvim-tree.utils.tabs_keybinds_opts')
+require('user.plugins.singles.nvim-tree.utils.tabs_keybinds_opts')
 
 -- also check vim-rooter and mini.misc.setup_auto_root autoroot for auto cds
 
