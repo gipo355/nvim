@@ -162,5 +162,38 @@ return {
             end
             lazygit_toggle()
         end, { desc = 'LazyGit' })
+
+        -- ## k9s
+        vim.keymap.set('n', '<leader>T', function()
+            local k9s_toggle = function()
+                local k9s = Terminal:new({
+                    cmd = 'k9s',
+                    hidden = true,
+                    -- dir = 'git_dir',
+                    direction = 'float',
+                    float_opts = {
+                        border = 'none',
+                        width = 100000,
+                        height = 100000,
+                    },
+                    on_open = function(term)
+                        vim.cmd('startinsert!')
+                        vim.api.nvim_buf_set_keymap(
+                            term.bufnr,
+                            'n',
+                            'q',
+                            '<cmd>close<CR>',
+                            { noremap = true, silent = true }
+                        )
+                    end,
+                    on_close = function(_)
+                        vim.cmd('startinsert!')
+                    end,
+                    count = 99,
+                })
+                k9s:toggle()
+            end
+            k9s_toggle()
+        end, { desc = 'k9s' })
     end,
 }
