@@ -501,7 +501,7 @@ return {
     {
         'folke/trouble.nvim',
         event = 'BufReadPre',
-        branch = 'dev', -- for beta v3
+        -- branch = 'dev', -- for beta v3
         opts = {},
         keys = {
             {
