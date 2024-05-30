@@ -1,5 +1,6 @@
 return {
     'sainnhe/sonokai',
+    enabled = _G.user.theme() == 'sonokai',
     lazy = false,
     priority = 1000,
     config = function()

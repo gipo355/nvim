@@ -121,12 +121,15 @@ _G.user.theme = function()
     -- return _G.user.themes.rose_pine
     -- return _G.user.themes.gruvbox_material
 
-    -- need this hack to disable unused themes for performance
-    -- must hardcode
+    -- need this hack to disable unused themes for performance must hardcode
+
     -- return 'monokai-pro'
     -- return 'gruvbox-material'
-    return 'rose-pine'
+    -- return 'rose-pine'
     -- return 'gruvbox-baby'
+    -- return 'everforest'
+    return 'onedarkpro'
+    -- return 'sonokai'
     -- return 'catppuccin'
 end
 

@@ -1,6 +1,7 @@
 return {
     'sainnhe/everforest',
     lazy = false,
+    enabled = _G.user.theme() == 'everforest',
     priority = 1000,
     config = function()
         local set_bg = function()
