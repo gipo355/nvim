@@ -506,9 +506,9 @@ return {
         keys = {
             {
                 '<leader>ve',
-                '<cmd>Trouble diagnostics toggle<cr>',
+                '<cmd>Trouble<cr>',
                 'n',
-                desc = 'Toggle diagnostics',
+                desc = 'Trouble',
             },
             {
                 '<S-e>',
