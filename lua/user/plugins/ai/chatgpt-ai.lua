@@ -187,80 +187,80 @@ return {
             { 'n', 'v' },
             '<leader>mf',
             ':ChatGPT<cr>',
-            set_desc('ChatGPT')
+            set_desc('OpenAI Chat')
         )
         vim.keymap.set(
             { 'n', 'v' },
             '<leader>mve',
             ':ChatGPTEditWithInstruction<CR>',
-            set_desc('Edit with instruction')
+            set_desc('OpenAI Edit')
         )
         vim.keymap.set(
             { 'n', 'v' },
 
             '<leader>mvg',
             ':ChatGPTRun grammar_correction<CR>',
-            set_desc('Grammar Correction')
+            set_desc('OpenAI Grammar Correction')
         )
         vim.keymap.set(
             { 'n', 'v' },
             '<leader>mvt',
             ':ChatGPTRun translate<CR>',
-            set_desc('Translate')
+            set_desc('OpenAI Translate')
         )
         vim.keymap.set(
             { 'n', 'v' },
             '<leader>mvk',
             ':ChatGPTRun keywords<CR>',
-            set_desc('Keywords')
+            set_desc('OpenAI Keywords')
         )
         vim.keymap.set(
             { 'n', 'v' },
             '<leader>mvd',
             ':ChatGPTRun docstring<CR>',
-            set_desc('Docstring')
+            set_desc('OpenAI Docstring')
         )
         vim.keymap.set(
             { 'n', 'v' },
             '<leader>mva',
             ':ChatGPTRun add_tests<CR>',
-            set_desc('Add Tests')
+            set_desc('OpenAI Add Tests')
         )
         vim.keymap.set(
             { 'n', 'v' },
             '<leader>mvo',
             ':ChatGPTRun optimize_code<CR>',
-            set_desc('Optimize Code')
+            set_desc('OpenAI Optimize Code')
         )
         vim.keymap.set(
             { 'n', 'v' },
             '<leader>mvs',
             ':ChatGPTRun summarize<CR>',
-            set_desc('Summarize')
+            set_desc('OpenAI Summarize')
         )
         vim.keymap.set(
             { 'n', 'v' },
             '<leader>mvf',
             ':ChatGPTRun fix_bugs<CR>',
-            set_desc('Fix Bugs')
+            set_desc('OpenAI Fix Bugs')
         )
         vim.keymap.set(
             { 'n', 'v' },
             '<leader>mvx',
             ':ChatGPTRun explain_code<CR>',
-            set_desc('Explain Code')
+            set_desc('OpenAI Explain Code')
         )
         vim.keymap.set(
             { 'n', 'v' },
             '<leader>mvr',
             ':ChatGPTRun roxygen_edit<CR>',
-            set_desc('Roxygen Edit')
+            set_desc('OpenAI Roxygen Edit')
         )
         vim.keymap.set(
             { 'n', 'v' },
             '<leader>mvl',
             ':ChatGPTRun code_readability_analysis<CR>',
-            set_desc('Code Readability Analysis')
+            set_desc('OpenAI Code Readability Analysis')
         )
     end,
 }

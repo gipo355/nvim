@@ -14,7 +14,12 @@ return {
     -- Minimal configuration
     'David-Kunz/gen.nvim',
 
-    event = 'BufReadPre',
+    -- enable if command ollama is in path
+    enabled = function()
+        return vim.fn.executable('ollama') == 1
+    end,
+
+    event = 'VeryLazy',
 
     dependencies = {
         -- for chat

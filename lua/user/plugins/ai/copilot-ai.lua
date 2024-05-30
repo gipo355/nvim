@@ -31,7 +31,7 @@ return {
                 'n',
                 '<leader>md',
                 '<cmd>CopilotChatToggle<cr>',
-                set_desc('CopilotChat toggle')
+                set_desc('Copilot Chat')
             )
 
             -- See Commands section for default commands if you want to lazy load on them
@@ -53,56 +53,56 @@ return {
                 { 'n', 'v' },
                 '<leader>mce',
                 '<cmd>CopilotChatExplain<cr>',
-                set_desc('CopilotChat explain')
+                set_desc('Copilot Explain')
             )
             --     :CopilotChatTests - Briefly explain how selected code works then generate unit tests
             vim.keymap.set(
                 { 'n', 'v' },
                 '<leader>mct',
                 '<cmd>CopilotChatTests<cr>',
-                set_desc('CopilotChat tests')
+                set_desc('Copilot Tests')
             )
             --     :CopilotChatFix - There is a problem in this code. Rewrite the code to show it with the bug fixed.
             vim.keymap.set(
                 { 'n', 'v' },
                 '<leader>mcf',
                 '<cmd>CopilotChatFix<cr>',
-                set_desc('CopilotChat fix')
+                set_desc('Copilot Fix')
             )
             --     :CopilotChatOptimize - Optimize the selected code to improve performance and readablilty.
             vim.keymap.set(
                 { 'n', 'v' },
                 '<leader>mco',
                 '<cmd>CopilotChatOptimize<cr>',
-                set_desc('CopilotChat optimize')
+                set_desc('Copilot Optimize')
             )
             --     :CopilotChatDocs - Write documentation for the selected code. The reply should be a codeblock containing the original code with the documentation added as comments. Use the most appropriate documentation style for the programming language used (e.g. JSDoc for JavaScript, docstrings for Python etc.
             vim.keymap.set(
                 { 'n', 'v' },
                 '<leader>mcd',
                 '<cmd>CopilotChatDocs<cr>',
-                set_desc('CopilotChat docs')
+                set_desc('Copilot Docs')
             )
             --     :CopilotChatFixDiagnostic - Please assist with the following diagnostic issue in file
             vim.keymap.set(
                 { 'n', 'v' },
                 '<leader>mci',
                 '<cmd>CopilotChatFixDiagnostic<cr>',
-                set_desc('CopilotChat fix diagnostic')
+                set_desc('Copilot Fix Diagnostics')
             )
             --     :CopilotChatCommit - Write commit message for the change with commitizen convention
             vim.keymap.set(
                 'n',
                 '<leader>mcc',
                 '<cmd>CopilotChatCommit<cr>',
-                set_desc('CopilotChat commit')
+                set_desc('Copilot Commit')
             )
             --     :CopilotChatCommitStaged - Write commit message for the change with commitizen convention
             vim.keymap.set(
                 'n',
                 '<leader>mcs',
                 '<cmd>CopilotChatCommitStaged<cr>',
-                set_desc('CopilotChat commit staged')
+                set_desc('Copilot Write Commit')
             )
 
             vim.keymap.set('v', '<leader>mca', function()
@@ -134,7 +134,7 @@ return {
                 '<leader>mm',
                 "<cmd>lua require('copilot.panel').open()<cr>",
                 'n',
-                desc = 'copilot panel',
+                desc = 'Copilot Open Panel',
             },
         },
         config = function()

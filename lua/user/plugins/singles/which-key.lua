@@ -79,11 +79,11 @@ return {
 
                 ['<leader>m'] = { name = 'Ai', _ = 'which_key_ignore' },
                 ['<leader>mc'] = {
-                    name = 'Ai [c]opilot Chat',
+                    name = 'Ai [C]opilot Chat',
                     _ = 'which_key_ignore',
                 },
                 ['<leader>mv'] = {
-                    name = 'Ai ChatGPT',
+                    name = 'Ai OpenAI',
                     _ = 'which_key_ignore',
                 },
 
@@ -168,7 +168,7 @@ return {
                 ['<leader>m'] = { name = 'Ai', _ = 'which_key_ignore' },
 
                 ['<leader>mc'] = {
-                    name = 'Ai [c]opilot Chat',
+                    name = 'Ai [C]opilot Chat',
                     _ = 'which_key_ignore',
                 },
                 ['<leader>ml'] = {
@@ -176,7 +176,7 @@ return {
                     _ = 'which_key_ignore',
                 },
                 ['<leader>mv'] = {
-                    name = 'Ai ChatGPT',
+                    name = 'Ai OpenAI',
                     _ = 'which_key_ignore',
                 },
 

@@ -106,29 +106,58 @@ return {
         )
 
         -- ## OLLAMA client keymap
-        vim.keymap.set('n', '<leader>mo', function()
-            local ollama_client = Terminal:new({
-                cmd = 'ollama run codellama',
-                hidden = true,
-                -- dir = 'git_dir',
-                direction = 'vertical',
-                on_open = function(term)
-                    vim.cmd('startinsert!')
-                    vim.api.nvim_buf_set_keymap(
-                        term.bufnr,
-                        'n',
-                        'q',
-                        '<cmd>close<CR>',
-                        { noremap = true, silent = true }
-                    )
-                end,
-                on_close = function(_)
-                    vim.cmd('startinsert!')
-                end,
-                count = 99,
-            })
-            ollama_client:toggle()
-        end, set_desc('Ollama'))
+        local function loadToggleTermProgram(executable, args, mapping)
+            if vim.fn.executable(executable) ~= 1 then
+                return
+            end
+            vim.keymap.set('n', '<leader>mo', function()
+                local client = Terminal:new({
+                    cmd = executable .. ' ' .. args,
+                    hidden = true,
+                    -- dir = 'git_dir',
+                    direction = 'vertical',
+                    on_open = function(term)
+                        vim.cmd('startinsert!')
+                        vim.api.nvim_buf_set_keymap(
+                            term.bufnr,
+                            'n',
+                            'q',
+                            '<cmd>close<CR>',
+                            { noremap = true, silent = true }
+                        )
+                    end,
+                    on_close = function(_)
+                        vim.cmd('startinsert!')
+                    end,
+                    count = 99,
+                })
+                client:toggle()
+            end, set_desc(executable))
+        end
+        loadToggleTermProgram('ollama', 'run codellama', '<leader>mo')
+        -- vim.keymap.set('n', '<leader>mo', function()
+        --     local ollama_client = Terminal:new({
+        --         cmd = 'ollama run codellama',
+        --         hidden = true,
+        --         -- dir = 'git_dir',
+        --         direction = 'vertical',
+        --         on_open = function(term)
+        --             vim.cmd('startinsert!')
+        --             vim.api.nvim_buf_set_keymap(
+        --                 term.bufnr,
+        --                 'n',
+        --                 'q',
+        --                 '<cmd>close<CR>',
+        --                 { noremap = true, silent = true }
+        --             )
+        --         end,
+        --         on_close = function(_)
+        --             vim.cmd('startinsert!')
+        --         end,
+        --         count = 99,
+        --     })
+        --     ollama_client:toggle()
+        -- end, set_desc('Ollama'))
 
         -- ## lazygit keymap client
         vim.keymap.set('n', '<c-g>', function()
@@ -162,38 +191,5 @@ return {
             end
             lazygit_toggle()
         end, { desc = 'LazyGit' })
-
-        -- ## k9s
-        vim.keymap.set('n', '<leader>T', function()
-            local k9s_toggle = function()
-                local k9s = Terminal:new({
-                    cmd = 'k9s',
-                    hidden = true,
-                    -- dir = 'git_dir',
-                    direction = 'float',
-                    float_opts = {
-                        border = 'none',
-                        width = 100000,
-                        height = 100000,
-                    },
-                    on_open = function(term)
-                        vim.cmd('startinsert!')
-                        vim.api.nvim_buf_set_keymap(
-                            term.bufnr,
-                            'n',
-                            'q',
-                            '<cmd>close<CR>',
-                            { noremap = true, silent = true }
-                        )
-                    end,
-                    on_close = function(_)
-                        vim.cmd('startinsert!')
-                    end,
-                    count = 99,
-                })
-                k9s:toggle()
-            end
-            k9s_toggle()
-        end, { desc = 'k9s' })
     end,
 }
