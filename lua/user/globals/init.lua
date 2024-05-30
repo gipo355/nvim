@@ -128,7 +128,7 @@ _G.user.theme = function()
     -- return 'rose-pine'
     -- return 'gruvbox-baby'
     -- return 'everforest'
-    return 'onedarkpro'
+    return 'onedark'
     -- return 'sonokai'
     -- return 'catppuccin'
 end

@@ -1,7 +1,7 @@
 return {
     'olimorris/onedarkpro.nvim',
     lazy = false,
-    enabled = _G.user.theme() == 'onedarkpro',
+    enabled = _G.user.theme() == 'onedark',
     priority = 1000,
     config = function()
         _G.user.themes.onedarkpro = 'onedark'
