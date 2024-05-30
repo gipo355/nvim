@@ -39,26 +39,5 @@ return {
         end,
     },
 
-    {
-        'sainnhe/edge',
-        init = function()
-            vim.g.edge_style = 'aura' -- default, aura, neon
-            vim.g.edge_enable_italic = 1
-            vim.g.edge_dim_foreground = 1
-            vim.g.edge_dim_inactive_windows = 1
-
-            _G.user.themes.edge = 'edge'
-        end,
-    },
-
-    {
-        'marko-cerovac/material.nvim',
-        init = function()
-            vim.g.material_style = 'darker' -- deep ocean, palenight, darker, lighter, oceanic
-
-            _G.user.themes.material = 'material'
-        end,
-    },
-
     -- { "tanvirtin/monokai.nvim" },
 }

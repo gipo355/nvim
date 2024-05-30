@@ -123,12 +123,17 @@ _G.user.theme = function()
 
     -- need this hack to disable unused themes for performance must hardcode
 
+    -- my favorites
+
     -- return 'monokai-pro'
     -- return 'gruvbox-material'
     -- return 'rose-pine'
     -- return 'gruvbox-baby'
     -- return 'everforest'
-    return 'onedark'
+    return 'kanagawa-wave'
+    -- return 'edge'
+    -- return 'material'
+    -- return 'onedark'
     -- return 'sonokai'
     -- return 'catppuccin'
 end

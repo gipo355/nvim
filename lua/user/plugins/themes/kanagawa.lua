@@ -2,6 +2,11 @@ return {
     'rebelot/kanagawa.nvim',
     lazy = false,
     priority = 1000,
+    enabled = function()
+        return _G.user.theme() == 'kanagawa-wave'
+            or _G.user.theme() == 'kanagawa-lotus'
+            or _G.user.theme() == 'kanagawa-dragon'
+    end,
     config = function()
         _G.user.themes.kanagawa_wave = 'kanagawa-wave'
         _G.user.themes.kanagawa_lotus = 'kanagawa-lotus'
@@ -48,10 +53,10 @@ return {
             --         CursorColumn = { bg = '#3d3d3d', fg = 'none' },
             --     }
             -- end,
-            theme = 'default', -- Load "default" theme or the experimental "light" theme
-            -- theme = 'wave', -- Load "default" theme or the experimental "light" theme
+            -- theme = 'default', -- Load "default" theme or the experimental "light" theme
+            theme = 'wave', -- Load "default" theme or the experimental "light" theme
             -- theme = "lotus",
-            -- theme = "dragon", -- Load "default" theme or the experimental "light" theme
+            -- theme = 'dragon', -- Load "default" theme or the experimental "light" theme
             -- background = {
             --     -- map the value of 'background' option to a theme
             --     -- dark = "dragon", -- try "dragon" ! or "lotus"
