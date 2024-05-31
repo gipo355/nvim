@@ -57,12 +57,12 @@ return {
             theme = 'wave', -- Load "default" theme or the experimental "light" theme
             -- theme = "lotus",
             -- theme = 'dragon', -- Load "default" theme or the experimental "light" theme
-            -- background = {
-            --     -- map the value of 'background' option to a theme
-            --     -- dark = "dragon", -- try "dragon" ! or "lotus"
-            --     dark = 'lotus', -- try "dragon" ! or "lotus"
-            --     light = 'lotus',
-            -- },
+            background = {
+                --     -- map the value of 'background' option to a theme
+                --     -- dark = "dragon", -- try "dragon" ! or "lotus"
+                dark = 'dragon', -- try "dragon" ! or "lotus"
+                --     light = 'lotus',
+            },
         })
     end,
 }

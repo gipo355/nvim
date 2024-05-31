@@ -108,12 +108,13 @@ return {
                 local mini_indent = require('mini.indentscope')
                 mini_indent.setup({
                     draw = {
-                        delay = 20,
-                        animation = mini_indent.gen_animation.linear({
-                            easing = 'in',
-                            duration = 100,
-                            unit = 'total',
-                        }),
+                        delay = 50,
+                        animation = mini_indent.gen_animation.none(),
+                        -- animation = mini_indent.gen_animation.linear({
+                        --     easing = 'in',
+                        --     duration = 100,
+                        --     unit = 'total',
+                        -- }),
                     },
                     symbol = icons.ui.LineLeft,
                 })
