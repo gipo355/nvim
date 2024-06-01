@@ -179,20 +179,10 @@ return {
             'lewis6991/satellite.nvim',
         },
         event = 'BufReadPre',
-        -- 'rasulomaroff/arrow.nvim',
-        -- FIXME: unpin
-        -- BUG: cursor disappears after q exit
-        -- commit = '717ec55', -- works
-        -- commit = '529a8ff', -- works
-        -- commit = '0f9b410', -- works (591f667 no)
-        -- commit = 'ced68e5', -- bad commit
-        -- commit = '#',
-        -- version = false,
-
         opts = {
             show_icons = true,
             leader_key = ';', -- Recommended to be a single key
-            buffer_leader_key = 'm;', -- Per Buffer Mappings
+            buffer_leader_key = 'ml', -- Per Buffer Mappings
             per_buffer_config = {
                 satellite = { -- defualt to nil, display arrow index in scrollbar at every update
                     enable = _G.user.enable_satellite_scrollbar,
