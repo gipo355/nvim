@@ -192,7 +192,7 @@ return {
         opts = {
             show_icons = true,
             leader_key = ';', -- Recommended to be a single key
-            buffer_leader_key = 'ml', -- Per Buffer Mappings
+            buffer_leader_key = 'm;', -- Per Buffer Mappings
             per_buffer_config = {
                 satellite = { -- defualt to nil, display arrow index in scrollbar at every update
                     enable = _G.user.enable_satellite_scrollbar,
