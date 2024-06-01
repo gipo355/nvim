@@ -59,10 +59,6 @@ else
     -- change in globals.lua under _G.user.theme = _G.user.themes.<theme>
     -- Set here: G.user.themes.<theme>
     vim.cmd.colorscheme(_G.user.theme())
-
-    -- set diagnostic config here, for some reason it gets
-    -- overwritten by the theme setup
-    vim.diagnostic.config(_G.user.diagnostics_config)
 end
 
 if vim.g.neovide then

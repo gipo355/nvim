@@ -160,7 +160,17 @@ for some reason some themes override the settings (gruvbox-material).
 possible conflicts with plugin statuscol
 ]]
 --
-local diagnostics_config = {
+_G.user.diagnostic_symbols = {
+    error = '',
+    warn = '',
+    info = '',
+    hint = '',
+    error_empty = '',
+    warn_empty = '',
+    info_empty = '',
+    hint_empty = '',
+}
+_G.user.diagnostics_config = {
     underline = true,
     virtual_text = true,
     float = {
@@ -171,11 +181,11 @@ local diagnostics_config = {
     -- signs = true,
     signs = {
         text = {
-            [vim.diagnostic.severity.ERROR] = '',
+            [vim.diagnostic.severity.ERROR] = _G.user.diagnostic_symbols.error,
             -- [vim.diagnostic.severity.WARN] = '⚠',
-            [vim.diagnostic.severity.WARN] = '',
-            [vim.diagnostic.severity.INFO] = '',
-            [vim.diagnostic.severity.HINT] = '',
+            [vim.diagnostic.severity.WARN] = _G.user.diagnostic_symbols.warn,
+            [vim.diagnostic.severity.INFO] = _G.user.diagnostic_symbols.info,
+            [vim.diagnostic.severity.HINT] = _G.user.diagnostic_symbols.hint,
         },
         -- linehl = {
         --     [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
@@ -187,7 +197,20 @@ local diagnostics_config = {
 
     update_in_insert = false,
 }
-_G.user.diagnostics_config = diagnostics_config
+vim.diagnostic.config(_G.user.diagnostics_config)
+-- set lsp diagnostic symbols (signs)
+local function lspSymbol(name, icon)
+    vim.fn.sign_define(
+        'DiagnosticSign' .. name,
+        { text = icon, numhl = 'DiagnosticDefault' .. name }
+    )
+end
+lspSymbol('Error', _G.user.diagnostic_symbols.error)
+lspSymbol('Information', _G.user.diagnostic_symbols.info)
+lspSymbol('Hint', _G.user.diagnostic_symbols.hint)
+lspSymbol('Info', _G.user.diagnostic_symbols.info)
+lspSymbol('Warning', _G.user.diagnostic_symbols.warn)
+lspSymbol('Warn', _G.user.diagnostic_symbols.warn)
 
 -- root patterns for rooter plugin and <leader>a change root
 _G.user.root_patterns = {
