@@ -40,17 +40,17 @@ return {
             )
             vim.api.nvim_set_hl(
                 0,
-                'IndentBlanklineIndent2',
+                'IndentBlanklineIndent3',
                 { fg = '#2d242d', bg = '#2d242d' }
             )
             vim.api.nvim_set_hl(
                 0,
-                'IndentBlanklineIndent4',
+                'IndentBlanklineIndent2',
                 { fg = '#202c2c', bg = '#202c2c' }
             )
             vim.api.nvim_set_hl(
                 0,
-                'IndentBlanklineIndent3',
+                'IndentBlanklineIndent4',
                 { fg = '#242d24', bg = '#242d24' }
             )
 
@@ -61,17 +61,17 @@ return {
             )
             vim.api.nvim_set_hl(
                 0,
-                'IndentBlanklineIndentChar2',
+                'IndentBlanklineIndentChar3',
                 { fg = '#584658' }
             )
             vim.api.nvim_set_hl(
                 0,
-                'IndentBlanklineIndentChar4',
+                'IndentBlanklineIndentChar2',
                 { fg = '#405858' }
             )
             vim.api.nvim_set_hl(
                 0,
-                'IndentBlanklineIndentChar3',
+                'IndentBlanklineIndentChar4',
                 { fg = '#394239' }
             )
         end)
