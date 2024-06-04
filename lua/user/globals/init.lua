@@ -125,12 +125,20 @@ _G.user.theme = function()
 
     -- my favorites
 
+    -- blue themes
     -- return 'monokai-pro'
     -- return 'gruvbox-material'
+
+    -- pink themes
+
+    -- red themes
+
+    -- green themes
     -- return 'rose-pine'
     -- return 'gruvbox-baby'
     -- return 'everforest'
-    return 'kanagawa'
+    -- return 'kanagawa'
+    return 'melange'
     -- return 'edge'
     -- return 'material'
     -- return 'onedark'
