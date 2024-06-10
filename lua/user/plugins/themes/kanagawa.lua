@@ -6,6 +6,7 @@ return {
         return _G.user.theme() == 'kanagawa-wave'
             or _G.user.theme() == 'kanagawa-lotus'
             or _G.user.theme() == 'kanagawa-dragon'
+            or _G.user.theme() == 'kanagawa'
     end,
     config = function()
         _G.user.themes.kanagawa_wave = 'kanagawa'

@@ -121,7 +121,7 @@ _G.user.use_mini_colors_customizatio = true
 
 _G.user.transparent_bg = set_transparent_bg(false) -- transparent background
 
-_G.user.background = 'light' -- dark or light
+_G.user.background = 'dark' -- dark or light
 -- allows to call this later after all vars are set
 _G.user.theme = function()
     -- return _G.user.themes.rose_pine
@@ -133,6 +133,7 @@ _G.user.theme = function()
 
     -- return 'monokai-pro'
     -- return 'gruvbox-baby'
+    return 'kanagawa-wave'
     -- return 'kanagawa'
     -- return 'material'
     -- return 'onedark'
@@ -143,7 +144,7 @@ _G.user.theme = function()
     -- return 'gruvbox-material'
     -- return 'kanagawa-lotus'
     -- return 'melange'
-    return 'rose-pine'
+    -- return 'rose-pine'
     -- return 'everforest'
     -- return 'edge'
 end
