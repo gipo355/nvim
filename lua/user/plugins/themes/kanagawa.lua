@@ -8,6 +8,7 @@ return {
             or _G.user.theme() == 'kanagawa-dragon'
     end,
     config = function()
+        _G.user.themes.kanagawa_wave = 'kanagawa'
         _G.user.themes.kanagawa_wave = 'kanagawa-wave'
         _G.user.themes.kanagawa_lotus = 'kanagawa-lotus'
         _G.user.themes.kanagawa_dragon = 'kanagawa-dragon'
@@ -61,7 +62,7 @@ return {
                 --     -- map the value of 'background' option to a theme
                 --     -- dark = "dragon", -- try "dragon" ! or "lotus"
                 dark = 'dragon', -- try "dragon" ! or "lotus"
-                --     light = 'lotus',
+                light = 'lotus',
             },
         })
     end,

@@ -47,7 +47,7 @@ _G.user.colemak = false -- stil buggy, don't use
     Precognition plugin
     shows hints for movements
 ]]
-_G.user.enable_precognition = true
+_G.user.enable_precognition = false
 
 -- Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
@@ -121,7 +121,7 @@ _G.user.use_mini_colors_customizatio = true
 
 _G.user.transparent_bg = set_transparent_bg(false) -- transparent background
 
-_G.user.background = 'dark' -- dark or light
+_G.user.background = 'light' -- dark or light
 -- allows to call this later after all vars are set
 _G.user.theme = function()
     -- return _G.user.themes.rose_pine
@@ -131,41 +131,37 @@ _G.user.theme = function()
 
     -- my favorites
 
-    -- blue themes
     -- return 'monokai-pro'
-    -- return 'gruvbox-material'
-
-    -- pink themes
-
-    -- red themes
-
-    -- green themes
-    -- return 'rose-pine'
     -- return 'gruvbox-baby'
-    -- return 'everforest'
-    return 'kanagawa'
-    -- return 'melange'
-    -- return 'edge'
+    -- return 'kanagawa'
     -- return 'material'
     -- return 'onedark'
     -- return 'sonokai'
     -- return 'catppuccin'
+
+    -- have light variant
+    return 'gruvbox-material'
+    -- return 'kanagawa-lotus'
+    -- return 'melange'
+    -- return 'rose-pine'
+    -- return 'everforest'
+    -- return 'edge'
 end
 
 --[[
 Indent blankline settings
 ]]
 --
-_G.user.enable_indent_blankline = true
+_G.user.enable_indent_blankline = false
 _G.user.indent_blankline_color_bg = false -- color the background of indentlines
 _G.user.hide_first_indent_level = false -- hide first indent level
-_G.user.enable_mini_indentscope = false -- alternative to indent-blankline, single scope
+_G.user.enable_mini_indentscope = true -- alternative to indent-blankline, single scope
 
 --[[
 miscellaneous visual settings
 ]]
 --
-_G.user.enable_rainbow_parens = true
+_G.user.enable_rainbow_parens = false
 _G.user.enable_highlight_colors = true -- css, tailwind colors, color #hex etc..
 
 --[[
