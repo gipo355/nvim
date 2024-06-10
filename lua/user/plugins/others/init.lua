@@ -489,29 +489,6 @@ return {
     },
 
     {
-        'folke/trouble.nvim',
-        event = 'BufReadPre',
-        -- branch = 'dev', -- for beta v3
-        opts = {},
-        keys = {
-            {
-                '<leader>ve',
-                '<cmd>Trouble<cr>',
-                'n',
-                desc = 'Trouble',
-            },
-            {
-                '<S-e>',
-                '<cmd>Trouble diagnostics toggle<cr>',
-                'n',
-                desc = 'Toggle diagnostics',
-            },
-        },
-    },
-
-    -- documentation
-
-    {
         'kkoomen/vim-doge',
         event = 'BufReadPre',
         build = ':call doge#install()',
