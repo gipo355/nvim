@@ -8,7 +8,7 @@ return {
     config = function()
         require('rose-pine').setup({
             -- 'auto' | 'main'|'moon'|'dawn'
-            variant = 'moon',
+            variant = 'auto',
             -- 'main'|'moon'|'dawn'
             dark_variant = 'moon',
 
@@ -36,10 +36,10 @@ return {
 
             groups = {
                 comment = 'muted',
-                background = '#171717',
-                background_nc = '#171717',
-                panel = '#171717',
-                panel_nc = '#171717',
+                -- background = '#171717',
+                -- background_nc = '#171717',
+                -- panel = '#171717',
+                -- panel_nc = '#171717',
             },
             highlight_groups = {
                 FloatBorder = { fg = 'rose' },

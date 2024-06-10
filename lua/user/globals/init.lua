@@ -140,10 +140,10 @@ _G.user.theme = function()
     -- return 'catppuccin'
 
     -- have light variant
-    return 'gruvbox-material'
+    -- return 'gruvbox-material'
     -- return 'kanagawa-lotus'
     -- return 'melange'
-    -- return 'rose-pine'
+    return 'rose-pine'
     -- return 'everforest'
     -- return 'edge'
 end
