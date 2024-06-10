@@ -43,6 +43,12 @@ I keep vim.g for third party plugins and _G for my own global ]]
 --
 _G.user.colemak = false -- stil buggy, don't use
 
+--[[
+    Precognition plugin
+    shows hints for movements
+]]
+_G.user.enable_precognition = true
+
 -- Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
