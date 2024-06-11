@@ -14,7 +14,6 @@ return {
         'CopilotC-Nvim/CopilotChat.nvim',
         event = 'BufReadPre',
         branch = 'canary',
-        enabled = _G.user.enable_copilot,
         dependencies = {
             { 'zbirenbaum/copilot.lua' }, -- or github/copilot.vim
             { 'nvim-lua/plenary.nvim' }, -- for curl, log wrapper
