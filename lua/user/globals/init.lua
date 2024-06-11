@@ -49,6 +49,11 @@ _G.user.colemak = false -- stil buggy, don't use
 ]]
 _G.user.enable_precognition = false
 
+--[[
+    enable github copilot plugin
+]]
+_G.user.enable_copilot = false
+
 -- Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
@@ -139,8 +144,8 @@ _G.user.theme = function()
 
     -- return 'monokai-pro'
     -- return 'gruvbox-baby'
-    return 'kanagawa-wave'
-    -- return 'kanagawa'
+    -- return 'kanagawa-wave'
+    return 'kanagawa'
     -- return 'material'
     -- return 'onedark'
     -- return 'sonokai'
