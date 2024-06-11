@@ -95,6 +95,12 @@ _G.user.enable_gitblame = true
 _G.user.picker_use_fzf_lua = false
 
 --[[
+    enable ufo folding plugin
+    BUG: bugs diffview difftool
+]]
+_G.user.enable_ufo = false
+
+--[[
 CMP sources
  those cmp sources are heavy
  cmp ripgrep search in cmp (cmp plugin)

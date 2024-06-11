@@ -1,6 +1,7 @@
 -- folding ( will disable folding module )
 return {
     'kevinhwang91/nvim-ufo',
+    enabled = _G.user.enable_ufo,
     event = 'BufReadPre',
     dependencies = {
         'kevinhwang91/promise-async',
