@@ -23,14 +23,29 @@ return {
                         set_desc('Close DiffView')
                     )
                 end,
-                -- view_opened = function(view)
-                --     print(
-                --         ('A new %s was opened on tab page %d!'):format(
-                --             view.class:name(),
-                --             view.tabpage
-                --         )
-                --     )
-                -- end,
+                view_opened = function(view)
+                    print(
+                        ('A new %s was opened on tab page %d!'):format(
+                            view.class:name(),
+                            view.tabpage
+                        )
+                    )
+                    vim.opt_local.wrap = false
+                    vim.opt_local.list = false
+                    vim.opt_local.colorcolumn = { 80 }
+                    vim.keymap.set(
+                        'n',
+                        '<C-c>',
+                        '<cmd>DiffviewClose<cr>',
+                        set_desc('Close DiffView')
+                    )
+                    vim.keymap.set(
+                        'n',
+                        '<Esc>',
+                        '<cmd>DiffviewClose<cr>',
+                        set_desc('Close DiffView')
+                    )
+                end,
             },
         })
         vim.keymap.set(
