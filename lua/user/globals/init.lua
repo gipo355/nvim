@@ -52,7 +52,7 @@ _G.user.enable_precognition = false
 --[[
     enable github copilot plugin
 ]]
-_G.user.enable_copilot = false
+_G.user.enable_copilot = true
 
 -- Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
