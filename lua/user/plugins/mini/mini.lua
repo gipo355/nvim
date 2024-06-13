@@ -15,7 +15,7 @@ return {
         -- [H / [h / ]h / ]H navigate cursor to the first / previous / next / last hunk range of the current buffer.
         'echasnovski/mini.nvim',
         version = false,
-        event = 'BufReadPre',
+        event = 'VeryLazy',
         config = function()
             -- BUG: neovim crash possibly?
             local mini_diff = require('mini.diff')
