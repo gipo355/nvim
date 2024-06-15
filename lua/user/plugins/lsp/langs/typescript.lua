@@ -59,6 +59,7 @@ return {
                     -- commented last
                     local active_clients = vim.lsp.get_clients()
 
+                    -- prevent ts server from starting if deno is already active
                     if client.name == 'denols' then
                         for _, client_ in pairs(active_clients) do
                             -- stop tsserver if denols is already active
@@ -93,86 +94,88 @@ return {
                     -- vim.diagnostic.disable()
                 end,
 
-                handlers = {
-                    ['textDocument/publishDiagnostics'] = function(
-                        _,
-                        result,
-                        ctx,
-                        config
-                    )
-                        if result.diagnostics == nil then
-                            return
-                        end
+                -- plugin format-ts-errors.nvim
+                -- handlers = {
+                --     ['textDocument/publishDiagnostics'] = function(
+                --         _,
+                --         result,
+                --         ctx,
+                --         config
+                --     )
+                --         if result.diagnostics == nil then
+                --             return
+                --         end
+                --
+                --         -- ignore some tsserver diagnostics
+                --         local idx = 1
+                --         while idx <= #result.diagnostics do
+                --             local entry = result.diagnostics[idx]
+                --
+                --             local formatter =
+                --                 require('format-ts-errors')[entry.code]
+                --             entry.message = formatter
+                --                     and formatter(entry.message)
+                --                 or entry.message
+                --
+                --             -- codes: https://github.com/microsoft/TypeScript/blob/main/src/compiler/diagnosticMessages.json
+                --             -- if entry.code == 80001 then
+                --             if false then
+                --                 -- { message = "File is a CommonJS module; it may be converted to an ES module.", }
+                --                 table.remove(result.diagnostics, idx)
+                --             else
+                --                 idx = idx + 1
+                --             end
+                --         end
+                --
+                --         vim.lsp.diagnostic.on_publish_diagnostics(
+                --             _,
+                --             result,
+                --             ctx,
+                --             config
+                --         )
+                --     end,
+                --     -- ['textDocument/definition'] = function(_, result, params)
+                --     --     local util = require('vim.lsp.util')
+                --     --     if result == nil or vim.tbl_isempty(result) then
+                --     --         -- local _ = vim.lsp.log.info() and vim.lsp.log.info(params.method, "No location found")
+                --     --         return nil
+                --     --     end
+                --     --
+                --     --     if vim.tbl_islist(result) then
+                --     --         -- this is opens a buffer to that result
+                --     --         -- you could loop the result and choose what you want
+                --     --         util.jump_to_location(result[1])
+                --     --
+                --     --         if #result > 1 then
+                --     --             local isReactDTs = false
+                --     --             ---@diagnostic disable-next-line: unused-local
+                --     --             for key, value in pairs(result) do
+                --     --                 if
+                --     --                     string.match(
+                --     --                         value.targetUri,
+                --     --                         'react/index.d.ts'
+                --     --                     )
+                --     --                 then
+                --     --                     isReactDTs = true
+                --     --                     break
+                --     --                 end
+                --     --             end
+                --     --             if not isReactDTs then
+                --     --                 -- this sets the value for the quickfix list
+                --     --                 util.set_qflist(
+                --     --                     util.locations_to_items(result)
+                --     --                 )
+                --     --                 -- this opens the quickfix window
+                --     --                 vim.api.nvim_command('copen')
+                --     --                 vim.api.nvim_command('wincmd p')
+                --     --             end
+                --     --         end
+                --     --     else
+                --     --         util.jump_to_location(result)
+                --     --     end
+                --     -- end,
+                -- },
 
-                        -- ignore some tsserver diagnostics
-                        local idx = 1
-                        while idx <= #result.diagnostics do
-                            local entry = result.diagnostics[idx]
-
-                            local formatter =
-                                require('format-ts-errors')[entry.code]
-                            entry.message = formatter
-                                    and formatter(entry.message)
-                                or entry.message
-
-                            -- codes: https://github.com/microsoft/TypeScript/blob/main/src/compiler/diagnosticMessages.json
-                            -- if entry.code == 80001 then
-                            if false then
-                                -- { message = "File is a CommonJS module; it may be converted to an ES module.", }
-                                table.remove(result.diagnostics, idx)
-                            else
-                                idx = idx + 1
-                            end
-                        end
-
-                        vim.lsp.diagnostic.on_publish_diagnostics(
-                            _,
-                            result,
-                            ctx,
-                            config
-                        )
-                    end,
-                    -- ['textDocument/definition'] = function(_, result, params)
-                    --     local util = require('vim.lsp.util')
-                    --     if result == nil or vim.tbl_isempty(result) then
-                    --         -- local _ = vim.lsp.log.info() and vim.lsp.log.info(params.method, "No location found")
-                    --         return nil
-                    --     end
-                    --
-                    --     if vim.tbl_islist(result) then
-                    --         -- this is opens a buffer to that result
-                    --         -- you could loop the result and choose what you want
-                    --         util.jump_to_location(result[1])
-                    --
-                    --         if #result > 1 then
-                    --             local isReactDTs = false
-                    --             ---@diagnostic disable-next-line: unused-local
-                    --             for key, value in pairs(result) do
-                    --                 if
-                    --                     string.match(
-                    --                         value.targetUri,
-                    --                         'react/index.d.ts'
-                    --                     )
-                    --                 then
-                    --                     isReactDTs = true
-                    --                     break
-                    --                 end
-                    --             end
-                    --             if not isReactDTs then
-                    --                 -- this sets the value for the quickfix list
-                    --                 util.set_qflist(
-                    --                     util.locations_to_items(result)
-                    --                 )
-                    --                 -- this opens the quickfix window
-                    --                 vim.api.nvim_command('copen')
-                    --                 vim.api.nvim_command('wincmd p')
-                    --             end
-                    --         end
-                    --     else
-                    --         util.jump_to_location(result)
-                    --     end
-                    -- end,
-                },
                 settings = {
                     -- code_lens = 'all',
                     -- spawn additional tsserver instance to calculate diagnostics on it
