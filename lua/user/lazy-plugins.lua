@@ -93,7 +93,7 @@ require('lazy').setup({
 
         -- { import = 'user.plugins.notes' },
         { import = 'user.plugins.mini' },
-        { import = 'user.plugins.netrw' },
+        { import = 'user.plugins.file-browsers' },
         { import = 'user.plugins.sessions-welcome' },
         { import = 'user.plugins.themes' },
         { import = 'user.plugins.telescope' },

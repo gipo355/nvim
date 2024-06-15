@@ -329,10 +329,10 @@ return {
             )
 
             -- replaces oil.nvim
-            require('mini.files').setup()
-            vim.keymap.set('n', '<leader>-', function()
-                require('mini.files').open()
-            end, set_desc('mini.files open'))
+            -- require('mini.files').setup()
+            -- vim.keymap.set('n', '<leader>-', function()
+            --     require('mini.files').open()
+            -- end, set_desc('mini.files open'))
 
             --[[
             surround, adds keymaps to s, lags flash.nvim, conflicts with nvim-surround 

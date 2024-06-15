@@ -1,6 +1,7 @@
 return {
     'kevinhwang91/rnvimr',
     cmd = 'RnvimrToggle',
+    enabled = false,
     -- TODO: plugins lazy loaded won't load keymaps in config fn untill they are called
     -- either add the keymaps in the keys prop or in the init fn
     keys = {
@@ -27,3 +28,17 @@ return {
         -- )
     end,
 }
+
+-- Alternative
+-- {
+--   "kelly-lin/ranger.nvim",
+--   config = function()
+--     require("ranger-nvim").setup({ replace_netrw = true })
+--     vim.api.nvim_set_keymap("n", "<leader>ef", "", {
+--       noremap = true,
+--       callback = function()
+--         require("ranger-nvim").open(true)
+--       end,
+--     })
+--   end,
+-- }
