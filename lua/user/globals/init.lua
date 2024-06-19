@@ -145,14 +145,14 @@ _G.user.theme = function()
     -- return 'monokai-pro'
     -- return 'gruvbox-baby'
     -- return 'kanagawa-wave'
-    return 'kanagawa'
+    -- return 'kanagawa'
     -- return 'material'
     -- return 'onedark'
     -- return 'sonokai'
     -- return 'catppuccin'
 
     -- have light variant
-    -- return 'gruvbox-material'
+    return 'gruvbox-material'
     -- return 'kanagawa-lotus'
     -- return 'melange'
     -- return 'rose-pine'

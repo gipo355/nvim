@@ -6,11 +6,11 @@ return {
     config = function()
         _G.user.themes.gruvbox_material = 'gruvbox-material'
 
-        local ok, gruvbox_material = pcall(require, 'monokai-pro')
+        -- local ok, gruvbox_material = pcall(require, 'gruvbox-material')
+        -- if not ok then
+        --     return
+        -- end
 
-        if not ok then
-            return
-        end
         -- vim.api.set.nvim_set_hl(0, 'PurpleCustomGruvboxMaterial', { fg = '#b16286' })
         -- vim.api.nvim_set_hl(0, 'Normal', { fg = "#ffffff", bg = "#333333" })
         -- vim.api.nvim_set_hl(0, 'Comment', { fg = "#111111", bold = true })
@@ -189,12 +189,12 @@ return {
             end
         end
 
-        -- vim.g.gruvbox_material_background = 'soft'   -- soft, medium, hard
-        vim.g.gruvbox_material_background = setBackground()
-        -- vim.g.gruvbox_material_background = 'hard'
+        -- vim.g.gruvbox_material_background = 'soft' -- soft, medium, hard
         -- vim.g.gruvbox_material_background = setBackground()
-        -- vim.g.gruvbox_material_foreground = 'material' -- material, mix, original
-        vim.g.gruvbox_material_foreground = setForeground()
+        vim.g.gruvbox_material_background = 'hard'
+        -- vim.g.gruvbox_material_background = setBackground()
+        vim.g.gruvbox_material_foreground = 'material' -- material, mix, original
+        -- vim.g.gruvbox_material_foreground = setForeground()
         -- vim.g.gruvbox_material_foreground = 'mix' -- material, mix, original
         -- vim.g.gruvbox_material_foreground = "original" -- material, mix, original
         -- vim.g.gruvbox_material_foreground = setForeground() -- material, mix, original
