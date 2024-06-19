@@ -63,6 +63,15 @@ o.listchars = {
 o.foldexpr = 'nvim_treesitter#foldexpr()'
 o.foldlevel = 99 -- prevent folds close on start
 
+-- HACK: causes freezes on <= 0.9, so only enable on >= 0.10 for now
+if vim.fn.has('nvim-0.10') == 1 then
+    o.smoothscroll = true
+    o.foldmethod = 'expr'
+    o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+else
+    o.foldmethod = 'indent'
+end
+
 -- Folding
 o.foldtext = "v:lua.require'lazyvim.util.ui'.foldtext()"
 
@@ -177,15 +186,6 @@ o.confirm = true -- Confirm to save changes before exiting modified buffer
 o.formatoptions = 'jcroqlnt' -- tcqj
 o.virtualedit = 'block' -- Allow cursor to move where there is no text in visual block mode
 o.wildmode = 'longest:full,full' -- Command-line completion mode
-
--- HACK: causes freezes on <= 0.9, so only enable on >= 0.10 for now
-if vim.fn.has('nvim-0.10') == 1 then
-    o.smoothscroll = true
-    o.foldmethod = 'expr'
-    o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-else
-    o.foldmethod = 'indent'
-end
 
 -- ## global vars
 -- ##### show line numbers in :Explore #####

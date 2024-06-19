@@ -427,6 +427,12 @@ return {
             capabilities.textDocument.completion.completionItem.snippetSupport =
                 true
 
+            -- for UFO
+            capabilities.textDocument.foldingRange = {
+                dynamicRegistration = false,
+                lineFoldingOnly = true,
+            }
+
             -- TODO: check if this is needed
             -- what is this? says it imrpoves performance
             -- https://www.reddit.com/r/neovim/comments/161tv8l/lsp_has_gotten_very_slow/
