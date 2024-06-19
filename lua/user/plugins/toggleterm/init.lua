@@ -110,7 +110,7 @@ return {
             if vim.fn.executable(executable) ~= 1 then
                 return
             end
-            vim.keymap.set('n', '<leader>mo', function()
+            vim.keymap.set('n', mapping, function()
                 local client = Terminal:new({
                     cmd = executable .. ' ' .. args,
                     hidden = true,
@@ -158,6 +158,39 @@ return {
         --     })
         --     ollama_client:toggle()
         -- end, set_desc('Ollama'))
+
+        -- ## btop
+        vim.keymap.set('n', '<M-5>', function()
+            local lazygit_toggle = function()
+                local lazygit = Terminal:new({
+                    cmd = 'btop',
+                    hidden = true,
+                    -- dir = 'git_dir',
+                    direction = 'float',
+                    float_opts = {
+                        border = 'none',
+                        width = 100000,
+                        height = 100000,
+                    },
+                    on_open = function(term)
+                        vim.cmd('startinsert!')
+                        vim.api.nvim_buf_set_keymap(
+                            term.bufnr,
+                            'n',
+                            'q',
+                            '<cmd>close<CR>',
+                            { noremap = true, silent = true }
+                        )
+                    end,
+                    on_close = function(_)
+                        vim.cmd('startinsert!')
+                    end,
+                    count = 99,
+                })
+                lazygit:toggle()
+            end
+            lazygit_toggle()
+        end, { desc = 'Btop' })
 
         -- ## lazygit keymap client
         vim.keymap.set('n', '<c-g>', function()
