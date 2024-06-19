@@ -283,7 +283,7 @@ return {
                 })
             end
 
-            if _G.user.use_mini_colors_customizatio then
+            if _G.user.use_mini_colors_customization then
                 require('mini.colors').setup()
             end
 
@@ -329,10 +329,11 @@ return {
             )
 
             -- replaces oil.nvim
-            -- require('mini.files').setup()
+            require('mini.files').setup()
             -- vim.keymap.set('n', '<leader>-', function()
-            --     require('mini.files').open()
-            -- end, set_desc('mini.files open'))
+            vim.keymap.set('n', '<leader>R', function()
+                require('mini.files').open()
+            end, set_desc('mini.files open'))
 
             --[[
             surround, adds keymaps to s, lags flash.nvim, conflicts with nvim-surround 

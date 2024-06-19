@@ -5,6 +5,11 @@ return {
     config = function()
         require('diffview').setup({
             hooks = {
+                view = {
+                    x = {
+                        layout = 'diff3_mixed',
+                    },
+                },
                 diff_buf_read = function(bufnr)
                     -- Change local options in diff buffers
                     vim.opt_local.wrap = false

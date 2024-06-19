@@ -10,7 +10,7 @@ return {
             -- 'auto' | 'main'|'moon'|'dawn'
             variant = 'auto',
             -- 'main'|'moon'|'dawn'
-            dark_variant = 'moon',
+            dark_variant = 'main',
 
             extend_background_behind_borders = false,
             dim_inactive_windows = false,
@@ -36,6 +36,7 @@ return {
 
             groups = {
                 comment = 'muted',
+                -- comment = '#171717',
                 -- background = '#171717',
                 -- background_nc = '#171717',
                 -- panel = '#171717',

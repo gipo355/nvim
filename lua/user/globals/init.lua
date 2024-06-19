@@ -128,7 +128,7 @@ _G.user.enable_auto_save = false
 --[[ theme settings 
 ]]
 -- use mini.colors for customizations on any theme
-_G.user.use_mini_colors_customizatio = true
+_G.user.use_mini_colors_customization = true
 
 _G.user.transparent_bg = set_transparent_bg(false) -- transparent background
 
@@ -152,10 +152,10 @@ _G.user.theme = function()
     -- return 'catppuccin'
 
     -- have light variant
-    return 'gruvbox-material'
+    -- return 'gruvbox-material'
     -- return 'kanagawa-lotus'
     -- return 'melange'
-    -- return 'rose-pine'
+    return 'rose-pine'
     -- return 'everforest'
     -- return 'edge'
 end
@@ -164,10 +164,10 @@ end
 Indent blankline settings
 ]]
 --
-_G.user.enable_indent_blankline = false
+_G.user.enable_indent_blankline = true
 _G.user.indent_blankline_color_bg = false -- color the background of indentlines
 _G.user.hide_first_indent_level = false -- hide first indent level
-_G.user.enable_mini_indentscope = true -- alternative to indent-blankline, single scope
+_G.user.enable_mini_indentscope = false -- alternative to indent-blankline, single scope
 
 --[[
 miscellaneous visual settings
