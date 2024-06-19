@@ -16,9 +16,9 @@ return {
             dim_inactive_windows = false,
 
             -- ## possible deprecated
-            bold_vert_split = false,
+            -- bold_vert_split = false,
             -- disable_italics = true,
-            -- dim_nc_background = true,
+            -- dim_nc_background = false,
             -- disable_background = _G.user.transparent_bg,
             -- disable_float_background = false,
 
