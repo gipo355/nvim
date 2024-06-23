@@ -186,6 +186,12 @@ return {
                     )
                     vim.keymap.set(
                         'n',
+                        '<leader>lr',
+                        '<cmd>LspRestart<cr>',
+                        { buffer = event.buf, desc = 'Lsp restart' }
+                    )
+                    vim.keymap.set(
+                        'n',
                         '<leader>lX',
                         '<cmd>Mason<cr>',
                         { buffer = event.buf, desc = 'mason' }
