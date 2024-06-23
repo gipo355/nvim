@@ -449,9 +449,8 @@ return {
             -- BUG: breaks tailwindcss lsp if set to true (or commented which means use fswatch)
             -- watch for file changes (default: true)
             if _G.user.enable_tailwindcss then
-                capabilities.workspace.didChangeWatchedFiles = {
-                    dynamicRegistration = false,
-                }
+                capabilities.workspace.didChangeWatchedFiles.dynamicRegistration =
+                    false
             end
 
             -- Enable the following language servers
