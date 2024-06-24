@@ -70,8 +70,8 @@ return {
             set_desc('[E]xec sh line')
         )
 
-        local toggleterm_utils =
-            require('user.plugins.toggleterm.utils.toggleterm_utils')
+        -- local toggleterm_utils =
+        --     require('user.plugins.toggleterm.utils.toggleterm_utils')
 
         -- init utils, will add keymaps for each exec
         -- BUG: will make termials lag
@@ -160,69 +160,206 @@ return {
         -- end, set_desc('Ollama'))
 
         -- ## btop
-        vim.keymap.set('n', '<M-5>', function()
-            local lazygit_toggle = function()
-                local lazygit = Terminal:new({
-                    cmd = 'btop',
-                    hidden = true,
-                    -- dir = 'git_dir',
-                    direction = 'float',
-                    float_opts = {
-                        border = 'none',
-                        width = 100000,
-                        height = 100000,
-                    },
-                    on_open = function(term)
-                        vim.cmd('startinsert!')
-                        vim.api.nvim_buf_set_keymap(
-                            term.bufnr,
-                            'n',
-                            'q',
-                            '<cmd>close<CR>',
-                            { noremap = true, silent = true }
-                        )
-                    end,
-                    on_close = function(_)
-                        vim.cmd('startinsert!')
-                    end,
-                    count = 99,
-                })
-                lazygit:toggle()
-            end
-            lazygit_toggle()
-        end, { desc = 'Btop' })
+        -- vim.keymap.set('n', '<M-5>', function()
+        --     local lazygit_toggle = function()
+        --         local lazygit = Terminal:new({
+        --             cmd = 'btop',
+        --             hidden = true,
+        --             -- dir = 'git_dir',
+        --             direction = 'float',
+        --             float_opts = {
+        --                 border = 'none',
+        --                 width = 100000,
+        --                 height = 100000,
+        --             },
+        --             on_open = function(term)
+        --                 vim.cmd('startinsert!')
+        --                 vim.api.nvim_buf_set_keymap(
+        --                     term.bufnr,
+        --                     'n',
+        --                     'q',
+        --                     '<cmd>close<CR>',
+        --                     { noremap = true, silent = true }
+        --                 )
+        --             end,
+        --             on_close = function(_)
+        --                 vim.cmd('startinsert!')
+        --             end,
+        --             count = 99,
+        --         })
+        --         lazygit:toggle()
+        --     end
+        --     lazygit_toggle()
+        -- end, { desc = 'Btop' })
+        local btop_tui = 'btop'
+        local btop_client = Terminal:new({
+            cmd = btop_tui,
+            -- dir = 'git_dir',
+            hidden = true,
+            -- direction = "tab",
+            direction = 'float',
+            float_opts = {
+                -- border = "double",
+                border = 'none',
+                width = 10000,
+                height = 10000,
+            },
+            -- on_open = function(term)
+            --     -- vim.cmd('startinsert!')
+            --     vim.api.nvim_buf_set_keymap(
+            --         term.bufnr,
+            --         'n',
+            --         'q',
+            --         '<cmd>close<CR>',
+            --         { noremap = true, silent = true }
+            --     )
+            -- end,
+            -- on_close = function(_)
+            --     vim.cmd('startinsert!')
+            -- end,
+            -- count = 99,
+        })
+        local function btop_client_toggle()
+            btop_client:toggle()
+        end
+        -- TODO: overriding something!!
+        vim.keymap.set('n', '<M-5>', btop_client_toggle, set_desc('btop'))
 
         -- ## lazygit keymap client
-        vim.keymap.set('n', '<c-g>', function()
-            local lazygit_toggle = function()
-                local lazygit = Terminal:new({
-                    cmd = 'lazygit',
-                    hidden = true,
-                    -- dir = 'git_dir',
-                    direction = 'float',
-                    float_opts = {
-                        border = 'none',
-                        width = 100000,
-                        height = 100000,
-                    },
-                    on_open = function(term)
-                        vim.cmd('startinsert!')
-                        vim.api.nvim_buf_set_keymap(
-                            term.bufnr,
-                            'n',
-                            'q',
-                            '<cmd>close<CR>',
-                            { noremap = true, silent = true }
-                        )
-                    end,
-                    on_close = function(_)
-                        vim.cmd('startinsert!')
-                    end,
-                    count = 99,
-                })
-                lazygit:toggle()
-            end
-            lazygit_toggle()
-        end, { desc = 'LazyGit' })
+        -- vim.keymap.set('n', '<c-g>', function()
+        --     local lazygit_toggle = function()
+        --         local lazygit = Terminal:new({
+        --             cmd = 'lazygit',
+        --             hidden = true,
+        --             -- dir = 'git_dir',
+        --             direction = 'float',
+        --             float_opts = {
+        --                 border = 'none',
+        --                 width = 100000,
+        --                 height = 100000,
+        --             },
+        --             on_open = function(term)
+        --                 vim.cmd('startinsert!')
+        --                 vim.api.nvim_buf_set_keymap(
+        --                     term.bufnr,
+        --                     'n',
+        --                     'q',
+        --                     '<cmd>close<CR>',
+        --                     { noremap = true, silent = true }
+        --                 )
+        --             end,
+        --             on_close = function(_)
+        --                 vim.cmd('startinsert!')
+        --             end,
+        --             count = 99,
+        --         })
+        --         lazygit:toggle()
+        --     end
+        --     lazygit_toggle()
+        -- end, { desc = 'LazyGit' })
+        local lazygit_tui = 'lazygit'
+        local lazygit_client = Terminal:new({
+            cmd = lazygit_tui,
+            -- dir = 'git_dir',
+            hidden = true,
+            -- direction = "tab",
+            direction = 'float',
+            float_opts = {
+                -- border = "double",
+                border = 'none',
+                width = 10000,
+                height = 10000,
+            },
+            -- on_open = function(term)
+            --     -- vim.cmd('startinsert!')
+            --     vim.api.nvim_buf_set_keymap(
+            --         term.bufnr,
+            --         'n',
+            --         'q',
+            --         '<cmd>close<CR>',
+            --         { noremap = true, silent = true }
+            --     )
+            -- end,
+            -- on_close = function(_)
+            --     vim.cmd('startinsert!')
+            -- end,
+            -- count = 99,
+        })
+        local function lazygit_client_toggle()
+            lazygit_client:toggle()
+        end
+        -- TODO: overriding something!!
+        vim.keymap.set('n', '<c-g>', lazygit_client_toggle, set_desc('lazygit'))
+
+        -- SERPL find and replace
+        -- vim.keymap.set('n', '<leader>Af', function()
+        --     local serpl_toggle = function()
+        --         local serpl = Terminal:new({
+        --             cmd = 'serpl',
+        --             hidden = true,
+        --             -- dir = 'git_dir',
+        --             direction = 'float',
+        --             float_opts = {
+        --                 border = 'none',
+        --                 width = 100000,
+        --                 height = 100000,
+        --             },
+        --             on_open = function(term)
+        --                 -- vim.cmd('startinsert!')
+        --                 vim.api.nvim_buf_set_keymap(
+        --                     term.bufnr,
+        --                     'n',
+        --                     '<C-c>',
+        --                     '<cmd>close<CR>',
+        --                     { noremap = true, silent = true }
+        --                 )
+        --             end,
+        --             -- on_close = function(_)
+        --             --     vim.cmd('startinsert!')
+        --             -- end,
+        --             count = 99,
+        --         })
+        --         serpl:toggle()
+        --     end
+        --     serpl_toggle()
+        -- end, { desc = 'Serpl' })
+        local serpl_tui = 'serpl'
+        local serpl_client = Terminal:new({
+            cmd = serpl_tui,
+            -- dir = 'git_dir',
+            hidden = true,
+            -- direction = "tab",
+            direction = 'float',
+            float_opts = {
+                -- border = "double",
+                border = 'none',
+                width = 10000,
+                height = 10000,
+            },
+            -- on_open = function(term)
+            --     -- vim.cmd('startinsert!')
+            --     vim.api.nvim_buf_set_keymap(
+            --         term.bufnr,
+            --         'n',
+            --         'q',
+            --         '<cmd>close<CR>',
+            --         { noremap = true, silent = true }
+            --     )
+            -- end,
+            -- on_close = function(_)
+            --     vim.cmd('startinsert!')
+            -- end,
+            -- count = 99,
+        })
+        local function serpl_client_toggle()
+            serpl_client:toggle()
+        end
+        -- TODO: overriding something!!
+        vim.keymap.set(
+            'n',
+            '<leader>Af',
+            serpl_client_toggle,
+            set_desc('serpl find and replace')
+        )
     end,
 }
