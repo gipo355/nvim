@@ -336,20 +336,6 @@ return {
                 width = 10000,
                 height = 10000,
             },
-            -- on_open = function(term)
-            --     -- vim.cmd('startinsert!')
-            --     vim.api.nvim_buf_set_keymap(
-            --         term.bufnr,
-            --         'n',
-            --         'q',
-            --         '<cmd>close<CR>',
-            --         { noremap = true, silent = true }
-            --     )
-            -- end,
-            -- on_close = function(_)
-            --     vim.cmd('startinsert!')
-            -- end,
-            -- count = 99,
         })
         local function serpl_client_toggle()
             serpl_client:toggle()
@@ -357,8 +343,44 @@ return {
         -- TODO: overriding something!!
         vim.keymap.set(
             'n',
-            '<leader>Af',
+            '<M-3>',
             serpl_client_toggle,
+            set_desc('serpl find and replace')
+        )
+
+        -- vertical split terminal
+        local vertical_term = Terminal:new({
+            cmd = nil,
+            -- dir = 'git_dir',
+            hidden = true,
+            -- direction = "tab",
+            direction = 'vertical',
+        })
+        local function vert_term_client_toggle()
+            vertical_term:toggle()
+        end
+        -- TODO: overriding something!!
+        vim.keymap.set(
+            'n',
+            '<M-2>',
+            vert_term_client_toggle,
+            set_desc('serpl find and replace')
+        )
+        local hori_term = Terminal:new({
+            cmd = nil,
+            -- dir = 'git_dir',
+            hidden = true,
+            -- direction = "tab",
+            direction = 'horizontal',
+        })
+        local function hori_term_toggle()
+            hori_term:toggle()
+        end
+        -- TODO: overriding something!!
+        vim.keymap.set(
+            'n',
+            '<M-1>',
+            hori_term_toggle,
             set_desc('serpl find and replace')
         )
     end,
