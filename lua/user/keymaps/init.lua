@@ -331,7 +331,7 @@ vim.keymap.set(
 
 vim.keymap.set(
     'n',
-    'gx',
+    'gX',
     [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]],
     set_desc('Open file in browser')
 )

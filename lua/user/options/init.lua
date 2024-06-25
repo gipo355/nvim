@@ -167,7 +167,7 @@ o.swapfile = false
 
 -- show `` in markdown, hides symbols in markdown, 0 is default no conceal
 -- show "" in json
-o.conceallevel = 0
+o.conceallevel = 1
 
 -- ### end chris
 
