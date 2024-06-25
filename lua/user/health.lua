@@ -69,6 +69,7 @@ local required_bins = {
     'gitrebase',
     'gomodifytags',
     'impl',
+    'k9s',
 }
 
 local check_version = function()
