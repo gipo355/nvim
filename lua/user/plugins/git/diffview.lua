@@ -4,12 +4,13 @@ return {
     event = 'VeryLazy',
     config = function()
         require('diffview').setup({
-            hooks = {
-                view = {
-                    x = {
-                        layout = 'diff3_mixed',
-                    },
+            enhanced_diff_hl = true,
+            view = {
+                x = {
+                    layout = 'diff3_mixed',
                 },
+            },
+            hooks = {
                 diff_buf_read = function(bufnr)
                     -- Change local options in diff buffers
                     vim.opt_local.wrap = false

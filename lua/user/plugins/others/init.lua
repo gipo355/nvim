@@ -16,16 +16,6 @@ local opts = require('user.utils.options').global_keymap_opts
 --
 -- See the kickstart.nvim README for more information
 return {
-    {
-        -- style markdown files
-        'MeanderingProgrammer/markdown.nvim',
-        ft = 'markdown',
-        name = 'render-markdown', -- Only needed if you have another plugin named markdown.nvim
-        dependencies = { 'nvim-treesitter/nvim-treesitter' },
-        config = function()
-            require('render-markdown').setup({})
-        end,
-    },
 
     -- easily move windows
     {
