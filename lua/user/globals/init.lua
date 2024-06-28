@@ -166,14 +166,14 @@ Indent blankline settings
 --
 _G.user.enable_indent_blankline = true
 _G.user.indent_blankline_color_bg = false -- color the background of indentlines
-_G.user.hide_first_indent_level = false -- hide first indent level
+_G.user.hide_first_indent_level = true -- hide first indent level
 _G.user.enable_mini_indentscope = false -- alternative to indent-blankline, single scope
 
 --[[
 miscellaneous visual settings
 ]]
 --
-_G.user.enable_rainbow_parens = false
+_G.user.enable_rainbow_parens = true
 _G.user.enable_highlight_colors = true -- css, tailwind colors, color #hex etc..
 
 --[[
