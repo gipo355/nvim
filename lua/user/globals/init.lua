@@ -142,9 +142,9 @@ _G.user.theme = function()
 
     -- my favorites
 
-    -- return 'monokai-pro'
+    return 'monokai-pro'
     -- return 'gruvbox-baby'
-    return 'kanagawa'
+    -- return 'kanagawa'
     -- return 'kanagawa'
     -- return 'material'
     -- return 'onedark'
