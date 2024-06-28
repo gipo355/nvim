@@ -113,6 +113,12 @@ return {
             )
             vim.keymap.set(
                 'n',
+                '<leader>gB',
+                '<cmd>lua require "gitsigns".blame()<cr>',
+                set_desc('Blame')
+            )
+            vim.keymap.set(
+                'n',
                 '<leader>gp',
                 '<cmd>lua require "gitsigns".preview_hunk()<cr>',
                 set_desc('Preview Hunk')
