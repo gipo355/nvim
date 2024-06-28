@@ -103,7 +103,7 @@ _G.user.picker_use_fzf_lua = false
     enable ufo folding plugin
     BUG: bugs diffview difftool
 ]]
-_G.user.enable_ufo = false
+_G.user.enable_ufo = true
 
 --[[
 CMP sources
