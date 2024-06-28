@@ -1,5 +1,7 @@
 local set_desc = require('user.utils.functions').set_keymap_desc
 -- optionals: jq, tidy
+--
+-- NOTE: REST ARCHIVED
 return {
     {
         'vhyrro/luarocks.nvim',
