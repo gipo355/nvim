@@ -291,6 +291,40 @@ return {
         -- TODO: overriding something!!
         vim.keymap.set('n', '<c-g>', lazygit_client_toggle, set_desc('lazygit'))
 
+        -- TermShark
+        local termshark_client = Terminal:new({
+            cmd = 'sudo termshark',
+            -- dir = 'git_dir',
+            hidden = true,
+            -- direction = "tab",
+            direction = 'float',
+            float_opts = {
+                -- border = "double",
+                border = 'none',
+                width = 10000,
+                height = 10000,
+            },
+            -- on_open = function(term)
+            --     -- vim.cmd('startinsert!')
+            --     vim.api.nvim_buf_set_keymap(
+            --         term.bufnr,
+            --         'n',
+            --         'q',
+            --         '<cmd>close<CR>',
+            --         { noremap = true, silent = true }
+            --     )
+            -- end,
+            -- on_close = function(_)
+            --     vim.cmd('startinsert!')
+            -- end,
+            -- count = 99,
+        })
+        local function termshark_toggle()
+            termshark_client:toggle()
+        end
+        -- TODO: overriding something!!
+        vim.keymap.set('n', '<M-6>', termshark_toggle, set_desc('termshark'))
+
         -- K9s
         local k9s_client = Terminal:new({
             cmd = 'k9s',
