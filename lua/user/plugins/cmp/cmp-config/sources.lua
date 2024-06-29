@@ -2,7 +2,7 @@ local cmp_types = require('cmp.types')
 
 local M = {}
 
-M.preferred_sources = {
+local preferred_sources = {
 
     {
         name = 'html-css', -- plugin
@@ -169,7 +169,7 @@ M.preferred_sources = {
     -- },
 }
 
-M.other_sources = {
+local other_sources = {
     -- possible performance issues
     {
         name = 'buffer',
@@ -187,5 +187,35 @@ M.other_sources = {
         },
     },
 }
+
+local tooBig = function(bufnr)
+    local max_filesize = 10 * 1024 -- 100 KB
+    local check_stats = (vim.uv or vim.loop).fs_stat
+    local ok, stats = pcall(check_stats, vim.api.nvim_buf_get_name(bufnr))
+    if ok and stats and stats.size > max_filesize then
+        return true
+    else
+        return false
+    end
+end
+
+M.set_sources = function(ev, cmp)
+    local sources = preferred_sources
+
+    -- append buffer source if the file is not too big
+    if not tooBig(ev.buf) then
+        -- sources[#sources + 1] = {
+        --     name = 'buffer',
+        --     keyword_length = 2,
+        --     max_item_count = 5,
+        -- }
+        sources = vim.list_extend(sources, other_sources)
+    end
+
+    -- set the sources
+    cmp.setup.buffer({
+        sources = cmp.config.sources(sources),
+    })
+end
 
 return M
