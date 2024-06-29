@@ -137,7 +137,7 @@ return {
 
             -- ##### Add servers for automatic installation and setup with custom opts #####
             local servers = require(
-                'user.plugins.lsp.lspconfig.configs.servers'
+                'user.plugins.lsp.lspconfig.configs.load-servers'
             ).load_servers(capabilities)
 
             -- Ensure the servers and tools above are installed

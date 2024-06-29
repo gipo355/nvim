@@ -14,82 +14,100 @@ M.load_servers = function(capabilities)
         -- tsserver = {},
         --
 
-        unocss = require('user.plugins.lsp.lspconfig.configs.servers.unocss').setup(),
-
-        cssls = require('user.plugins.lsp.lspconfig.configs.servers.cssls').setup(
-            capabilities
-        ),
-
-        cssmodules_ls = require(
-            'user.plugins.lsp.lspconfig.configs.servers.cssmodules'
+        unocss = require(
+            'user.plugins.lsp.lspconfig.configs.server-configs.unocss'
         ).setup(),
 
-        snyk_ls = require('user.plugins.lsp.lspconfig.configs.servers.snyk_ls').setup(),
-
-        omnisharp = require(
-            'user.plugins.lsp.lspconfig.configs.servers.omnisharp'
+        cssls = require(
+            'user.plugins.lsp.lspconfig.configs.server-configs.cssls'
         ).setup(capabilities),
 
-        html = require('user.plugins.lsp.lspconfig.configs.servers.html').setup(),
-
-        emmet_language_server = require(
-            'user.plugins.lsp.lspconfig.configs.servers.emmet_lsp'
+        cssmodules_ls = require(
+            'user.plugins.lsp.lspconfig.configs.server-configs.cssmodules'
         ).setup(),
 
-        -- htmx = require('user.plugins.lsp.lspconfig.configs.servers.htmx').setup(),
+        snyk_ls = require(
+            'user.plugins.lsp.lspconfig.configs.server-configs.snyk_ls'
+        ).setup(),
+
+        omnisharp = require(
+            'user.plugins.lsp.lspconfig.configs.server-configs.omnisharp'
+        ).setup(capabilities),
+
+        html = require(
+            'user.plugins.lsp.lspconfig.configs.server-configs.html'
+        ).setup(),
+
+        emmet_language_server = require(
+            'user.plugins.lsp.lspconfig.configs.server-configs.emmet_lsp'
+        ).setup(),
+
+        -- htmx = require('user.plugins.lsp.lspconfig.configs.server-configs.htmx').setup(),
 
         -- using go.nvim lsp config
-        gopls = require('user.plugins.lsp.lspconfig.configs.servers.gopls').setup(),
+        gopls = require(
+            'user.plugins.lsp.lspconfig.configs.server-configs.gopls'
+        ).setup(),
 
-        -- golangci_lint_ls = require('user.plugins.lsp.lspconfig.configs.servers.golangci_lint_ls').setup(),
+        -- golangci_lint_ls = require('user.plugins.lsp.lspconfig.configs.server-configs.golangci_lint_ls').setup(),
 
         intelephense = require(
-            'user.plugins.lsp.lspconfig.configs.servers.intelephense'
+            'user.plugins.lsp.lspconfig.configs.server-configs.intelephense'
         ).setup(),
 
         phpactor = require(
-            'user.plugins.lsp.lspconfig.configs.servers.phpactor'
+            'user.plugins.lsp.lspconfig.configs.server-configs.phpactor'
         ).setup(),
 
-        eslint = require('user.plugins.lsp.lspconfig.configs.servers.eslint').setup(
-            capabilities
-        ),
+        eslint = require(
+            'user.plugins.lsp.lspconfig.configs.server-configs.eslint'
+        ).setup(capabilities),
 
-        jsonls = require('user.plugins.lsp.lspconfig.configs.servers.jsonls').setup(),
+        jsonls = require(
+            'user.plugins.lsp.lspconfig.configs.server-configs.jsonls'
+        ).setup(),
 
-        yamlls = require('user.plugins.lsp.lspconfig.configs.servers.yamlls').setup(),
+        yamlls = require(
+            'user.plugins.lsp.lspconfig.configs.server-configs.yamlls'
+        ).setup(),
 
         stylelint_lsp = require(
-            'user.plugins.lsp.lspconfig.configs.servers.stylelint_lsp'
+            'user.plugins.lsp.lspconfig.configs.server-configs.stylelint_lsp'
         ).setup(),
 
         -- kotlin
         kotlin_language_server = require(
-            'user.plugins.lsp.lspconfig.configs.servers.kotlin_language_server'
+            'user.plugins.lsp.lspconfig.configs.server-configs.kotlin_language_server'
         ).setup(),
 
         vuels = {
             root_dir = require('lspconfig').util.root_pattern('vue.config.js'),
         },
 
-        volar = require('user.plugins.lsp.lspconfig.configs.servers.volar').setup(),
+        volar = require(
+            'user.plugins.lsp.lspconfig.configs.server-configs.volar'
+        ).setup(),
 
         ltex = {
             filetypes = { 'tex', 'latex', 'markdown', 'mdx' },
         },
 
         -- ##### We use neodev by folke #####
-        lua_ls = require('user.plugins.lsp.lspconfig.configs.servers.lua_ls').setup(),
-
-        angularls = require(
-            'user.plugins.lsp.lspconfig.configs.servers.angularls'
+        lua_ls = require(
+            'user.plugins.lsp.lspconfig.configs.server-configs.lua_ls'
         ).setup(),
 
-        denols = require('user.plugins.lsp.lspconfig.configs.servers.denols').setup(),
+        angularls = require(
+            'user.plugins.lsp.lspconfig.configs.server-configs.angularls'
+        ).setup(),
+
+        denols = require(
+            'user.plugins.lsp.lspconfig.configs.server-configs.denols'
+        ).setup(),
 
         -- using plugin tailwind-tools
         tailwindcss = require(
-            'user.plugins.lsp.lspconfig.configs.servers.tailwindcss'
+            'user.plugins.lsp.lspconfig.configs.server-configs.tailwindcss'
         ).setup(),
 
         helm_ls = {},
