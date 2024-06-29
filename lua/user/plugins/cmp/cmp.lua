@@ -86,8 +86,19 @@ return {
             local luasnip = require('luasnip')
             local _, lspkind = pcall(require, 'lspkind')
 
+            local status_cmp_ok, cmp_types_cmp = pcall(require, 'cmp.types.cmp')
+            local ConfirmBehavior = cmp_types_cmp.ConfirmBehavior
+            -- local SelectBehavior = cmp_types_cmp.SelectBehavior
+            -- local cmp_window = require('cmp.config.window')
+            local icons = require('user.utils.icons')
+            local cmputils = require('user.plugins.cmp.utils.lsp-kind')
+
+            local tailwind_tools = require('tailwind-tools.cmp')
+
             local utils = require('user.utils.functions')
+
             local paths = {}
+
             -- TODO: do they have any problems?
             paths[#paths + 1] = utils.join_paths(
                 utils.get_runtime_dir(),
@@ -97,22 +108,28 @@ return {
                 'opt',
                 'friendly-snippets'
             )
+
             local user_snippets = utils.join_paths(
                 utils.get_config_dir(),
                 'lua',
                 'user',
                 'snippets'
             )
+
             if utils.is_directory(user_snippets) then
                 paths[#paths + 1] = user_snippets
             end
+
             require('luasnip.loaders.from_lua').lazy_load()
+
             require('luasnip.loaders.from_vscode').lazy_load({
                 paths = paths,
             })
+
             require('luasnip.loaders.from_snipmate').lazy_load()
 
             luasnip.config.setup({})
+
             luasnip.setup({
                 histofy = true,
                 delete_check_events = 'TextChanged',
@@ -124,71 +141,12 @@ return {
                 desc = 'Remove placeholder inside snippet',
             })
 
-            local types = require('luasnip.util.types')
             -- `/` cmdline setup.
-            cmp.setup.cmdline('/', {
-                mapping = cmp.mapping.preset.cmdline({
-                    ['<Down>'] = {
-                        c = cmp.mapping.select_next_item({
-                            behavior = cmp.SelectBehavior.Insert,
-                        }),
-                    },
-                    ['<Up>'] = {
-                        c = cmp.mapping.select_prev_item({
-                            behavior = cmp.SelectBehavior.Insert,
-                        }),
-                    },
-                }),
-                sources = {
-                    { name = 'buffer' },
-                },
-                -- Display a cursor-like placeholder in unvisited nodes
-                -- of the snippet.
-                ext_opts = {
-                    [types.insertNode] = {
-                        unvisited = {
-                            virt_text = { { '|', 'Conceal' } },
-                            virt_text_pos = 'inline',
-                        },
-                    },
-                },
-            })
-
+            local cmd_line_configs =
+                require('user.plugins.cmp.cmp-config.cmd-line')
+            cmp.setup.cmdline('/', cmd_line_configs['/'])
             -- `:` cmdline setup.
-            cmp.setup.cmdline(':', {
-                mapping = cmp.mapping.preset.cmdline({
-                    ['<Down>'] = {
-                        c = cmp.mapping.select_next_item({
-                            behavior = cmp.SelectBehavior.Insert,
-                        }),
-                    },
-                    ['<Up>'] = {
-                        c = cmp.mapping.select_prev_item({
-                            behavior = cmp.SelectBehavior.Insert,
-                        }),
-                    },
-                }),
-                sources = cmp.config.sources({
-                    { name = 'path' },
-                }, {
-                    {
-                        name = 'cmdline',
-                        option = {
-                            ignore_cmds = { 'Man', '!' },
-                        },
-                    },
-                }),
-            })
-
-            local status_cmp_ok, cmp_types_cmp = pcall(require, 'cmp.types.cmp')
-            local ConfirmBehavior = cmp_types_cmp.ConfirmBehavior
-            local SelectBehavior = cmp_types_cmp.SelectBehavior
-            local cmp_window = require('cmp.config.window')
-            local icons = require('user.utils.icons')
-            local cmputils = require('user.plugins.cmp.utils.lsp-kind')
-            local cmp_types = require('cmp.types')
-
-            local tailwind_tools = require('tailwind-tools.cmp')
+            cmp.setup.cmdline(':', cmd_line_configs[':'])
 
             local function prepare_completion_with_delay_opt()
                 local opts = {
@@ -200,194 +158,12 @@ return {
                 return opts
             end
 
+            local custom_sources =
+                require('user.plugins.cmp.cmp-config.sources')
             -- Those are sources that will always be on
-            local preferred_sources = {
-
-                {
-                    name = 'html-css', -- plugin
-                    option = {
-                        enable_on = {
-                            'html',
-                            -- 'css',
-                            -- 'scss',
-                            'angular.html',
-                        },
-                        file_extensions = {
-                            'html',
-                            'css',
-                            'scss',
-                            'angular.html',
-                        },
-                        style_sheets = {
-                            -- example of remote styles, only css no js for now
-                            -- "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
-                            -- "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css",
-                            'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css',
-                            -- 'https://cdn.tailwindcss.com',
-                            -- 'https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css',
-                        },
-                    },
-                    keyword_length = 2,
-                    max_item_count = 10,
-                },
-
-                {
-                    name = 'luasnip',
-                    keyword_length = 2,
-                    max_item_count = 5,
-                },
-
-                -- ai, requires copilot.lua plugin, prefer ghost text
-                -- {
-                --     name = 'copilot',
-                --     keyword_length = 1,
-                --     max_item_count = 3,
-                --     trigger_characters = {
-                --         {
-                --             '.',
-                --             ':',
-                --             '(',
-                --             "'",
-                --             '"',
-                --             '[',
-                --             ',',
-                --             '#',
-                --             '*',
-                --             '@',
-                --             '|',
-                --             '=',
-                --             '-',
-                --             '{',
-                --             '/',
-                --             '\\',
-                --             '+',
-                --             '?',
-                --             ' ',
-                --             -- "\t",
-                --             -- "\n",
-                --         },
-                --     },
-                --     -- group_index = 2
-                -- },
-
-                -- filter out snippets and text, huge noise from real lsp suggestions
-                {
-                    name = 'git',
-                    keyword_length = 2,
-                    max_item_count = 5,
-                },
-
-                -- lsp
-                {
-                    name = 'nvim_lsp',
-                    keyword_lengths = 2,
-                    max_item_count = 50,
-
-                    -- filter out snippets and text, huge noise from real lsp suggestions
-                    entry_filter = function(entry, ctx)
-                        local kind =
-                            cmp_types.lsp.CompletionItemKind[entry:get_kind()]
-
-                        -- if kind == "Snippet" and (ctx.prev_context.filetype ~= "html" and ctx.prev_context.filetype ~= "svelte") then
-
-                        -- snippet is a huge noise in lsp, prefer luasnip and copilot
-                        if
-                            kind == 'Snippet'
-                            -- and ctx.prev_context.filetype == 'java'
-                        then
-                            return false
-                        end
-
-                        -- text is a huge noise in lsp, prefer copilot and buffer source
-                        if
-                            kind == 'Text'
-                            -- and (
-                            --     ctx.prev_context.filetype ~= 'html'
-                            --     and ctx.prev_context.filetype ~= 'svelte'
-                            -- )
-                        then
-                            return false
-                        end
-                        return true
-                    end,
-                },
-
-                {
-                    name = 'path',
-                    keyword_length = 2,
-                    max_item_count = 5,
-                },
-
-                {
-                    name = 'nvim_lua',
-                    keyword_length = 2,
-                    max_item_count = 5,
-                },
-
-                {
-                    name = 'calc',
-                    keyword_length = 3,
-                    max_item_count = 5,
-                },
-
-                {
-                    name = 'emoji',
-                    keyword_length = 2,
-                    max_item_count = 50,
-                },
-
-                {
-                    name = 'treesitter',
-                    keyword_length = 3,
-                    max_item_count = 5,
-                },
-
-                {
-                    name = 'crates',
-                    keyword_length = 3,
-                    max_item_count = 5,
-                },
-
-                {
-                    name = 'tmux',
-                    keyword_length = 3,
-                    max_item_count = 5,
-                },
-
-                -- AI
-                -- must enable plugins and setups
-                -- { name = 'cmp_ai' },
-                -- {
-                --     name = 'cmp_tabnine',
-                --     keyword_length = 3,
-                --     max_item_count = 5,
-                -- },
-                -- {
-                --     name = 'codeium',
-                --     keyword_length = 3,
-                --     max_item_count = 5,
-                -- },
-            }
-
+            local preferred_sources = custom_sources.preferred_sources
             -- sources to not be loaded when the file is too big
-            local other_sources = {
-                -- possible performance issues
-                {
-                    name = 'buffer',
-                    keyword_length = 2,
-                    max_item_count = 5,
-                },
-                {
-                    name = 'rg',
-                    -- Try it when you feel cmp performance is poor
-                    keyword_length = 2,
-                    max_item_count = 5,
-                    option = {
-                        -- additional_arguments = '--smart-case --hidden -g "!.git" -g "!pnpm-lock.yaml" -g "!package-lock.json" -g "!node_modules" -g "!*cache',
-                        additional_arguments = '--smart-case',
-                    },
-                },
-            }
+            local other_sources = custom_sources.other_sources
 
             -- check if the file is too big to enable some sources
             local function tooBig(bufnr)
