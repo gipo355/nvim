@@ -2,9 +2,6 @@ local M = {}
 
 M.load_servers = function(capabilities)
     return {
-        -- clangd = {},
-        -- pyright = {},
-        -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -12,7 +9,6 @@ M.load_servers = function(capabilities)
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
-        --
 
         unocss = require(
             'user.plugins.lsp.lspconfig.configs.server-configs.unocss'
@@ -123,7 +119,6 @@ M.load_servers = function(capabilities)
         astro = {},
         vimls = {},
         bashls = {},
-        ['rust-analyzer'] = {},
         tsserver = {},
         pyright = {},
         clangd = {},
@@ -136,8 +131,12 @@ M.load_servers = function(capabilities)
         prosemd_lsp = {},
         sqlls = {},
         autotools_ls = {},
+
+        -- not sure which one
+        ['rust-analyzer'] = {},
+        ['rust_analyzer'] = {},
+
         -- solidity = {},
-        -- 'rust_analyzer',
         -- 'semgrep',
         -- "google-java-format",
         -- "sumneko_lua",
@@ -154,6 +153,8 @@ M.load_servers = function(capabilities)
         -- "vimscript",
         -- 'yamlls',
         -- "zsh"
+        -- clangd = {},
+        -- pyright = {},
         -- "java_language_server",
         -- 'jdtls', -- manual require it at the end, no autoinstall (java plugin)
     }

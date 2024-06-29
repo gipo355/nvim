@@ -164,6 +164,7 @@ return {
                 tailwindcss = not _G.user.enable_tailwindcss, -- too laggy, requires special setting (hint, grep the global var to check where it's used)
                 tsserver = true, -- using typescript-tools, not setting up but needed installed
                 rust_analyzer = true, -- using rustacean plugin, not setting up but needed installed
+                ['rust-analyzer'] = true, -- using rustacean plugin, not setting up but needed installed
                 sqlls = true, -- buggy as hell
             }
 
