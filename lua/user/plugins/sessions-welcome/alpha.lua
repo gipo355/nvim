@@ -25,7 +25,7 @@ return {
     -- },
     config = function()
         if _G.user.alpha_type == 'dashboard' then
-            require('alpha').setup(require('alpha.themes.dashboard').config)
+            require('user.plugins.sessions-welcome.alpha-config.dashboard')
         end
         if _G.user.alpha_type == 'startify' then
             require('alpha').setup(require('alpha.themes.startify').config)
