@@ -61,6 +61,10 @@ vim.g.maplocalleader = '\\'
 -- Set to true if you have a Nerd Font installed
 _G.user.have_nerd_font = true
 
+-- Alpha: enable start screen dashboard
+_G.user.enable_alpha = true
+_G.user.alpha_type = 'startify' -- dashboard or startify
+
 -- enable sessions autoload with alpha - neovim-session-manager, buggy
 _G.user.enable_sessions_autoload = false
 

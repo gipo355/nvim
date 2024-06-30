@@ -6,7 +6,9 @@ return {
         -- alternative to shatur/neovim-session-manager and persistence and possession
         'Shatur/neovim-session-manager',
     },
-    event = 'VimEnter',
+    lazy = false,
+    enabled = _G.user.enable_alpha,
+    priority = 1000,
     -- keys = {
     --     {
     --         '<leader>;',
@@ -22,9 +24,13 @@ return {
     --     },
     -- },
     config = function()
-        require('alpha').setup(require('alpha.themes.startify').config)
-        -- require('alpha').setup(require('alpha.themes.dashboard').config)
-        vim.keymap.set('n', '<leader>;', '<cmd>Alpha<cr>', set_desc('Alpha'))
+        if _G.user.alpha_type == 'dashboard' then
+            require('alpha').setup(require('alpha.themes.dashboard').config)
+        end
+        if _G.user.alpha_type == 'startify' then
+            require('alpha').setup(require('alpha.themes.startify').config)
+        end
+        vim.keymap.set('n', '<leader>J', '<cmd>Alpha<cr>', set_desc('Alpha'))
     end,
 }
 --     {
