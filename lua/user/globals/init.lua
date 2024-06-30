@@ -63,7 +63,7 @@ _G.user.have_nerd_font = true
 
 -- Alpha: enable start screen dashboard
 _G.user.enable_alpha = true
-_G.user.alpha_type = 'dashboard' -- dashboard or startify
+_G.user.alpha_type = 'dashboard' -- dashboard or startify or theta
 
 -- enable sessions autoload with alpha - neovim-session-manager, buggy
 _G.user.enable_sessions_autoload = false

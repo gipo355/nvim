@@ -101,3 +101,8 @@ dashboard.section.footer.opts.hl = 'Constant'
 alpha.setup(dashboard.opts)
 
 vim.cmd([[ autocmd FileType alpha setlocal nofoldenable ]])
+
+-- q and C-c quits if inside alpha
+vim.cmd([[ autocmd FileType alpha nnoremap <buffer><silent> q :q<CR> ]])
+
+vim.cmd([[ autocmd FileType alpha nnoremap <buffer><silent> <C-c> :q<CR> ]])

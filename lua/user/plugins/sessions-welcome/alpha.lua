@@ -30,6 +30,11 @@ return {
         if _G.user.alpha_type == 'startify' then
             require('alpha').setup(require('alpha.themes.startify').config)
         end
+
+        if _G.user.alpha_type == 'theta' then
+            require('alpha').setup(require('alpha.themes.theta').config)
+        end
+
         vim.keymap.set('n', '<leader>J', '<cmd>Alpha<cr>', set_desc('Alpha'))
     end,
 }
