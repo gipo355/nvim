@@ -1290,12 +1290,12 @@
     "key": "reactFunctionalComponent",
     "prefix": "rfc",
     "body": [
-      "import React from 'react'",
-      "",
-      "export default function ${1:${TM_FILENAME_BASE}}() {",
-      "  return (",
-      "    <div>${1:first}</div>",
-      "  )",
+      "export const ${1:${TM_FILENAME_BASE}} = (): JSX.Element => {",
+      "    return (",
+      "        <>",
+      "            <div>${1:first}</div>",
+      "        </>",
+      "    )",
       "}",
       ""
     ],

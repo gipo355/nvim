@@ -11,7 +11,7 @@ require('user.plugins.lsp.lspconfig.configs.global-config').setup()
 return {
     {
         'williamboman/mason.nvim',
-        event = 'BufEnter',
+        event = 'VeryLazy',
         opts = {
             ui = {
                 icons = {
@@ -19,6 +19,14 @@ return {
                     package_pending = '➜',
                     package_uninstalled = '✗',
                 },
+            },
+        },
+        keys = {
+            {
+                '<leader>lX',
+                '<cmd>Mason<cr>',
+                'n',
+                { desc = 'mason' },
             },
         },
     },

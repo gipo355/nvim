@@ -91,8 +91,10 @@ dashboard.section.buttons.val = {
     -- dashboard.button('<Leader>f', '  File Explorer'),
     -- dashboard.button('<Leader>fo', '  Find File'),
     -- dashboard.button('<Leader>fw', '  Find Word'),
-    -- dashboard.button('<Leader>ps', '  Update plugins'),
-    -- dashboard.button('q', '  Quit', ':qa<cr>'),
+    dashboard.button('<C-j>', '  Recent'),
+    dashboard.button('<Leader>lx', '  Lazy'),
+    dashboard.button('<Leader>lX', '  Mason'),
+    dashboard.button('q', '  Quit', ':qa<cr>'),
 }
 
 dashboard.section.footer.val = footer()
