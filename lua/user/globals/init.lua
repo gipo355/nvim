@@ -146,9 +146,8 @@ _G.user.theme = function()
 
     -- my favorites
 
-    return 'monokai-pro'
+    -- return 'monokai-pro'
     -- return 'gruvbox-baby'
-    -- return 'kanagawa'
     -- return 'kanagawa'
     -- return 'material'
     -- return 'onedark'
@@ -156,7 +155,7 @@ _G.user.theme = function()
     -- return 'catppuccin'
 
     -- have light variant
-    -- return 'gruvbox-material'
+    return 'gruvbox-material'
     -- return 'kanagawa-lotus'
     -- return 'melange'
     -- return 'rose-pine'
