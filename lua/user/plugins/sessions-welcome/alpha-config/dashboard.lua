@@ -91,10 +91,10 @@ dashboard.section.buttons.val = {
     -- dashboard.button('<Leader>f', '  File Explorer'),
     -- dashboard.button('<Leader>fo', '  Find File'),
     -- dashboard.button('<Leader>fw', '  Find Word'),
-    dashboard.button('<Leader>gdo', '  Diff This'),
-    dashboard.button('<C-j>', '  Recent'),
-    dashboard.button('<Leader>lx', '  Lazy'),
-    dashboard.button('<Leader>lX', '  Mason'),
+    dashboard.button('<leader>Sl', '🌱 Load last session'),
+    dashboard.button('<Leader>gdo', '🗡️  Diff This'),
+    dashboard.button('<Leader>lx', '🛌  Lazy'),
+    dashboard.button('<Leader>lX', '💻  Mason'),
     -- dashboard.button('q', '  Quit', ':qa<cr>'),
 }
 
