@@ -145,7 +145,7 @@ M.load_servers = function(capabilities)
         -- "google-java-format",
         -- "sumneko_lua",
         -- 'grammarly',
-        -- 'emmet_ls',
+        -- ['emmet_ls'] = {},
         -- "go",
         -- "java",
         -- "markdown",

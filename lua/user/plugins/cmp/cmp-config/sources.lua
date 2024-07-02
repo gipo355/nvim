@@ -91,12 +91,13 @@ local preferred_sources = {
             -- if kind == "Snippet" and (ctx.prev_context.filetype ~= "html" and ctx.prev_context.filetype ~= "svelte") then
 
             -- snippet is a huge noise in lsp, prefer luasnip and copilot
-            if
-                kind == 'Snippet'
-                -- and ctx.prev_context.filetype == 'java'
-            then
-                return false
-            end
+            -- but breaks emmet
+            -- if
+            --     kind == 'Snippet'
+            --     -- and ctx.prev_context.filetype == 'java'
+            -- then
+            --     return false
+            -- end
 
             -- text is a huge noise in lsp, prefer copilot and buffer source
             if
