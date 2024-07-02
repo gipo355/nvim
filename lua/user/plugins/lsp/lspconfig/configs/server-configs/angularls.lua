@@ -10,8 +10,7 @@ M.setup = function()
         },
         root_dir = require('lspconfig').util.root_pattern(
             'angular.json',
-            'tsconfig.angular.json',
-            '.git'
+            'tsconfig.angular.json'
         ),
     }
 end
