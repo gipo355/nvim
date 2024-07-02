@@ -100,6 +100,8 @@ require('lazy').setup({
 
         { import = 'user.plugins.toggleterm' },
 
+        { import = 'user.plugins.http' },
+
         { import = 'user.plugins.cmp' },
         { import = 'user.plugins.ai' },
         { import = 'user.plugins.git' },

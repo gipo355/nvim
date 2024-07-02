@@ -70,7 +70,7 @@ return {
                 },
 
                 ['<leader>r'] = {
-                    name = '[R]est http',
+                    name = '[r] http',
                     _ = 'which_key_ignore',
                 },
 
