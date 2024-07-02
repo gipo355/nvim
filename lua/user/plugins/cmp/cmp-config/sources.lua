@@ -100,15 +100,15 @@ local preferred_sources = {
             -- end
 
             -- text is a huge noise in lsp, prefer copilot and buffer source
-            if
-                kind == 'Text'
-                -- and (
-                --     ctx.prev_context.filetype ~= 'html'
-                --     and ctx.prev_context.filetype ~= 'svelte'
-                -- )
-            then
-                return false
-            end
+            -- if
+            --     kind == 'Text'
+            --     -- and (
+            --     --     ctx.prev_context.filetype ~= 'html'
+            --     --     and ctx.prev_context.filetype ~= 'svelte'
+            --     -- )
+            -- then
+            --     return false
+            -- end
             return true
         end,
     },
