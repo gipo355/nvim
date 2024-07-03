@@ -82,7 +82,7 @@ _G.user.animate_scroll = false
 _G.user.enable_bufferline = false
 -- lualine plugin
 _G.user.lualine = {
-    enable = true,
+    enable = false,
     show_lsp = false,
 }
 -- disable builtin statusline
@@ -93,21 +93,28 @@ _G.user.tmux = {
 }
 -- show function scope at the top of the window (nvim-treesitter)
 _G.user.treesitter_context = {
-    enable = false,
-    max_lines = 3, -- maximum number of lines to show
+    enable = true,
+    max_lines = 1, -- maximum number of lines to show
     multiline_threshold = 1, -- max n of lines for single context
 }
 
 --
 
+--[[ Scrollbars, minimap ]]
+
 -- enable minimap and scrollbar on the right (mini.map plugin)
-_G.user.enable_minimap = false
-_G.user.minimap_width = 1 -- 1 for bar only or 10 for bar and map
-_G.user.minimap_winblend = 75 -- 0 to 100 transparency
+_G.user.mini_map = {
+    enable = true,
+    minimap_width = 10, -- 1 for bar only or 10 for bar and map
+    minimap_winblend = 75, -- 0 to 100 transparency
+    side = 'right', -- right or left
+}
 
 -- alternative minimap and scrollbar, satellite (good with arrow.nvim)
 -- lighter than mini map
-_G.user.enable_satellite_scrollbar = true
+_G.user.enable_satellite_scrollbar = false
+
+--
 
 -- WARN: heavy plugins, only enable when needed
 -- enable tailwindcss lspconfig start (huge lag)

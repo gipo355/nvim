@@ -292,7 +292,7 @@ return {
             -- use  local-highlight.nvim (faster), same as illuminate
             require('mini.cursorword').setup() -- highlight word under cursor
 
-            if _G.user.enable_minimap then
+            if _G.user.mini_map.enable then
                 local minimap = require('mini.map')
                 minimap.setup({
                     integrations = {
@@ -304,9 +304,9 @@ return {
                         encode = minimap.gen_encode_symbols.dot('4x2'),
                     },
                     window = {
-                        width = _G.user.minimap_width,
-                        winblend = _G.user.minimap_winblend,
-                        side = 'left',
+                        width = _G.user.mini_map.minimap_width,
+                        winblend = _G.user.mini_map.minimap_winblend,
+                        side = _G.user.mini_map.side,
                     },
                 }) -- lua Mini
                 vim.api.nvim_create_autocmd('BufEnter', {
