@@ -61,10 +61,9 @@ M.setup = function()
                     --         vim_item
                     --     )
 
-                    if _G.user.enable_tailwindcss then
-                        vim_item =
-                            tailwind_tools.lspkind_format(entry, vim_item)
-                    end
+                    -- if _G.user.enable_tailwindcss then
+                    vim_item = tailwind_tools.lspkind_format(entry, vim_item)
+                    -- end
 
                     return vim_item
                 end,
