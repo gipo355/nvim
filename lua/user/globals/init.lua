@@ -75,7 +75,9 @@ _G.user.animate_scroll = false
 _G.user.enable_bufferline = false
 
 -- lualine plugin
-_G.user.enable_lualine = true
+_G.user.lualine = {
+    enable = true,
+}
 
 -- show function scope at the top of the window (nvim-treesitter)
 _G.user.enable_treesitter_context = true
