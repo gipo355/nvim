@@ -181,7 +181,6 @@ o.shell = '/usr/bin/zsh'
 
 o.autowrite = true -- Enable auto write
 o.completeopt = 'menu,menuone,noinsert'
--- opt.conceallevel = 3 -- Hide * markup for bold and italic
 o.confirm = true -- Confirm to save changes before exiting modified buffer
 o.formatoptions = 'jcroqlnt' -- tcqj
 o.virtualedit = 'block' -- Allow cursor to move where there is no text in visual block mode
