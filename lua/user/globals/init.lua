@@ -104,7 +104,7 @@ _G.user.treesitter_context = {
 
 -- enable minimap and scrollbar on the right (mini.map plugin)
 _G.user.mini_map = {
-    enable = true,
+    enable = false,
     minimap_width = 10, -- 1 for bar only or 10 for bar and map
     minimap_winblend = 75, -- 0 to 100 transparency
     side = 'right', -- right or left
@@ -120,7 +120,7 @@ _G.user.enable_satellite_scrollbar = false
 -- enable tailwindcss lspconfig start (huge lag)
 -- BUG: enabling tailwind requires didChangeWatchedFiles capabilities to false to work (lspconfig)
 -- TODO: check if fixed
-_G.user.enable_tailwindcss = true
+_G.user.enable_tailwindcss = false
 -- enable CSS intellisense (nvim-html-css plugin) pretty heavy, only when needed
 _G.user.enable_css_intellisense_in_html = false
 
@@ -144,6 +144,7 @@ CMP sources
 --
 _G.user.enable_rg_intellisense_in_cmp = true
 _G.user.enable_buffer_intellisense_in_cmp = false
+_G.user.enable_text_search_in_cmp = false
 
 -- TODO: finish this, must alternate between deno and typescript tools
 -- use denolsp

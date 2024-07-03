@@ -72,6 +72,7 @@ local preferred_sources = {
     -- },
 
     -- filter out snippets and text, huge noise from real lsp suggestions
+
     {
         name = 'git',
         keyword_length = 2,
@@ -172,6 +173,8 @@ local preferred_sources = {
 
 local other_sources = {
     -- possible performance issues
+
+    -- buffer sources, laggy
     {
         name = 'buffer',
         keyword_length = 2,
@@ -204,7 +207,7 @@ M.set_sources = function(ev, cmp)
     local sources = preferred_sources
 
     -- append buffer source if the file is not too big
-    if not tooBig(ev.buf) then
+    if _G.user.enable_text_search_in_cmp and not tooBig(ev.buf) then
         -- sources[#sources + 1] = {
         --     name = 'buffer',
         --     keyword_length = 2,

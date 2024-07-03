@@ -43,6 +43,9 @@ return {
         config = function()
             local _, actions = pcall(require, 'telescope.actions')
 
+            local custom_functions =
+                require('user.plugins.telescope.utils.functions')
+
             -- Telescope is a fuzzy finder that comes with a lot of different things that
             -- it can fuzzy find! It's more than just a "file finder", it can search
             -- many different aspects of Neovim, your workspace, LSP, and more!
@@ -175,6 +178,40 @@ return {
                     --     '--hidden', -- thats the new thing
                     -- },
 
+                    mappings = {
+                        -- i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+                        i = {
+                            ['<C-h>'] = 'which_key',
+                            -- ['<C-d>'] = actions.delete_buffer,
+                            ['<C-d>'] = custom_functions.delete_files,
+                            ['<C-j>'] = actions.move_selection_next,
+                            ['<C-k>'] = actions.move_selection_previous,
+                            ['<C-n>'] = actions.cycle_history_next,
+                            ['<C-c>'] = actions.close,
+                            ['<C-p>'] = actions.cycle_history_prev,
+                            ['<C-f>'] = actions.to_fuzzy_refine,
+                            ['<C-q>'] = function(...)
+                                actions.smart_send_to_qflist(...)
+                                actions.open_qflist(...)
+                            end,
+                        },
+
+                        n = {
+                            ['<c-j>'] = actions.move_selection_next,
+                            ['dd'] = custom_functions.delete_files,
+                            -- ['dd'] = actions.delete_buffer,
+                            ['<C-c>'] = actions.close,
+                            ['q'] = actions.close,
+                            ['<C-k>'] = actions.move_selection_previous,
+                            ['<C-n>'] = actions.cycle_history_next,
+                            ['<C-p>'] = actions.cycle_history_prev,
+                            ['<C-q>'] = function(...)
+                                actions.smart_send_to_qflist(...)
+                                actions.open_qflist(...)
+                            end,
+                        },
+                    },
+
                     pickers = {
                         colorscheme = {
                             enable_preview = true,
@@ -207,14 +244,24 @@ return {
                                 '--hidden',
                                 '--follow',
                             },
+                            -- BUG: doesn't override default
+                            mappings = {
+                                ['i'] = {
+                                    ['<C-d>'] = custom_functions.delete_files,
+                                },
+                                ['n'] = {
+                                    ['dd'] = custom_functions.delete_files,
+                                },
+                            },
                         },
                         buffers = {
                             initial_mode = 'normal',
+                            -- BUG: doesn't override default
                             mappings = {
-                                i = {
+                                ['i'] = {
                                     ['<C-d>'] = actions.delete_buffer,
                                 },
-                                n = {
+                                ['n'] = {
                                     ['dd'] = actions.delete_buffer,
                                 },
                             },
@@ -225,38 +272,6 @@ return {
                         -- git_files = {
                         --     hidden = true,
                         -- },
-                    },
-
-                    mappings = {
-                        -- i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-                        i = {
-                            ['<C-h>'] = 'which_key',
-                            ['<C-d>'] = actions.delete_buffer,
-                            ['<C-j>'] = actions.move_selection_next,
-                            ['<C-k>'] = actions.move_selection_previous,
-                            ['<C-n>'] = actions.cycle_history_next,
-                            ['<C-c>'] = actions.close,
-                            ['<C-p>'] = actions.cycle_history_prev,
-                            ['<C-f>'] = actions.to_fuzzy_refine,
-                            ['<C-q>'] = function(...)
-                                actions.smart_send_to_qflist(...)
-                                actions.open_qflist(...)
-                            end,
-                        },
-
-                        n = {
-                            ['<C-j>'] = actions.move_selection_next,
-                            ['dd'] = actions.delete_buffer,
-                            ['<C-c>'] = actions.close,
-                            ['q'] = actions.close,
-                            ['<C-k>'] = actions.move_selection_previous,
-                            ['<C-n>'] = actions.cycle_history_next,
-                            ['<C-p>'] = actions.cycle_history_prev,
-                            ['<C-q>'] = function(...)
-                                actions.smart_send_to_qflist(...)
-                                actions.open_qflist(...)
-                            end,
-                        },
                     },
                 },
                 -- pickers = {}
