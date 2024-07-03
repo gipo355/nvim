@@ -47,13 +47,13 @@ return {
     -- show function context above
     {
         'nvim-treesitter/nvim-treesitter-context',
-        enabled = _G.user.enable_treesitter_context,
+        enabled = _G.user.treesitter_context.enable,
         event = 'BufReadPre',
         config = function()
             require('treesitter-context').setup({
-                max_lines = 5,
+                max_lines = _G.user.treesitter_context.max_lines,
                 line_numbers = true,
-                multiline_threshold = 3,
+                multiline_threshold = _G.user.treesitter_context.multiline_threshold,
                 trim_scope = 'outer', -- inner or outer
             })
         end,

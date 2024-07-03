@@ -80,7 +80,11 @@ _G.user.lualine = {
 }
 
 -- show function scope at the top of the window (nvim-treesitter)
-_G.user.enable_treesitter_context = true
+_G.user.treesitter_context = {
+    enable = true,
+    max_lines = 3, -- maximum number of lines to show
+    multiline_threshold = 1, -- max n of lines for single context
+}
 
 -- enable minimap and scrollbar on the right (mini.map plugin)
 _G.user.enable_minimap = false
