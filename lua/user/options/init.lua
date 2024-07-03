@@ -207,3 +207,8 @@ g.loaded_matchit = 1 -- for vim matchup (also matchparen)
 -- make popup menu transparent (good for cmp sometimes)
 -- value range [0,100]
 -- vim.opt.pumblend = 0
+
+-- disable builtin statusline
+if _G.user.disable_builtin_statusline then
+    vim.opt.laststatus = 0
+end

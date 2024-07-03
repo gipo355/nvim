@@ -71,20 +71,33 @@ _G.user.enable_sessions_autoload = false
 -- enable scroll animation and disable improved movements (laggy)
 _G.user.animate_scroll = false
 
+--[[
+
+ VERTICAL SPACE
+
+ Lualine, bufferline, treesitter context and built-in statusline occupy space at the top and bottom
+ disable all to get back 100% of the width
+]]
 -- enable bufferline (bufferline plugin)
 _G.user.enable_bufferline = false
-
 -- lualine plugin
 _G.user.lualine = {
     enable = true,
 }
-
+-- disable builtin statusline
+_G.user.disable_builtin_statusline = true
+-- disable status line in tmux to recover space
+_G.user.tmux = {
+    disable_statusline = true,
+}
 -- show function scope at the top of the window (nvim-treesitter)
 _G.user.treesitter_context = {
-    enable = true,
+    enable = false,
     max_lines = 3, -- maximum number of lines to show
     multiline_threshold = 1, -- max n of lines for single context
 }
+
+--
 
 -- enable minimap and scrollbar on the right (mini.map plugin)
 _G.user.enable_minimap = false

@@ -147,3 +147,17 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
         vim.opt_local.conceallevel = 0
     end,
 })
+
+-- disable statusline too if lualine is disabled to get all space back
+if _G.user.tmux.disable_statusline then
+    local cmd = vim.api.nvim_command
+
+    if os.getenv('TMUX') then
+        cmd('augroup tmux_something')
+        cmd('autocmd VimResume  * lua vim.fn.system("tmux set status off")')
+        cmd('autocmd VimEnter   * lua vim.fn.system("tmux set status off")')
+        cmd('autocmd VimLeave   * lua vim.fn.system("tmux set status on")')
+        cmd('autocmd VimSuspend * lua vim.fn.system("tmux set status on")')
+        cmd('augroup END')
+    end
+end
