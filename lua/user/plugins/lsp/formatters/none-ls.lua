@@ -219,7 +219,8 @@ return {
             -- COMPLETION
             -- ###
 
-            null_ls.builtins.completion.spell,
+            -- -- too noisy in cmp
+            -- null_ls.builtins.completion.spell,
             null_ls.builtins.completion.tags,
 
             -- ###

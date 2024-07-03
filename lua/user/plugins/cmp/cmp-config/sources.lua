@@ -100,6 +100,8 @@ local preferred_sources = {
             --     return false
             -- end
 
+            -- NOTE: none-ls adds sources here. spell was adding noise
+
             -- text is a huge noise in lsp, prefer copilot and buffer source
             -- if
             --     kind == 'Text'
