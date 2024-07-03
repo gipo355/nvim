@@ -43,7 +43,7 @@ return {
             },
             lualine_x = {
                 components.diagnostics,
-                components.lsp,
+                -- components.lsp,
                 {
                     'copilot',
                     show_colors = true,

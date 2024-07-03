@@ -17,12 +17,12 @@ M.callback = function(event)
         vim.lsp.with(vim.lsp.handlers.hover, { border = 'single' })
 
     -- set keymap to open lspinfo and mason
-    vim.keymap.set(
-        'n',
-        '<leader>lz',
-        '<cmd>LspInfo<cr>',
-        { buffer = event.buf, desc = 'lspinfo' }
-    )
+    -- vim.keymap.set(
+    --     'n',
+    --     '<leader>lz',
+    --     '<cmd>LspInfo<cr>',
+    --     { buffer = event.buf, desc = 'lspinfo' }
+    -- )
     vim.keymap.set(
         'n',
         '<leader>lr',
@@ -127,9 +127,9 @@ M.callback = function(event)
     -- f = { "<cmd>lua require('lvim.lsp.utils').format()<cr>", "Format" },
     map('n', '<leader>lF', vim.lsp.buf.format, 'format')
     -- i = { "<cmd>LspInfo<cr>", "Info" },
-    map('n', '<leader>li', '<cmd>LspInfo', 'lspinfo')
+    map('n', '<leader>li', '<cmd>LspInfo<cr>', 'lspinfo')
     -- I = { "<cmd>Mason<cr>", "Mason Info" },
-    map('n', '<leader>lI', '<cmd>Mason<cr>', 'mason info')
+    -- map('n', '<leader>lI', '<cmd>Mason<cr>', 'mason info')
     -- j = {
     --   "<cmd>lua vim.diagnostic.goto_next()<cr>",
     --   "Next Diagnostic",
