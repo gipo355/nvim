@@ -5,7 +5,9 @@ local M = {}
 local preferred_sources = {
 
     {
-        name = 'html-css', -- plugin
+        -- plugin, only active if _G.user.enable_css_intellisense_in_html is true
+        -- pretty heavy
+        name = 'html-css',
         option = {
             enable_on = {
                 'html',
@@ -73,12 +75,6 @@ local preferred_sources = {
 
     -- filter out snippets and text, huge noise from real lsp suggestions
 
-    {
-        name = 'git',
-        keyword_length = 2,
-        max_item_count = 5,
-    },
-
     -- lsp
     {
         name = 'nvim_lsp',
@@ -86,34 +82,40 @@ local preferred_sources = {
         max_item_count = 50,
 
         -- filter out snippets and text, huge noise from real lsp suggestions
-        entry_filter = function(entry, ctx)
-            local kind = cmp_types.lsp.CompletionItemKind[entry:get_kind()]
+        -- entry_filter = function(entry, ctx)
+        --     local kind = cmp_types.lsp.CompletionItemKind[entry:get_kind()]
+        --
+        --     -- if kind == "Snippet" and (ctx.prev_context.filetype ~= "html" and ctx.prev_context.filetype ~= "svelte") then
+        --
+        --     -- snippet is a huge noise in lsp, prefer luasnip and copilot
+        --     -- but breaks emmet
+        --     -- if
+        --     --     kind == 'Snippet'
+        --     --     -- and ctx.prev_context.filetype == 'java'
+        --     -- then
+        --     --     return false
+        --     -- end
+        --
+        --     -- NOTE: none-ls adds sources here. spell was adding noise
+        --
+        --     -- text is a huge noise in lsp, prefer copilot and buffer source
+        --     -- if
+        --     --     kind == 'Text'
+        --     --     -- and (
+        --     --     --     ctx.prev_context.filetype ~= 'html'
+        --     --     --     and ctx.prev_context.filetype ~= 'svelte'
+        --     --     -- )
+        --     -- then
+        --     --     return false
+        --     -- end
+        --     return true
+        -- end,
+    },
 
-            -- if kind == "Snippet" and (ctx.prev_context.filetype ~= "html" and ctx.prev_context.filetype ~= "svelte") then
-
-            -- snippet is a huge noise in lsp, prefer luasnip and copilot
-            -- but breaks emmet
-            -- if
-            --     kind == 'Snippet'
-            --     -- and ctx.prev_context.filetype == 'java'
-            -- then
-            --     return false
-            -- end
-
-            -- NOTE: none-ls adds sources here. spell was adding noise
-
-            -- text is a huge noise in lsp, prefer copilot and buffer source
-            -- if
-            --     kind == 'Text'
-            --     -- and (
-            --     --     ctx.prev_context.filetype ~= 'html'
-            --     --     and ctx.prev_context.filetype ~= 'svelte'
-            --     -- )
-            -- then
-            --     return false
-            -- end
-            return true
-        end,
+    {
+        name = 'git',
+        keyword_length = 2,
+        max_item_count = 5,
     },
 
     {
@@ -173,27 +175,6 @@ local preferred_sources = {
     -- },
 }
 
-local other_sources = {
-    -- possible performance issues
-
-    -- buffer sources, laggy
-    {
-        name = 'buffer',
-        keyword_length = 2,
-        max_item_count = 5,
-    },
-    {
-        name = 'rg',
-        -- Try it when you feel cmp performance is poor
-        keyword_length = 2,
-        max_item_count = 5,
-        option = {
-            -- additional_arguments = '--smart-case --hidden -g "!.git" -g "!pnpm-lock.yaml" -g "!package-lock.json" -g "!node_modules" -g "!*cache',
-            additional_arguments = '--smart-case',
-        },
-    },
-}
-
 local tooBig = function(bufnr)
     local max_filesize = 10 * 1024 -- 100 KB
     local check_stats = (vim.uv or vim.loop).fs_stat
@@ -205,17 +186,56 @@ local tooBig = function(bufnr)
     end
 end
 
+-- local other_sources = {
+--     -- possible performance issues
+--
+--     -- buffer sources, laggy
+--     {
+--         name = 'buffer',
+--         keyword_length = 2,
+--         max_item_count = 5,
+--     },
+--     {
+--         name = 'rg',
+--         -- Try it when you feel cmp performance is poor
+--         keyword_length = 2,
+--         max_item_count = 5,
+--         option = {
+--             -- additional_arguments = '--smart-case --hidden -g "!.git" -g "!pnpm-lock.yaml" -g "!package-lock.json" -g "!node_modules" -g "!*cache',
+--             additional_arguments = '--smart-case',
+--         },
+--     },
+-- }
+
 M.set_sources = function(ev, cmp)
     local sources = preferred_sources
 
     -- append buffer source if the file is not too big
-    if _G.user.enable_text_search_in_cmp and not tooBig(ev.buf) then
+    -- this appends last, prio is given to other sources
+    if _G.user.cmp_sources.enable and not tooBig(ev.buf) then
+        if _G.user.cmp_sources.buffer then
+            sources[#sources + 1] = {
+                name = 'buffer',
+                keyword_length = 2,
+                max_item_count = 5,
+            }
+        end
+        if _G.user.cmp_sources.ripgrep then
+            sources[#sources + 1] = {
+                name = 'rg',
+                keyword_length = 2,
+                max_item_count = 5,
+                option = {
+                    additional_arguments = '--smart-case',
+                },
+            }
+        end
         -- sources[#sources + 1] = {
         --     name = 'buffer',
         --     keyword_length = 2,
         --     max_item_count = 5,
         -- }
-        sources = vim.list_extend(sources, other_sources)
+        -- sources = vim.list_extend(sources, other_sources)
     end
 
     -- set the sources

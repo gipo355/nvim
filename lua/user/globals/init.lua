@@ -120,7 +120,7 @@ _G.user.enable_satellite_scrollbar = false
 -- enable tailwindcss lspconfig start (huge lag)
 -- BUG: enabling tailwind requires didChangeWatchedFiles capabilities to false to work (lspconfig)
 -- TODO: check if fixed
-_G.user.enable_tailwindcss = true
+_G.user.enable_tailwindcss = false
 -- enable CSS intellisense (nvim-html-css plugin) pretty heavy, only when needed
 _G.user.enable_css_intellisense_in_html = false
 
@@ -137,14 +137,19 @@ _G.user.picker_use_fzf_lua = false
 _G.user.enable_ufo = false
 
 --[[
-CMP sources
+CMP heavy sources
+ripgrep and buffer
  those cmp sources are heavy
  cmp ripgrep search in cmp (cmp plugin)
 ]]
 --
+_G.user.cmp_sources = {
+    enable = true,
+    buffer = false,
+    ripgrep = true,
+}
 _G.user.enable_rg_intellisense_in_cmp = true
 _G.user.enable_buffer_intellisense_in_cmp = false
-_G.user.enable_text_search_in_cmp = false
 
 -- TODO: finish this, must alternate between deno and typescript tools
 -- use denolsp
@@ -174,7 +179,7 @@ _G.user.theme = function()
 
     -- my favorites
 
-    -- return 'monokai-pro'
+    return 'monokai-pro'
     -- return 'gruvbox-baby'
     -- return 'kanagawa'
     -- return 'material'
@@ -183,7 +188,7 @@ _G.user.theme = function()
     -- return 'catppuccin'
 
     -- have light variant
-    return 'gruvbox-material'
+    -- return 'gruvbox-material'
     -- return 'kanagawa-lotus'
     -- return 'melange'
     -- return 'rose-pine'

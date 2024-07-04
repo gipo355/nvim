@@ -125,7 +125,57 @@ M.setup = function()
                             lspserver_name = entry.source.source.client.name
                             -- print('client name ' + lspserver_name) -- typescript_tools
                             -- print('client name ' + lspserver_name) -- typescript_tools
-                            vim_item.menu = lspserver_name
+
+                            -- if name is long e.g. typescript_tools, shorten it
+
+                            -- split the string by underscore or camelcase or pascalcase or kebabcase or snakecase and get the first word of each
+
+                            -- if string.len(lspserver_name) > 10 then
+                            --     lspserver_name =
+                            --         string.sub(lspserver_name, 1, 5)
+                            -- end
+
+                            -- if string is longer than 5 chars, shorten it
+                            if string.len(lspserver_name) > 5 then
+                                local t = {}
+                                -- split by underscore, kebabcase or snakecase
+                                for str in
+                                    string.gmatch(lspserver_name, '([^_%-]+)')
+                                do
+                                    table.insert(t, str)
+                                end
+                                -- split by camelcase or pascalcase
+                                for i, str in ipairs(t) do
+                                    local camelCaseSplit = {}
+                                    for camel in
+                                        string.gmatch(str, '([%a][%l]*)')
+                                    do
+                                        table.insert(camelCaseSplit, camel)
+                                    end
+                                    -- first word
+                                    -- t[i] = camelCaseSplit[1]
+                                    -- first letter of each word
+
+                                    -- we always want to have 5 characters
+                                    -- e.g. typescript_tools -> typet
+                                    -- e.g. emmet_language_server -> emmet
+
+                                    t[i] = camelCaseSplit[1]:sub(1, 1)
+                                end
+                                -- vim_item.menu = table.concat(t, '')
+                                -- set vim_item.menu as the first word of each element in the table surrounded by square brackets
+                                vim_item.menu = '['
+                                    .. 'LSP: '
+                                    .. table.concat(t, '')
+                                    .. ']'
+
+                                -- vim_item.menu = lspserver_name
+                            else
+                                vim_item.menu = '['
+                                    .. 'LSP: '
+                                    .. lspserver_name
+                                    .. ']'
+                            end
                         end)
                     end
 

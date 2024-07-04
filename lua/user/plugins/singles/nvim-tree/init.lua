@@ -143,7 +143,7 @@ return {
                     full_name = false,
                     highlight_opened_files = 'all',
                     root_folder_label = ':t',
-                    indent_width = 2,
+                    indent_width = 4,
                     indent_markers = {
                         enable = true,
                         inline_arrows = true,
