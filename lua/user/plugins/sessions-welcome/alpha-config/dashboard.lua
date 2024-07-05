@@ -5,7 +5,8 @@ math.randomseed(os.time())
 
 local function pick_color()
     local colors = { 'String', 'Identifier', 'Keyword', 'Number' }
-    return colors[math.random(#colors)]
+    -- return colors[math.random(#colors)]
+    return 'Keyword'
 end
 
 local function footer()
