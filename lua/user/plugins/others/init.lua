@@ -17,21 +17,6 @@ local opts = require('user.utils.options').global_keymap_opts
 -- See the kickstart.nvim README for more information
 return {
 
-    -- easily move windows
-    {
-        'sindrets/winshift.nvim',
-        event = 'BufWinEnter',
-        config = function()
-            require('winshift').setup()
-            vim.keymap.set(
-                'n',
-                '<C-w>a',
-                '<cmd>WinShift<cr>',
-                set_desc('WinShiftLeft')
-            )
-        end,
-    },
-
     { 'nvim-treesitter/nvim-treesitter-textobjects', event = 'BufReadPre' },
 
     { 'JoosepAlviste/nvim-ts-context-commentstring', event = 'BufReadPre' },
