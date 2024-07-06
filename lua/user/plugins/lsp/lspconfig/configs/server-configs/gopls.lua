@@ -2,7 +2,16 @@ local M = {}
 M.setup = function()
     return {
         -- https://github.com/Integralist/nvim/blob/main/lua/plugins/lsp.lua#L10-L92
-        on_attach = function()
+        on_attach = function(client, bufnr)
+            -- override to map and provide refactoring functions
+            vim.keymap.set(
+                { 'n', 'v' },
+                '<C-c>',
+                -- ':Lspsaga code_action<cr>',
+                vim.lsp.buf.code_action,
+                { buffer = bufnr, desc = 'lsp code action' }
+            )
+
             vim.lsp.inlay_hint.enable() -- uncomment to enable inlay hints for go
         end,
         capabilities = {

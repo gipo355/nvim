@@ -24,6 +24,14 @@ return {
                     'deno.jsonc'
                 ),
                 on_attach = function(client, bufnr)
+                    vim.keymap.set(
+                        { 'n', 'v' },
+                        '<C-c>',
+                        -- ':Lspsaga code_action<cr>',
+                        vim.lsp.buf.code_action,
+                        { buffer = bufnr, desc = 'lsp code action' }
+                    )
+
                     -- vim.lsp.codelens.refresh()
                     vim.lsp.inlay_hint.enable()
 
