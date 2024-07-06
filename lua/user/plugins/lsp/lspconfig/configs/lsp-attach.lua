@@ -209,6 +209,15 @@ M.callback = function(event)
     --         }
     --     )
     -- end
+
+    -- override to map and provide refactoring functions
+    vim.keymap.set(
+        { 'n', 'v' },
+        '<C-c>',
+        -- ':Lspsaga code_action<cr>',
+        vim.lsp.buf.code_action,
+        { buffer = event.buf, desc = 'lsp code action' }
+    )
 end
 
 return M

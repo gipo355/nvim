@@ -83,12 +83,20 @@ return {
                     end
                     ----
 
+                    -- override to map and provide refactoring functions
                     vim.keymap.set(
                         { 'n', 'v' },
-                        '<leader>va',
-                        ':Lspsaga code_action<cr>',
+                        '<C-c>',
+                        -- ':Lspsaga code_action<cr>',
+                        vim.lsp.buf.code_action,
                         { buffer = bufnr, desc = 'ts code actions' }
                     )
+                    -- vim.keymap.set(
+                    --     { 'n', 'v' },
+                    --     '<leader>va',
+                    --     vim.lsp.buf.code_action,
+                    --     { buffer = bufnr, desc = 'ts code actions' }
+                    -- )
                     -- vim.lsp.inlay_hint.enable() -- uncomment to enable inlay hints for typescript
                     -- vim.lsp.codelens.refresh()
                     -- vim.diagnostic.disable()
@@ -373,6 +381,7 @@ return {
 
                     -- mirror of VSCode's `typescript.suggest.completeFunctionCalls`
                     complete_function_calls = true,
+                    include_completions_with_insert_text = true,
                 },
             })
 
