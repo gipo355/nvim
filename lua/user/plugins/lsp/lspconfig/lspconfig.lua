@@ -4,7 +4,8 @@ local lsp_attach_callback =
 -- TODO: add custom filetypes for lsps
 
 -- Set the log level for the LSP server for debugging
-vim.lsp.set_log_level('off') -- off, error, warn, info, debug
+-- in ~/.local
+vim.lsp.set_log_level('debug') -- off, error, warn, info, debug
 
 require('user.plugins.lsp.lspconfig.configs.global-config').setup()
 
