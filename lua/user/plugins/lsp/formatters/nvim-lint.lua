@@ -32,23 +32,23 @@ return {
             -- javascript = { 'eslint_d' },
             -- javascriptreact = { 'eslint_d' },
             -- gitcommit = { 'commitlint' },
-            html = { 'snyk_iac', 'htmlhint', 'biomejs' },
+            html = { 'snyk_iac', 'htmlhint' },
 
             ['angular.html'] = {
                 -- 'snyk_iac',
                 'htmlhint',
             },
 
-            astro = { 'biomejs' },
-            vue = { 'biomejs' },
+            astro = {},
+            vue = {},
+            json = {},
+            jsonc = {},
+            css = {},
 
-            json = { 'biomejs' },
-            jsonc = { 'biomejs' },
-            css = { 'biomejs' },
-            typescript = { 'snyk_iac', 'biomejs' },
-            javascript = { 'biomejs' },
-            typescriptreact = { 'biomejs' },
-            javascriptreact = { 'biomejs' },
+            typescript = { 'snyk_iac' },
+            javascript = {},
+            typescriptreact = {},
+            javascriptreact = {},
 
             go = { 'snyk_iac' },
 

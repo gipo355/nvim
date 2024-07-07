@@ -1,7 +1,6 @@
 local M = {}
 M.setup = function(capabilities)
     return {
-
         capabilities = capabilities,
         root_dir = require('lspconfig').util.root_pattern({
             'package.json',
