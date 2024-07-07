@@ -32,15 +32,30 @@ return {
             -- javascript = { 'eslint_d' },
             -- javascriptreact = { 'eslint_d' },
             -- gitcommit = { 'commitlint' },
-            html = { 'snyk_iac', 'htmlhint' },
+            html = { 'snyk_iac', 'htmlhint', 'biomejs' },
+
             ['angular.html'] = {
                 -- 'snyk_iac',
                 'htmlhint',
             },
-            typescript = { 'snyk_iac' },
+
+            astro = { 'biomejs' },
+            vue = { 'biomejs' },
+
+            json = { 'biomejs' },
+            jsonc = { 'biomejs' },
+            css = { 'biomejs' },
+            typescript = { 'snyk_iac', 'biomejs' },
+            javascript = { 'biomejs' },
+            typescriptreact = { 'biomejs' },
+            javascriptreact = { 'biomejs' },
+
             go = { 'snyk_iac' },
+
             java = { 'snyk_iac' },
+
             rust = { 'snyk_iac' },
+
             dockerfile = { 'hadolint' },
         }
 
