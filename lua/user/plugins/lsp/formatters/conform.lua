@@ -93,13 +93,37 @@ return {
                 --         },
             }
             -- NOTE: at the moment we use only none-ls
+            local slow_format_filetypes = {}
+
             require('conform').setup({
                 notify_on_error = false,
-                format_on_save = {
-                    timeout_ms = 1500,
-                    lsp_fallback = true, -- true, false, 'always'
-                },
+                -- format_on_save = {
+                --     timeout_ms = 1500,
+                --     lsp_fallback = true, -- true, false, 'always'
+                -- },
                 formatters_by_ft = formatters_by_ft,
+
+                -- This snippet will automatically detect which formatters take too long to run synchronously and will run them async on save instead.
+                format_on_save = function(bufnr)
+                    if slow_format_filetypes[vim.bo[bufnr].filetype] then
+                        return
+                    end
+                    local function on_format(err)
+                        if err and err:match('timeout$') then
+                            slow_format_filetypes[vim.bo[bufnr].filetype] = true
+                        end
+                    end
+
+                    return { timeout_ms = 200, lsp_format = 'fallback' },
+                        on_format
+                end,
+
+                format_after_save = function(bufnr)
+                    if not slow_format_filetypes[vim.bo[bufnr].filetype] then
+                        return
+                    end
+                    return { lsp_format = 'fallback' }
+                end,
             })
             -- better than eslint_d
             -- vim.api.nvim_create_autocmd('BufWritePre', {
