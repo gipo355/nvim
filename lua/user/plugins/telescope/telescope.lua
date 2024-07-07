@@ -126,7 +126,11 @@ return {
 
                     -- ### truncate instead of smart: monorepo same filenames can't distinguish
                     path_display = {
-                        'filename_first', -- 'shorten', 'absolute', 'smart' 'truncate', 'filename first'
+                        -- 'shorten', 'absolute', 'smart' 'truncate', 'filename first'
+                        -- 'filename_first',
+                        -- 'shorten',
+                        -- 'smart',
+                        'truncate',
                     },
 
                     cache_picker = {
