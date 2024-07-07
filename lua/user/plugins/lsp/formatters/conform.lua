@@ -63,12 +63,13 @@ return {
                 vue = { 'prettierd' },
                 less = { 'prettierd' },
 
-                json = { 'biome' },
-                jsonc = { 'biome' },
-                javascript = { 'biome' },
-                javascriptreact = { 'biome' },
-                typescript = { 'biome' },
-                typescriptreact = { 'biome' },
+                -- these should be formatted by lsp biome
+                -- json = { 'biome' },
+                -- jsonc = { 'biome' },
+                -- javascript = { 'biome' },
+                -- javascriptreact = { 'biome' },
+                -- typescript = { 'biome' },
+                -- typescriptreact = { 'biome' },
 
                 java = { 'google-java-format' },
                 --         go = {
