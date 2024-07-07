@@ -80,13 +80,14 @@ M.load_servers = function(capabilities)
             'user.plugins.lsp.lspconfig.configs.server-configs.kotlin_language_server'
         ).setup(),
 
-        vuels = {
-            root_dir = require('lspconfig').util.root_pattern('vue.config.js'),
-        },
-
-        volar = require(
-            'user.plugins.lsp.lspconfig.configs.server-configs.volar'
-        ).setup(),
+        -- vuels = {
+        --     root_dir = require('lspconfig').util.root_pattern('vue.config.js'),
+        -- },
+        -- ['vue-language-server'] = {},
+        volar = {},
+        -- volar = require(
+        --     'user.plugins.lsp.lspconfig.configs.server-configs.volar'
+        -- ).setup(),
 
         ltex = {
             filetypes = { 'tex', 'latex', 'markdown', 'mdx' },
