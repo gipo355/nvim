@@ -57,16 +57,19 @@ return {
                 yaml = { 'prettierd' },
                 markdown = { 'prettierd' },
                 pug = { 'prettierd' },
-                json = { 'prettierd' },
-                jsonc = { 'prettierd' },
+
                 astro = { 'prettierd' },
-                javascript = { 'prettierd' },
-                javascriptreact = { 'prettierd' },
-                typescript = { 'prettierd' },
-                typescriptreact = { 'prettierd' },
                 svelte = { 'prettierd' },
                 vue = { 'prettierd' },
                 less = { 'prettierd' },
+
+                json = { 'biome' },
+                jsonc = { 'biome' },
+                javascript = { 'biome' },
+                javascriptreact = { 'biome' },
+                typescript = { 'biome' },
+                typescriptreact = { 'biome' },
+
                 java = { 'google-java-format' },
                 --         go = {
                 --             {
