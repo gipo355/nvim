@@ -1294,7 +1294,7 @@
 			"    children?: React.ReactNode;",
 			"};",
 			"",
-			"export const ${1:${TM_FILENAME_BASE}} = (): JSX.Element => {",
+			"export const ${1:${TM_FILENAME_BASE}} = (): React.JSX.Element => {",
 			"    return (",
 			"        <>",
 			"            <div>${1:first}</div>",
