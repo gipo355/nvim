@@ -20,6 +20,11 @@ return {
         -- vim.g.gruvbox_baby_function_style = 'NONE'
         -- vim.g.gruvbox_baby_keyword_style = 'NONE'
         vim.g.gruvbox_baby_highlights = {
+            -- https://github.com/luisiacc/gruvbox-baby/issues/70
+            IncSearch = { bg = '#ff9e64', fg = 'White' },
+            CurSearch = { link = 'IncSearch' },
+            Cursor = { bg = 'gray' },
+
             -- TSVariableBuiltin = { fg = '#078b80', style = 'italic' },
             -- TSFunction = { fg = '#d6aa2f', style = 'bold' },
             -- TSFunctionBuiltin = { fg = '#be972a' },
