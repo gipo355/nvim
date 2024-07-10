@@ -74,6 +74,11 @@ return {
                     _ = 'which_key_ignore',
                 },
 
+                ['<leader>N'] = {
+                    name = '[n]x',
+                    _ = 'which_key_ignore',
+                },
+
                 ['<leader>s'] = { name = '[s]earch', _ = 'which_key_ignore' },
                 ['<leader>S'] = { name = '[S]ession', _ = 'which_key_ignore' },
 

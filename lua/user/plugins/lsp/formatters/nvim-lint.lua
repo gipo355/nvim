@@ -45,9 +45,9 @@ return {
             jsonc = {},
             css = {},
 
-            typescript = { 'snyk_iac' },
+            typescript = { 'snyk_iac', 'biomejs' },
             javascript = {},
-            typescriptreact = {},
+            typescriptreact = { 'biomejs' },
             javascriptreact = {},
 
             go = { 'snyk_iac' },
