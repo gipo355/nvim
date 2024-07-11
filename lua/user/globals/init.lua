@@ -295,3 +295,8 @@ _G.user.root_patterns = {
 -- enable autocompletion delay for cmp, buggy?
 _G.user.enable_autocomplete_delay = false -- trying performance throttle in cmp
 _G.user.autocomplete_delay = 200
+
+--[[ 
+  Enable java plugin, pretty heavy
+]]
+_G.user.enable_java_plugin = false

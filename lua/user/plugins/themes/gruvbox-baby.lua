@@ -26,9 +26,17 @@ return {
             Cursor = { bg = 'gray' },
 
             -- TSVariableBuiltin = { fg = '#078b80', style = 'italic' },
+
             -- TSFunction = { fg = '#d6aa2f', style = 'bold' },
             -- TSFunctionBuiltin = { fg = '#be972a' },
             -- TSMethod = { fg = '#d6aa2f', style = 'bold' },
+            ['@function'] = { fg = '#b8bb26', style = 'bold' },
+            ['@function.method'] = { fg = '#b8bb26', style = 'bold' },
+            ['@lsp.type.function'] = { fg = '#b8bb26', style = 'bold' },
+
+            -- #b8bb26
+            -- #b0b846
+
             -- TSTypeBuiltin = { fg = '#4e9951', style = 'italic' },
             -- TSOperator = { fg = '#fb4934', style = 'italic' },
             -- TSPunctSpecial = { fg = '#fb4934', style = 'italic' },

@@ -32,7 +32,10 @@ return {
             -- javascript = { 'eslint_d' },
             -- javascriptreact = { 'eslint_d' },
             -- gitcommit = { 'commitlint' },
-            html = { 'snyk_iac', 'htmlhint' },
+            html = {
+                -- 'snyk_iac',
+                'htmlhint',
+            },
 
             ['angular.html'] = {
                 -- 'snyk_iac',
@@ -45,16 +48,19 @@ return {
             jsonc = {},
             css = {},
 
-            typescript = { 'snyk_iac', 'biomejs' },
+            typescript = {
+                -- 'snyk_iac',
+                'biomejs',
+            },
             javascript = {},
             typescriptreact = { 'biomejs' },
             javascriptreact = {},
 
-            go = { 'snyk_iac' },
-
-            java = { 'snyk_iac' },
-
-            rust = { 'snyk_iac' },
+            -- go = { 'snyk_iac' },
+            --
+            -- java = { 'snyk_iac' },
+            --
+            -- rust = { 'snyk_iac' },
 
             dockerfile = { 'hadolint' },
         }
