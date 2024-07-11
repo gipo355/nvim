@@ -32,6 +32,7 @@ return {
             -- TSMethod = { fg = '#d6aa2f', style = 'bold' },
             ['@function'] = { fg = '#b8bb26', style = 'bold' },
             ['@function.method'] = { fg = '#b8bb26', style = 'bold' },
+            ['@function.method.call'] = { fg = '#b8bb26', style = 'bold' },
             ['@lsp.type.function'] = { fg = '#b8bb26', style = 'bold' },
 
             -- #b8bb26
