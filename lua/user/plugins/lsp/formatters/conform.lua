@@ -64,12 +64,18 @@ return {
                 less = { 'prettierd' },
 
                 -- these should be formatted by lsp biome
-                json = { 'biome' },
-                jsonc = { 'biome' },
-                javascript = { 'biome' },
-                javascriptreact = { 'biome' },
-                typescript = { 'biome' },
-                typescriptreact = { 'biome' },
+                -- json = { 'biome' },
+                -- jsonc = { 'biome' },
+                -- javascript = { 'biome' },
+                -- javascriptreact = { 'biome' },
+                -- typescript = { 'biome' },
+                -- typescriptreact = { 'biome' },
+                json = { 'prettierd' },
+                jsonc = { 'prettierd' },
+                javascript = { 'prettierd' },
+                javascriptreact = { 'prettierd' },
+                typescript = { 'prettierd' },
+                typescriptreact = { 'prettierd' },
 
                 java = { 'google-java-format' },
                 --         go = {

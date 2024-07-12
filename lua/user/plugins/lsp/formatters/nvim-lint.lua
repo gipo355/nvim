@@ -48,12 +48,12 @@ return {
             jsonc = {},
             css = {},
 
-            typescript = {
-                -- 'snyk_iac',
-                'biomejs',
-            },
+            -- typescript = {
+            --     -- 'snyk_iac',
+            --     'biomejs',
+            -- },
             javascript = {},
-            typescriptreact = { 'biomejs' },
+            -- typescriptreact = { 'biomejs' },
             javascriptreact = {},
 
             -- go = { 'snyk_iac' },
