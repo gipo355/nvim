@@ -30,10 +30,11 @@ return {
             -- TSFunction = { fg = '#d6aa2f', style = 'bold' },
             -- TSFunctionBuiltin = { fg = '#be972a' },
             -- TSMethod = { fg = '#d6aa2f', style = 'bold' },
-            ['@function'] = { fg = '#b8bb26', style = 'bold' },
-            ['@function.method'] = { fg = '#b8bb26', style = 'bold' },
-            ['@function.method.call'] = { fg = '#b8bb26', style = 'bold' },
             ['@lsp.type.function'] = { fg = '#b8bb26', style = 'bold' },
+            ['@function'] = { fg = '#b0b846' },
+            ['@function.call'] = { fg = '#b8bb26', style = 'bold' },
+            ['@function.method'] = { fg = '#b0b846' },
+            ['@function.method.call'] = { fg = '#b8bb26', style = 'bold' },
 
             -- #b8bb26
             -- #b0b846
