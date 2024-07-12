@@ -331,7 +331,18 @@ return {
             )
 
             -- replaces oil.nvim
-            require('mini.files').setup()
+            require('mini.files').setup({
+                windows = {
+                    -- Maximum number of windows to show side by side
+                    max_number = math.huge,
+                    -- Whether to show preview of directory under cursor
+                    preview = true,
+                    -- Width of focused window
+                    width_focus = 50,
+                    -- Width of non-focused window
+                    width_nofocus = 15,
+                },
+            })
             -- vim.keymap.set('n', '<leader>-', function()
             -- vim.keymap.set('n', '<leader>R', function()
             vim.keymap.set('n', '<C-t>', function()
