@@ -12,7 +12,7 @@ M.setup = function()
                 { buffer = bufnr, desc = 'lsp code action' }
             )
 
-            vim.lsp.inlay_hint.enable() -- uncomment to enable inlay hints for go
+            -- vim.lsp.inlay_hint.enable() -- uncomment to enable inlay hints for go
         end,
         capabilities = {
             textDocument = {

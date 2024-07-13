@@ -14,7 +14,7 @@ return {
                         { buffer = bufnr, desc = 'lsp code action' }
                     )
 
-                    vim.lsp.inlay_hint.enable() -- uncomment to enable inlay hints for rust
+                    -- vim.lsp.inlay_hint.enable() -- uncomment to enable inlay hints for rust
                     -- vim.lsp.codelens.refresh()
                     -- vim.diagnostic.disable()
                 end,

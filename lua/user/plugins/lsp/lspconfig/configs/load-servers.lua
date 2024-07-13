@@ -60,9 +60,9 @@ M.load_servers = function(capabilities)
         ).setup(capabilities),
 
         -- BUG: not always working, using nvim-lint
-        biome = require(
-            'user.plugins.lsp.lspconfig.configs.server-configs.biome'
-        ).setup(capabilities),
+        -- biome = require(
+        --     'user.plugins.lsp.lspconfig.configs.server-configs.biome'
+        -- ).setup(capabilities),
 
         jsonls = require(
             'user.plugins.lsp.lspconfig.configs.server-configs.jsonls'

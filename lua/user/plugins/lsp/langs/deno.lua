@@ -33,7 +33,7 @@ return {
                     )
 
                     -- vim.lsp.codelens.refresh()
-                    vim.lsp.inlay_hint.enable()
+                    -- vim.lsp.inlay_hint.enable()
 
                     local active_clients = vim.lsp.get_clients()
 

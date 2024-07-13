@@ -13,7 +13,7 @@ M.setup = function()
                 { buffer = bufnr, desc = 'lsp code action' }
             )
 
-            vim.lsp.inlay_hint.enable()
+            -- vim.lsp.inlay_hint.enable()
         end,
         settings = {
             Lua = {
