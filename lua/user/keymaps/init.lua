@@ -438,7 +438,10 @@ vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 --
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', set_desc('Exit terminal mode'))
+-- remove, breaks lazygit
+-- vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', set_desc('Exit terminal mode'))
+vim.keymap.set('t', '<C-c>', '<C-\\><C-n>', set_desc('Exit terminal mode'))
+
 -- vim.keymap.set('t', '<esc><esc>', '<c-\\><c-n>', set_desc('Enter Normal Mode')) -- double keymap
 
 vim.keymap.set('t', '<C-h>', '<cmd>wincmd h<cr>', set_desc('Go to left window'))
