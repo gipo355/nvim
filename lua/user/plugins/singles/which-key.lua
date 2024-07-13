@@ -18,28 +18,55 @@ return {
         'folke/which-key.nvim',
         event = 'VimEnter', -- Sets the loading event to 'VimEnter'
         config = function() -- This is the function that runs, AFTER loading
-            require('which-key').setup({
-                popup_mappings = {
-                    scroll_down = '<c-d>', -- binding to scroll down inside the popup
-                    scroll_up = '<c-u>', -- binding to scroll up inside the popup
+            local wk = require('which-key')
+            wk.setup({
+                ---@type false | "classic" | "modern" | "helix"
+                preset = 'modern',
+                ---@type wk.Win
+                win = {
+                    width = 1,
+                    -- height = { min = 4, max = 50 },
+                    -- col = 0,
+                    row = -1,
+                    -- border = "none",
+                    padding = { 1, 2 }, -- extra window padding [top/bottom, right/left]
+                    title = true,
+                    title_pos = 'center',
+                    zindex = 1000,
+                    -- Additional vim.wo and vim.bo options
+                    -- bo = {},
+                    -- wo = {
+                    --     -- winblend = 10, -- value between 0-100 0 for fully opaque and 100 for fully transparent
+                    -- },
                 },
-                ignore_missing = false,
-                opts = {
-                    mode = 'n', -- NORMAL mode
-                    prefix = '<leader>',
-                    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-                    silent = true, -- use `silent` when creating keymaps
-                    noremap = true, -- use `noremap` when creating keymaps
-                    nowait = true, -- use `nowait` when creating keymaps
+                layout = {
+                    -- width = { min = 20 }, -- min and max width of the columns
+                    -- spacing = 3, -- spacing between columns
+                    align = 'center', -- align columns left, center or right
                 },
-                vopts = {
-                    mode = 'v', -- VISUAL mode
-                    prefix = '<leader>',
-                    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-                    silent = true, -- use `silent` when creating keymaps
-                    noremap = true, -- use `noremap` when creating keymaps
-                    nowait = true, -- use `nowait` when creating keymaps
-                },
+
+                -- OLD?
+                -- popup_mappings = {
+                --     scroll_down = '<c-d>', -- binding to scroll down inside the popup
+                --     scroll_up = '<c-u>', -- binding to scroll up inside the popup
+                -- },
+                -- ignore_missing = false,
+                -- opts = {
+                --     mode = 'n', -- NORMAL mode
+                --     prefix = '<leader>',
+                --     buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+                --     silent = true, -- use `silent` when creating keymaps
+                --     noremap = true, -- use `noremap` when creating keymaps
+                --     nowait = true, -- use `nowait` when creating keymaps
+                -- },
+                -- vopts = {
+                --     mode = 'v', -- VISUAL mode
+                --     prefix = '<leader>',
+                --     buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+                --     silent = true, -- use `silent` when creating keymaps
+                --     noremap = true, -- use `noremap` when creating keymaps
+                --     nowait = true, -- use `nowait` when creating keymaps
+                -- },
             })
 
             -- Document existing key chains
