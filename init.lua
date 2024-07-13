@@ -4,11 +4,11 @@
 ]]
 
 -- TODO: remove this when plugins patched the deprecated vim.api
-vim.tbl_add_reverse_lookup = function(tbl)
-    for k, v in pairs(tbl) do
-        tbl[v] = k
-    end
-end
+-- vim.tbl_add_reverse_lookup = function(tbl)
+--     for k, v in pairs(tbl) do
+--         tbl[v] = k
+--     end
+-- end
 
 -- [[ Set runtime path for shims if using mise ]]
 vim.env.PATH = vim.env.HOME .. '/.local/share/mise/shims:' .. vim.env.PATH
