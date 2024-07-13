@@ -47,9 +47,14 @@ return {
             -- especially usefull when we have a lot of keybinds and many depend on other plugins
             -- when we disable the plugin, the keys will unregister
 
-            -- ### NORMAL MODE
             require('which-key').add({
                 {
+                    -- ### NORMAL MODE
+                    mode = 'n',
+                    buffer = nil,
+                    silent = true,
+                    noremap = true,
+
                     { '<leader><tab>', group = '[tab]s', remap = false },
                     { '<leader><tab>_', hidden = true, remap = false },
                     {
@@ -122,15 +127,8 @@ return {
                     { '<leader>v_', hidden = true, remap = false },
                     { 's', group = 'flash and surround', remap = false },
                     { 's_', hidden = true, remap = false },
-                    mode = 'n',
-                    buffer = nil,
-                    silent = true,
-                    noremap = true,
                 },
-            })
-
-            -- ### VISUAL MODE
-            require('which-key').add({
+                -- ### VISUAL MODE
                 {
                     mode = { 'v' },
                     buffer = nil,
