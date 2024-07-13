@@ -48,167 +48,121 @@ return {
             -- when we disable the plugin, the keys will unregister
 
             -- ### NORMAL MODE
-            require('which-key').register({
-                -- ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-                -- ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-                -- ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-                -- ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-
-                ['s'] = {
-                    name = 'flash and surround',
-                    _ = 'which_key_ignore',
+            require('which-key').add({
+                {
+                    { '<leader><tab>', group = '[tab]s', remap = false },
+                    { '<leader><tab>_', hidden = true, remap = false },
+                    {
+                        '<leader>A',
+                        group = 'repl[a]ce and Refactor',
+                        remap = false,
+                    },
+                    { '<leader>A_', hidden = true, remap = false },
+                    {
+                        '<leader>B',
+                        group = '[B]ookmarks, Todos',
+                        remap = false,
+                    },
+                    { '<leader>B_', hidden = true, remap = false },
+                    { '<leader>C', group = '[C]ompiler', remap = false },
+                    { '<leader>C_', hidden = true, remap = false },
+                    { '<leader>D', group = '[D]atabase', remap = false },
+                    { '<leader>D_', hidden = true, remap = false },
+                    { '<leader>M', group = 'Co[m]piler', remap = false },
+                    { '<leader>M_', hidden = true, remap = false },
+                    { '<leader>N', group = '[n]x', remap = false },
+                    { '<leader>N_', hidden = true, remap = false },
+                    { '<leader>O', group = 'git [O]cto', remap = false },
+                    { '<leader>O_', hidden = true, remap = false },
+                    { '<leader>S', group = '[S]ession', remap = false },
+                    { '<leader>S_', hidden = true, remap = false },
+                    {
+                        '<leader>b',
+                        group = '[b]uffers and file tree',
+                        remap = false,
+                    },
+                    { '<leader>b_', hidden = true, remap = false },
+                    { '<leader>d', group = '[d]ebug', remap = false },
+                    { '<leader>d_', hidden = true, remap = false },
+                    { '<leader>g', group = '[g]it', remap = false },
+                    { '<leader>gG', group = '[g]it [g]ist', remap = false },
+                    { '<leader>gG_', hidden = true, remap = false },
+                    { '<leader>gL', group = '[g]it [L]inker', remap = false },
+                    { '<leader>gL_', hidden = true, remap = false },
+                    { '<leader>g_', hidden = true, remap = false },
+                    { '<leader>gc', group = '[g]it [C]ommits', remap = false },
+                    { '<leader>gc_', hidden = true, remap = false },
+                    { '<leader>gd', group = '[g]it [D]iffview', remap = false },
+                    { '<leader>gd_', hidden = true, remap = false },
+                    { '<leader>gs', group = '[G]it [S]earch', remap = false },
+                    { '<leader>gs_', hidden = true, remap = false },
+                    { '<leader>h', group = '[h] docs', remap = false },
+                    { '<leader>h_', hidden = true, remap = false },
+                    { '<leader>l', group = '[l]sp', remap = false },
+                    { '<leader>l_', hidden = true, remap = false },
+                    { '<leader>m', group = 'Ai', remap = false },
+                    { '<leader>m_', hidden = true, remap = false },
+                    {
+                        '<leader>mc',
+                        group = 'Ai [C]opilot Chat',
+                        remap = false,
+                    },
+                    { '<leader>mc_', hidden = true, remap = false },
+                    { '<leader>ml', group = 'Ai [l]lama', remap = false },
+                    { '<leader>ml_', hidden = true, remap = false },
+                    { '<leader>mv', group = 'Ai OpenAI', remap = false },
+                    { '<leader>mv_', hidden = true, remap = false },
+                    { '<leader>r', group = '[r] http', remap = false },
+                    { '<leader>r_', hidden = true, remap = false },
+                    { '<leader>s', group = '[s]earch', remap = false },
+                    { '<leader>s_', hidden = true, remap = false },
+                    { '<leader>t', group = '[t]ests', remap = false },
+                    { '<leader>t_', hidden = true, remap = false },
+                    { '<leader>v', group = '[v] lsp', remap = false },
+                    { '<leader>v_', hidden = true, remap = false },
+                    { 's', group = 'flash and surround', remap = false },
+                    { 's_', hidden = true, remap = false },
+                    mode = 'n',
+                    buffer = nil,
+                    silent = true,
+                    noremap = true,
                 },
-
-                ['<leader>A'] = {
-                    name = 'repl[a]ce and Refactor',
-                    _ = 'which_key_ignore',
-                },
-
-                ['<leader>M'] = {
-                    name = 'Co[m]piler',
-                    _ = 'which_key_ignore',
-                },
-
-                ['<leader>r'] = {
-                    name = '[r] http',
-                    _ = 'which_key_ignore',
-                },
-
-                ['<leader>N'] = {
-                    name = '[n]x',
-                    _ = 'which_key_ignore',
-                },
-
-                ['<leader>s'] = { name = '[s]earch', _ = 'which_key_ignore' },
-                ['<leader>S'] = { name = '[S]ession', _ = 'which_key_ignore' },
-
-                ['<leader>m'] = { name = 'Ai', _ = 'which_key_ignore' },
-                ['<leader>mc'] = {
-                    name = 'Ai [C]opilot Chat',
-                    _ = 'which_key_ignore',
-                },
-                ['<leader>mv'] = {
-                    name = 'Ai OpenAI',
-                    _ = 'which_key_ignore',
-                },
-
-                ['<leader>ml'] = {
-                    name = 'Ai [l]lama',
-                    _ = 'which_key_ignore',
-                },
-
-                ['<leader>g'] = { name = '[g]it', _ = 'which_key_ignore' },
-                ['<leader>gG'] = {
-                    name = '[g]it [g]ist',
-                    _ = 'which_key_ignore',
-                },
-
-                ['<leader>O'] = {
-                    name = 'git [O]cto',
-                    _ = 'which_key_ignore',
-                },
-
-                -- ['<leader>G'] = { name = '[G]ithub', _ = 'which_key_ignore' },
-                ['<leader>gd'] = {
-                    name = '[g]it [D]iffview',
-                    _ = 'which_key_ignore',
-                },
-                ['<leader>gL'] = {
-                    name = '[g]it [L]inker',
-                    _ = 'which_key_ignore',
-                },
-                ['<leader>gc'] = {
-                    name = '[g]it [C]ommits',
-                    _ = 'which_key_ignore',
-                },
-                ['<leader>gs'] = {
-                    name = '[G]it [S]earch',
-                    _ = 'which_key_ignore',
-                },
-
-                ['<leader>b'] = {
-                    name = '[b]uffers and file tree',
-                    _ = 'which_key_ignore',
-                },
-                ['<leader>B'] = {
-                    name = '[B]ookmarks, Todos',
-                    _ = 'which_key_ignore',
-                },
-
-                ['<leader><tab>'] = { name = '[tab]s', _ = 'which_key_ignore' },
-
-                ['<leader>l'] = { name = '[l]sp', _ = 'which_key_ignore' },
-
-                ['<leader>v'] = { name = '[v] lsp', _ = 'which_key_ignore' },
-
-                ['<leader>h'] = { name = '[h] docs', _ = 'which_key_ignore' },
-
-                ['<leader>D'] = { name = '[D]atabase', _ = 'which_key_ignore' },
-                ['<leader>d'] = { name = '[d]ebug', _ = 'which_key_ignore' },
-
-                -- TODO: lvim which key config
-
-                ['<leader>C'] = {
-                    name = '[C]ompiler',
-                    _ = 'which_key_ignore',
-                },
-
-                ['<leader>t'] = {
-                    name = '[t]ests',
-                    _ = 'which_key_ignore',
-                },
-            }, {
-                mode = 'n',
-                buffer = nil,
-                silent = true,
-                noremap = true,
-                -- nowait = true,
-                -- expr = true,
             })
 
             -- ### VISUAL MODE
-            require('which-key').register({
-                ['<leader>l'] = { name = '[l]sp', _ = 'which_key_ignore' },
-
-                ['<leader>m'] = { name = 'Ai', _ = 'which_key_ignore' },
-
-                ['<leader>mc'] = {
-                    name = 'Ai [C]opilot Chat',
-                    _ = 'which_key_ignore',
+            require('which-key').add({
+                {
+                    mode = { 'v' },
+                    buffer = nil,
+                    silent = true,
+                    noremap = true,
+                    { '<leader>g', group = '[g]it', remap = false },
+                    { '<leader>gL', group = '[g]it [L]inker', remap = false },
+                    { '<leader>gL_', hidden = true, remap = false },
+                    { '<leader>g_', hidden = true, remap = false },
+                    { '<leader>gc', group = '[g]it [C]ommits', remap = false },
+                    { '<leader>gc_', hidden = true, remap = false },
+                    { '<leader>gs', group = '[G]it [S]earch', remap = false },
+                    { '<leader>gs_', hidden = true, remap = false },
+                    { '<leader>h', group = '[h] docs', remap = false },
+                    { '<leader>h_', hidden = true, remap = false },
+                    { '<leader>l', group = '[l]sp', remap = false },
+                    { '<leader>l_', hidden = true, remap = false },
+                    { '<leader>m', group = 'Ai', remap = false },
+                    { '<leader>m_', hidden = true, remap = false },
+                    {
+                        '<leader>mc',
+                        group = 'Ai [C]opilot Chat',
+                        remap = false,
+                    },
+                    { '<leader>mc_', hidden = true, remap = false },
+                    { '<leader>ml', group = 'Ai [l]lama', remap = false },
+                    { '<leader>ml_', hidden = true, remap = false },
+                    { '<leader>mv', group = 'Ai OpenAI', remap = false },
+                    { '<leader>mv_', hidden = true, remap = false },
+                    { '<leader>v', group = '[v] lsp', remap = false },
+                    { '<leader>v_', hidden = true, remap = false },
                 },
-                ['<leader>ml'] = {
-                    name = 'Ai [l]lama',
-                    _ = 'which_key_ignore',
-                },
-                ['<leader>mv'] = {
-                    name = 'Ai OpenAI',
-                    _ = 'which_key_ignore',
-                },
-
-                ['<leader>v'] = { name = '[v] lsp', _ = 'which_key_ignore' },
-
-                ['<leader>h'] = { name = '[h] docs', _ = 'which_key_ignore' },
-
-                ['<leader>g'] = { name = '[g]it', _ = 'which_key_ignore' },
-                ['<leader>gc'] = {
-                    name = '[g]it [C]ommits',
-                    _ = 'which_key_ignore',
-                },
-                ['<leader>gs'] = {
-                    name = '[G]it [S]earch',
-                    _ = 'which_key_ignore',
-                },
-                ['<leader>gL'] = {
-                    name = '[g]it [L]inker',
-                    _ = 'which_key_ignore',
-                },
-            }, {
-                mode = 'v',
-                buffer = nil,
-                silent = true,
-                noremap = true,
-                -- nowait = true,
-                -- expr = true,
             })
         end,
     },

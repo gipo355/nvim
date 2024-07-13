@@ -44,12 +44,12 @@ return {
                 -- dap_retries = 20, -- see dap option max_retries
             })
 
-            require('which-key').register({
+            require('which-key').add({
                 -- TODO: improve, must be only available for filetype go
                 -- since i register the keymap in go plugin
-                ['<leader>G'] = {
-                    name = '[G]o',
-                    _ = 'which_key_ignore',
+                {
+                    { '<leader>G', group = '[G]o' },
+                    { '<leader>G_', hidden = true },
                 },
             })
 
