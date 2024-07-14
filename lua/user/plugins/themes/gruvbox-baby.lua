@@ -18,7 +18,7 @@ return {
         -- vim.g.gruvbox_baby_transparent_mode = setBg()
         vim.g.gruvbox_baby_transparent_mode = _G.user.transparent_bg
         -- vim.g.gruvbox_baby_function_style = 'NONE'
-        -- vim.g.gruvbox_baby_keyword_style = 'NONE'
+        vim.g.gruvbox_baby_keyword_style = 'NONE'
         vim.g.gruvbox_baby_highlights = {
             -- https://github.com/luisiacc/gruvbox-baby/issues/70
             IncSearch = { bg = '#ff9e64', fg = 'White' },
