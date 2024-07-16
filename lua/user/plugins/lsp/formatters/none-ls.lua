@@ -45,7 +45,7 @@ return {
             null_ls.builtins.formatting.buf,
 
             -- markdown
-            null_ls.builtins.formatting.markdownlint,
+            -- null_ls.builtins.formatting.markdownlint,
 
             -- go
             -- null_ls.builtins.formatting.gofmt.with({
@@ -175,7 +175,7 @@ return {
             }),
 
             -- markdown
-            null_ls.builtins.diagnostics.proselint, -- markdown
+            -- null_ls.builtins.diagnostics.proselint, -- markdown
 
             -- many
             null_ls.builtins.diagnostics.semgrep.with({
@@ -203,17 +203,17 @@ return {
             }),
 
             -- markdown
-            null_ls.builtins.diagnostics.markdownlint,
+            -- null_ls.builtins.diagnostics.markdownlint,
 
             -- markdown
-            null_ls.builtins.diagnostics.codespell.with({
-                filetypes = { 'markdown', 'text' },
-            }),
+            -- null_ls.builtins.diagnostics.codespell.with({
+            --     filetypes = { 'markdown', 'text' },
+            -- }),
 
             -- markdown
-            null_ls.builtins.diagnostics.write_good.with({
-                filetypes = { 'markdown', 'text' },
-            }),
+            -- null_ls.builtins.diagnostics.write_good.with({
+            --     filetypes = { 'markdown', 'text' },
+            -- }),
 
             -- ###
             -- COMPLETION

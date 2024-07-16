@@ -55,7 +55,7 @@ return {
                 html = { 'prettierd' },
                 ['angular.html'] = { 'prettierd' },
                 yaml = { 'prettierd' },
-                markdown = { 'prettierd' },
+                -- markdown = { 'prettierd' },
                 pug = { 'prettierd' },
 
                 astro = { 'prettierd' },

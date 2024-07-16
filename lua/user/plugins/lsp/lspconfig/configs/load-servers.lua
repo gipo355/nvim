@@ -90,9 +90,9 @@ M.load_servers = function(capabilities)
         --     'user.plugins.lsp.lspconfig.configs.server-configs.volar'
         -- ).setup(),
 
-        ltex = {
-            filetypes = { 'tex', 'latex', 'markdown', 'mdx' },
-        },
+        -- ltex = {
+        --     filetypes = { 'tex', 'latex', 'markdown', 'mdx' },
+        -- },
 
         -- ##### We use neodev by folke #####
         lua_ls = require(
@@ -132,9 +132,9 @@ M.load_servers = function(capabilities)
         dotls = {},
         terraformls = {},
         graphql = {},
-        marksman = {},
+        marksman = {}, -- markdown
         prismals = {},
-        prosemd_lsp = {},
+        -- prosemd_lsp = {}, -- markdown
         sqlls = {},
         autotools_ls = {},
 
