@@ -5,7 +5,7 @@ return {
     config = function()
         require('grug-far').setup({
             keymaps = {
-                close = '<C-c>',
+                close = '<C-q>',
             },
         })
 

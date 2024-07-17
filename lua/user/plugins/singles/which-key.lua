@@ -24,10 +24,10 @@ return {
                 preset = 'modern',
                 ---@type wk.Win
                 win = {
-                    width = 1,
+                    -- width = 1,
                     -- height = { min = 4, max = 50 },
                     -- col = 0,
-                    row = -1,
+                    -- row = -1,
                     -- border = "none",
                     padding = { 1, 2 }, -- extra window padding [top/bottom, right/left]
                     title = true,
