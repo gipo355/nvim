@@ -103,11 +103,11 @@ return {
         end
 
         local function set_highlight_char()
-            -- if _G.user.indent_blankline_color_bg then
-            --     return nil
-            -- else
-            return highlight_char
-            -- end
+            if _G.user.indent_blankline_color then
+                return highlight_char
+            else
+                return nil
+            end
         end
 
         require('ibl').setup({

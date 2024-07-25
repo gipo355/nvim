@@ -550,8 +550,10 @@ vim.keymap.set('i', '<S-CR>', '<esc>O', set_desc('Insert newline above'))
 -- c-j in insert mode to insert newline below
 vim.keymap.set('i', '<C-j>', '<esc>o', set_desc('Insert newline below'))
 
+-- select all
+vim.keymap.set('n', 'M', 'ggVG', set_desc('Select all file'))
 -- yank all file( replaces go to middle of displayed window M)
-vim.keymap.set('n', 'M', ':%y<cr>', set_desc('Yank all file'))
+vim.keymap.set('n', 'MM', ':%y<cr>', set_desc('Yank all file'))
 -- Change all file all file( replaces go to middle of displayed window M)
 vim.keymap.set('n', 'dC', ':%c<cr>', set_desc('Change all file'))
 -- Delete all file all file( replaces go to middle of displayed window M)

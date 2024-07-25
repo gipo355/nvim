@@ -42,7 +42,7 @@ return {
 
         vim.keymap.set(
             'n',
-            '<leader>vo',
+            '<leader>vO',
             '<cmd>Lspsaga outline<cr>',
             set_desc('Lsp outline')
         )

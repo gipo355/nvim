@@ -82,7 +82,7 @@ _G.user.animate_scroll = false
 _G.user.enable_bufferline = false
 -- lualine plugin
 _G.user.lualine = {
-    enable = true,
+    enable = false,
     show_lsp = true,
 }
 -- disable builtin statusline
@@ -185,6 +185,16 @@ _G.user.theme = function()
     -- return 'kanagawa'
     -- return 'gruvbox-material'
     -- return 'rose-pine'
+    -- return 'ares'
+
+    -- return 'zenbones'
+    -- return 'forestbones'
+    -- return 'seoulbones'
+    -- return 'zenburned'
+    -- return 'rosebones'
+    -- return 'nordbones'
+    -- return 'tokyobones'
+    -- return 'kanagawabones'
 
     -- return 'material'
     -- return 'onedark'
@@ -205,7 +215,8 @@ Indent blankline settings
 ]]
 --
 _G.user.enable_indent_blankline = true
-_G.user.indent_blankline_color_bg = true -- color the background of indentlines
+_G.user.indent_blankline_color = false -- color the background of indentlines
+_G.user.indent_blankline_color_bg = false -- color the background of indentlines
 _G.user.hide_first_indent_level = false -- hide first indent level
 _G.user.enable_mini_indentscope = false -- alternative to indent-blankline, single scope
 
@@ -215,6 +226,13 @@ miscellaneous visual settings
 --
 _G.user.enable_rainbow_parens = true
 _G.user.enable_highlight_colors = true -- css, tailwind colors, color #hex etc..
+
+--[[
+    trouble setting
+]]
+_G.user.trouble = {
+    show_symbols = true,
+}
 
 --[[
 This diagnostic config is put here to use it in multiple places
