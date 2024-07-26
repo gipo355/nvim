@@ -82,7 +82,7 @@ _G.user.animate_scroll = false
 _G.user.enable_bufferline = false
 -- lualine plugin
 _G.user.lualine = {
-    enable = false,
+    enable = true,
     show_lsp = true,
 }
 -- disable builtin statusline
