@@ -24,8 +24,23 @@ return {
         },
         config = function()
             local chat = require('CopilotChat')
+            local select = require('CopilotChat.select')
 
-            chat.setup()
+            -- 'Write commit message for the change with commitizen convention.
+            -- Make sure the title has maximum 50 characters and message is wrapped
+            -- at 72 characters. Wrap the whole message in code block with language gitcommit.'
+
+            chat.setup({
+                -- default prompts
+                prompts = {
+                    CommitStaged = {
+                        prompt = 'Write commit message for the change with commitizen convention. Make sure the title has maximum 60 characters and message is wrapped at 72 characters. Wrap the whole message in code block with language gitcommit. Also Make sure the subject starts with lowercase and the scope is the app name. Follow commitlint rules.',
+                        selection = function(source)
+                            return select.gitdiff(source, true)
+                        end,
+                    },
+                },
+            })
 
             vim.keymap.set(
                 'n',
