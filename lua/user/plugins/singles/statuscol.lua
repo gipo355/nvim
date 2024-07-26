@@ -50,8 +50,8 @@ return {
                 --     click = "v:lua.ScSa",
                 -- },
                 { text = { builtin.lnumfunc }, click = 'v:lua.ScLa' },
-                { text = { builtin.foldfunc }, click = 'v:lua.ScFa' },
                 { text = { '  ' } },
+                { text = { builtin.foldfunc }, click = 'v:lua.ScFa' },
                 -- {
                 --     sign = {
                 --         name = { ".*" },
