@@ -34,7 +34,12 @@ return {
                 -- default prompts
                 prompts = {
                     CommitStaged = {
-                        prompt = 'Write commit message for the change with commitizen convention. Make sure the title has maximum 60 characters and message is wrapped at 72 characters. Wrap the whole message in code block with language gitcommit. Also Make sure the subject starts with lowercase and the scope is the app name. Follow commitlint rules.',
+                        prompt = [[Write commit message for the change with commitizen convention.
+Choose between ["feat", "fix", "docs", "style", "refactor", "perf", "test", "build", "ci", "chore", "revert"] based on the scope of the change.
+Make sure the title has maximum 60 characters and message is wrapped at 72 characters.
+Wrap the whole message in code block with language gitcommit.
+Also Make sure the subject starts with lowercase and the scope is the app name.
+Follow commitlint rules. Add breaking change note only if necessary.]],
                         selection = function(source)
                             return select.gitdiff(source, true)
                         end,
