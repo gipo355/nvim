@@ -115,7 +115,7 @@ return {
             --     :CopilotChatCommitStaged - Write commit message for the change with commitizen convention
             vim.keymap.set(
                 'n',
-                '<leader>mcs',
+                '<leader>ms',
                 '<cmd>CopilotChatCommitStaged<cr>',
                 set_desc('Copilot Write Commit')
             )
