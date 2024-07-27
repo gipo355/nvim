@@ -1320,6 +1320,12 @@
     "description": "Creates a React Functional Component with ES7 module system",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
+  "importCSSModule": {
+    "prefix": "csm",
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "body": ["import c from './${TM_FILENAME_BASE}.module.scss'"],
+    "description": "Import CSS Module as `styles`"
+  },
   "reactFunctionalComponentRedux": {
     "key": "reactFunctionalComponentRedux",
     "prefix": "rfcredux",
