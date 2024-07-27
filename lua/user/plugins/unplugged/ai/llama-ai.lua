@@ -1,3 +1,4 @@
+-- best modles: llama2, codellama, claude
 local set_desc = require('user.utils.functions').set_keymap_desc
 
 -- TODO: add globals to allow disabling ai plugins

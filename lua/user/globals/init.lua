@@ -51,8 +51,14 @@ _G.user.enable_precognition = false
 
 --[[
     enable github copilot plugin
+    don't enable both copilot and supermaven
 ]]
-_G.user.enable_copilot = true
+_G.user.enable_copilot = false
+--[[
+ enable supermaven plugin
+ don't enable both copilot and supermaven
+]]
+_G.user.enable_supermaven = true
 
 -- Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
