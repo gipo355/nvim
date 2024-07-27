@@ -8,6 +8,7 @@ The best tools i've found so far are:
 - copilot
 - aider (terminal, requires model)
 - continue (vscode)
+- tabnine
 
 paid and best:
 - chatgpt 
