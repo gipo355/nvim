@@ -330,4 +330,4 @@ _G.user.autocomplete_delay = 200
 --[[ 
   Enable java plugin, pretty heavy
 ]]
-_G.user.enable_java_plugin = false
+_G.user.enable_java_plugin = true
