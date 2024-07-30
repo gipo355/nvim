@@ -22,7 +22,7 @@ return {
             debounce = 200, -- in milliseconds, only applied in insert mode
         },
         conceal = {
-            enabled = false, -- can be toggled by commands
+            enabled = _G.user.tailwindtools.enable_conceal, -- can be toggled by commands
             symbol = '󱏿', -- only a single character is allowed
             highlight = { -- extmark highlight options, see :h 'highlight'
                 fg = '#38BDF8',

@@ -53,12 +53,12 @@ _G.user.enable_precognition = false
     enable github copilot plugin
     don't enable both copilot and supermaven
 ]]
-_G.user.enable_copilot = false
+_G.user.enable_copilot_autocomplete = false
 --[[
  enable supermaven plugin
  don't enable both copilot and supermaven
 ]]
-_G.user.enable_supermaven = true
+_G.user.enable_supermaven_autocomplete = true
 
 -- Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
@@ -126,7 +126,10 @@ _G.user.enable_satellite_scrollbar = false
 -- enable tailwindcss lspconfig start (huge lag)
 -- BUG: enabling tailwind requires didChangeWatchedFiles capabilities to false to work (lspconfig)
 -- TODO: check if fixed
-_G.user.enable_tailwindcss = false
+_G.user.enable_tailwindlsp = false
+_G.user.tailwindtools = {
+    enable_conceal = true,
+}
 -- enable CSS intellisense (nvim-html-css plugin) pretty heavy, only when needed
 _G.user.enable_css_intellisense_in_html = false
 

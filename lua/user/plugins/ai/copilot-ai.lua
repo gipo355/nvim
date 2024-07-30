@@ -147,7 +147,7 @@ Follow commitlint rules. Add breaking change note only if necessary.]],
         'zbirenbaum/copilot.lua', -- config in its own file
         -- cmd = "Copilot",
         dependencies = {},
-        enabled = _G.user.enable_copilot,
+        enabled = _G.user.enable_copilot_autocomplete,
         build = ':Copilot auth',
         event = 'InsertEnter',
         keys = {
