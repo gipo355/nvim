@@ -35,28 +35,28 @@ return {
             html = {
                 -- 'snyk_iac',
                 'htmlhint',
-                'biomejs',
+                -- 'biomejs',
             },
 
             ['angular.html'] = {
                 -- 'snyk_iac',
                 'htmlhint',
-                'biomejs',
+                -- 'biomejs',
             },
 
-            astro = { 'biomejs' },
-            vue = { 'biomejs' },
-            json = { 'biomejs' },
-            jsonc = { 'biomejs' },
-            css = { 'biomejs' },
+            -- astro = { 'biomejs' },
+            -- vue = { 'biomejs' },
+            -- json = { 'biomejs' },
+            -- jsonc = { 'biomejs' },
+            -- css = { 'biomejs' },
 
             typescript = {
                 -- 'snyk_iac',
-                'biomejs',
+                -- 'biomejs',
             },
-            javascript = { 'biomejs' },
-            typescriptreact = { 'biomejs' },
-            javascriptreact = { 'biomejs' },
+            -- javascript = { 'biomejs' },
+            -- typescriptreact = { 'biomejs' },
+            -- javascriptreact = { 'biomejs' },
 
             -- go = { 'snyk_iac' },
             --
