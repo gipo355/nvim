@@ -20,8 +20,8 @@ vim.loader.enable()
 -- possible culprits: overseer, wakatime, dap, session-manager, alpha, vm-start, indent-blankline, crates
 -- reduce plugins, use VeryLazy for plugins that are not used often
 
--- [[ Initialize global variables before everything else ]]
-require('user.globals')
+-- [[ Initialize global variables and user defined settings before everything else ]]
+require('user.config')
 
 -- [[ Settings ]]
 require('user.options')
