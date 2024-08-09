@@ -85,7 +85,7 @@ _G.user.animate_scroll = false
  disable all to get back 100% of the width
 ]]
 -- enable bufferline (bufferline plugin)
-_G.user.enable_bufferline = false
+_G.user.enable_bufferline = true
 -- lualine plugin
 _G.user.lualine = {
     enable = true,
@@ -95,7 +95,7 @@ _G.user.lualine = {
 _G.user.disable_builtin_statusline = true
 -- disable status line in tmux to recover space
 _G.user.tmux = {
-    disable_statusline = true,
+    disable_statusline = false,
 }
 -- show function scope at the top of the window (nvim-treesitter)
 _G.user.treesitter_context = {
@@ -118,7 +118,7 @@ _G.user.mini_map = {
 
 -- alternative minimap and scrollbar, satellite (good with arrow.nvim)
 -- lighter than mini map
-_G.user.enable_satellite_scrollbar = false
+_G.user.enable_satellite_scrollbar = true
 
 --
 
