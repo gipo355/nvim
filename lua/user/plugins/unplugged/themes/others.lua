@@ -10,7 +10,7 @@ return {
         priority = 1000,
         config = function()
             require('borrowed').setup({
-                transparent = _G.user.transparent_bg,
+                transparent = _G.user.transparent_background,
             })
             _G.user.themes.borrowed_mayu = 'mayu'
             _G.user.themes.borrowed_shin = 'shin'

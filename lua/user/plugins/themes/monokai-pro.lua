@@ -16,7 +16,7 @@ return {
         -- require("monokai-pro").setup()
         monokai.setup({
             -- transparent_background = vim.g.transparent_bg,
-            transparent_background = _G.user.transparent_bg,
+            transparent_background = _G.user.transparent_background,
             devicons = true,
             filter = 'classic', -- classic | octagon | pro | machine | ristretto | spectrum
             -- filter = "octagon", -- classic | octagon | pro | machine | ristretto | spectrum

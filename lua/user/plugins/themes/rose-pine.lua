@@ -31,7 +31,7 @@ return {
             styles = {
                 bold = true,
                 italic = true,
-                transparency = _G.user.transparent_bg,
+                transparency = _G.user.transparent_background,
             },
 
             groups = {

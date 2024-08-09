@@ -34,7 +34,7 @@ return {
             --     shade = "dark",
             --     percentage = 0.15,
             -- },
-            transparent_background = _G.user.transparent_bg,
+            transparent_background = _G.user.transparent_background,
             show_end_of_buffer = false, -- show the '~' characters after the end of buffers
             term_colors = true,
             compile_path = vim.fn.stdpath('cache') .. '/catppuccin',

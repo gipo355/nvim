@@ -94,7 +94,7 @@ return {
         local function set_highlight_bg()
             if
                 _G.user.background ~= 'light'
-                and _G.user.indent_blankline_color_bg
+                and _G.user.indent_blankline_color_background
             then
                 return highlight_bg
             else
@@ -114,7 +114,11 @@ return {
 
             scope = {
                 enabled = true,
-                show_start = false, -- show first line underline
+                show_start = true,
+                show_end = true,
+                -- injected_languages = false,
+                highlight = { 'Function', 'Label' },
+                -- priority = 500,
             },
             indent = {
                 smart_indent_cap = true,

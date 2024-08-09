@@ -5,7 +5,7 @@ return {
     enabled = _G.user.theme() == 'gruvbox-baby',
     init = function()
         local setBg = function()
-            if not _G.user.transparent_bg then
+            if not _G.user.transparent_background then
                 -- if vim.g.transparent_bg then
                 return 1
             else
@@ -16,7 +16,7 @@ return {
         -- vim.g.gruvbox_baby_use_original_palette = true
         vim.g.gruvbox_baby_background_color = 'medium' -- 'dark' 'medium'
         -- vim.g.gruvbox_baby_transparent_mode = setBg()
-        vim.g.gruvbox_baby_transparent_mode = _G.user.transparent_bg
+        vim.g.gruvbox_baby_transparent_mode = _G.user.transparent_background
         -- vim.g.gruvbox_baby_function_style = 'NONE'
         vim.g.gruvbox_baby_keyword_style = 'NONE'
         vim.g.gruvbox_baby_highlights = {

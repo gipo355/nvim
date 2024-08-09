@@ -70,7 +70,7 @@ return {
                 underline = true, -- use the colorscheme's opinionated underline styles?
                 undercurl = true, -- use the colorscheme's opinionated undercurl styles?
                 cursorline = true, -- use cursorline highlighting?
-                transparency = _G.user.transparent_bg, -- use a transparent background?
+                transparency = _G.user.transparent_background, -- use a transparent background?
                 terminal_colors = true, -- use the colorscheme's colors for neovim's :terminal?
                 window_unfocused_color = false, -- when the window is out of focus, change the normal background?
             },

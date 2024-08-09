@@ -182,7 +182,7 @@ return {
         end
 
         local function isTransparent()
-            if _G.user.transparent_bg then
+            if _G.user.transparent_background then
                 return 1
             else
                 return 0

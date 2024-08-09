@@ -5,7 +5,7 @@ return {
     priority = 1000,
     config = function()
         local set_bg = function()
-            if _G.user.transparent_bg then
+            if _G.user.transparent_background then
                 return 1
             else
                 return 0

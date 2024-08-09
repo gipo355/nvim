@@ -18,7 +18,7 @@ return {
             invert_selection = false,
             inverse = true, -- invert background for search, diffs, statuslines and errors
             dim_inactive = false,
-            transparent_mode = _G.user.transparent_bg,
+            transparent_mode = _G.user.transparent_background,
 
             undercurl = true,
             underline = true,
