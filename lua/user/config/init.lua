@@ -85,7 +85,7 @@ _G.user.animate_scroll = false
  disable all to get back 100% of the width
 ]]
 -- enable bufferline (bufferline plugin)
-_G.user.enable_bufferline = true
+_G.user.enable_bufferline = false
 -- lualine plugin
 _G.user.lualine = {
     enable = true,
