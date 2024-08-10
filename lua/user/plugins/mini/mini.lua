@@ -345,7 +345,8 @@ return {
             })
             -- vim.keymap.set('n', '<leader>-', function()
             -- vim.keymap.set('n', '<leader>R', function()
-            vim.keymap.set('n', '<C-t>', function()
+            -- vim.keymap.set('n', '<C-t>', function()
+            vim.keymap.set('n', '+', function()
                 require('mini.files').open()
             end, set_desc('mini.files open'))
 

@@ -62,7 +62,8 @@ return {
         )
         vim.keymap.set(
             'n',
-            '<leader>gdo',
+            -- '<leader>gdo',
+            '<C-t>',
             '<cmd>DiffviewOpen<cr>',
             set_desc('Open DiffView')
         )
