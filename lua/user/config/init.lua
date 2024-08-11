@@ -189,7 +189,7 @@ _G.user.htmlcss_intellisense = {
 
 -- enable git blame in line (gitsigns plugin)
 _G.user.gitsigns = {
-    current_line_blame = true,
+    current_line_blame = false,
 }
 --------------------------------
 

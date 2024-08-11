@@ -16,6 +16,12 @@ return {
             local gitsigns = require('gitsigns')
             gitsigns.setup({
                 current_line_blame = _G.user.gitsigns.current_line_blame,
+                current_line_blame_opts = {
+                    virt_text = true,
+                    virt_text_pos = 'right_align', -- 'eol' | 'overlay' | 'right_align'
+                    delay = 2000,
+                    ignore_whitespace = true,
+                },
             })
             -- gitsigns.setup({
             --     signs = {
