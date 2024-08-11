@@ -13,9 +13,14 @@ local alternative_methods = {
 function M.list_registered(filetype)
     local registered_providers =
         services.list_registered_providers_names(filetype)
-    local providers_for_methods = vim.tbl_flatten(vim.tbl_map(function(m)
-        return registered_providers[m] or {}
-    end, alternative_methods))
+    -- local providers_for_methods = vim.tbl_flatten(vim.tbl_map(function(m)
+    --     return registered_providers[m] or {}
+    -- end, alternative_methods))
+    -- tbl_flatten is deprecated, use iter instead, run :checkhealth vim.tbl_flatten
+    local providers_for_methods = {}
+    for _, m in ipairs(alternative_methods) do
+        vim.list_extend(providers_for_methods, registered_providers[m] or {})
+    end
 
     return providers_for_methods
 end
