@@ -95,7 +95,7 @@ _G.user.lualine = {
 _G.user.disable_builtin_statusline = true
 -- disable status line in tmux to recover space
 _G.user.tmux = {
-    disable_statusline = false,
+    disable_statusline = true,
 }
 -- show function scope at the top of the window (nvim-treesitter)
 _G.user.treesitter_context = {
