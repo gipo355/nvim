@@ -11,7 +11,7 @@
 -- end
 
 -- [[ Set runtime path for shims if using mise ]]
-vim.env.PATH = vim.env.HOME .. '/.local/share/mise/shims:' .. vim.env.PATH
+-- vim.env.PATH = vim.env.HOME .. '/.local/share/mise/shims:' .. vim.env.PATH
 
 -- improve startup time, experimental
 vim.loader.enable()
