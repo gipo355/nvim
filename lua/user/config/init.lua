@@ -142,7 +142,7 @@ _G.user.oil = {
 }
 
 --------------------------------
---[[ Scrollbars, minimap ]]
+--[[ Scrollbars, minimaps ]]
 
 -- enable minimap and scrollbar on the right (mini.map plugin)
 -- problem: this is 1 map even if split vertically
