@@ -22,6 +22,7 @@ function _G.setAutoCompleteDelay(delay)
 ]]
 --
 
+--------------------------------
 --[[ prepare user object
 we put everything here to have intellisense and to prevent conflicts with other plugins ]]
 --
@@ -36,6 +37,7 @@ or the _G object (which provides intellisense)
 
 I keep vim.g for third party plugins and _G for my own global ]]
 --
+--------------------------------
 
 --[[
  Colemak
@@ -49,6 +51,10 @@ _G.user.colemak = false -- stil buggy, don't use
 ]]
 _G.user.enable_precognition = false
 
+--------------------------------
+--[[
+ AI
+]]
 --[[
     enable github copilot plugin
     don't enable both copilot and supermaven
@@ -59,6 +65,7 @@ _G.user.enable_copilot_autocomplete = false
  don't enable both copilot and supermaven
 ]]
 _G.user.enable_supermaven_autocomplete = true
+--------------------------------
 
 -- Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
@@ -77,6 +84,7 @@ _G.user.enable_sessions_autoload = false
 -- enable scroll animation and disable improved movements (laggy)
 _G.user.animate_scroll = false
 
+--------------------------------
 --[[
 
  VERTICAL SPACE
@@ -103,14 +111,15 @@ _G.user.treesitter_context = {
     max_lines = 1, -- maximum number of lines to show
     multiline_threshold = 1, -- max n of lines for single context
 }
+--------------------------------
 
---
-
+--------------------------------
 --[[ Scrollbars, minimap ]]
 
 -- enable minimap and scrollbar on the right (mini.map plugin)
+-- problem: this is 1 map even if split vertically
 _G.user.mini_map = {
-    enable = false,
+    enable = true,
     minimap_width = 10, -- 1 for bar only or 10 for bar and map
     minimap_winblend = 75, -- 0 to 100 transparency
     side = 'right', -- right or left
@@ -118,10 +127,13 @@ _G.user.mini_map = {
 
 -- alternative minimap and scrollbar, satellite (good with arrow.nvim)
 -- lighter than mini map
-_G.user.enable_satellite_scrollbar = true
+_G.user.enable_satellite_scrollbar = false
+-- there is another option: aria.nvim, symbols-outline.nvim, lspsaga symbols-outline, trouble symbols
+-- they can all function as symbols minimap
 
---
+--------------------------------
 
+-------------------------------- HEAVY PLUGINS
 -- WARN: heavy plugins, only enable when needed
 -- enable tailwindcss lspconfig start (huge lag)
 -- BUG: enabling tailwind requires didChangeWatchedFiles capabilities to false to work (lspconfig)
@@ -130,11 +142,13 @@ _G.user.enable_tailwindlsp = false
 _G.user.tailwindtools = {
     enable_conceal = true,
 }
+
 -- enable CSS intellisense (nvim-html-css plugin) pretty heavy, only when needed
 _G.user.enable_css_intellisense_in_html = false
 
 -- enable git blame in line (gitsigns plugin)
 _G.user.enable_gitblame = true
+--------------------------------
 
 -- pickers: use fzf-lua or telescope ( only for the mose used keymaps )
 _G.user.picker_use_fzf_lua = false
@@ -219,6 +233,7 @@ _G.user.theme = function()
     -- return 'edge'
 end
 
+--------------------------------
 --[[
 Indent blankline settings
 ]]
@@ -228,6 +243,7 @@ _G.user.indent_blankline_color = true -- color the background of indentlines
 _G.user.indent_blankline_color_background = true -- color the background of indentlines
 _G.user.hide_first_indent_level = false -- hide first indent level
 _G.user.enable_mini_indentscope = false -- alternative to indent-blankline, single scope
+--------------------------------
 
 --[[
 miscellaneous visual settings
@@ -332,4 +348,4 @@ _G.user.autocomplete_delay = 200
 --[[ 
   Enable java plugin, pretty heavy
 ]]
-_G.user.enable_java_plugin = true
+_G.user.enable_java_plugin = false
