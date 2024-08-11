@@ -3,7 +3,7 @@
 return {
     'ray-x/lsp_signature.nvim',
     event = 'VeryLazy',
-    enabled = _G.user.use_lsp_signature,
+    enabled = _G.user.lsp_signature.enable,
     opts = {
         bind = true, -- This is mandatory, otherwise border config won't get registered.
         handler_opts = {

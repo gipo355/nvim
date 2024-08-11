@@ -1,7 +1,7 @@
 return -- highlight colors in css, html, lua, svelte, markdown, vue, typescript, javascript, javascriptreact, typescriptreact
 {
     'brenoprata10/nvim-highlight-colors', -- alternative to colorizer
-    enabled = _G.user.enable_highlight_colors,
+    enabled = _G.user.highlight_colors.enable,
     event = 'BufReadPre',
     config = function()
         require('nvim-highlight-colors').setup({

@@ -1,7 +1,7 @@
 local M = {}
 
 M.setup_delay = function(cmp)
-    local completionDelay = _G.user.autocomplete_delay
+    local completionDelay = _G.user.cmp.autocomplete_delay.delay
 
     local timer = nil
 

@@ -1,5 +1,6 @@
 return {
     'folke/trouble.nvim',
+    enabled = _G.user.trouble.enable,
     event = 'BufReadPre',
     -- branch = 'dev', -- for beta v3
     opts = {},

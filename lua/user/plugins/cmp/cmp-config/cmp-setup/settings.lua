@@ -8,7 +8,7 @@ local function prepare_completion_with_delay_opt()
     local opts = {
         completeopt = 'menu,menuone,noinsert',
     }
-    if _G.user.enable_autocomplete_delay then
+    if _G.user.cmp.autocomplete_delay.enable then
         opts.autocomplete = false
     end
     return opts

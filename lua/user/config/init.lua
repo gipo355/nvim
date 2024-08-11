@@ -222,21 +222,31 @@ _G.user.cmp_sources = {
     buffer = false,
     ripgrep = true,
 }
-_G.user.enable_rg_intellisense_in_cmp = true
-_G.user.enable_buffer_intellisense_in_cmp = false
+_G.user.cmp = {
+    rg_intellisense = {
+        enable = true,
+    },
+    buffer_intellisense = {
+        enable = false,
+    },
+}
 
 -- TODO: finish this, must alternate between deno and typescript tools
 -- use denolsp
 -- _G.user.use_deno_disable_ts = false
 
 -- use signatures when entering a function (pretty laggy), we are using mini.completion, faster
-_G.user.use_lsp_signature = false
+_G.user.lsp_signature = {
+    enable = false,
+}
 _G.user.mini.lsp_signature_completion = {
     enable = true,
 }
 
 -- enable auto save
-_G.user.enable_auto_save = false
+_G.user.autosave = {
+    enable = false,
+}
 
 --[[ theme settings 
 ]]
@@ -293,10 +303,12 @@ end
 Indent blankline settings
 ]]
 --
-_G.user.enable_indent_blankline = true
-_G.user.indent_blankline_color = true -- color the background of indentlines
-_G.user.indent_blankline_color_background = true -- color the background of indentlines
-_G.user.hide_first_indent_level = false -- hide first indent level
+_G.user.indent_blankline = {
+    enable = true,
+    color = true, -- color the background of indentlines
+    color_background = true, -- color the background of indentlines
+    hide_first_indent_level = false, -- hide first indent level
+}
 _G.user.mini.indentscope = {
     enable = false,
 }
@@ -306,13 +318,19 @@ _G.user.mini.indentscope = {
 miscellaneous visual settings
 ]]
 --
-_G.user.enable_rainbow_parens = true
-_G.user.enable_highlight_colors = true -- css, tailwind colors, color #hex etc..
+_G.user.rainbow_parens = {
+    enable = true,
+}
+-- css, tailwind colors, color #hex etc..
+_G.user.highlight_colors = {
+    enable = true,
+}
 
 --[[
     trouble setting
 ]]
 _G.user.trouble = {
+    enable = true,
     show_symbols = true,
 }
 
@@ -399,10 +417,15 @@ _G.user.root_patterns = {
 }
 
 -- enable autocompletion delay for cmp, buggy?
-_G.user.enable_autocomplete_delay = false -- trying performance throttle in cmp
-_G.user.autocomplete_delay = 200
+-- trying performance throttle in cmp
+_G.user.cmp.autocomplete_delay = {
+    enable = false,
+    delay = 200,
+}
 
 --[[ 
   Enable java plugin, pretty heavy
 ]]
-_G.user.enable_java_plugin = false
+_G.user.java = {
+    enable = false,
+}

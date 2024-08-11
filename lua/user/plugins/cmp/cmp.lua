@@ -31,7 +31,7 @@ return {
             { 'luckasRanarison/tailwind-tools.nvim' },
             {
                 'lukas-reineke/cmp-rg',
-                enabled = _G.user.enable_rg_intellisense_in_cmp,
+                enabled = _G.user.cmp.rg_intellisense.enable,
             },
             -- Snippet Engine & its associated nvim-cmp source
             {
@@ -70,7 +70,7 @@ return {
             { 'hrsh7th/cmp-path' },
             {
                 'hrsh7th/cmp-buffer',
-                enabled = _G.user.enable_buffer_intellisense_in_cmp,
+                enabled = _G.user.cmp.buffer_intellisense.enable,
             },
 
             -- If you want to add a bunch of pre-configured snippets,
@@ -127,7 +127,7 @@ return {
 
             -- set delay on autocompletion
             -- requires autocomplete = false
-            if _G.user.enable_autocomplete_delay then
+            if _G.user.cmp.autocomplete_delay.enable then
                 require('user.plugins.cmp.cmp-config.autocomplete-delay').setup_delay(
                     cmp
                 )

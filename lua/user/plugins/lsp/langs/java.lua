@@ -1,6 +1,6 @@
 return {
     'nvim-java/nvim-java',
-    enabled = _G.user.enable_java_plugin,
+    enabled = _G.user.java.enable,
     event = 'BufRead *.java',
     dependencies = {
         'nvim-java/nvim-java-refactor',

@@ -5,7 +5,7 @@ return {
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help ibl`
-    enabled = _G.user.enable_indent_blankline,
+    enabled = _G.user.indent_blankline.enable,
     main = 'ibl',
     event = 'VeryLazy',
 
@@ -13,7 +13,7 @@ return {
         local hooks = require('ibl.hooks')
 
         -- hide first indent level
-        if _G.user.hide_first_indent_level then
+        if _G.user.indent_blankline.hide_first_indent_level then
             hooks.register(
                 hooks.type.WHITESPACE,
                 hooks.builtin.hide_first_space_indent_level
@@ -94,7 +94,7 @@ return {
         local function set_highlight_bg()
             if
                 _G.user.background ~= 'light'
-                and _G.user.indent_blankline_color_background
+                and _G.user.indent_blankline.color_background
             then
                 return highlight_bg
             else
@@ -103,7 +103,7 @@ return {
         end
 
         local function set_highlight_char()
-            if _G.user.indent_blankline_color then
+            if _G.user.indent_blankline.color then
                 return highlight_char
             else
                 return nil
