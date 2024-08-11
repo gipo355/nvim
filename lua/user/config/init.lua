@@ -119,7 +119,7 @@ _G.user.treesitter_context = {
 -- enable minimap and scrollbar on the right (mini.map plugin)
 -- problem: this is 1 map even if split vertically
 _G.user.mini_map = {
-    enable = true,
+    enable = false,
     minimap_width = 10, -- 1 for bar only or 10 for bar and map
     minimap_winblend = 75, -- 0 to 100 transparency
     side = 'right', -- right or left
