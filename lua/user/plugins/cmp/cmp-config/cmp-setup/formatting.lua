@@ -91,7 +91,7 @@ M.setup = function()
                     })[entry.source.name]
 
                     if
-                        _G.user.enable_css_intellisense_in_html
+                        _G.user.htmlcss_intellisense.enable
                         and entry.source.name == 'html-css'
                     then
                         vim_item.menu = entry.completion_item.menu
@@ -189,7 +189,7 @@ M.setup = function()
                     --         vim_item
                     --     )
 
-                    if _G.user.enable_tailwindlsp then
+                    if _G.user.tailwindcss.enable_lsp then
                         vim_item =
                             tailwind_tools.lspkind_format(entry, vim_item)
                     end

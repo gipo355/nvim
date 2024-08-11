@@ -151,7 +151,7 @@ return {
             'nvim-treesitter/nvim-treesitter',
             'nvim-lua/plenary.nvim',
         },
-        enabled = _G.user.enable_css_intellisense_in_html,
+        enabled = _G.user.htmlcss_intellisense.enable,
         config = function()
             require('html-css'):setup()
         end,

@@ -1,6 +1,6 @@
 return {
     'tris203/precognition.nvim',
-    enabled = _G.user.enable_precognition,
+    enabled = _G.user.precognition.enable,
     event = 'VeryLazy',
     config = {
         -- startVisible = true,

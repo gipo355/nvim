@@ -1,7 +1,7 @@
 return {
     'supermaven-inc/supermaven-nvim',
     event = 'BufReadPre',
-    enabled = _G.user.enable_supermaven_autocomplete,
+    enabled = _G.user.supermaven.enable_autocomplete,
     config = function()
         require('supermaven-nvim').setup({
             keymaps = {

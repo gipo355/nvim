@@ -149,7 +149,7 @@ return {
         -- scrollbar
         'lewis6991/satellite.nvim',
         event = 'BufReadPre',
-        enabled = _G.user.enable_satellite_scrollbar,
+        enabled = _G.user.satellite_scrollbar.enable,
         config = function()
             require('satellite').setup()
         end,
@@ -170,7 +170,7 @@ return {
             buffer_leader_key = 'ml', -- Per Buffer Mappings
             per_buffer_config = {
                 satellite = { -- defualt to nil, display arrow index in scrollbar at every update
-                    enable = _G.user.enable_satellite_scrollbar,
+                    enable = _G.user.satellite_scrollbar.enable,
                     overlap = true,
                     priority = 1000,
                 },

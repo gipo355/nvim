@@ -51,7 +51,9 @@ _G.user.colemak = false -- stil buggy, don't use
     Precognition plugin
     shows hints for movements
 ]]
-_G.user.enable_precognition = false
+_G.user.precognition = {
+    enable = false,
+}
 
 --------------------------------
 --[[
@@ -61,12 +63,16 @@ _G.user.enable_precognition = false
     enable github copilot plugin
     don't enable both copilot and supermaven
 ]]
-_G.user.enable_copilot_autocomplete = false
+_G.user.copilot = {
+    enable_autocomplete = false,
+}
 --[[
  enable supermaven plugin
  don't enable both copilot and supermaven
 ]]
-_G.user.enable_supermaven_autocomplete = true
+_G.user.supermaven = {
+    enable_autocomplete = true,
+}
 --------------------------------
 
 -- Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -77,11 +83,15 @@ vim.g.maplocalleader = '\\'
 _G.user.have_nerd_font = true
 
 -- Alpha: enable start screen dashboard
-_G.user.enable_alpha = true
-_G.user.alpha_type = 'dashboard' -- dashboard or startify or theta
+_G.user.alpha = {
+    enable = true,
+    type = 'dashboard', -- dashboard or startify or theta
+}
 
 -- enable sessions autoload with alpha - neovim-session-manager, buggy
-_G.user.enable_sessions_autoload = false
+_G.user.session_manager = {
+    enable_autoload = false,
+}
 
 -- enable scroll animation and disable improved movements (laggy)
 _G.user.mini.animate_scroll = {
@@ -97,14 +107,18 @@ _G.user.mini.animate_scroll = {
  disable all to get back 100% of the width
 ]]
 -- enable bufferline (bufferline plugin)
-_G.user.enable_bufferline = false
+_G.user.bufferline = {
+    enable = false,
+}
 -- lualine plugin
 _G.user.lualine = {
     enable = true,
     show_lsp = true,
 }
 -- disable builtin statusline
-_G.user.disable_builtin_statusline = true
+_G.user.statusline = {
+    disable_builtin = true,
+}
 -- disable status line in tmux to recover space
 _G.user.tmux = {
     disable_statusline = true,
@@ -141,11 +155,17 @@ _G.user.mini.map = {
 
 -- alternative minimap and scrollbar, satellite (good with arrow.nvim)
 -- lighter than mini map
-_G.user.enable_satellite_scrollbar = false
+_G.user.satellite_scrollbar = {
+    enable = false,
+}
 -- there is another option: aerial.nvim, lspsaga symbols-outline, trouble symbols, minimap.nvim, codewindow.nvim, neominimap.nvim
 -- they can all function as symbols minimap
-_G.user.enable_codewindow = false
-_G.user.enable_neominimap = true
+_G.user.codewindow = {
+    enable = false,
+}
+_G.user.neominimap = {
+    enable = true,
+}
 
 --------------------------------
 
@@ -154,13 +174,18 @@ _G.user.enable_neominimap = true
 -- enable tailwindcss lspconfig start (huge lag)
 -- BUG: enabling tailwind requires didChangeWatchedFiles capabilities to false to work (lspconfig)
 -- TODO: check if fixed
-_G.user.enable_tailwindlsp = false
-_G.user.tailwindtools = {
-    enable_conceal = true,
+_G.user.tailwindcss = {
+    enable_lsp = false,
+    tailwind_tools = {
+        enable = true,
+        enable_conceal = true,
+    },
 }
 
 -- enable CSS intellisense (nvim-html-css plugin) pretty heavy, only when needed
-_G.user.enable_css_intellisense_in_html = false
+_G.user.htmlcss_intellisense = {
+    enable = false,
+}
 
 -- enable git blame in line (gitsigns plugin)
 _G.user.enable_gitblame = true

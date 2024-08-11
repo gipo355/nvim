@@ -4,12 +4,11 @@ return {
     'akinsho/bufferline.nvim',
     -- version = '*',
     event = 'BufReadPre',
-    enabled = _G.user.enable_bufferline,
+    enabled = _G.user.bufferline.enable,
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
         require('bufferline').setup({
             options = {
-                -- active = vim.g.enable_bufferline,
                 tab_size = 10,
                 diagnostics = 'nvim_lsp', -- false | "nvim_lsp" | "coc"
                 hover = {

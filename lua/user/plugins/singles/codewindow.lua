@@ -2,7 +2,7 @@
 return {
     'gorbit99/codewindow.nvim',
     event = 'BufWinEnter',
-    enabled = _G.user.enable_codewindow,
+    enabled = _G.user.codewindow.enable,
     config = function()
         local codewindow = require('codewindow')
         codewindow.setup({

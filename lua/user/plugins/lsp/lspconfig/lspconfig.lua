@@ -144,7 +144,7 @@ return {
             -- in case you need one installed but need it inactive
             -- NOTE: lsps added here will not be automatically setup and started
             local skipped_automatic_setups = {
-                tailwindcss = not _G.user.enable_tailwindlsp, -- too laggy, requires special setting (hint, grep the global var to check where it's used)
+                tailwindcss = not _G.user.tailwindcss.enable_lsp, -- too laggy, requires special setting (hint, grep the global var to check where it's used)
                 tsserver = true, -- using typescript-tools, not setting up but needed installed
                 rust_analyzer = true, -- using rustacean plugin, not setting up but needed installed
                 ['rust-analyzer'] = true, -- using rustacean plugin, not setting up but needed installed

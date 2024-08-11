@@ -3,7 +3,7 @@ return {
     dependencies = {
         'nvim-treesitter/nvim-treesitter', -- Recommended
     },
-    enabled = _G.user.enable_neominimap,
+    enabled = _G.user.neominimap.enable,
     lazy = false, -- NOTE: NO NEED to Lazy load
     -- Optional
     -- keys = {
@@ -78,6 +78,15 @@ return {
             auto_enable = true,
             window_border = 'none',
             minimap_width = 7,
+            -- Minimap will not be created for buffers of these types
+            exclude_buftypes = {
+                'oil',
+                'nofile',
+                'nowrite',
+                'quickfix',
+                'terminal',
+                'prompt',
+            },
         }
     end,
 }

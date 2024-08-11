@@ -7,7 +7,7 @@ return {
         'Shatur/neovim-session-manager',
     },
     lazy = false,
-    enabled = _G.user.enable_alpha,
+    enabled = _G.user.alpha.enable,
     priority = 1000,
     -- keys = {
     --     {
@@ -24,14 +24,14 @@ return {
     --     },
     -- },
     config = function()
-        if _G.user.alpha_type == 'dashboard' then
+        if _G.user.alpha.type == 'dashboard' then
             require('user.plugins.sessions-welcome.alpha-config.dashboard')
         end
-        if _G.user.alpha_type == 'startify' then
+        if _G.user.alpha.type == 'startify' then
             require('alpha').setup(require('alpha.themes.startify').config)
         end
 
-        if _G.user.alpha_type == 'theta' then
+        if _G.user.alpha.type == 'theta' then
             require('alpha').setup(require('alpha.themes.theta').config)
         end
 

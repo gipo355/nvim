@@ -7,7 +7,7 @@ return {
         local config = require('session_manager.config')
         local session_manager = require('session_manager')
         local function autoload_mode()
-            if _G.user.enable_sessions_autoload then
+            if _G.user.session_manager.enable_autoload then
                 return config.AutoloadMode.CurrentDir
             end
             return config.AutoloadMode.Disabled

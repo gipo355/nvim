@@ -208,6 +208,6 @@ g.loaded_matchit = 1 -- for vim matchup (also matchparen)
 -- vim.opt.pumblend = 0
 
 -- disable builtin statusline
-if _G.user.disable_builtin_statusline then
+if _G.user.statusline.disable_builtin then
     vim.opt.laststatus = 0
 end

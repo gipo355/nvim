@@ -179,7 +179,7 @@ Follow commitlint rules. Add breaking change note only if necessary.]],
                     },
                 },
                 suggestion = {
-                    enabled = _G.user.enable_copilot_autocomplete,
+                    enabled = _G.user.copilot.enable_autocomplete,
                     auto_trigger = true,
                     debounce = 75,
                     keymap = {
