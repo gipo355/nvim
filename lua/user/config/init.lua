@@ -164,7 +164,7 @@ _G.user.codewindow = {
     enable = false,
 }
 _G.user.neominimap = {
-    enable = true,
+    enable = false,
 }
 
 --------------------------------
