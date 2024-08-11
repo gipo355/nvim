@@ -30,6 +30,8 @@ _G.user = {}
 -- prepare obj for themes. add them here to have intellisense on the installed
 _G.user.themes = {}
 
+_G.user.mini = {}
+
 --[[ 
 for single use variables is to use the vim.g object
 
@@ -82,7 +84,9 @@ _G.user.alpha_type = 'dashboard' -- dashboard or startify or theta
 _G.user.enable_sessions_autoload = false
 
 -- enable scroll animation and disable improved movements (laggy)
-_G.user.animate_scroll = false
+_G.user.mini.animate_scroll = {
+    enable = false,
+}
 
 --------------------------------
 --[[
@@ -118,11 +122,19 @@ _G.user.treesitter_context = {
 
 -- enable minimap and scrollbar on the right (mini.map plugin)
 -- problem: this is 1 map even if split vertically
-_G.user.mini_map = {
+_G.user.mini.map = {
     enable = false,
     minimap_width = 10, -- 1 for bar only or 10 for bar and map
     minimap_winblend = 75, -- 0 to 100 transparency
     side = 'right', -- right or left
+}
+
+_G.user.mini.files = {
+    enable = false,
+}
+
+_G.user.oil = {
+    enable = true,
 }
 
 -- alternative minimap and scrollbar, satellite (good with arrow.nvim)
@@ -182,7 +194,9 @@ _G.user.enable_buffer_intellisense_in_cmp = false
 
 -- use signatures when entering a function (pretty laggy), we are using mini.completion, faster
 _G.user.use_lsp_signature = false
-_G.user.mini_completion_lsp_signature = true
+_G.user.mini.lsp_signature_completion = {
+    enable = true,
+}
 
 -- enable auto save
 _G.user.enable_auto_save = false
@@ -190,7 +204,9 @@ _G.user.enable_auto_save = false
 --[[ theme settings 
 ]]
 -- use mini.colors for customizations on any theme
-_G.user.use_mini_colors_customization = true
+_G.user.mini.colors = {
+    enable = true,
+}
 
 _G.user.transparent_background = set_transparent_bg(false) -- transparent background
 
@@ -244,7 +260,9 @@ _G.user.enable_indent_blankline = true
 _G.user.indent_blankline_color = true -- color the background of indentlines
 _G.user.indent_blankline_color_background = true -- color the background of indentlines
 _G.user.hide_first_indent_level = false -- hide first indent level
-_G.user.enable_mini_indentscope = false -- alternative to indent-blankline, single scope
+_G.user.mini.indentscope = {
+    enable = false,
+}
 --------------------------------
 
 --[[

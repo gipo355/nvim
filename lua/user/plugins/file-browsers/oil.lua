@@ -2,7 +2,7 @@
 return {
     'stevearc/oil.nvim',
     event = 'VimEnter',
-    enabled = false,
+    enabled = _G.user.oil.enable,
     opts = {},
     -- Optional dependencies
     dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -23,7 +23,7 @@ return {
         })
         vim.keymap.set(
             'n',
-            '-',
+            '=',
             '<CMD>Oil<CR>',
             { desc = 'Open parent directory' }
         )

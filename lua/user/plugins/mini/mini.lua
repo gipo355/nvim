@@ -106,7 +106,7 @@ return {
             -- })
 
             -- indentline for current scope, not needed(indent-blankline does it)
-            if _G.user.enable_mini_indentscope then
+            if _G.user.mini.indentscope.enable then
                 local mini_indent = require('mini.indentscope')
                 mini_indent.setup({
                     draw = {
@@ -123,7 +123,7 @@ return {
             end
 
             -- Better Around/Inside textobjects
-            if _G.user.animate_scroll then
+            if _G.user.mini.animate_scroll.enable then
                 -- see https://www.lazyvim.org/extras/ui/mini-animate
                 local animate = require('mini.animate')
                 -- linear, quadratic, cubic, quartic, exponential
@@ -269,7 +269,7 @@ return {
             require('mini.fuzzy').setup()
 
             -- alternative to lsp_signature.nvim
-            if _G.user.mini_completion_lsp_signature then
+            if _G.user.mini.lsp_signature_completion.enable then
                 require('mini.completion').setup({
                     window = {
                         signature = {
@@ -285,14 +285,14 @@ return {
                 })
             end
 
-            if _G.user.use_mini_colors_customization then
+            if _G.user.mini.colors.enable then
                 require('mini.colors').setup()
             end
 
             -- use  local-highlight.nvim (faster), same as illuminate
             require('mini.cursorword').setup() -- highlight word under cursor
 
-            if _G.user.mini_map.enable then
+            if _G.user.mini.map.enable then
                 local minimap = require('mini.map')
                 minimap.setup({
                     integrations = {
@@ -304,9 +304,9 @@ return {
                         encode = minimap.gen_encode_symbols.dot('4x2'),
                     },
                     window = {
-                        width = _G.user.mini_map.minimap_width,
-                        winblend = _G.user.mini_map.minimap_winblend,
-                        side = _G.user.mini_map.side,
+                        width = _G.user.mini.map.minimap_width,
+                        winblend = _G.user.mini.map.minimap_winblend,
+                        side = _G.user.mini.map.side,
                     },
                 }) -- lua Mini
                 vim.api.nvim_create_autocmd('BufEnter', {
@@ -331,24 +331,26 @@ return {
             )
 
             -- replaces oil.nvim
-            require('mini.files').setup({
-                windows = {
-                    -- Maximum number of windows to show side by side
-                    max_number = math.huge,
-                    -- Whether to show preview of directory under cursor
-                    preview = true,
-                    -- Width of focused window
-                    width_focus = 50,
-                    -- Width of non-focused window
-                    width_nofocus = 15,
-                },
-            })
-            -- vim.keymap.set('n', '<leader>-', function()
-            -- vim.keymap.set('n', '<leader>R', function()
-            -- vim.keymap.set('n', '<C-t>', function()
-            vim.keymap.set('n', '+', function()
-                require('mini.files').open()
-            end, set_desc('mini.files open'))
+            if _G.user.mini.files.enable then
+                require('mini.files').setup({
+                    windows = {
+                        -- Maximum number of windows to show side by side
+                        max_number = math.huge,
+                        -- Whether to show preview of directory under cursor
+                        preview = true,
+                        -- Width of focused window
+                        width_focus = 50,
+                        -- Width of non-focused window
+                        width_nofocus = 15,
+                    },
+                })
+                -- vim.keymap.set('n', '<leader>-', function()
+                -- vim.keymap.set('n', '<leader>R', function()
+                -- vim.keymap.set('n', '<C-t>', function()
+                vim.keymap.set('n', '+', function()
+                    require('mini.files').open()
+                end, set_desc('mini.files open'))
+            end
 
             --[[
             surround, adds keymaps to s, lags flash.nvim, conflicts with nvim-surround 
