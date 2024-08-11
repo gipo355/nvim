@@ -120,7 +120,7 @@ _G.user.treesitter_context = {
 --------------------------------
 --[[ File explorer ]]
 _G.user.mini.files = {
-    enable = false,
+    enable = true,
 }
 
 _G.user.oil = {
