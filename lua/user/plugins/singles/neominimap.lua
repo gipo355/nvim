@@ -77,7 +77,7 @@ return {
         vim.g.neominimap = {
             auto_enable = true,
             window_border = 'none',
-            minimap_width = 10,
+            minimap_width = 7,
         }
     end,
 }
