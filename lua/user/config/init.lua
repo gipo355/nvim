@@ -118,6 +118,16 @@ _G.user.treesitter_context = {
 --------------------------------
 
 --------------------------------
+--[[ File explorer ]]
+_G.user.mini.files = {
+    enable = false,
+}
+
+_G.user.oil = {
+    enable = true,
+}
+
+--------------------------------
 --[[ Scrollbars, minimap ]]
 
 -- enable minimap and scrollbar on the right (mini.map plugin)
@@ -127,14 +137,6 @@ _G.user.mini.map = {
     minimap_width = 10, -- 1 for bar only or 10 for bar and map
     minimap_winblend = 75, -- 0 to 100 transparency
     side = 'right', -- right or left
-}
-
-_G.user.mini.files = {
-    enable = false,
-}
-
-_G.user.oil = {
-    enable = true,
 }
 
 -- alternative minimap and scrollbar, satellite (good with arrow.nvim)
