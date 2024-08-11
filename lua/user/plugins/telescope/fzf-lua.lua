@@ -84,7 +84,7 @@ M.fzflua = {
         -- complete path
 
         -- ### FZF-lua enabled
-        if _G.user.picker_use_fzf_lua then
+        if _G.user.pickers.fzf_lua.enable then
             -- buffers
             vim.keymap.set('n', '<c-k>', function()
                 require('fzf-lua').buffers({
@@ -257,7 +257,7 @@ M.fzflua = {
     end,
 }
 -- faster telescope
-if _G.user.picker_use_fzf_lua then
+if _G.user.pickers.fzf_lua.enable then
     return M.fzflua
 else
     return {}

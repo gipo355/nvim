@@ -14,7 +14,9 @@ return {
 
         config = function()
             local gitsigns = require('gitsigns')
-            gitsigns.setup()
+            gitsigns.setup({
+                current_line_blame = _G.user.gitsigns.current_line_blame,
+            })
             -- gitsigns.setup({
             --     signs = {
             --         add = {

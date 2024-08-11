@@ -360,7 +360,7 @@ return {
             -- )
 
             -- #### IMP: disable if using fzf-lua (replaced with fzf-lua.lua)
-            if not _G.user.picker_use_fzf_lua then
+            if not _G.user.pickers.fzf_lua.enable then
                 -- old files
                 vim.keymap.set(
                     'n',

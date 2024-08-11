@@ -188,17 +188,27 @@ _G.user.htmlcss_intellisense = {
 }
 
 -- enable git blame in line (gitsigns plugin)
-_G.user.enable_gitblame = true
+_G.user.gitsigns = {
+    current_line_blame = true,
+}
 --------------------------------
 
 -- pickers: use fzf-lua or telescope ( only for the mose used keymaps )
 _G.user.picker_use_fzf_lua = false
+_G.user.pickers = {
+    -- this disables telescope for most used keymaps and uses fzf-lua instead
+    fzf_lua = {
+        enable = false,
+    },
+}
 
 --[[
     enable ufo folding plugin
     BUG: bugs diffview difftool
 ]]
-_G.user.enable_ufo = true
+_G.user.ufo = {
+    enable = true,
+}
 
 --[[
 CMP heavy sources

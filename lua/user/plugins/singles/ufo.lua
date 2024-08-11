@@ -1,7 +1,7 @@
 -- folding ( will disable folding module )
 return {
     'kevinhwang91/nvim-ufo',
-    enabled = _G.user.enable_ufo,
+    enabled = _G.user.ufo.enable,
     -- event = 'BufReadPre',
     -- https://github.com/kevinhwang91/nvim-ufo/issues/235
     lazy = false,
