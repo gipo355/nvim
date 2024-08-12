@@ -169,6 +169,17 @@ _G.user.neominimap = {
 
 --------------------------------
 
+-------------------------------- LSP
+_G.user.lsp = {
+    hints = {
+        enable = false,
+    },
+    diagnostics = {
+        enable = true,
+    },
+}
+--------------------------------
+
 -------------------------------- HEAVY PLUGINS
 -- WARN: heavy plugins, only enable when needed
 -- enable tailwindcss lspconfig start (huge lag)
@@ -194,7 +205,6 @@ _G.user.gitsigns = {
 --------------------------------
 
 -- pickers: use fzf-lua or telescope ( only for the mose used keymaps )
-_G.user.picker_use_fzf_lua = false
 _G.user.pickers = {
     -- this disables telescope for most used keymaps and uses fzf-lua instead
     fzf_lua = {
@@ -247,7 +257,7 @@ _G.user.autosave = {
 ]]
 -- use mini.colors for customizations on any theme
 _G.user.mini.colors = {
-    enable = true,
+    enable = false,
 }
 
 _G.user.transparent_background = set_transparent_bg(false) -- transparent background
@@ -269,6 +279,7 @@ _G.user.theme = function()
     -- return 'gruvbox-material'
     -- return 'rose-pine'
     -- return 'ares'
+    -- return 'onedark'
 
     -- return 'zenbones'
     -- return 'forestbones'
@@ -280,7 +291,6 @@ _G.user.theme = function()
     -- return 'kanagawabones'
 
     -- return 'material'
-    -- return 'onedark'
     -- return 'sonokai'
     -- return 'catppuccin'
 
@@ -299,13 +309,13 @@ Indent blankline settings
 ]]
 --
 _G.user.indent_blankline = {
-    enable = true,
+    enable = false,
     color = true, -- color the background of indentlines
     color_background = true, -- color the background of indentlines
     hide_first_indent_level = false, -- hide first indent level
 }
 _G.user.mini.indentscope = {
-    enable = false,
+    enable = true,
 }
 --------------------------------
 
@@ -314,7 +324,7 @@ miscellaneous visual settings
 ]]
 --
 _G.user.rainbow_parens = {
-    enable = true,
+    enable = false,
 }
 -- css, tailwind colors, color #hex etc..
 _G.user.highlight_colors = {

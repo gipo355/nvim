@@ -35,9 +35,16 @@ M.callback = function(event)
     -- TODO: inlay hints, codelens
     -- ##### Here we can laod events when LSP has started globally for all FT #####
     -- note: it's recommended to laod per FT
-    -- vim.lsp.inlay_hint.enable()
+    if _G.user.lsp.hints.enable then
+        vim.lsp.inlay_hint.enable()
+    end
+    if _G.user.lsp.diagnostics.enable then
+        vim.diagnostic.enable()
+    else
+        vim.diagnostic.enable(false)
+    end
+
     -- vim.lsp.codelens.refresh(event.buf)
-    -- vim.lsp.diagnostic.enable(event.buf)
 
     -- NOTE: Remember that lua is a real programming language, and as such it is possible
     -- to define small helper and utility functions so you don't have to repeat yourself
