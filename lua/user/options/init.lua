@@ -126,13 +126,23 @@ o.cursorline = true
 -- vim.opt.colorcolumn = '81' -- paint a column at 81 characters
 -- vim.opt.cursorcolumn = true -- highlight current column vertically
 
--- static cursor no blinking
-o.guicursor = ''
--- vim.o.guicursor = table.concat({
---     "n-v-c:block-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100",
---     "i-ci:ver25-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100",
---     "r:hor50-Cursor/lCursor-blinkwait100-blinkon100-blinkoff100",
--- }, ",")
+--[[
+Cursor shapes:
+--]]
+
+-- static cursor no blinking (bypass neovim, use terminal)
+-- o.guicursor = ''
+
+-- static cursor in normal, blinking in insert
+-- o.guicursor = 'n-v-c:block-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100'
+
+vim.o.guicursor = table.concat({
+    'n-v-c:block-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100',
+    'i-ci:ver25-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100',
+    'r:hor50-Cursor/lCursor-blinkwait100-blinkon100-blinkoff100',
+}, ',')
+
+---------
 
 -- ##### end primeagen #####
 

@@ -227,6 +227,11 @@ _G.user.highlight_colors = {
     enable = true,
 }
 
+-- cursor modes colors
+_G.user.cursor_modes = {
+    enable = true,
+}
+
 -- enable CSS intellisense (nvim-html-css plugin) pretty heavy, only when needed
 _G.user.htmlcss_intellisense = {
     enable = false,
