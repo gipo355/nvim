@@ -182,6 +182,8 @@ _G.user.lsp = {
 
 -------------------------------- HEAVY PLUGINS
 -- WARN: heavy plugins, only enable when needed
+
+-- TAILWIND
 -- enable tailwindcss lspconfig start (huge lag)
 -- BUG: enabling tailwind requires didChangeWatchedFiles capabilities to false to work (lspconfig)
 -- TODO: check if fixed
@@ -191,6 +193,32 @@ _G.user.tailwindcss = {
         enable = true,
         enable_conceal = true,
     },
+}
+
+--[[
+Indent blankline settings
+]]
+--
+_G.user.indent_blankline = {
+    enable = false,
+    color = true, -- color the background of indentlines
+    color_background = true, -- color the background of indentlines
+    hide_first_indent_level = false, -- hide first indent level
+}
+_G.user.mini.indentscope = {
+    enable = true,
+}
+
+--[[
+miscellaneous visual settings
+]]
+--
+_G.user.rainbow_parens = {
+    enable = false,
+}
+-- css, tailwind colors, color #hex etc..
+_G.user.highlight_colors = {
+    enable = true,
 }
 
 -- enable CSS intellisense (nvim-html-css plugin) pretty heavy, only when needed
@@ -304,32 +332,6 @@ _G.user.theme = function()
 end
 
 --------------------------------
---[[
-Indent blankline settings
-]]
---
-_G.user.indent_blankline = {
-    enable = false,
-    color = true, -- color the background of indentlines
-    color_background = true, -- color the background of indentlines
-    hide_first_indent_level = false, -- hide first indent level
-}
-_G.user.mini.indentscope = {
-    enable = true,
-}
---------------------------------
-
---[[
-miscellaneous visual settings
-]]
---
-_G.user.rainbow_parens = {
-    enable = false,
-}
--- css, tailwind colors, color #hex etc..
-_G.user.highlight_colors = {
-    enable = true,
-}
 
 --[[
     trouble setting
