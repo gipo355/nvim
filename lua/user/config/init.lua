@@ -156,7 +156,7 @@ _G.user.mini.map = {
 -- alternative minimap and scrollbar, satellite (good with arrow.nvim)
 -- lighter than mini map
 _G.user.satellite_scrollbar = {
-    enable = false,
+    enable = true,
 }
 -- there is another option: aerial.nvim, lspsaga symbols-outline, trouble symbols, minimap.nvim, codewindow.nvim, neominimap.nvim
 -- they can all function as symbols minimap
@@ -164,7 +164,7 @@ _G.user.codewindow = {
     enable = false,
 }
 _G.user.neominimap = {
-    enable = false,
+    enable = true,
 }
 
 -- aerial lsp symbols map
