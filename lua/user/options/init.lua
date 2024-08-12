@@ -98,9 +98,6 @@ o.fillchars = {
 -- Preview substitutions live, as you type!
 o.inccommand = 'split'
 
--- Show which line your cursor is on
-o.cursorline = true
-
 -- Minimal number of screen lines to keep above and below the cursor.
 o.scrolloff = 8
 
@@ -122,10 +119,14 @@ vim.opt.hlsearch = false -- possible conflicts with flash nvim? highlight search
 vim.opt.incsearch = false -- possible conflicts with flash nvim? incremental search
 -- color max width columt
 
+-- Show which line your cursor is on
+o.cursorline = true
+
 -- columns
 -- vim.opt.colorcolumn = '81' -- paint a column at 81 characters
 -- vim.opt.cursorcolumn = true -- highlight current column vertically
 
+-- static cursor no blinking
 o.guicursor = ''
 -- vim.o.guicursor = table.concat({
 --     "n-v-c:block-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100",

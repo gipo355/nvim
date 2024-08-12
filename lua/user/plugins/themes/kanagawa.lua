@@ -20,6 +20,8 @@ return {
             return
         end
 
+        vim.opt.cursorline = false
+
         kanagawa.setup({
             compile = true,
             undercurl = true, -- enable undercurls
