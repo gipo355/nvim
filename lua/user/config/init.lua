@@ -170,6 +170,7 @@ _G.user.neominimap = {
 -- aerial lsp symbols map
 _G.user.aerial = {
     enable = true,
+    direction = 'prefer_left',
 }
 
 --------------------------------

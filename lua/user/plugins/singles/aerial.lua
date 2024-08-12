@@ -1,3 +1,4 @@
+-- symbols map on side
 return {
     'stevearc/aerial.nvim',
     enabled = _G.user.aerial.enable,
@@ -12,7 +13,10 @@ return {
         placement = 'edge',
         attach_mode = 'global',
         -- default_direction = "prefer_right",
-        -- default_direction = 'left',
+        -- default_direction = 'prefer_left',
+        layout = {
+            default_direction = _G.user.aerial.direction,
+        },
 
         -- ignore = {
         --     filetypes = {
