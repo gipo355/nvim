@@ -112,7 +112,7 @@ _G.user.bufferline = {
 }
 -- lualine plugin
 _G.user.lualine = {
-    enable = true,
+    enable = false,
     show_lsp = true,
 }
 -- disable builtin statusline
