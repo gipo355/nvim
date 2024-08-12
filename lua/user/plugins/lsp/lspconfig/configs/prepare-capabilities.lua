@@ -29,9 +29,11 @@ M.prepare_capabilities = function()
     -- workspace/didChangeWatchedFiles LSP client capability is now enabled by default
     -- BUG: breaks tailwindcss lsp if set to true (or commented which means use fswatch)
     -- watch for file changes (default: true)
-    if _G.user.tailwindcss.enable_lsp then
-        capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = false
-    end
+
+    -- NOTE: looks like it's fixed
+    -- if _G.user.tailwindcss.enable_lsp then
+    --     capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = false
+    -- end
 
     return capabilities
 end

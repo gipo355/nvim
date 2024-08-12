@@ -187,8 +187,9 @@ _G.user.lsp = {
 -- enable tailwindcss lspconfig start (huge lag)
 -- BUG: enabling tailwind requires didChangeWatchedFiles capabilities to false to work (lspconfig)
 -- TODO: check if fixed
+-- NOTE: looks like it's fixed
 _G.user.tailwindcss = {
-    enable_lsp = false,
+    enable_lsp = true,
     tailwind_tools = {
         enable = true,
         enable_conceal = true,
@@ -206,7 +207,7 @@ _G.user.indent_blankline = {
     hide_first_indent_level = false, -- hide first indent level
 }
 _G.user.mini.indentscope = {
-    enable = true,
+    enable = false,
 }
 
 --[[
@@ -302,8 +303,8 @@ _G.user.theme = function()
 
     -- return 'vague'
     -- return 'monokai-pro'
-    return 'gruvbox-baby'
-    -- return 'kanagawa'
+    -- return 'gruvbox-baby'
+    return 'kanagawa'
     -- return 'gruvbox-material'
     -- return 'rose-pine'
     -- return 'ares'
