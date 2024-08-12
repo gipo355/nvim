@@ -108,4 +108,23 @@ M.delete_files = function(prompt_bufnr)
     actions.close(prompt_bufnr)
 end
 
+-- rename single file
+M.rename_file = function(prompt_bufnr)
+    local current_picker = actions_state.get_current_picker(prompt_bufnr)
+    local selected_entries = current_picker:get_multi_selection()
+
+    local new_name = ''
+
+    if #selected_entries == 0 then
+        local selected_entry = actions_state.get_selected_entry()
+        new_name = vim.fn.input('New name: ', selected_entry[1])
+        if new_name then
+            os.rename(selected_entry[1], new_name)
+        end
+    end
+
+    -- Close the picker
+    actions.close(prompt_bufnr)
+end
+
 return M

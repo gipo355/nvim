@@ -194,6 +194,7 @@ return {
                             ['<C-k>'] = actions.move_selection_previous,
                             ['<C-n>'] = actions.cycle_history_next,
                             ['<C-c>'] = actions.close,
+                            ['<C-r>'] = custom_functions.rename_file,
                             ['<C-p>'] = actions.cycle_history_prev,
                             ['<C-f>'] = actions.to_fuzzy_refine,
                             ['<C-q>'] = function(...)
@@ -204,6 +205,7 @@ return {
 
                         n = {
                             ['<c-j>'] = actions.move_selection_next,
+                            ['r'] = custom_functions.rename_file,
                             ['dd'] = custom_functions.delete_files,
                             -- ['dd'] = actions.delete_buffer,
                             ['<C-c>'] = actions.close,
