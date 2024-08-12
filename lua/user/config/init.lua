@@ -388,18 +388,18 @@ vim.diagnostic.config(_G.user.diagnostics_config)
 -- set lsp diagnostic symbols (signs)
 -- WARN: deprecated, use vim.diagnostic.config instead (signs field)
 -- https://github.com/mfussenegger/nvim-dap/discussions/355
--- local function lspSymbol(name, icon)
---     vim.fn.sign_define(
---         'DiagnosticSign' .. name,
---         { text = icon, numhl = 'DiagnosticDefault' .. name }
---     )
--- end
--- lspSymbol('Error', _G.user.diagnostic_symbols.error)
--- lspSymbol('Information', _G.user.diagnostic_symbols.info)
--- lspSymbol('Hint', _G.user.diagnostic_symbols.hint)
--- lspSymbol('Info', _G.user.diagnostic_symbols.info)
--- lspSymbol('Warning', _G.user.diagnostic_symbols.warn)
--- lspSymbol('Warn', _G.user.diagnostic_symbols.warn)
+local function lspSymbol(name, icon)
+    vim.fn.sign_define(
+        'DiagnosticSign' .. name,
+        { text = icon, numhl = 'DiagnosticDefault' .. name }
+    )
+end
+lspSymbol('Error', _G.user.diagnostic_symbols.error)
+lspSymbol('Information', _G.user.diagnostic_symbols.info)
+lspSymbol('Hint', _G.user.diagnostic_symbols.hint)
+lspSymbol('Info', _G.user.diagnostic_symbols.info)
+lspSymbol('Warning', _G.user.diagnostic_symbols.warn)
+lspSymbol('Warn', _G.user.diagnostic_symbols.warn)
 
 -- root patterns for rooter plugin and <leader>a change root
 _G.user.root_patterns = {
