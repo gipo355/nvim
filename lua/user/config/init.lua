@@ -112,7 +112,7 @@ _G.user.bufferline = {
 }
 -- lualine plugin
 _G.user.lualine = {
-    enable = false,
+    enable = true,
     show_lsp = true,
 }
 -- disable builtin statusline
@@ -142,7 +142,7 @@ _G.user.oil = {
 }
 
 --------------------------------
---[[ Scrollbars, minimaps ]]
+--[[ Scrollbars, minimaps, lspsymbols ]]
 
 -- enable minimap and scrollbar on the right (mini.map plugin)
 -- problem: this is 1 map even if split vertically
@@ -165,6 +165,11 @@ _G.user.codewindow = {
 }
 _G.user.neominimap = {
     enable = false,
+}
+
+-- aerial lsp symbols map
+_G.user.aerial = {
+    enable = true,
 }
 
 --------------------------------
@@ -201,9 +206,9 @@ Indent blankline settings
 ]]
 --
 _G.user.indent_blankline = {
-    enable = false,
+    enable = true,
     color = true, -- color the background of indentlines
-    color_background = true, -- color the background of indentlines
+    color_background = false, -- color the background of indentlines
     hide_first_indent_level = false, -- hide first indent level
 }
 _G.user.mini.indentscope = {
@@ -213,9 +218,9 @@ _G.user.mini.indentscope = {
 --[[
 miscellaneous visual settings
 ]]
---
+-- rainbow parentheses and html tags colorized
 _G.user.rainbow_parens = {
-    enable = false,
+    enable = true,
 }
 -- css, tailwind colors, color #hex etc..
 _G.user.highlight_colors = {
