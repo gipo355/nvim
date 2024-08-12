@@ -5,15 +5,16 @@ return {
     -- tag = 'v0.2.0',
     config = function()
         require('modes').setup({
-            colors = {
-                bg = '', -- Optional bg param, defaults to Normal hl group
-                copy = '#f5c359',
-                delete = '#c75c6a',
-                insert = '#78ccc5',
-                visual = '#9745be',
-            },
+            -- colors = {
+            --     bg = '', -- Optional bg param, defaults to Normal hl group
+            --     copy = '#f5c359',
+            --     delete = '#c75c6a',
+            --     insert = '#78ccc5',
+            --     visual = '#9745be',
+            --     replace = '#e5c07b',
+            -- },
             -- Set opacity for cursorline and number background
-            line_opacity = 0.15,
+            -- line_opacity = 0.15,
 
             -- Enable cursor highlights
             set_cursor = true,

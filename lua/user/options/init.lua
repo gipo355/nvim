@@ -119,8 +119,8 @@ vim.opt.hlsearch = false -- possible conflicts with flash nvim? highlight search
 vim.opt.incsearch = false -- possible conflicts with flash nvim? incremental search
 -- color max width columt
 
--- Show which line your cursor is on
-o.cursorline = true
+-- Show which line your cursor is on (kanagawa overrides this too, grep for 'cursorline')
+o.cursorline = false
 
 -- columns
 -- vim.opt.colorcolumn = '81' -- paint a column at 81 characters
@@ -131,16 +131,16 @@ Cursor shapes:
 --]]
 
 -- static cursor no blinking (bypass neovim, use terminal)
--- o.guicursor = ''
+o.guicursor = ''
 
 -- static cursor in normal, blinking in insert
 -- o.guicursor = 'n-v-c:block-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100'
 
-vim.o.guicursor = table.concat({
-    'n-v-c:block-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100',
-    'i-ci:ver25-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100',
-    'r:hor50-Cursor/lCursor-blinkwait100-blinkon100-blinkoff100',
-}, ',')
+-- vim.o.guicursor = table.concat({
+--     'n-v-c:block-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100',
+--     'i-ci:ver25-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100',
+--     'r:hor50-Cursor/lCursor-blinkwait100-blinkon100-blinkoff100',
+-- }, ',')
 
 ---------
 
