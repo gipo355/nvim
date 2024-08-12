@@ -217,14 +217,9 @@ ripgrep and buffer
  cmp ripgrep search in cmp (cmp plugin)
 ]]
 --
-_G.user.cmp_sources = {
-    enable = true,
-    buffer = false,
-    ripgrep = true,
-}
 _G.user.cmp = {
     rg_intellisense = {
-        enable = true,
+        enable = false,
     },
     buffer_intellisense = {
         enable = false,

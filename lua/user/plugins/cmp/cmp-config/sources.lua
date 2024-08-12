@@ -212,15 +212,21 @@ M.set_sources = function(ev, cmp)
 
     -- append buffer source if the file is not too big
     -- this appends last, prio is given to other sources
-    if _G.user.cmp_sources.enable and not tooBig(ev.buf) then
-        if _G.user.cmp_sources.buffer then
+    -- if _G.user.cmp_sources.enable and not tooBig(ev.buf) then
+    if
+        (
+            _G.user.cmp.buffer_intellisense.enable
+            or _G.user.cmp.rg_intellisense.enable
+        ) and not tooBig(ev.buf)
+    then
+        if _G.user.cmp.buffer_intellisense.enable then
             sources[#sources + 1] = {
                 name = 'buffer',
                 keyword_length = 2,
                 max_item_count = 5,
             }
         end
-        if _G.user.cmp_sources.ripgrep then
+        if _G.user.cmp.rg_intellisense.enable then
             sources[#sources + 1] = {
                 name = 'rg',
                 keyword_length = 2,
