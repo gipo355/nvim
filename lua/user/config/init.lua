@@ -39,14 +39,15 @@ or the _G object (which provides intellisense)
 
 I keep vim.g for third party plugins and _G for my own global ]]
 --
---------------------------------
 
+--------------------------------
 --[[
  Colemak
 ]]
 --
 _G.user.colemak = false -- stil buggy, don't use
 
+--------------------------------
 --[[
     Precognition plugin
     shows hints for movements
@@ -56,10 +57,7 @@ _G.user.precognition = {
 }
 
 --------------------------------
---[[
- AI
-]]
---[[
+--[[ AI 
     enable github copilot plugin
     don't enable both copilot and supermaven
 ]]
@@ -88,6 +86,11 @@ _G.user.alpha = {
     type = 'dashboard', -- dashboard or startify or theta
 }
 
+-- enable auto save
+_G.user.autosave = {
+    enable = false,
+}
+
 -- enable sessions autoload with alpha - neovim-session-manager, buggy
 _G.user.session_manager = {
     enable_autoload = false,
@@ -99,13 +102,12 @@ _G.user.mini.animate_scroll = {
 }
 
 --------------------------------
---[[
-
- VERTICAL SPACE
+--[[ VERTICAL SPACE
 
  Lualine, bufferline, treesitter context and built-in statusline occupy space at the top and bottom
  disable all to get back 100% of the width
 ]]
+
 -- enable bufferline (bufferline plugin)
 _G.user.bufferline = {
     enable = false,
@@ -129,16 +131,21 @@ _G.user.treesitter_context = {
     max_lines = 1, -- maximum number of lines to show
     multiline_threshold = 1, -- max n of lines for single context
 }
---------------------------------
 
 --------------------------------
---[[ File explorer ]]
+--[[ File explorers ]]
+
 _G.user.mini.files = {
     enable = true,
 }
 
 _G.user.oil = {
     enable = true,
+}
+
+_G.user.nvimtree = {
+    enable = true,
+    side = 'right',
 }
 
 --------------------------------
@@ -163,6 +170,7 @@ _G.user.satellite_scrollbar = {
 _G.user.codewindow = {
     enable = false,
 }
+
 _G.user.neominimap = {
     enable = true,
 }
@@ -174,16 +182,7 @@ _G.user.aerial = {
 }
 
 --------------------------------
-
---[[
- Nvimtree ]]
---
-_G.user.nvimtree = {
-    enable = true,
-    side = 'right',
-}
-
--------------------------------- LSP
+--[[ LSP ]]
 _G.user.lsp = {
     hints = {
         enable = false,
@@ -194,13 +193,12 @@ _G.user.lsp = {
 }
 --------------------------------
 
--------------------------------- HEAVY PLUGINS
--- WARN: heavy plugins, only enable when needed
+--------------------------------
+--[[ HEAVY PLUGINS ]]
 
--- TAILWIND
+-- [[ TAILWIND ]]
 -- enable tailwindcss lspconfig start (huge lag)
--- BUG: enabling tailwind requires didChangeWatchedFiles capabilities to false to work (lspconfig)
--- TODO: check if fixed
+-- enabling tailwind requires didChangeWatchedFiles capabilities to false to work (lspconfig)
 -- NOTE: looks like it's fixed
 _G.user.tailwindcss = {
     enable_lsp = true,
@@ -210,10 +208,7 @@ _G.user.tailwindcss = {
     },
 }
 
---[[
-Indent blankline settings
-]]
---
+--[[ Indent blankline settings ]]
 _G.user.indent_blankline = {
     enable = true,
     color = true, -- color the background of indentlines
@@ -224,9 +219,8 @@ _G.user.mini.indentscope = {
     enable = false,
 }
 
---[[
-miscellaneous visual settings
-]]
+--------------------------------
+--[[ miscellaneous visual settings ]]
 -- rainbow parentheses and html tags colorized
 _G.user.rainbow_parens = {
     enable = true,
@@ -251,6 +245,7 @@ _G.user.gitsigns = {
     current_line_blame = false,
 }
 --------------------------------
+--[[ PICKERS ]]
 
 -- pickers: use fzf-lua or telescope ( only for the mose used keymaps )
 _G.user.pickers = {
@@ -260,14 +255,14 @@ _G.user.pickers = {
     },
 }
 
---[[
-    enable ufo folding plugin
-    BUG: bugs diffview difftool
-]]
+--------------------------------
+--[[ enable ufo folding plugin
+--BUG: bugs diffview difftool ]]
 _G.user.ufo = {
     enable = true,
 }
 
+--------------------------------
 --[[
 CMP heavy sources
 ripgrep and buffer
@@ -284,10 +279,19 @@ _G.user.cmp = {
     },
 }
 
+-- enable autocompletion delay for cmp, buggy?
+-- trying performance throttle in cmp
+_G.user.cmp.autocomplete_delay = {
+    enable = false,
+    delay = 200,
+}
+
 -- TODO: finish this, must alternate between deno and typescript tools
 -- use denolsp
 -- _G.user.use_deno_disable_ts = false
 
+--------------------------------
+-- [[ LSP Signatures ]]
 -- use signatures when entering a function (pretty laggy), we are using mini.completion, faster
 _G.user.lsp_signature = {
     enable = false,
@@ -296,13 +300,9 @@ _G.user.mini.lsp_signature_completion = {
     enable = true,
 }
 
--- enable auto save
-_G.user.autosave = {
-    enable = false,
-}
+--------------------------------
+--[[ Theme and color settings ]]
 
---[[ theme settings 
-]]
 -- use mini.colors for customizations on any theme
 _G.user.mini.colors = {
     enable = false,
@@ -322,8 +322,8 @@ _G.user.theme = function()
 
     -- return 'vague'
     -- return 'monokai-pro'
-    -- return 'gruvbox-baby'
-    return 'kanagawa'
+    return 'gruvbox-baby'
+    -- return 'kanagawa'
     -- return 'gruvbox-material'
     -- return 'rose-pine'
     -- return 'ares'
@@ -352,7 +352,6 @@ _G.user.theme = function()
 end
 
 --------------------------------
-
 --[[
     trouble setting
 ]]
@@ -360,6 +359,9 @@ _G.user.trouble = {
     enable = true,
     show_symbols = true,
 }
+
+--------------------------------
+--[[ LSP Diagnostics ]]
 
 --[[
 This diagnostic config is put here to use it in multiple places
@@ -435,6 +437,9 @@ lspSymbol('Info', _G.user.diagnostic_symbols.info)
 lspSymbol('Warning', _G.user.diagnostic_symbols.warn)
 lspSymbol('Warn', _G.user.diagnostic_symbols.warn)
 
+--------------------------------
+--[[ Rooter and root patterns ]]
+
 -- root patterns for rooter plugin and <leader>a change root
 _G.user.root_patterns = {
     'angular.json',
@@ -457,13 +462,7 @@ _G.user.root_patterns = {
     '.git',
 }
 
--- enable autocompletion delay for cmp, buggy?
--- trying performance throttle in cmp
-_G.user.cmp.autocomplete_delay = {
-    enable = false,
-    delay = 200,
-}
-
+--------------------------------
 --[[ 
   Enable java plugin, pretty heavy
 ]]

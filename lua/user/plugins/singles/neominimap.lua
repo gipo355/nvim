@@ -76,6 +76,10 @@ return {
         vim.opt.sidescrolloff = 36 -- It's recommended to set a large value
         vim.g.neominimap = {
             auto_enable = true,
+            diagnostic = {
+                enabled = true,
+                severity = vim.diagnostic.severity.ERROR,
+            },
             window_border = 'none',
             minimap_width = 7,
             -- Minimap will not be created for buffers of these types
