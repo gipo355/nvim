@@ -101,7 +101,12 @@ vim.keymap.set(
 -- vim.keymap.set('n', '<Esc>', '<cmd>nohl<CR><Esc>')
 
 -- quit
-vim.keymap.set('n', '<leader>Q', '<cmd>wqa<cr>', set_desc('[Q]uit all'))
+vim.keymap.set(
+    'n',
+    '<leader>Q',
+    '<cmd>w<cr><cmd>wqa<cr>',
+    set_desc('[Q]uit all')
+)
 vim.keymap.set('n', '<leader>q', '<cmd>confirm q<cr>', set_desc('[q]uit'))
 -- vim.keymap.set(
 --     'n',
@@ -114,7 +119,7 @@ vim.keymap.set('n', '<leader>q', '<cmd>confirm q<cr>', set_desc('[q]uit'))
 vim.keymap.set('n', '<C-q>', '<cmd>norm @q<cr>', set_desc('exec q macro'))
 
 -- save
-vim.keymap.set('n', '<leader>w', '<cmd>wa<cr>', set_desc('Save all'))
+vim.keymap.set('n', '<leader>w', '<cmd>w<cr><cmd>wa<cr>', set_desc('Save all'))
 vim.keymap.set('n', '<c-s>', '<cmd>w<cr><cmd>wa<cr>', set_desc('Save all'))
 vim.keymap.set(
     'n',
