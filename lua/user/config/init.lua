@@ -82,7 +82,7 @@ _G.user.have_nerd_font = true
 
 -- Alpha: enable start screen dashboard
 _G.user.alpha = {
-    enable = true,
+    enable = false,
     type = 'dashboard', -- dashboard or startify or theta
 }
 
