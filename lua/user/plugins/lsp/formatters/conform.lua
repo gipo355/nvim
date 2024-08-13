@@ -49,42 +49,63 @@ return {
                 lua = { 'stylua' },
 
                 -- php = { 'php_cs_fixer', 'prettier' },
-                -- markdown = { 'prettierd' },
-                -- php = { 'prettierd' },
-                -- css = { 'prettierd' },
-                -- scss = { 'prettierd' },
-                -- html = { 'prettierd' },
-                -- ['angular.html'] = { 'prettierd' },
-                -- yaml = { 'prettierd' },
-                -- pug = { 'prettierd' },
-                -- astro = { 'prettierd' },
-                -- svelte = { 'prettierd' },
-                -- vue = { 'prettierd' },
-                -- less = { 'prettierd' },
-                -- json = { 'prettierd' },
-                -- jsonc = { 'prettierd' },
-                -- javascript = { 'prettierd' },
-                -- javascriptreact = { 'prettierd' },
-                -- typescript = { 'prettierd' },
-                -- typescriptreact = { 'prettierd' },
-                markdown = { 'prettier' },
-                php = { 'prettier' },
-                css = { 'prettier' },
-                scss = { 'prettier' },
-                html = { 'prettier' },
-                ['angular.html'] = { 'prettier' },
-                yaml = { 'prettier' },
-                pug = { 'prettier' },
-                astro = { 'prettier' },
-                svelte = { 'prettier' },
-                vue = { 'prettier' },
-                less = { 'prettier' },
-                json = { 'prettier' },
-                jsonc = { 'prettier' },
-                javascript = { 'prettier' },
-                javascriptreact = { 'prettier' },
-                typescript = { 'prettier' },
-                typescriptreact = { 'prettier' },
+
+                markdown = { 'prettierd' },
+                php = { 'prettierd' },
+                css = { 'prettierd' },
+                scss = { 'prettierd' },
+                html = { 'prettierd' },
+                ['angular.html'] = { 'prettierd' },
+                yaml = { 'prettierd' },
+                pug = { 'prettierd' },
+                astro = { 'prettierd' },
+                svelte = { 'prettierd' },
+                vue = { 'prettierd' },
+                less = { 'prettierd' },
+                json = { 'prettierd' },
+                jsonc = { 'prettierd' },
+                javascript = { 'prettierd' },
+                javascriptreact = { 'prettierd' },
+                typescript = { 'prettierd' },
+                typescriptreact = { 'prettierd' },
+
+                -- markdown = { { 'prettierd', 'prettier' } },
+                -- php = { { 'prettierd', 'prettier' } },
+                -- css = { { 'prettierd', 'prettier' } },
+                -- scss = { { 'prettierd', 'prettier' } },
+                -- html = { { 'prettierd', 'prettier' } },
+                -- ['angular.html'] = { { 'prettierd', 'prettier' } },
+                -- yaml = { { 'prettierd', 'prettier' } },
+                -- pug = { { 'prettierd', 'prettier' } },
+                -- astro = { { 'prettierd', 'prettier' } },
+                -- svelte = { { 'prettierd', 'prettier' } },
+                -- vue = { { 'prettierd', 'prettier' } },
+                -- less = { { 'prettierd', 'prettier' } },
+                -- json = { { 'prettierd', 'prettier' } },
+                -- jsonc = { { 'prettierd', 'prettier' } },
+                -- javascript = { { 'prettierd', 'prettier' } },
+                -- javascriptreact = { { 'prettierd', 'prettier' } },
+                -- typescript = { { 'prettierd', 'prettier' } },
+                -- typescriptreact = { { 'prettierd', 'prettier' } },
+
+                -- markdown = { 'prettier' },
+                -- php = { 'prettier' },
+                -- css = { 'prettier' },
+                -- scss = { 'prettier' },
+                -- html = { 'prettier' },
+                -- ['angular.html'] = { 'prettier' },
+                -- yaml = { 'prettier' },
+                -- pug = { 'prettier' },
+                -- astro = { 'prettier' },
+                -- svelte = { 'prettier' },
+                -- vue = { 'prettier' },
+                -- less = { 'prettier' },
+                -- json = { 'prettier' },
+                -- jsonc = { 'prettier' },
+                -- javascript = { 'prettier' },
+                -- javascriptreact = { 'prettier' },
+                -- typescript = { 'prettier' },
+                -- typescriptreact = { 'prettier' },
 
                 -- these should be formatted by lsp biome
                 -- json = { 'biome' },
@@ -131,26 +152,28 @@ return {
                 formatters_by_ft = formatters_by_ft,
 
                 -- This snippet will automatically detect which formatters take too long to run synchronously and will run them async on save instead.
-                format_on_save = function(bufnr)
-                    if slow_format_filetypes[vim.bo[bufnr].filetype] then
-                        return
-                    end
-                    local function on_format(err)
-                        if err and err:match('timeout$') then
-                            slow_format_filetypes[vim.bo[bufnr].filetype] = true
-                        end
-                    end
-
-                    return { timeout_ms = 200, lsp_format = 'fallback' },
-                        on_format
-                end,
-
-                format_after_save = function(bufnr)
-                    if not slow_format_filetypes[vim.bo[bufnr].filetype] then
-                        return
-                    end
-                    return { lsp_format = 'fallback' }
-                end,
+                -- format_on_save = function(bufnr)
+                --     if slow_format_filetypes[vim.bo[bufnr].filetype] then
+                --         return
+                --     end
+                --     local function on_format(err)
+                --         if err and err:match('timeout$') then
+                --             slow_format_filetypes[vim.bo[bufnr].filetype] = true
+                --         end
+                --     end
+                --
+                --     return { timeout_ms = 500, lsp_format = 'fallback' },
+                --         on_format
+                --     -- return { timeout_ms = 200, lsp_format = 'first' }, on_format
+                -- end,
+                --
+                -- format_after_save = function(bufnr)
+                --     if not slow_format_filetypes[vim.bo[bufnr].filetype] then
+                --         return
+                --     end
+                --     return { lsp_format = 'fallback' }
+                --     -- return { lsp_format = 'first' }
+                -- end,
             })
             -- better than eslint_d
             -- vim.api.nvim_create_autocmd('BufWritePre', {
@@ -176,22 +199,39 @@ return {
             -- for conform langs and none-ls langs
             -- use those for patterns
             -- conform auto format on save
+            local lsp_format_on_save_group = vim.api.nvim_create_augroup(
+                'lsp_format_on_save',
+                -- The `clear` option in `vim.api.nvim_create_augroup` is used to clear any existing autocmds in the group before creating the new group. This ensures that the group starts fresh without any previously defined autocmds.
+                -- - `clear = true`: Clears any existing autocmds in the group before creating the new group.
+                -- - `clear = false` (or omitted): Keeps any existing autocmds in the group.
+                -- This is useful to avoid conflicts or unintended behavior from previously defined autocmds in the same group.
+                { clear = false }
+            )
+
+            -- local function on_format(err)
+            --     print('on_format')
+            --     -- if err and err:match('timeout$') then
+            --     --     slow_format_filetypes[vim.bo[bufnr].filetype] = true
+            --     -- end
+            -- end
+
             vim.api.nvim_create_autocmd('BufWritePre', {
-                -- group = 'lsp_format_on_save',
+                group = lsp_format_on_save_group,
                 pattern = '*',
                 callback = function(event)
                     -- don't format if no formatter is set
-                    if formatters_by_ft[vim.bo.filetype] == nil then
-                        return
-                    end
+                    -- if formatters_by_ft[vim.bo.filetype] == nil then
+                    --     return
+                    -- end
 
-                    if
-                        #vim.lsp.get_clients({
-                            name = 'eslint',
-                        }) > 0
-                    then
-                        vim.cmd('EslintFixAll')
-                    end
+                    -- if
+                    --     #vim.lsp.get_clients({
+                    --         name = 'eslint',
+                    --     }) > 0
+                    -- then
+                    --         NOTE: this is not in vim.lsp.buf.format()
+                    --     vim.cmd('EslintFixAll')
+                    -- end
 
                     if
                         #vim.lsp.get_clients({
@@ -201,10 +241,20 @@ return {
                         vim.cmd('TSToolsFixAll')
                     end
 
-                    require('conform').format({
-                        bufnr = event.buf,
-                        lsp_fallback = true,
-                    })
+                    require('conform').format(
+                        {
+                            bufnr = event.buf,
+                            -- async = true,
+                            lsp_format = 'first',
+                            stop_after_first = false,
+                            -- id
+                            -- name
+                            -- filter
+                            -- undojoin
+                            -- lsp_fallback = true,
+                        }
+                        -- , function(err) end
+                    )
                 end,
             })
         end,

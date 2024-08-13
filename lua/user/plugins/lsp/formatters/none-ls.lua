@@ -276,8 +276,6 @@ return {
 
         -- NOTE: we use conform to format, none-ls for diagnostics
         --
-    end,
-    init = function()
         local format_filter = require(
             'user.plugins.lsp.formatters.utils.formatting'
         ).format_filter
@@ -298,47 +296,47 @@ return {
         }
 
         -- TODO: fix overlapping double save with conform
-        vim.api.nvim_create_autocmd('BufWritePre', {
-            -- group = 'lsp_format_on_save',
-            pattern = '*',
-            callback = function()
-                -- don't format for those filetypes, use conform
-                if eslint_languages[vim.bo.filetype] then
-                    return
-                end
-
-                if vim.bo.filetype == 'html' then
-                    return
-                end
-                if vim.bo.filetype == 'lua' then
-                    return
-                end
-
-                if vim.bo.filetype == 'cs' then
-                    -- require('lvim.lsp.utils').format({
-                    --     timeout_ms = 2000,
-                    --     filter = require('lvim.lsp.utils').format_filter,
-                    -- })
-                    format({
-                        timeout_ms = 2000,
-                        filter = format_filter,
-                    })
-                    return
-                end
-
-                -- conform
-                -- if
-                --     eslint_languages[vim.bo.filetype]
-                --     and #vim.lsp.get_clients({ name = 'eslint' }) > 0
-                -- then
-                --     vim.cmd('EslintFixAll')
-                --     vim.lsp.buf.format()
-                --
-                --     return
-                -- end
-
-                vim.lsp.buf.format()
-            end,
-        })
+        -- vim.api.nvim_create_autocmd('BufWritePre', {
+        --     group = 'lsp_format_on_save',
+        --     pattern = '*',
+        --     callback = function()
+        --         -- don't format for those filetypes, use conform
+        --         if eslint_languages[vim.bo.filetype] then
+        --             return
+        --         end
+        --
+        --         if vim.bo.filetype == 'html' then
+        --             return
+        --         end
+        --         if vim.bo.filetype == 'lua' then
+        --             return
+        --         end
+        --
+        --         if vim.bo.filetype == 'cs' then
+        --             -- require('lvim.lsp.utils').format({
+        --             --     timeout_ms = 2000,
+        --             --     filter = require('lvim.lsp.utils').format_filter,
+        --             -- })
+        --             format({
+        --                 timeout_ms = 2000,
+        --                 filter = format_filter,
+        --             })
+        --             return
+        --         end
+        --
+        --         -- conform
+        --         -- if
+        --         --     eslint_languages[vim.bo.filetype]
+        --         --     and #vim.lsp.get_clients({ name = 'eslint' }) > 0
+        --         -- then
+        --         --     vim.cmd('EslintFixAll')
+        --         --     vim.lsp.buf.format()
+        --         --
+        --         --     return
+        --         -- end
+        --
+        --         vim.lsp.buf.format()
+        --     end,
+        -- })
     end,
 }
