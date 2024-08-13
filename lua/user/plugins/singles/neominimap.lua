@@ -75,6 +75,7 @@ return {
         vim.opt.wrap = false -- Recommended
         vim.opt.sidescrolloff = 36 -- It's recommended to set a large value
         vim.g.neominimap = {
+            max_minimap_height = _G.user.neominimap.max_height,
             auto_enable = true,
             diagnostic = {
                 enabled = true,
