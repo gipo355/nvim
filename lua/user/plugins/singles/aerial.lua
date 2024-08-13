@@ -18,12 +18,12 @@ return {
             default_direction = _G.user.aerial.direction,
         },
 
-        -- ignore = {
-        --     filetypes = {
-        --         'oil',
-        --     },
-        --     buftypes = 'special',
-        -- },
+        ignore = {
+            filetypes = {
+                'oil',
+            },
+            -- buftypes = 'special',
+        },
         -- manage_folds = true,
         -- link_folds_to_tree = true,
         open_automatic = true,

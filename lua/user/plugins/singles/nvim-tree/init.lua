@@ -77,6 +77,7 @@ return {
     },
     {
         -- ##### automatically refactor when renaming and other goodies - substitute tsserver rename file #####
+        -- has config in lspconfig capabilities making
         'antosha417/nvim-lsp-file-operations',
         event = 'VeryLazy',
         dependencies = {
@@ -89,6 +90,7 @@ return {
     },
     {
         'nvim-tree/nvim-tree.lua',
+        enabled = _G.user.nvimtree.enable,
         event = 'User DirOpened',
         cmd = {
             'NvimTreeToggle',
@@ -118,7 +120,7 @@ return {
                     adaptive_size = true,
                     centralize_selection = true,
                     width = 30,
-                    side = 'left',
+                    side = _G.user.nvimtree.side,
                     preserve_window_proportions = false,
                     number = true,
                     relativenumber = true,

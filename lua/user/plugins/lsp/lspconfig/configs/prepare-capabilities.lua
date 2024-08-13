@@ -1,7 +1,10 @@
 local M = {}
 
 M.prepare_capabilities = function()
+    local lspconfig = require('lspconfig')
     local capabilities = vim.lsp.protocol.make_client_capabilities()
+    local file_operations_ok, file_operations =
+        pcall(require, 'lsp-file-operations')
 
     local ok, cmp_lsp = pcall(require, 'cmp_nvim_lsp')
 
@@ -10,6 +13,26 @@ M.prepare_capabilities = function()
             'force',
             capabilities,
             require('cmp_nvim_lsp').default_capabilities()
+        )
+    end
+    if file_operations_ok then
+        -- Set global defaults for all servers
+        -- lspconfig.util.default_config =
+        --     vim.tbl_extend('force', lspconfig.util.default_config, {
+        --         capabilities = vim.tbl_deep_extend(
+        --             'force',
+        --             vim.lsp.protocol.make_client_capabilities(),
+        --             -- returns configured operations if setup() was already called
+        --             -- or default operations if not
+        --             require('lsp-file-operations').default_capabilities()
+        --         ),
+        --     })
+        capabilities = vim.tbl_deep_extend(
+            'force',
+            capabilities,
+            -- returns configured operations if setup() was already called
+            -- or default operations if not
+            file_operations.default_capabilities()
         )
     end
     capabilities.textDocument.completion.completionItem.snippetSupport = true
