@@ -152,7 +152,7 @@ return {
                     { '<leader>t_', hidden = true, remap = false },
                     { '<leader>v', group = '[v] lsp', remap = false },
                     { '<leader>v_', hidden = true, remap = false },
-                    { 'cv', group = 'flash and surround', remap = false },
+                    -- { 'cv', group = 'flash and surround', remap = false },
                     -- { 's_', hidden = true, remap = false },
                 },
                 -- ### VISUAL MODE
