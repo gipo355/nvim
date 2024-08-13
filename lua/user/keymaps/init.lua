@@ -276,25 +276,25 @@ vim.keymap.set(
 -- Resize with arrows
 vim.keymap.set(
     'n',
-    '<C-Up>',
+    '<M-Up>',
     ':resize -2<CR>',
     set_desc('Resize window horizontally')
 )
 vim.keymap.set(
     'n',
-    '<C-Down>',
+    '<M-Down>',
     ':resize +2<CR>',
     set_desc('Resize window horizontally')
 )
 vim.keymap.set(
     'n',
-    '<C-Left>',
+    '<M-Left>',
     ':vertical resize -2<CR>',
     set_desc('Resize window vertically')
 )
 vim.keymap.set(
     'n',
-    '<C-Right>',
+    '<M-Right>',
     ':vertical resize +2<CR>',
     set_desc('Resize window vertically')
 )

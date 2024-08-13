@@ -54,7 +54,41 @@ return {
         -- see the extension section to learn how it works
     }, -- your configuration
     config = function(opts)
-        require('tailwind-tools').setup(opts)
+        -- local function printTable(t, indent)
+        --     if not indent then
+        --         indent = 0
+        --     end
+        --     for k, v in pairs(t) do
+        --         local formatting = string.rep('  ', indent) .. k .. ': '
+        --         if type(v) == 'table' then
+        --             print(formatting)
+        --             printTable(v, indent + 1)
+        --         else
+        --             print(formatting .. tostring(v))
+        --         end
+        --     end
+        -- end
+        --
+        -- -- Print the opts table
+        -- printTable(opts)
+
+        require('tailwind-tools').setup({
+            document_color = {
+                enabled = _G.user.tailwindcss.tailwind_tools.enable_colors, -- can be toggled by commands
+                kind = 'inline', -- "inline" | "foreground" | "background"
+                inline_symbol = '󰝤 ', -- only used in inline mode
+                debounce = 200, -- in milliseconds, only applied in insert mode
+            },
+            conceal = {
+                enabled = _G.user.tailwindcss.tailwind_tools.enable_conceal, -- can be toggled by commands
+                symbol = '󱏿', -- only a single character is allowed
+                highlight = { -- extmark highlight options, see :h 'highlight'
+                    fg = '#38BDF8',
+                },
+            },
+            custom_filetypes = custom_filetypes,
+            -- see the extension section to learn how it works
+        })
         vim.keymap.set(
             'n',
             '<leader>vj',
