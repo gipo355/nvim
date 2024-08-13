@@ -7,7 +7,7 @@ return -- highlight colors in css, html, lua, svelte, markdown, vue, typescript,
         require('nvim-highlight-colors').setup({
             ---Render style
             ---@usage 'background'|'foreground'|'virtual'
-            render = 'background',
+            render = _G.user.highlight_colors.render,
 
             ---Set virtual symbol (requires render to be set to 'virtual')
             virtual_symbol = '■',

@@ -232,6 +232,7 @@ _G.user.rainbow_parens = {
 -- css, tailwind colors, color #hex etc..
 _G.user.highlight_colors = {
     enable = true,
+    render = 'virtual', -- 'virtual' or 'background' or 'foreground'
 }
 
 -- cursor modes colors
