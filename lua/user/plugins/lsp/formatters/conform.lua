@@ -1,8 +1,11 @@
+local format_filter =
+    require('user.plugins.lsp.formatters.utils.formatting').format_filter
+
 --[[
 This file is for setting up conform.
 
 The whole setup contains three parts:
-- None-ls 
+- None-ls
 - Conform
 - Nvim-lint
 
@@ -249,7 +252,7 @@ return {
                             stop_after_first = false,
                             -- id
                             -- name
-                            -- filter
+                            filter = format_filter,
                             -- undojoin
                             -- lsp_fallback = true,
                         }
