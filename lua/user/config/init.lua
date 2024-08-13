@@ -170,7 +170,7 @@ _G.user.neominimap = {
 -- aerial lsp symbols map
 _G.user.aerial = {
     enable = true,
-    direction = 'prefer_right',
+    direction = 'prefer_left',
 }
 
 --------------------------------
@@ -180,7 +180,7 @@ _G.user.aerial = {
 --
 _G.user.nvimtree = {
     enable = true,
-    side = 'left',
+    side = 'right',
 }
 
 -------------------------------- LSP
