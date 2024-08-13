@@ -145,7 +145,7 @@ _G.user.oil = {
 
 _G.user.nvimtree = {
     enable = true,
-    side = 'right',
+    side = 'left',
 }
 
 --------------------------------
@@ -179,8 +179,8 @@ _G.user.neominimap = {
 
 -- aerial lsp symbols map
 _G.user.aerial = {
-    enable = true,
-    direction = 'prefer_left',
+    enable = false,
+    direction = 'prefer_right',
 }
 
 --------------------------------
