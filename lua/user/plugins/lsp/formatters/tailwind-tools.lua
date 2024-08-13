@@ -10,14 +10,35 @@
 -- TailwindSort: sorts all classes in the current buffer.
 -- TailwindSortSelection: sorts selected classes in visual mode.
 
+local set_desc = require('user.utils.functions').set_keymap_desc
+
+local custom_filetypes = {
+    'html',
+    'css',
+    'scss',
+    'javascript',
+    'typescript',
+    'javascriptreact',
+    'typescriptreact',
+    'svelte',
+    'vue',
+    'markdown',
+    'javascript.jsx',
+    'typescript.tsx',
+    'javascriptreact',
+    'typescriptreact',
+    'angular.html',
+    'templ',
+}
+
 return {
     'luckasRanarison/tailwind-tools.nvim',
-    event = 'BufReadPre',
+    ft = custom_filetypes,
     enabled = _G.user.tailwindcss.tailwind_tools.enable,
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     opts = {
         document_color = {
-            enabled = true, -- can be toggled by commands
+            enabled = _G.user.tailwindcss.tailwind_tools.enable_colors, -- can be toggled by commands
             kind = 'inline', -- "inline" | "foreground" | "background"
             inline_symbol = '󰝤 ', -- only used in inline mode
             debounce = 200, -- in milliseconds, only applied in insert mode
@@ -29,24 +50,16 @@ return {
                 fg = '#38BDF8',
             },
         },
-        custom_filetypes = {
-            'html',
-            'css',
-            'scss',
-            'javascript',
-            'typescript',
-            'javascriptreact',
-            'typescriptreact',
-            'svelte',
-            'vue',
-            'markdown',
-            'javascript.jsx',
-            'typescript.tsx',
-            'javascriptreact',
-            'typescriptreact',
-            'angular.html',
-            'templ',
-        },
+        custom_filetypes = custom_filetypes,
         -- see the extension section to learn how it works
     }, -- your configuration
+    config = function(opts)
+        require('tailwind-tools').setup(opts)
+        vim.keymap.set(
+            'n',
+            '<leader>vj',
+            '<cmd>TailwindConcealToggle<cr>',
+            set_desc('Toggle TailwindConceal')
+        )
+    end,
 }

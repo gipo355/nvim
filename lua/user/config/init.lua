@@ -207,6 +207,8 @@ _G.user.tailwindcss = {
     tailwind_tools = {
         enable = true,
         enable_conceal = true,
+        -- plugin highligh colors can do the same thing
+        enable_colors = false,
     },
 }
 
