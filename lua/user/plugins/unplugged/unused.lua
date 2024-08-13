@@ -180,15 +180,6 @@ return {
         end,
     },
 
-    -- # surround, conflicts with mini.surround
-    -- also conflicts with flash.nvim (ds is jump)
-    {
-        'kylechui/nvim-surround',
-        config = function()
-            require('nvim-surround').setup({})
-        end,
-    },
-
     -- highlight colors in css, html, lua, svelte, markdown, vue, typescript, javascript, javascriptreact, typescriptreact
     -- better alternative is highlight-colors
     {

@@ -356,12 +356,26 @@ return {
             surround, adds keymaps to s, lags flash.nvim, conflicts with nvim-surround 
             and flash.nvim
             ]]
+            -- preferring nvim-surround for html tags too
             --
             -- Add/delete/replace surroundings (brackets, quotes, etc.)
             -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
             -- - sd'   - [S]urround [D]elete [']quotes
             -- - sr)'  - [S]urround [R]eplace [)] [']
-            require('mini.surround').setup()
+            -- require('mini.surround').setup({
+            --     mappings = {
+            --         add = 'cva', -- Add surrounding in Normal and Visual modes
+            --         delete = 'cvd', -- Delete surrounding
+            --         find = 'cvf', -- Find surrounding (to the right)
+            --         find_left = 'cvF', -- Find surrounding (to the left)
+            --         highlight = 'cvh', -- Highlight surrounding
+            --         replace = 'cvr', -- Replace surrounding
+            --         update_n_lines = 'cvn', -- Update `n_lines`
+            --
+            --         suffix_last = 'l', -- Suffix to search with "prev" method
+            --         suffix_next = 'n', -- Suffix to search with "next" method
+            --     },
+            -- })
 
             -- Simple and easy statusline.
             --  You could remove this setup call if you don't like it,

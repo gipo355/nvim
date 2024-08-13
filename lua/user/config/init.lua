@@ -206,7 +206,7 @@ _G.user.tailwindcss = {
     enable_lsp = true,
     tailwind_tools = {
         enable = true,
-        enable_conceal = true,
+        enable_conceal = false,
         -- plugin highligh colors can do the same thing
         enable_colors = false,
     },
