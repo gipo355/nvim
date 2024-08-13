@@ -3,7 +3,8 @@ return {
     dependencies = {
         'nvim-lua/plenary.nvim',
     },
-    event = 'VeryLazy',
+    -- event = 'VeryLazy',
+    lazy = false,
     keys = {
         -- 👇 in this section, choose your own keymappings!
         {
