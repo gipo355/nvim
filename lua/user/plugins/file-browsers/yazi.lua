@@ -36,7 +36,9 @@ return {
     -- config = function(opts)
     --     -- require('yazi').setup(opts)
     --
-    --     require('yazi').setup(self, opts)
+    --     print(vim.inspect(opts))
+    --
+    --     -- require('yazi').setup(self, opts)
     --
     --     -- require('yazi').setup({
     --     --     {
