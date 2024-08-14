@@ -41,6 +41,10 @@ return {
         'stevearc/conform.nvim',
         event = 'BufEnter',
         -- opts = {},
+        init = function()
+            -- If you want the formatexpr, here is the place to set it
+            vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+        end,
         config = function()
             local formatters_by_ft = {
                 --         -- Conform can also run multiple formatters sequentially
@@ -70,7 +74,7 @@ return {
                 javascript = { 'prettierd' },
                 javascriptreact = { 'prettierd' },
                 typescript = { 'prettierd' },
-                typescriptreact = { 'prettierd' },
+                typescriptreact = { 'prettierd', stop_after_first = false },
 
                 -- markdown = { { 'prettierd', 'prettier' } },
                 -- php = { { 'prettierd', 'prettier' } },
@@ -153,6 +157,9 @@ return {
                 --     lsp_fallback = true, -- true, false, 'always'
                 -- },
                 formatters_by_ft = formatters_by_ft,
+                default_format_opts = {
+                    lsp_format = 'first',
+                },
 
                 -- NOTE: this will automatically set autocmd bufwritepre
                 -- This snippet will automatically detect which formatters take too long to run synchronously and will run them async on save instead.
