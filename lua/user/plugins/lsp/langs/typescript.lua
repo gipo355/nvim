@@ -210,7 +210,7 @@ return {
                         -- for TypeScript v4.9+
                         '@styled/typescript-styled-plugin',
                         -- or for older TypeScript versions
-                        -- "typescript-styled-plugin",
+                        -- 'typescript-styled-plugin',
                     },
 
                     -- this value is passed to: https://nodejs.org/api/cli.html#--max-old-space-sizesize-in-megabytes
