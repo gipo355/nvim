@@ -2,7 +2,7 @@
 This file is for setting up none-ls, a plugin that provides formatters, linters, and code actions for languages that don't have a language server.
 
 The whole setup contains three parts:
-- None-ls 
+- None-ls
 - Conform
 - Nvim-lint
 
@@ -48,18 +48,22 @@ return {
             -- null_ls.builtins.formatting.markdownlint,
 
             -- go
+            -- NOTE: possible conflicts with conform and go plugin?
+
             -- null_ls.builtins.formatting.gofmt.with({
             --     filetypes = { 'go', 'gomod', 'gowork', 'templ' },
             -- }), -- using gofumpt
+
+            -- NOTE: this is builtin gopls (and go plugin)
             -- null_ls.builtins.formatting.gofumpt.with({
             --     filetypes = { 'go', 'gomod', 'gowork', 'templ' },
             -- }), -- in gopls
+
             -- null_ls.builtins.formatting.goimports.with({
             --     filetypes = { 'go', 'gomod', 'gowork', 'templ' },
             -- }), -- used in golines already
 
-            -- go
-            -- TODO: move to conform
+            -- NOTE: this may conflict with go plugin and gopls lsp
             null_ls.builtins.formatting.goimports_reviser.with({
                 filetypes = { 'go', 'gomod', 'gowork', 'templ' },
             }),
@@ -151,7 +155,9 @@ return {
             -- protobuf
             null_ls.builtins.diagnostics.buf,
 
-            -- here or lspconfig or go plugin, go
+            -- GO
+            -- here or lspconfig or go plugin or nvim-lint
+            -- only works here
             null_ls.builtins.diagnostics.golangci_lint.with({ -- lspconfig doesn't work
                 filetypes = { 'go', 'gomod', 'gowork', 'templ', 'gotempl' },
             }),

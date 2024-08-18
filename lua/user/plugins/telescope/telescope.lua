@@ -530,9 +530,9 @@ return {
 
             vim.keymap.set(
                 'n',
-                '<leader>hH',
+                '<leader>ht',
                 builtin.help_tags,
-                set_desc('[S]earch [H]elp')
+                set_desc('[S]earch Help [T]ags')
             )
             vim.keymap.set(
                 'n',
@@ -591,10 +591,9 @@ return {
                 builtin.resume,
                 set_desc('[S]earch [L]ast')
             )
-
             vim.keymap.set(
                 'n',
-                '<leader>hM',
+                '<leader>hh',
                 builtin.man_pages,
                 set_desc('[S]earch [M]an pages')
             )

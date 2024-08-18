@@ -86,8 +86,24 @@ return {
                 --     .. '/.local/share/nvim/lazy/vscode-js-debug',
             })
 
-            for _, language in ipairs({ 'typescript', 'javascript' }) do
+            for _, language in ipairs({
+                'typescript',
+                'javascript',
+                'typescriptreact',
+                'javascriptreact',
+            }) do
                 dap.configurations[language] = {
+                    {
+                        type = 'pwa-chrome',
+                        request = 'launch',
+                        name = 'Launch Chrome against localhost vite project',
+                        url = 'http://localhost:4200',
+                        webRoot = '${workspaceFolder}/src',
+                        runtimeArgs = {
+                            '--remote-debugging-port=9222',
+                        },
+                        sourceMaps = true,
+                    },
                     {
                         type = 'pwa-node',
                         request = 'launch',

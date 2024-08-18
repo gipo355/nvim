@@ -2,7 +2,7 @@ return {
     'NStefan002/speedtyper.nvim',
     keys = {
         {
-            '<leader>ht',
+            '<leader>hT',
             '<cmd>Speedtyper<cr>',
             'n',
         },

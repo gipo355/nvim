@@ -43,10 +43,10 @@ USER EVENTS ON PLUGINS TRIGGERED BY LAZY:
  - LazyReload: triggered by change detection after reloading plugin specs
  - LazyVimStarted: triggered after UIEnter when require("lazy").stats().startuptime has been calculated. Useful to update the startuptime on your dashboard.
 
---- 
+---
 Plugins opts
 
-EVENT OPTS: 
+EVENT OPTS:
 - lazy: When true, the plugin will only be loaded when needed. Lazy-loaded plugins are automatically loaded when their Lua modules are required, or when one of the lazy-loading handlers triggers
 - priority: Only useful for start plugins (lazy=false) to force loading certain plugins first. Default priority is 50. It's recommended to set this to a high number for colorschemes.
 
@@ -73,7 +73,7 @@ OTHER OPTS:
 - [1]: short for plugin URL
 - pin: Don't update this plugin
 - build: cmd executed when the plugin is installed
-- cond: When false, or if the function returns false, then this plugin will not be loaded. 
+- cond: When false, or if the function returns false, then this plugin will not be loaded.
 - enabled: When false, or if the function returns false, then this plugin will not be included in the spec
 - url: plugin URL (not needed if you use [1])
 ]]
@@ -110,6 +110,8 @@ require('lazy').setup({
         { import = 'user.plugins.lsp.langs' },
         { import = 'user.plugins.lsp.formatters' },
         { import = 'user.plugins.lsp.lspconfig' },
+
+        { import = 'user.plugins.lua-dev' },
 
         -- other ways
         -- 'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically

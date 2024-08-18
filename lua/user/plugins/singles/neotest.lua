@@ -1,6 +1,7 @@
 local set_desc = require('user.utils.functions').set_keymap_desc
 return {
     'nvim-neotest/neotest',
+    event = 'BufReadPre',
     dependencies = {
         'nvim-lua/plenary.nvim',
         'nvim-neotest/nvim-nio',
@@ -8,7 +9,7 @@ return {
         'antoinemadec/FixCursorHold.nvim',
         'marilari88/neotest-vitest',
         'nvim-neotest/neotest-go',
-        'folke/neodev.nvim',
+        -- 'folke/neodev.nvim',
     },
     keys = {
         {
@@ -59,8 +60,8 @@ return {
                 },
             },
         })
-        require('neodev').setup({
-            library = { plugins = { 'neotest' }, types = true },
-        })
+        -- require('neodev').setup({
+        --     library = { plugins = { 'neotest' }, types = true },
+        -- })
     end,
 }

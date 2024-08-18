@@ -2,7 +2,7 @@
 This file is for setting up nvim-lint.
 
 The whole setup contains three parts:
-- None-ls 
+- None-ls
 - Conform
 - Nvim-lint
 

@@ -113,7 +113,7 @@ return {
         require('ibl').setup({
 
             scope = {
-                enabled = true,
+                enabled = _G.user.indent_blankline.scope,
                 show_start = true,
                 show_end = true,
                 -- injected_languages = false,

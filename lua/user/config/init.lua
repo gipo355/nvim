@@ -2,11 +2,11 @@
 
 local set_transparent_bg = require('user.utils.functions').set_transparent_bg
 
---[[ 
+--[[
  In this file we set global variables that can be accessed anywhere in the Lua code everywhere.
  we must require it in the main init.lua so that they are available in the entire configuration.
 
- Adding some options for most used settings that may require disabling as 
+ Adding some options for most used settings that may require disabling as
  they are quite intrusive ]]
 --
 
@@ -32,7 +32,7 @@ _G.user.themes = {}
 
 _G.user.mini = {}
 
---[[ 
+--[[
 for single use variables is to use the vim.g object
 
 or the _G object (which provides intellisense)
@@ -57,7 +57,7 @@ _G.user.precognition = {
 }
 
 --------------------------------
---[[ AI 
+--[[ AI
     enable github copilot plugin
     don't enable both copilot and supermaven
 ]]
@@ -128,7 +128,7 @@ _G.user.tmux = {
 -- show function scope at the top of the window (nvim-treesitter)
 _G.user.treesitter_context = {
     enable = true,
-    max_lines = 1, -- maximum number of lines to show
+    max_lines = 4, -- maximum number of lines to show
     multiline_threshold = 1, -- max n of lines for single context
 }
 
@@ -192,6 +192,24 @@ _G.user.lsp = {
     diagnostics = {
         enable = true,
     },
+    -- enable format on save
+    format_on_save = true,
+    -- this is a list of lsp formatters passed to a filter function
+    -- in conform to prevent autoformatting on save from those sources
+    skipped_lsp_formatters = {
+        ['typescript-tools'] = true, -- conflicts with prettier and eslint
+        ['html'] = true, -- conflicts with prettier
+        ['cssls'] = true, -- conflicts with prettier and stylelint
+        ['biome'] = true, -- conflicts with prettier and eslint
+        ['jsonls'] = true, -- conflicts with prettier
+        ['lua_ls'] = true, -- conflicts with stylua
+    },
+    -- this is a list of lsp callbacks to execute on save if the lsp formatter is active
+    lsp_callbacks = {
+        ['typescript-tools'] = function()
+            vim.cmd('TSToolsFixAll')
+        end,
+    },
 }
 --------------------------------
 
@@ -215,6 +233,7 @@ _G.user.tailwindcss = {
 --[[ Indent blankline settings ]]
 _G.user.indent_blankline = {
     enable = true,
+    scope = false,
     color = true, -- color the background of indentlines
     color_background = false, -- color the background of indentlines
     hide_first_indent_level = false, -- hide first indent level
@@ -468,7 +487,7 @@ _G.user.root_patterns = {
 }
 
 --------------------------------
---[[ 
+--[[
   Enable java plugin, pretty heavy
 ]]
 _G.user.java = {
