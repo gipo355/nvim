@@ -9,6 +9,10 @@ M.setup = function(capabilities)
             'astro',
             'svelte',
             'angular.html',
+            'typescript',
+            'javascript',
+            'javascriptreact',
+            'typescriptreact',
         },
         capabilities = capabilities,
         --root_dir = { ".git" }
