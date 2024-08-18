@@ -16,6 +16,8 @@ return {
         -- branch = '0.1.x',
         version = false,
         dependencies = {
+            { 'debugloop/telescope-undo.nvim' },
+
             { 'nvim-lua/plenary.nvim', lazy = true },
             { -- If encountering errors, see telescope-fzf-native README for install instructions
                 'nvim-telescope/telescope-fzf-native.nvim',
@@ -668,6 +670,15 @@ return {
             vim.keymap.set('n', '<leader>sn', function()
                 builtin.find_files({ cwd = vim.fn.stdpath('config') })
             end, set_desc('[S]earch [N]eovim files'))
+
+            -- undo
+            require('telescope').load_extension('undo')
+            vim.keymap.set(
+                'n',
+                '<leader>su',
+                '<cmd>Telescope undo<cr>',
+                set_desc('[S]earch [U]ndo')
+            )
         end,
     },
 }
