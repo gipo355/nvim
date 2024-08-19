@@ -9,7 +9,17 @@ return {
     opts = {
         -- Show debugging info
         debug = false,
-        env_file = '.env',
+        env_file = {
+            '.env',
+            -- '.env.development',
+            -- '.env.production',
+            -- '.env.local',
+            -- '.env.staging',
+            -- 'hurl.env',
+            -- 'vars.env',
+            -- '.env.default',
+            -- 'default.env',
+        },
         -- Show notification on run
         show_notification = false,
         -- Show response in popup or split
@@ -49,8 +59,8 @@ return {
         {
             '<leader>rh',
             '<cmd>HurlRunner<CR>',
+            'v',
             desc = 'Hurl Runner',
-            mode = 'v',
         },
 
         -- Show last response
