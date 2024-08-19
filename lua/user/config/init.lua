@@ -71,6 +71,18 @@ _G.user.copilot = {
 _G.user.supermaven = {
     enable_autocomplete = true,
 }
+
+-- this tries to simulate Cursor IDE with deep integration of ai
+-- into editor.
+-- Also check aider AI
+-- https://github.com/joshuavial/aider.nvim
+_G.user.avante = {
+    enable = false,
+}
+
+_G.user.aider = {
+    enable = false,
+}
 --------------------------------
 
 -- Must happen before plugins are loaded (otherwise wrong leader will be used)
