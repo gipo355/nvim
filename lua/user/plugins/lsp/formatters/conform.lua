@@ -66,13 +66,17 @@ return {
                 -- gomod = { 'gofumpt', 'goimports-reviser' },
                 -- gowork = { 'gofumpt', 'goimports-reviser' },
                 -- templ = { 'gofumpt', 'goimports-reviser' },
+                -- templ = { 'templ', 'gofumpt', 'goimports-reviser' },
 
                 markdown = { 'prettierd' },
                 css = { 'prettierd' },
                 scss = { 'prettierd' },
                 html = { 'prettierd' },
                 ['angular.html'] = { 'prettierd' },
-                yaml = { 'prettierd' },
+                yaml = {
+                    'prettierd',
+                    -- 'yamlfmt'
+                },
                 pug = { 'prettierd' },
                 astro = { 'prettierd' },
                 svelte = { 'prettierd' },

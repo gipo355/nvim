@@ -141,8 +141,8 @@ return {
             -- php
             null_ls.builtins.formatting.phpcsfixer, -- conform
 
-            -- yaml
-            null_ls.builtins.formatting.yamlfmt,
+            -- yaml -conform
+            -- null_ls.builtins.formatting.yamlfmt,
 
             -- python
             null_ls.builtins.formatting.isort,
