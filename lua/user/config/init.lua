@@ -359,9 +359,9 @@ _G.user.theme = function()
     -- my favorites
 
     -- return 'vague'
-    return 'monokai-pro'
+    -- return 'monokai-pro'
     -- return 'gruvbox-baby'
-    -- return 'kanagawa'
+    return 'kanagawa'
     -- return 'gruvbox-material'
     -- return 'rose-pine'
     -- return 'ares'
