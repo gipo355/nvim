@@ -343,7 +343,7 @@ _G.user.mini.lsp_signature_completion = {
 
 -- use mini.colors for customizations on any theme
 _G.user.mini.colors = {
-    enable = false,
+    enable = true,
 }
 
 _G.user.transparent_background = set_transparent_bg(false) -- transparent background
@@ -359,8 +359,8 @@ _G.user.theme = function()
     -- my favorites
 
     -- return 'vague'
-    -- return 'monokai-pro'
-    return 'gruvbox-baby'
+    return 'monokai-pro'
+    -- return 'gruvbox-baby'
     -- return 'kanagawa'
     -- return 'gruvbox-material'
     -- return 'rose-pine'
