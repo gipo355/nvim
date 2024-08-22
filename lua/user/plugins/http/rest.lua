@@ -4,32 +4,35 @@ local set_desc = require('user.utils.functions').set_keymap_desc
 -- NOTE: REST ARCHIVED
 return {
     {
-        'vhyrro/luarocks.nvim',
-        event = 'BufRead *.http',
-        priority = 1000,
-        config = true,
-    },
-    {
         'rest-nvim/rest.nvim',
-        event = 'BufRead *.http',
+        enabled = false,
         dependencies = {
             { 'luarocks.nvim' },
             { 'nvim-telescope/telescope.nvim' },
+            {
+                'vhyrro/luarocks.nvim',
+                -- event = 'BufRead *.http',
+                priority = 1000,
+                config = true,
+            },
         },
         ft = 'http',
         -- keys = {},
         config = function()
             local rest = require('rest-nvim')
-            require('telescope').load_extension('rest')
+            local ok, telescope = pcall(require, 'telescope')
+            if ok then
+                telescope.load_extension('rest')
+            end
             rest.setup({
-                skip_ssl_verification = true,
-                result = {
-                    split = {
-                        horizontal = false,
-                        in_place = false,
-                        stay_in_current_window_after_split = true,
-                    },
-                },
+                -- skip_ssl_verification = true,
+                -- result = {
+                --     split = {
+                --         horizontal = false,
+                --         in_place = false,
+                --         stay_in_current_window_after_split = true,
+                --     },
+                -- },
             })
             vim.keymap.set(
                 'n',

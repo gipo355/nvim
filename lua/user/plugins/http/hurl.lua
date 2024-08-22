@@ -65,7 +65,7 @@ return {
 
         -- Show last response
         {
-            '<leader>rl',
+            '<leader>rL',
             '<cmd>HurlShowLastResponse<CR>',
             desc = 'Hurl Last Response',
         },
