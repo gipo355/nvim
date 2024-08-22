@@ -19,21 +19,21 @@ return {
         ft = 'http',
         -- keys = {},
         config = function()
-            local rest = require('rest-nvim')
+            -- local rest = require('rest-nvim')
             local ok, telescope = pcall(require, 'telescope')
             if ok then
                 telescope.load_extension('rest')
             end
-            rest.setup({
-                -- skip_ssl_verification = true,
-                -- result = {
-                --     split = {
-                --         horizontal = false,
-                --         in_place = false,
-                --         stay_in_current_window_after_split = true,
-                --     },
-                -- },
-            })
+            -- rest.setup({
+            --     -- skip_ssl_verification = true,
+            --     -- result = {
+            --     --     split = {
+            --     --         horizontal = false,
+            --     --         in_place = false,
+            --     --         stay_in_current_window_after_split = true,
+            --     --     },
+            --     -- },
+            -- })
             vim.keymap.set(
                 'n',
                 '<leader>rr',
