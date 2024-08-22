@@ -9,7 +9,18 @@ return {
         dependencies = {
             'nvim-lua/plenary.nvim',
             'neovim/nvim-lspconfig',
-            'davidosomething/format-ts-errors.nvim',
+            {
+                'OlegGulevskyy/better-ts-errors.nvim',
+                dependencies = { 'MunifTanjim/nui.nvim' },
+                config = {
+                    keymaps = {
+                        -- toggle = '<leader>vD', -- default '<leader>dd'
+                        toggle = 'gj', -- default '<leader>dd'
+                        go_to_definition = '<leader>dc', -- default '<leader>dx'
+                    },
+                },
+            },
+            -- 'davidosomething/format-ts-errors.nvim',
         },
         config = function()
             local ok, tstools = pcall(require, 'typescript-tools')
@@ -36,7 +47,7 @@ return {
                 -- end,
                 -- on_attach = require("lvim.lsp").common_on_attach,
 
-                -- for format-ts-errors.nvim
+                -- IMP: for format-ts-errors.nvim
                 single_file_support = false,
                 root_dir = require('lspconfig').util.root_pattern(
                     'package.json',
@@ -102,7 +113,7 @@ return {
                     -- vim.diagnostic.disable()
                 end,
 
-                -- plugin format-ts-errors.nvim
+                -- IMP: plugin format-ts-errors.nvim
                 -- handlers = {
                 --     ['textDocument/publishDiagnostics'] = function(
                 --         _,
