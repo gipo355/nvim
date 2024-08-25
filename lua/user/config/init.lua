@@ -57,32 +57,29 @@ _G.user.precognition = {
 }
 
 --------------------------------
---[[ AI
-    enable github copilot plugin
-    don't enable both copilot and supermaven
-]]
-_G.user.copilot = {
-    enable_autocomplete = false,
-}
 --[[
- enable supermaven plugin
- don't enable both copilot and supermaven
+    AI
 ]]
-_G.user.supermaven = {
-    enable_autocomplete = true,
+_G.user.ai = {
+    ---@type 'copilot' | 'supermaven'
+    autocomplete = 'copilot',
+    copilot = {
+        chat = {
+            enable = true,
+        },
+    },
+    -- this tries to simulate Cursor IDE with deep integration of ai
+    -- into editor.
+    -- Also check aider AI
+    -- https://github.com/joshuavial/aider.nvim
+    avante = {
+        enable = false,
+    },
+    aider = {
+        enable = false,
+    },
 }
 
--- this tries to simulate Cursor IDE with deep integration of ai
--- into editor.
--- Also check aider AI
--- https://github.com/joshuavial/aider.nvim
-_G.user.avante = {
-    enable = false,
-}
-
-_G.user.aider = {
-    enable = false,
-}
 --------------------------------
 
 -- Must happen before plugins are loaded (otherwise wrong leader will be used)

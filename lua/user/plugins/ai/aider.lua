@@ -3,7 +3,7 @@ local set_desc = require('user.utils.functions').set_keymap_desc
 return {
     'joshuavial/aider.nvim',
     event = 'VeryLazy',
-    enabled = _G.user.aider.enable,
+    enabled = _G.user.ai.aider.enable,
     config = function()
         require('aider').setup({
             auto_manage_context = true,

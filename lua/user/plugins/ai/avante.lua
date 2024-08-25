@@ -2,7 +2,7 @@ return {
     'yetone/avante.nvim',
     event = 'VeryLazy',
     build = 'make',
-    enabled = _G.user.avante.enable,
+    enabled = _G.user.ai.avante.enable,
     opts = {
         -- add any opts here
         provider = 'openai',

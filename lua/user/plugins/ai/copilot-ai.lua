@@ -13,6 +13,7 @@ return {
     {
         'CopilotC-Nvim/CopilotChat.nvim',
         event = 'BufReadPre',
+        enabled = _G.user.ai.copilot.chat.enable,
         branch = 'canary',
         dependencies = {
             { 'zbirenbaum/copilot.lua' }, -- or github/copilot.vim
@@ -147,6 +148,7 @@ Follow commitlint rules. Add breaking change note only if necessary.]],
         'zbirenbaum/copilot.lua', -- config in its own file
         -- cmd = "Copilot",
         dependencies = {},
+        enabled = _G.user.ai.copilot.chat.enable,
         build = ':Copilot auth',
         event = 'InsertEnter',
         keys = {
@@ -179,7 +181,7 @@ Follow commitlint rules. Add breaking change note only if necessary.]],
                     },
                 },
                 suggestion = {
-                    enabled = _G.user.copilot.enable_autocomplete,
+                    enabled = _G.user.ai.copilot.enable_autocomplete,
                     auto_trigger = true,
                     debounce = 75,
                     keymap = {

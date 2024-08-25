@@ -30,14 +30,13 @@ return {
             -- TSFunction = { fg = '#d6aa2f', style = 'bold' },
             -- TSFunctionBuiltin = { fg = '#be972a' },
             -- TSMethod = { fg = '#d6aa2f', style = 'bold' },
-            ['@lsp.type.function'] = { fg = '#b8bb26', style = 'bold' },
-            ['@function'] = { fg = '#b0b846' },
-            ['@function.call'] = { fg = '#b8bb26', style = 'bold' },
-            ['@function.method'] = { fg = '#b0b846' },
-            ['@function.method.call'] = { fg = '#b8bb26', style = 'bold' },
 
-            -- #b8bb26
-            -- #b0b846
+            -- COLOR functions green
+            -- ['@lsp.type.function'] = { fg = '#b8bb26', style = 'bold' },
+            -- ['@function'] = { fg = '#b0b846' },
+            -- ['@function.call'] = { fg = '#b8bb26', style = 'bold' },
+            -- ['@function.method'] = { fg = '#b0b846' },
+            -- ['@function.method.call'] = { fg = '#b8bb26', style = 'bold' },
 
             -- TSTypeBuiltin = { fg = '#4e9951', style = 'italic' },
             -- TSOperator = { fg = '#fb4934', style = 'italic' },
