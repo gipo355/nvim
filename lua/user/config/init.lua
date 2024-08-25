@@ -59,6 +59,7 @@ _G.user.precognition = {
 --------------------------------
 --[[
     AI
+    note: zed, cursor, and vscode editors have deep and better integration with AI
 ]]
 _G.user.ai = {
     ---@type 'copilot' | 'supermaven'
