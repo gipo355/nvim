@@ -123,7 +123,7 @@ return {
 
         vim.keymap.set(
             { 'n', 'v' },
-            '<leader>ma',
+            '<leader>mA',
             ':Gen Ask<cr>',
             set_desc('Llama ask')
         )

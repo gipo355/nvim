@@ -74,7 +74,7 @@ _G.user.ai = {
     -- Also check aider AI
     -- https://github.com/joshuavial/aider.nvim
     avante = {
-        enable = false,
+        enable = true,
     },
     aider = {
         enable = false,
@@ -358,9 +358,9 @@ _G.user.theme = function()
 
     -- return 'vague'
     -- return 'monokai-pro'
-    -- return 'gruvbox-baby'
+    return 'gruvbox-baby'
     -- return 'kanagawa'
-    return 'gruvbox-material'
+    -- return 'gruvbox-material'
     -- return 'rose-pine'
     -- return 'ares'
     -- return 'onedark'
