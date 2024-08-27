@@ -266,6 +266,8 @@ return {
             --  - ci'  - [C]hange [I]nside [']quote
             require('mini.ai').setup({ n_lines = 500 })
 
+            require('mini.comment').setup()
+
             require('mini.fuzzy').setup()
 
             -- alternative to lsp_signature.nvim
