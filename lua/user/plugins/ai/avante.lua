@@ -1,6 +1,6 @@
 return {
     'yetone/avante.nvim',
-    event = 'VeryLazy',
+    event = 'BufReadPre',
     build = 'make',
     enabled = _G.user.ai.avante.enable,
     -- opts = {

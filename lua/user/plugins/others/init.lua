@@ -19,8 +19,6 @@ return {
 
     { 'nvim-treesitter/nvim-treesitter-textobjects', event = 'BufReadPre' },
 
-    { 'JoosepAlviste/nvim-ts-context-commentstring', event = 'BufReadPre' },
-
     -- disable feats if file is big
     {
         -- bigfile
@@ -41,32 +39,6 @@ return {
                 multiline_threshold = _G.user.treesitter_context.multiline_threshold,
                 trim_scope = 'outer', -- inner or outer
             })
-        end,
-    },
-
-    {
-        'numToStr/Comment.nvim',
-        event = 'BufReadPre',
-        opts = {},
-        config = function()
-            -- vim.keymap.set(
-            --     'n',
-            --     '<M-/>',
-            --     "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>",
-            --     opts
-            -- )
-            vim.keymap.set(
-                { 'n', 'v' },
-                '<leader>/',
-                '<Plug>(comment_toggle_linewise_current)',
-                set_desc('comment')
-            )
-            vim.keymap.set(
-                { 'v' },
-                '<leader>/',
-                '<Plug>(comment_toggle_linewise_visual)',
-                set_desc('comment')
-            )
         end,
     },
 
