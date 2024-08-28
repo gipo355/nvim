@@ -128,6 +128,7 @@ _G.user.lualine = {
     show_lsp = true,
 }
 -- disable builtin statusline
+-- avante overrides this
 _G.user.statusline = {
     disable_builtin = true,
 }
