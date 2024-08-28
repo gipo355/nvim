@@ -4,7 +4,8 @@ return {
     event = 'VeryLazy',
     dependencies = 'nvim-telescope/telescope.nvim',
     config = function()
-        pcall(require('telescope').load_extension('file_browser'))
+        -- NOTE: this is in the telescope file
+        -- pcall(require('telescope').load_extension('file_browser'))
 
         vim.keymap.set(
             'n',

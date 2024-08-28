@@ -44,6 +44,8 @@ return {
         },
         config = function()
             local _, actions = pcall(require, 'telescope.actions')
+            -- local _, file_browser_actions =
+            --     pcall(require, 'telescope.extensions.file_browser.actions')
 
             local custom_functions =
                 require('user.plugins.telescope.utils.functions')
@@ -186,6 +188,8 @@ return {
                     --     '--hidden', -- thats the new thing
                     -- },
 
+                    -- IMP: this overrides default mappings for extensions too
+                    -- e.g. <C-f> overridden for telescope_file_browser
                     mappings = {
                         -- i = { ['<c-enter>'] = 'to_fuzzy_refine' },
                         i = {
@@ -198,7 +202,7 @@ return {
                             ['<C-c>'] = actions.close,
                             ['<C-r>'] = custom_functions.rename_file,
                             ['<C-p>'] = actions.cycle_history_prev,
-                            ['<C-f>'] = actions.to_fuzzy_refine,
+                            -- ['<C-f>'] = actions.to_fuzzy_refine,
                             ['<C-q>'] = function(...)
                                 actions.smart_send_to_qflist(...)
                                 actions.open_qflist(...)
@@ -295,6 +299,17 @@ return {
                         override_file_sorter = true, -- override the file sorter
                         case_mode = 'smart_case', -- or "ignore_case" or "respect_case"
                     },
+                    -- file_browser = {
+                    --     mappings = {
+                    --         i = {
+                    --             NOTE: this is overridden by the default mapping above, why??
+                    --             ['<C-f>'] = file_browser_actions.toggle_browser,
+                    --         },
+                    --         -- n = {
+                    --         --     ['dd'] = actions.delete_buffer,
+                    --         -- },
+                    --     },
+                    -- },
                     cder = {
                         previewer_command = 'exa '
                             .. '-a '
@@ -340,6 +355,7 @@ return {
             -- Enable telescope extensions, if they are installed ( prefer doing it in their plugins )
             pcall(require('telescope').load_extension, 'fzf')
             pcall(require('telescope').load_extension, 'ui-select')
+            pcall(require('telescope').load_extension, 'file_browser')
             -- pcall(telescope.load_extension, "neoclip")
             -- pcall(telescope.load_extension("harpoon"))
             -- pcall(telescope.load_extension "media_files")
