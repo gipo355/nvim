@@ -56,9 +56,14 @@ return {
                     insert = '<C-s>',
                 },
                 toggle = {
-                    debug = '<leader>ad',
-                    hint = '<leader>ah',
+                    debug = '<leader>mad',
+                    hint = '<leader>mah',
                 },
+            },
+            behaviour = {
+                auto_set_highlight_group = true,
+                auto_apply_diff_after_generation = true,
+                support_paste_from_clipboard = true,
             },
             hints = {
                 enabled = true,
