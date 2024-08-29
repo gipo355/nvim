@@ -63,7 +63,7 @@ _G.user.precognition = {
 ]]
 _G.user.ai = {
     ---@type 'copilot' | 'supermaven'
-    autocomplete = 'copilot',
+    autocomplete = 'supermaven',
     copilot = {
         chat = {
             enable = true,
