@@ -44,6 +44,8 @@ return {
                 'biomejs',
             },
 
+            -- groovy = { 'npm-groovy-lint' },
+
             astro = { 'biomejs' },
             vue = { 'biomejs' },
             json = { 'biomejs' },

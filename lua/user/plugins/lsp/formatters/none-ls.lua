@@ -212,6 +212,14 @@ return {
                 }, -- or "/sun_checks.xml" or path to self written rules
             }),
 
+            -- groovy gradle
+            null_ls.builtins.formatting.npm_groovy_lint,
+            null_ls.builtins.diagnostics.npm_groovy_lint,
+
+            -- XML
+            -- null_ls.builtins.formatting.tidy,
+            null_ls.builtins.diagnostics.tidy,
+
             -- markdown
             -- null_ls.builtins.diagnostics.markdownlint,
 

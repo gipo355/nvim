@@ -139,6 +139,7 @@ return {
                 -- typescriptreact = { 'biome' },
 
                 java = { 'google-java-format' },
+
                 --         go = {
                 --             {
                 --                 'gofumpt',

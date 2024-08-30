@@ -177,8 +177,6 @@ return {
                     -- TODO: refactor this
                     -- java
                     jdtls = function()
-                        vim.print('JDTLS setup')
-
                         require('java').setup({
                             -- Your custom jdtls settings goes here
                         })

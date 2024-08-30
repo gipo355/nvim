@@ -166,6 +166,7 @@ M.load_servers = function(capabilities)
         -- "java_language_server",
         -- "java",
         jdtls = {}, -- manual require it at the end, no autoinstall (java plugin)
+        lemminx = {}, -- xml
         ['sonarlint-language-server'] = {},
     }
 end
