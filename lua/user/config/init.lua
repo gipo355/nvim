@@ -496,6 +496,10 @@ _G.user.root_patterns = {
     'Makefile',
     'go.work',
     '.obsidian',
+    'pom.xml',
+    'build.gradle.kts',
+    'build.gradle',
+    'settings.gradle',
     '.git',
 }
 
