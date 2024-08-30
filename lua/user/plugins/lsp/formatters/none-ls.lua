@@ -205,7 +205,11 @@ return {
 
             -- java
             null_ls.builtins.diagnostics.checkstyle.with({
-                extra_args = { '-c', '/home/wolf/google_checks.xml' }, -- or "/sun_checks.xml" or path to self written rules
+                extra_args = {
+                    '-c',
+                    -- '/home/wolf/checkstyle/intellij_google_style.xml',
+                    '/home/wolf/checkstyle/google_checks.xml',
+                }, -- or "/sun_checks.xml" or path to self written rules
             }),
 
             -- markdown
