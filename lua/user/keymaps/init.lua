@@ -479,6 +479,10 @@ vim.keymap.set(
     set_desc('Close all other buffers')
 )
 
+-- go to top of buffer is already <go>
+-- go end of buffer
+vim.keymap.set('n', 'gk', 'G', set_desc('Go to end of buffer'))
+
 -- An exprssion mapping for dd that doesn't yank an empty line into your default register:
 vim.keymap.set('n', 'dd', function()
     if vim.api.nvim_get_current_line():match('^%s*$') then
