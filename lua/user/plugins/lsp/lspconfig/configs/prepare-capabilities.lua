@@ -3,6 +3,7 @@ local M = {}
 M.prepare_capabilities = function()
     local lspconfig = require('lspconfig')
     local capabilities = vim.lsp.protocol.make_client_capabilities()
+
     local file_operations_ok, file_operations =
         pcall(require, 'lsp-file-operations')
 
@@ -15,6 +16,7 @@ M.prepare_capabilities = function()
             require('cmp_nvim_lsp').default_capabilities()
         )
     end
+
     if file_operations_ok then
         -- Set global defaults for all servers
         -- lspconfig.util.default_config =
@@ -35,6 +37,7 @@ M.prepare_capabilities = function()
             file_operations.default_capabilities()
         )
     end
+
     capabilities.textDocument.completion.completionItem.snippetSupport = true
 
     -- for UFO
@@ -42,6 +45,12 @@ M.prepare_capabilities = function()
         dynamicRegistration = false,
         lineFoldingOnly = true,
     }
+
+    -- capabilities.textDocument.documentSymbol = {
+    --     dynamicRegistration = true,
+    --     hierarchicalDocumentSymbolSupport = true,
+    --     labelSupport = true,
+    -- }
 
     -- TODO: check if this is needed
     -- what is this? says it imrpoves performance

@@ -661,6 +661,13 @@ return {
 
             vim.keymap.set(
                 'n',
+                '<leader>la',
+                '<cmd>Telescope treesitter<cr>',
+                set_desc('Telescope treesitter Symbols')
+            )
+
+            vim.keymap.set(
+                'n',
                 '<leader>lt',
                 '<cmd>Telescope lsp_type_definitions<cr>',
                 set_desc('[T]elescope [L]SP [T]ype Definitions')

@@ -174,74 +174,82 @@ return {
                         require('lspconfig')[server_name].setup(server)
                     end,
 
+                    -- TODO: refactor this
                     -- java
                     jdtls = function()
+                        vim.print('JDTLS setup')
+
                         require('java').setup({
                             -- Your custom jdtls settings goes here
                         })
 
+                        -- NOTE: document symbols not working
                         require('lspconfig').jdtls.setup({
                             -- Your custom nvim-java configuration goes here
                             capabilities = capabilities,
-                            settings = {
-                                java = {
-                                    server = { launchMode = 'Hybrid' },
-                                    eclipse = {
-                                        downloadSources = true,
-                                    },
-                                    maven = {
-                                        downloadSources = true,
-                                    },
-                                    -- configuration = {
-                                    --     runtimes = {
-                                    --         {
-                                    --             name = 'JavaSE-1.8',
-                                    --             path = '~/.sdkman/candidates/java/8.0.402-tem',
-                                    --         },
-                                    --         {
-                                    --             name = 'JavaSE-11',
-                                    --             path = '~/.sdkman/candidates/java/11.0.22-tem',
-                                    --         },
-                                    --         {
-                                    --             name = 'JavaSE-17',
-                                    --             path = '~/.sdkman/candidates/java/17.0.10-tem',
-                                    --         },
-                                    --         {
-                                    --             name = 'JavaSE-21',
-                                    --             path = '~/.sdkman/candidates/java/21.0.3-tem',
-                                    --         },
-                                    --     },
-                                    -- },
-                                    references = {
-                                        includeDecompiledSources = true,
-                                    },
-                                    implementationsCodeLens = {
-                                        enabled = false,
-                                    },
-                                    referenceCodeLens = {
-                                        enabled = false,
-                                    },
-                                    inlayHints = {
-                                        parameterNames = {
-                                            -- enabled = 'none',
-                                            enabled = 'all',
-                                        },
-                                    },
-                                    signatureHelp = {
-                                        enabled = true,
-                                        description = {
-                                            enabled = true,
-                                        },
-                                    },
-                                    sources = {
-                                        organizeImports = {
-                                            starThreshold = 9999,
-                                            staticStarThreshold = 9999,
-                                        },
-                                    },
-                                },
-                                redhat = { telemetry = { enabled = false } },
-                            },
+                            -- on_attach = function(client)
+                            --     -- client.server_capabilities.documentSymbolProvider =
+                            --     --     false
+                            -- end,
+                            -- settings = {
+                            --     java = {
+                            --         server = { launchMode = 'Hybrid' },
+                            --         eclipse = {
+                            --             downloadSources = true,
+                            --         },
+                            --         maven = {
+                            --             downloadSources = true,
+                            --         },
+                            --         -- configuration = {
+                            --         --     runtimes = {
+                            --         --         {
+                            --         --             name = 'JavaSE-1.8',
+                            --         --             path = '~/.sdkman/candidates/java/8.0.402-tem',
+                            --         --         },
+                            --         --         {
+                            --         --             name = 'JavaSE-11',
+                            --         --             path = '~/.sdkman/candidates/java/11.0.22-tem',
+                            --         --         },
+                            --         --         {
+                            --         --             name = 'JavaSE-17',
+                            --         --             path = '~/.sdkman/candidates/java/17.0.10-tem',
+                            --         --         },
+                            --         --         {
+                            --         --             name = 'JavaSE-21',
+                            --         --             path = '~/.sdkman/candidates/java/21.0.3-tem',
+                            --         --         },
+                            --         --     },
+                            --         -- },
+                            --         references = {
+                            --             includeDecompiledSources = true,
+                            --         },
+                            --         implementationsCodeLens = {
+                            --             enabled = false,
+                            --         },
+                            --         referenceCodeLens = {
+                            --             enabled = false,
+                            --         },
+                            --         inlayHints = {
+                            --             parameterNames = {
+                            --                 -- enabled = 'none',
+                            --                 enabled = 'all',
+                            --             },
+                            --         },
+                            --         signatureHelp = {
+                            --             enabled = true,
+                            --             description = {
+                            --                 enabled = true,
+                            --             },
+                            --         },
+                            --         sources = {
+                            --             organizeImports = {
+                            --                 starThreshold = 9999,
+                            --                 staticStarThreshold = 9999,
+                            --             },
+                            --         },
+                            --     },
+                            --     redhat = { telemetry = { enabled = false } },
+                            -- },
                         })
                     end,
                 },
