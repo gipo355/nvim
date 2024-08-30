@@ -38,12 +38,14 @@ return {
         lazy = false,
         dependencies = {
             -- Automatically install LSPs and related tools to stdpath for neovim
-            'williamboman/mason.nvim',
+            { 'williamboman/mason.nvim', config = true, lazy = false },
             'williamboman/mason-lspconfig.nvim',
             'WhoIsSethDaniel/mason-tool-installer.nvim',
 
             -- LSP completion plugin ( schemas )
             'b0o/schemastore.nvim',
+
+            { 'nvim-java/nvim-java' },
 
             -- Useful status updates for LSP.
             -- this shows lsp loadings in the bottom right corner, quite obnoxious
@@ -148,6 +150,7 @@ return {
                 tsserver = true, -- using typescript-tools, not setting up but needed installed
                 rust_analyzer = true, -- using rustacean plugin, not setting up but needed installed
                 ['rust-analyzer'] = true, -- using rustacean plugin, not setting up but needed installed
+                jdtls = true, -- using nvim-java plugin, not setting up but needed installed
                 sqlls = true, -- buggy as hell
             }
 
@@ -169,6 +172,75 @@ return {
                             server.capabilities or {}
                         )
                         require('lspconfig')[server_name].setup(server)
+                    end,
+
+                    -- java
+                    jdtls = function()
+                        require('java').setup({
+                            -- Your custom jdtls settings goes here
+                        })
+
+                        require('lspconfig').jdtls.setup({
+                            -- Your custom nvim-java configuration goes here
+                            settings = {
+                                java = {
+                                    server = { launchMode = 'Hybrid' },
+                                    eclipse = {
+                                        downloadSources = true,
+                                    },
+                                    maven = {
+                                        downloadSources = true,
+                                    },
+                                    -- configuration = {
+                                    --     runtimes = {
+                                    --         {
+                                    --             name = 'JavaSE-1.8',
+                                    --             path = '~/.sdkman/candidates/java/8.0.402-tem',
+                                    --         },
+                                    --         {
+                                    --             name = 'JavaSE-11',
+                                    --             path = '~/.sdkman/candidates/java/11.0.22-tem',
+                                    --         },
+                                    --         {
+                                    --             name = 'JavaSE-17',
+                                    --             path = '~/.sdkman/candidates/java/17.0.10-tem',
+                                    --         },
+                                    --         {
+                                    --             name = 'JavaSE-21',
+                                    --             path = '~/.sdkman/candidates/java/21.0.3-tem',
+                                    --         },
+                                    --     },
+                                    -- },
+                                    references = {
+                                        includeDecompiledSources = true,
+                                    },
+                                    implementationsCodeLens = {
+                                        enabled = false,
+                                    },
+                                    referenceCodeLens = {
+                                        enabled = false,
+                                    },
+                                    inlayHints = {
+                                        parameterNames = {
+                                            enabled = 'none',
+                                        },
+                                    },
+                                    signatureHelp = {
+                                        enabled = true,
+                                        description = {
+                                            enabled = true,
+                                        },
+                                    },
+                                    sources = {
+                                        organizeImports = {
+                                            starThreshold = 9999,
+                                            staticStarThreshold = 9999,
+                                        },
+                                    },
+                                },
+                                redhat = { telemetry = { enabled = false } },
+                            },
+                        })
                     end,
                 },
             })

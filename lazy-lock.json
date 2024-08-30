@@ -116,6 +116,7 @@
   "rustaceanvim": { "branch": "master", "commit": "a38c2c4f6188ae580da8133f03c60a99fc4578cb" },
   "satellite.nvim": { "branch": "main", "commit": "777ed56e1ef45ec808df701730b6597fc4fb0fbc" },
   "schemastore.nvim": { "branch": "main", "commit": "54a2cf0105166d5a48172e81f12a2bf10cfc8b2c" },
+  "sonarlint": { "branch": "main", "commit": "818f5b932b25df2b6395b40e59d975070f517af7" },
   "speedtyper.nvim": { "branch": "main", "commit": "d73b3d2bdd574dd9c2e39e3558a4fe26f081d885" },
   "spring-boot.nvim": { "branch": "main", "commit": "218c0c26c14d99feca778e4d13f5ec3e8b1b60f0" },
   "sqlite.lua": { "branch": "master", "commit": "d0ffd703b56d090d213b497ed4eb840495f14a11" },

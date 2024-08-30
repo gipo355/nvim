@@ -122,7 +122,6 @@ M.load_servers = function(capabilities)
         gradle_ls = {},
         templ = {},
         svelte = {},
-        ['sonarlint-language-server'] = {},
         rustywind = {},
         astro = {},
         vimls = {},
@@ -151,7 +150,6 @@ M.load_servers = function(capabilities)
         -- 'grammarly',
         -- ['emmet_ls'] = {},
         -- "go",
-        -- "java",
         -- "markdown",
         -- "nginx",
         -- "openapi",
@@ -163,8 +161,12 @@ M.load_servers = function(capabilities)
         -- "zsh"
         -- clangd = {},
         -- pyright = {},
+
+        --[[ JAVA ]]
         -- "java_language_server",
-        -- 'jdtls', -- manual require it at the end, no autoinstall (java plugin)
+        -- "java",
+        jdtls = {}, -- manual require it at the end, no autoinstall (java plugin)
+        ['sonarlint-language-server'] = {},
     }
 end
 
