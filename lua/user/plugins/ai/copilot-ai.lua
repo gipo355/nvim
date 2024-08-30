@@ -32,6 +32,20 @@ return {
             -- at 72 characters. Wrap the whole message in code block with language gitcommit.'
 
             chat.setup({
+                mappings = {
+                    reset = {
+                        normal = '<C-r>',
+                        insert = '<C-r>',
+                    },
+                    yank_diff = {
+                        normal = '<C-y>',
+                        insert = '<C-y>',
+                    },
+                    accept_diff = {
+                        normal = '<C-o>',
+                        insert = '<C-o>',
+                    },
+                },
                 -- default prompts
                 prompts = {
                     CommitStaged = {
