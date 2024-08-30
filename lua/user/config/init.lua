@@ -214,7 +214,7 @@ _G.user.lsp = {
         ['biome'] = true, -- conflicts with prettier and eslint
         ['jsonls'] = true, -- conflicts with prettier
         ['lua_ls'] = true, -- conflicts with stylua
-        ['jdtls'] = true, -- conflicts with stylua
+        -- ['jdtls'] = true, -- conflicts with stylua
         ['yamlls'] = true, -- conflicts with stylua
     },
     -- this is a list of lsp callbacks to execute on save if the lsp formatter is active
