@@ -54,7 +54,7 @@ M.setup = function(cmp)
         preselect = cmp.PreselectMode.None,
         -- conflicts with copilot?
         experimental = {
-            ghost_text = false,
+            ghost_text = _G.user.cmp.ghost_text,
         },
         confirm_opts = {
             behavior = ConfirmBehavior.Replace,

@@ -308,19 +308,19 @@ ripgrep and buffer
 ]]
 --
 _G.user.cmp = {
+    ghost_text = false,
     rg_intellisense = {
         enable = false,
     },
     buffer_intellisense = {
         enable = false,
     },
-}
-
--- enable autocompletion delay for cmp, buggy?
--- trying performance throttle in cmp
-_G.user.cmp.autocomplete_delay = {
-    enable = false,
-    delay = 200,
+    -- enable autocompletion delay for cmp, buggy?
+    -- trying performance throttle in cmp
+    autocomplete_delay = {
+        enable = false,
+        delay = 200,
+    },
 }
 
 -- TODO: finish this, must alternate between deno and typescript tools
