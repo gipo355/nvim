@@ -182,6 +182,7 @@ return {
 
                         require('lspconfig').jdtls.setup({
                             -- Your custom nvim-java configuration goes here
+                            capabilities = capabilities,
                             settings = {
                                 java = {
                                     server = { launchMode = 'Hybrid' },
@@ -222,7 +223,8 @@ return {
                                     },
                                     inlayHints = {
                                         parameterNames = {
-                                            enabled = 'none',
+                                            -- enabled = 'none',
+                                            enabled = 'all',
                                         },
                                     },
                                     signatureHelp = {
