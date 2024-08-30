@@ -213,8 +213,12 @@ return {
             }),
 
             -- groovy gradle
-            null_ls.builtins.formatting.npm_groovy_lint,
-            null_ls.builtins.diagnostics.npm_groovy_lint,
+            null_ls.builtins.formatting.npm_groovy_lint.with({
+                filetypes = { 'groovy', 'gradle' },
+            }),
+            null_ls.builtins.diagnostics.npm_groovy_lint.with({
+                filetypes = { 'groovy', 'gradle' },
+            }),
 
             -- XML
             -- null_ls.builtins.formatting.tidy,

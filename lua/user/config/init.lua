@@ -216,6 +216,7 @@ _G.user.lsp = {
         ['lua_ls'] = true, -- conflicts with stylua
         -- ['jdtls'] = true, -- conflicts with stylua
         ['yamlls'] = true, -- conflicts with stylua
+        ['jdtls'] = true, -- conflicts with google-java-format
     },
     -- this is a list of lsp callbacks to execute on save if the lsp formatter is active
     lsp_callbacks = {
