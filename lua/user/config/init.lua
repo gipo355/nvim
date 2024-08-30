@@ -214,7 +214,6 @@ _G.user.lsp = {
         ['biome'] = true, -- conflicts with prettier and eslint
         ['jsonls'] = true, -- conflicts with prettier
         ['lua_ls'] = true, -- conflicts with stylua
-        -- ['jdtls'] = true, -- conflicts with stylua
         ['yamlls'] = true, -- conflicts with stylua
         ['jdtls'] = true, -- conflicts with google-java-format
     },
