@@ -32,6 +32,12 @@ return {
             -- at 72 characters. Wrap the whole message in code block with language gitcommit.'
 
             chat.setup({
+                -- yank_diff_register = '"',
+                -- to allow unnamed register
+                -- yank_diff_register = { '"', '+', '*' },
+                yank_diff_register = '+',
+                -- yank_diff_registers = 'unnamedplus',
+                auto_follow_cursor = false, -- Follow cursor in chat window
                 mappings = {
                     reset = {
                         normal = '<C-r>',
