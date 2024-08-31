@@ -198,7 +198,7 @@ _G.user.aerial = {
 --[[ LSP ]]
 _G.user.lsp = {
     inlay_hints = {
-        enable = true,
+        enable = false,
     },
     diagnostics = {
         enable = true,

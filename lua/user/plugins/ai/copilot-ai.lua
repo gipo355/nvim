@@ -61,7 +61,9 @@ Make sure the title has maximum 60 characters and message is wrapped at 72 chara
 Wrap the whole message in code block with language gitcommit.
 Also Make sure the subject starts with lowercase and the scope is the app name.
 Follow commitlint rules. Add breaking change note only if necessary.
-If you find a jira issue number in the branch name (regex [A-Z]+-\d+), add it to the commit message body.
+If a JIRA issue is found in the branch name (e.g., feature/PROJ-1234-description), include it in the commit message.
+To find the JIRA issue, parse the branch name using a regular expression to match the pattern [A-Z]+-\d+.
+Include the JIRA issue at the beginning of the commit message in the format: "JIRA-ISSUE: commit message".
 ]],
                         selection = function(source)
                             return select.gitdiff(source, true)
