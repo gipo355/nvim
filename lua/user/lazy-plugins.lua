@@ -1,3 +1,4 @@
+local set_desc = require('user.utils.functions').set_keymap_desc
 --  To check the current status of your plugins, run :Lazy
 --  You can press `?` in this menu for help. Use `:q` to close the window
 --  To update plugins, you can run :Lazy update
@@ -112,6 +113,8 @@ require('lazy').setup({
         { import = 'user.plugins.lsp.formatters' },
         { import = 'user.plugins.lsp.lspconfig' },
 
+        { import = 'user.plugins.runners' },
+
         { import = 'user.plugins.lua-dev' },
 
         -- other ways
@@ -182,8 +185,6 @@ require('lazy').setup({
         },
     },
 })
-
-local set_desc = require('user.utils.functions').set_keymap_desc
 
 -- set keymap to open lazy
 vim.keymap.set('n', '<leader>lx', '<cmd>Lazy<CR>', set_desc('Open lazy.nvim'))
