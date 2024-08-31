@@ -3,19 +3,6 @@ local set_desc = require('user.utils.functions').set_keymap_desc
 -- The task runner we use, overseer + compiler.nvim
 return {
     {
-        'stevearc/overseer.nvim',
-        event = 'BufReadPre',
-        cmd = { 'CompilerOpen', 'CompilerToggleResults', 'CompilerRedo' },
-        opts = {
-            task_list = {
-                direction = 'bottom',
-                min_height = 25,
-                max_height = 25,
-                default_detail = 1,
-            },
-        },
-    },
-    {
         'Zeioth/compiler.nvim',
         event = 'BufReadPre',
         cmd = { 'CompilerOpen', 'CompilerToggleResults', 'CompilerRedo' },
@@ -27,8 +14,9 @@ return {
                 end,
             },
         },
-        opts = {},
         config = function()
+            require('compiler').setup()
+
             vim.api.nvim_buf_set_keymap(
                 0,
                 'n',
@@ -64,5 +52,19 @@ return {
                 set_desc('run overseer')
             )
         end,
+    },
+    {
+        'stevearc/overseer.nvim',
+        event = 'BufReadPre',
+        commit = '6271cab7ccc4ca840faa93f54440ffae3a3918bd',
+        cmd = { 'CompilerOpen', 'CompilerToggleResults', 'CompilerRedo' },
+        opts = {
+            task_list = {
+                direction = 'bottom',
+                min_height = 25,
+                max_height = 25,
+                default_detail = 1,
+            },
+        },
     },
 }
