@@ -43,14 +43,14 @@ return {
                         normal = '<C-r>',
                         insert = '<C-r>',
                     },
-                    yank_diff = {
-                        normal = '<C-y>',
-                        insert = '<C-y>',
-                    },
-                    accept_diff = {
-                        normal = '<C-o>',
-                        insert = '<C-o>',
-                    },
+                    -- yank_diff = {
+                    --     normal = '<C-y>',
+                    --     insert = '<C-y>',
+                    -- },
+                    -- accept_diff = {
+                    --     normal = '<C-o>',
+                    --     insert = '<C-o>',
+                    -- },
                 },
                 -- default prompts
                 prompts = {
@@ -60,7 +60,9 @@ Choose between ["feat", "fix", "docs", "style", "refactor", "perf", "test", "bui
 Make sure the title has maximum 60 characters and message is wrapped at 72 characters.
 Wrap the whole message in code block with language gitcommit.
 Also Make sure the subject starts with lowercase and the scope is the app name.
-Follow commitlint rules. Add breaking change note only if necessary.]],
+Follow commitlint rules. Add breaking change note only if necessary.
+If you find a jira issue number in the branch name (regex [A-Z]+-\d+), add it to the commit message body.
+]],
                         selection = function(source)
                             return select.gitdiff(source, true)
                         end,

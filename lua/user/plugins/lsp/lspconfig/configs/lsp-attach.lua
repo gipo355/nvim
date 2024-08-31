@@ -35,7 +35,7 @@ M.callback = function(event)
     -- TODO: inlay hints, codelens
     -- ##### Here we can laod events when LSP has started globally for all FT #####
     -- note: it's recommended to laod per FT
-    if _G.user.lsp.hints.enable then
+    if _G.user.lsp.inlay_hints.enable then
         vim.lsp.inlay_hint.enable()
     end
     if _G.user.lsp.diagnostics.enable then
