@@ -288,7 +288,7 @@ return {
             require('mini.fuzzy').setup()
 
             -- alternative to lsp_signature.nvim
-            if _G.user.mini.lsp_signature_completion.enable then
+            if _G.user.lsp.function_signature.source == 'mini' then
                 require('mini.completion').setup({
                     window = {
                         signature = {

@@ -50,17 +50,18 @@ return {
             -- Useful status updates for LSP.
             -- this shows lsp loadings in the bottom right corner, quite obnoxious
             -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-            -- {
-            --     'j-hui/fidget.nvim',
-            --     opts = {
-            --         progress = {
-            --             suppress_on_insert = true,
-            --             ignore_done_already = true, -- Ignore new tasks that are already complete
-            --             ignore_empty_message = true, -- Ignore new tasks that don't contain a message
-            --             -- ignore = {},
-            --         },
-            --     },
-            -- },
+            {
+                'j-hui/fidget.nvim',
+                enabled = _G.user.lsp.lsp_progress.source == 'fidget',
+                opts = {
+                    progress = {
+                        suppress_on_insert = true,
+                        ignore_done_already = true, -- Ignore new tasks that are already complete
+                        ignore_empty_message = true, -- Ignore new tasks that don't contain a message
+                        -- ignore = {},
+                    },
+                },
+            },
         },
         config = function()
             -- Brief Aside: **What is LSP?**

@@ -1,5 +1,6 @@
 return {
     'folke/noice.nvim',
+    enabled = _G.user.noice.enable,
     event = 'VeryLazy',
     -- opts = {
     --     -- add any options here
@@ -28,12 +29,12 @@ return {
                     filter = { event = 'msg_showmode' },
                 },
             },
-            -- messages = {
-            --     enabled = false
-            -- },
-            -- notify = {
-            --     enabled = false
-            -- },
+            messages = {
+                enabled = _G.user.noice.message,
+            },
+            notify = {
+                enabled = _G.user.noice.notify,
+            },
             -- cmdline = {
             --     opts = {
             --         position = {
@@ -53,17 +54,19 @@ return {
                 --     ['cmp.entry.get_documentation'] = false,
                 -- },
                 progress = {
-                    enabled = false,
+                    enabled = _G.user.lsp.lsp_progress.source == 'noice',
                 },
                 message = {
-                    enabled = false,
+                    enabled = _G.user.noice.message,
                 },
+                -- this gets overridden by cmp?
                 hover = {
                     enabled = false,
                 },
                 -- error fix
+                -- show lsp signature
                 signature = {
-                    enabled = false,
+                    enabled = _G.user.lsp.function_signature.source == 'noice',
                     -- auto_open = {
                     --     enabled = true,
                     -- },

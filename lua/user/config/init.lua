@@ -194,11 +194,27 @@ _G.user.aerial = {
     direction = 'prefer_right',
 }
 
+--[[ NOICE ]]
+_G.user.noice = {
+    enable = true,
+    message = true,
+    notify = true,
+}
+
 --------------------------------
 --[[ LSP ]]
 _G.user.lsp = {
     inlay_hints = {
         enable = false,
+    },
+    -- use signatures when entering a function (pretty laggy), we are using mini.completion, faster
+    function_signature = {
+        ---@type "lsp_signature" | "mini" | "noice"| "none"
+        source = 'lsp_signature',
+    },
+    lsp_progress = {
+        ---@type "fidget" | "noice"| "none"
+        source = 'fidget',
     },
     diagnostics = {
         enable = true,
@@ -328,14 +344,6 @@ _G.user.cmp = {
 -- _G.user.use_deno_disable_ts = false
 
 --------------------------------
--- [[ LSP Signatures ]]
--- use signatures when entering a function (pretty laggy), we are using mini.completion, faster
-_G.user.lsp_signature = {
-    enable = false,
-}
-_G.user.mini.lsp_signature_completion = {
-    enable = true,
-}
 
 --------------------------------
 --[[ Theme and color settings ]]
