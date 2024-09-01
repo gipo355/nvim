@@ -1,4 +1,7 @@
 local _, lspkind = pcall(require, 'lspkind')
+local cmp_format_fns = require(
+    'user.plugins.cmp.cmp-config.cmp-setup.cmp-formatters.cmp-format-fns'
+)
 local icons = require('user.utils.icons')
 local tailwind_tools = require('tailwind-tools.cmp')
 
@@ -76,6 +79,16 @@ M.setup = function()
                             -- if name is jdtls, return since it provides info on list item
                             if lspserver_name == 'jdtls' then
                                 return
+                            end
+                            if lspserver_name == 'rust_analyzer' then
+                                return cmp_format_fns.rust_fmt(entry, vim_item)
+                            end
+                            -- NOTE: this amazing code shows params
+                            if lspserver_name == 'gopls' then
+                                return cmp_format_fns.go_fmt(entry, vim_item)
+                            end
+                            if lspserver_name == 'lua_ls' then
+                                return cmp_format_fns.lua_fmt(entry, vim_item)
                             end
 
                             -- split the string by underscore or camelcase or pascalcase or kebabcase or snakecase and get the first word of each
