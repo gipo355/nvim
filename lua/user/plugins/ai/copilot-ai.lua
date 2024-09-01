@@ -47,10 +47,10 @@ return {
                     --     normal = '<C-y>',
                     --     insert = '<C-y>',
                     -- },
-                    -- accept_diff = {
-                    --     normal = '<C-o>',
-                    --     insert = '<C-o>',
-                    -- },
+                    accept_diff = {
+                        normal = '<C-o>',
+                        insert = '<C-o>',
+                    },
                 },
                 -- default prompts
                 prompts = {
