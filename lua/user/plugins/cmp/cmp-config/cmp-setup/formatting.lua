@@ -76,10 +76,12 @@ M.setup = function()
                                 )
                             end
 
-                            -- if name is jdtls, return since it provides info on list item
+                            -- if name is jdtls, return since it provides info on list item like fn params, source
                             if lspserver_name == 'jdtls' then
                                 return
                             end
+
+                            -- custom formatters from amazing user
                             if lspserver_name == 'rust_analyzer' then
                                 return cmp_format_fns.rust_fmt(entry, vim_item)
                             end
@@ -90,6 +92,15 @@ M.setup = function()
                             if lspserver_name == 'lua_ls' then
                                 return cmp_format_fns.lua_fmt(entry, vim_item)
                             end
+
+                            -- NOTE: would like to add details like java
+                            -- https://github.com/microsoft/vscode/issues/39441
+                            -- if lspserver_name == 'typescript-tools' then
+                            --     return cmp_format_fns.typescript_fmt(
+                            --         entry,
+                            --         vim_item
+                            --     )
+                            -- end
 
                             -- split the string by underscore or camelcase or pascalcase or kebabcase or snakecase and get the first word of each
                             -- if string is longer than 5 chars, shorten it

@@ -1,6 +1,7 @@
 -- from https://github.com/xzbdmw/nvimconfig/blob/5bb7acd264e8101a01f966ca6547b164b64f5066/lua/config/utils.lua
 -- https://github.com/gipo355/nvimconfig
 -- https://www.reddit.com/r/neovim/comments/1ca4gm2/colorful_cmp_menu_powered_by_treesitter/?share_id=f2Iz6BSMQ8ej4Sg6uz05J&utm_content=2&utm_medium=ios_app&utm_name=ioscss&utm_source=share&utm_term=1
+-- https://github.com/xzbdmw/nvimconfig/blob/6829ce4aee6b2a3987c489bdf8553b5f37e519b9/lua/plugins/cmp.lua#L580
 -- local utils = require('config.utils')
 
 local api = vim.api
