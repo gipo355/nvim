@@ -214,7 +214,7 @@ _G.user.lsp = {
     },
     lsp_progress = {
         ---@type "fidget" | "noice"| "none"
-        source = 'fidget',
+        source = 'none',
     },
     diagnostics = {
         enable = true,
