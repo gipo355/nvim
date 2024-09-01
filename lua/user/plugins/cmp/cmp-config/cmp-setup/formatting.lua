@@ -7,6 +7,7 @@ local M = {}
 M.setup = function()
     return {
         formatting = {
+
             -- example custom format, wanted to add lsp source name
             -- format = function(entry, vim_item)
             --     local cmp_item = entry:get_completion_item() --- @type lsp.CompletionItem
@@ -28,9 +29,14 @@ M.setup = function()
             --     --     end)
             --     -- end
             -- end,
+
             format = lspkind.cmp_format({
+                ---@type 'text'| 'text_symbol'| 'symbol_text'| 'symbol'
                 mode = 'symbol_text', -- show only symbol annotations
-                -- mode = 'symbol', -- show only symbol annotations
+
+                ---@type 'codicons' | 'default'
+                preset = 'default',
+                show_labelDetails = false,
 
                 -- if i display the menu, it won't display dynamic icons like typescript_tools
                 -- menu = {
@@ -55,8 +61,6 @@ M.setup = function()
 
                 ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
 
-                show_labelDetails = false,
-
                 maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 
                 -- The function below will be called before any actual modifications from lspkind
@@ -69,27 +73,32 @@ M.setup = function()
 
                 -- https://github.com/onsails/lspkind.nvim/issues/19
                 -- https://www.reddit.com/r/neovim/comments/12qo8na/display_specific_lsp_in_cmp_completions/
-                before = function(entry, vim_item)
-                    vim_item.menu = ({
-                        buffer = '[Buffer]',
-                        typescript_tools = '[TS]',
-                        nvim_lsp = '[LSP]',
-                        copilot = '[Copilot]',
-                        git = '[Git]',
-                        luasnip = '[LuaSnip]',
-                        path = '[Path]',
-                        cmp_tabnine = '[TabNine]',
-                        calc = '[Calc]',
-                        emoji = '[Emoji]',
-                        treesitter = '[Treesitter]',
-                        crates = '[Crates]',
-                        tmux = '[Tmux]',
-                        Codeium = '',
-                        rg = '[Rg]',
-                        nvim_lua = '[Lua]',
-                        latex_symbols = '[Latex]',
-                    })[entry.source.name]
 
+                -- BEFORE for custom formatting
+                before = function(entry, vim_item)
+                    -- NOTE: this overrides the right side of the menu, displays the source instead of function details (params, return, etc)
+                    -- i've put this after the lsp check
+                    -- vim_item.menu = ({
+                    --     buffer = '[Buffer]',
+                    --     typescript_tools = '[TS]',
+                    --     -- nvim_lsp = '[LSP]',
+                    --     copilot = '[Copilot]',
+                    --     git = '[Git]',
+                    --     luasnip = '[LuaSnip]',
+                    --     path = '[Path]',
+                    --     cmp_tabnine = '[TabNine]',
+                    --     calc = '[Calc]',
+                    --     emoji = '[Emoji]',
+                    --     treesitter = '[Treesitter]',
+                    --     crates = '[Crates]',
+                    --     tmux = '[Tmux]',
+                    --     Codeium = '',
+                    --     rg = '[Rg]',
+                    --     nvim_lua = '[Lua]',
+                    --     latex_symbols = '[Latex]',
+                    -- })[entry.source.name]
+
+                    -- add the lsp source name to the menu for html-css plugin
                     if
                         _G.user.htmlcss_intellisense.enable
                         and entry.source.name == 'html-css'
@@ -99,7 +108,7 @@ M.setup = function()
                     end
 
                     -- adds the lsp source name to the menu
-                    -- print(entry.source.name) -- nvim_lsp
+                    -- NOTE: this overrides the right side of the menu, displays the source instead of function details (params, return, etc)
                     if entry.source.name == 'nvim_lsp' then
                         -- print('entry.source.name', entry.source.name)
                         -- -- Try to get the LSP client's name
@@ -128,13 +137,23 @@ M.setup = function()
 
                             -- if name is long e.g. typescript_tools, shorten it
 
+                            -- if name is 'tailwindcss', format it
+                            if
+                                _G.user.tailwindcss.enable_lsp
+                                and lspserver_name == 'tailwindcss'
+                            then
+                                vim_item = tailwind_tools.lspkind_format(
+                                    entry,
+                                    vim_item
+                                )
+                            end
+
+                            -- if name is jdtls, return since it provides info on list item
+                            if lspserver_name == 'jdtls' then
+                                return
+                            end
+
                             -- split the string by underscore or camelcase or pascalcase or kebabcase or snakecase and get the first word of each
-
-                            -- if string.len(lspserver_name) > 10 then
-                            --     lspserver_name =
-                            --         string.sub(lspserver_name, 1, 5)
-                            -- end
-
                             -- if string is longer than 5 chars, shorten it
                             if string.len(lspserver_name) > 5 then
                                 local t = {}
@@ -177,26 +196,48 @@ M.setup = function()
                                     .. ']'
                             end
                         end)
+                    else
+                        vim_item.menu = ({
+                            buffer = '[Buffer]',
+                            typescript_tools = '[TS]',
+                            -- nvim_lsp = '[LSP]',
+                            copilot = '[Copilot]',
+                            git = '[Git]',
+                            luasnip = '[LuaSnip]',
+                            path = '[Path]',
+                            cmp_tabnine = '[TabNine]',
+                            calc = '[Calc]',
+                            emoji = '[Emoji]',
+                            treesitter = '[Treesitter]',
+                            crates = '[Crates]',
+                            tmux = '[Tmux]',
+                            Codeium = '',
+                            rg = '[Rg]',
+                            nvim_lua = '[Lua]',
+                            latex_symbols = '[Latex]',
+                        })[entry.source.name]
                     end
 
                     -- NOT this, old own method
                     -- vim_item =
                     --     cmputils.formatForTailwindCSS(entry, vim_item)
 
+                    -- NOT: old way for tailwind
                     -- vim_item =
                     --     require('tailwindcss-colorizer-cmp').formatter(
                     --         entry,
                     --         vim_item
                     --     )
 
-                    if _G.user.tailwindcss.enable_lsp then
-                        vim_item =
-                            tailwind_tools.lspkind_format(entry, vim_item)
-                    end
+                    -- if _G.user.tailwindcss.enable_lsp then
+                    --     vim_item =
+                    --         tailwind_tools.lspkind_format(entry, vim_item)
+                    -- end
 
                     return vim_item
                 end,
             }),
+
             fields = { 'kind', 'abbr', 'menu' },
             max_width = 0,
             kind_icons = icons.kind,
