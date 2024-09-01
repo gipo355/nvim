@@ -7,6 +7,8 @@ local M = {}
 M.setup = function()
     return {
         formatting = {
+            expandable_indicator = false,
+            deprecated = true,
             fields = { 'kind', 'abbr', 'menu' },
             max_width = 0,
             kind_icons = icons.kind,
