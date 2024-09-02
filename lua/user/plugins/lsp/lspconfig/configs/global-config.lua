@@ -33,7 +33,7 @@ M.setup = function()
         extension = {
             templ = 'templ', -- golang atempl
             zsh = 'sh',
-            -- http = 'http',
+            http = 'http',
         },
         filename = {
             ['.zshrc'] = 'sh',

@@ -5,7 +5,6 @@ local set_desc = require('user.utils.functions').set_keymap_desc
 return {
     {
         'rest-nvim/rest.nvim',
-        enabled = false,
         dependencies = {
             { 'luarocks.nvim' },
             { 'nvim-telescope/telescope.nvim' },
