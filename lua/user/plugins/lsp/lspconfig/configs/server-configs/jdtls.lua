@@ -16,6 +16,7 @@ M.setup = function(capabilities)
         single_file_support = true,
         settings = {
             java = {
+                autobuild = { enabled = false },
                 server = { launchMode = 'Hybrid' },
                 eclipse = {
                     downloadSources = true,
