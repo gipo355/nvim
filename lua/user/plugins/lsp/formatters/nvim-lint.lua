@@ -62,7 +62,10 @@ return {
 
             -- go = { 'snyk_iac' },
             --
-            -- java = { 'snyk_iac' },
+            java = {
+                -- 'snyk_iac',
+                'checkstyle',
+            },
             --
             -- rust = { 'snyk_iac' },
 
