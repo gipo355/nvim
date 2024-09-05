@@ -204,15 +204,15 @@ return {
             null_ls.builtins.diagnostics.hadolint,
 
             -- java
-
+            --
             -- using nvim lint
-            -- null_ls.builtins.diagnostics.checkstyle.with({
-            --     extra_args = {
-            --         '-c',
-            --         -- '/home/wolf/checkstyle/intellij_google_style.xml',
-            --         '/home/wolf/checkstyle/google_checks.xml',
-            --     }, -- or "/sun_checks.xml" or path to self written rules
-            -- }),
+            null_ls.builtins.diagnostics.checkstyle.with({
+                extra_args = {
+                    '-c',
+                    -- '/home/wolf/checkstyle/intellij_google_style.xml',
+                    '/home/wolf/checkstyle/google_checks.xml',
+                }, -- or "/sun_checks.xml" or path to self written rules
+            }),
 
             -- groovy gradle
             null_ls.builtins.formatting.npm_groovy_lint.with({
