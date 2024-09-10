@@ -35,7 +35,7 @@ return {
                 -- yank_diff_register = '"',
                 -- to allow unnamed register
                 -- yank_diff_register = { '"', '+', '*' },
-                yank_diff_register = '+',
+                -- yank_diff_register = '+',
                 -- yank_diff_registers = 'unnamedplus',
                 auto_follow_cursor = false, -- Follow cursor in chat window
                 mappings = {
@@ -43,10 +43,11 @@ return {
                         normal = '<C-r>',
                         insert = '<C-r>',
                     },
-                    -- yank_diff = {
-                    --     normal = '<C-y>',
-                    --     insert = '<C-y>',
-                    -- },
+                    yank_diff = {
+                        --     normal = '<C-y>',
+                        --     insert = '<C-y>',
+                        register = '+',
+                    },
                     accept_diff = {
                         normal = '<C-o>',
                         insert = '<C-o>',

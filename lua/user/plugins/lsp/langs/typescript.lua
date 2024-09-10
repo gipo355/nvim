@@ -75,7 +75,8 @@ return {
                         for _, client_ in pairs(active_clients) do
                             -- stop tsserver if denols is already active
                             if
-                                client_.name == 'tsserver'
+                                -- client_.name == 'tsserver'
+                                client_.name == 'ts_ls'
                                 or client_.name == 'typescript-tools'
                             then
                                 client_.stop()
@@ -83,7 +84,8 @@ return {
                         end
                     elseif
                         client.name == 'typescript-tools'
-                        or client.name == 'tsserver'
+                        -- or client.name == 'tsserver'
+                        or client.name == 'ts_ls'
                     then
                         for _, client_ in pairs(active_clients) do
                             -- prevent tsserver from starting if denols is already active
