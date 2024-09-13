@@ -32,11 +32,19 @@ return {
             -- TSMethod = { fg = '#d6aa2f', style = 'bold' },
 
             -- COLOR functions green
-            -- ['@lsp.type.function'] = { fg = '#b8bb26', style = 'bold' },
-            -- ['@function'] = { fg = '#b0b846' },
-            -- ['@function.call'] = { fg = '#b8bb26', style = 'bold' },
-            -- ['@function.method'] = { fg = '#b0b846' },
-            -- ['@function.method.call'] = { fg = '#b8bb26', style = 'bold' },
+            ['@lsp.type.function'] = { fg = '#b8bb26', style = 'bold' },
+            ['@lsp.type.method'] = { fg = '#b8bb26', style = 'bold' },
+            ['@function'] = { fg = '#b0b846' },
+            ['@function.call'] = { fg = '#b8bb26', style = 'bold' },
+            ['@function.method'] = { fg = '#b0b846' },
+            ['@function.method.call'] = { fg = '#b8bb26', style = 'bold' },
+
+            -- vars white
+            -- ['@lsp.type.variable'] = { fg = '#DDC7A1' },
+
+            -- Diff classes and interfaces
+            ['@lsp.type.class'] = { fg = '#d6aa2f' },
+            -- ['@lsp.type.interface'] = { fg = '#b8bb26', style = 'bold' },
 
             -- TSTypeBuiltin = { fg = '#4e9951', style = 'italic' },
             -- TSOperator = { fg = '#fb4934', style = 'italic' },
