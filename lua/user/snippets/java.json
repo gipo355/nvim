@@ -1,293 +1,231 @@
-### Java Snippets
-
-
-#### Converting Strings to int and int to String
-
-    String a = String.valueOf(2); 
-    int i = Integer.parseInt(a);  
-
-    
-#### Convert String to Date
-
-    java.util.Date = java.text.DateFormat.getDateInstance().parse(date String);
-
-or
-
-    SimpleDateFormat format = new SimpleDateFormat( "dd.MM.yyyy" );
-    Date date = format.parse( myString );
-
-#### Convert Java util.Date to sql.Date
-
-    java.util.Date utilDate = new java.util.Date();
-    java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
-
-#### Append text to a File
-
-    BufferedWriter out = null;
-    try {
-        out = new BufferedWriter(new FileWriter(”filename”, true));
-        out.write(”aString”);
-    } catch (IOException e) {
-        // error processing code
-    } finally {
-        if (out != null) {
-            out.close();
-        }
-    }
-    
-#### Get name of current method
-
-    String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();  
-    
-#### Connecting to Oracle using Java JDBC
-
-    public class OracleJdbcTest {
-        String driverClass = "oracle.jdbc.driver.OracleDriver";
-        Connection con;
-     
-        public void init(FileInputStream fs) throws ClassNotFoundException, SQLException, FileNotFoundException, IOException {
-            Properties props = new Properties();
-            props.load(fs);
-            String url = props.getProperty("db.url");
-            String userName = props.getProperty("db.user");
-            String password = props.getProperty("db.password");
-            Class.forName(driverClass);
-            con=DriverManager.getConnection(url, userName, password);
-        }
-     
-        public void fetch() throws SQLException, IOException {
-            PreparedStatement ps = con.prepareStatement("select SYSDATE from dual");
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                // do the thing you do
-            }
-            rs.close();
-            ps.close();
-        }
-        
-        public static void main(String[] args) {
-            OracleJdbcTest test = new OracleJdbcTest();
-            test.init();
-            test.fetch();
-        }
-    }
-    
-#### Create Thumbnail of an Image
-
-    private void createThumbnail(String filename, int thumbWidth, int thumbHeight, int quality, String outFilename) throws InterruptedException, FileNotFoundException, IOException {
-        Image image = Toolkit.getDefaultToolkit().getImage(filename);
-        MediaTracker mediaTracker = new MediaTracker(new Container());
-        mediaTracker.addImage(image, 0);
-        mediaTracker.waitForID(0);
-        System.out.println(mediaTracker.isErrorAny());
-        double thumbRatio = (double)thumbWidth / (double)thumbHeight;
-        int imageWidth = image.getWidth(null);
-        int imageHeight = image.getHeight(null);
-        double imageRatio = (double)imageWidth / (double)imageHeight;
-        if (thumbRatio < imageRatio) {
-            thumbHeight = (int)(thumbWidth / imageRatio);
-        } else {
-            thumbWidth = (int)(thumbHeight * imageRatio);
-        }
-        BufferedImage thumbImage = new BufferedImage(thumbWidth, thumbHeight, BufferedImage.TYPE_INT_RGB);
-        Graphics2D graphics2D = thumbImage.createGraphics();
-        graphics2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-        graphics2D.drawImage(image, 0, 0, thumbWidth, thumbHeight, null);
-        BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(outFilename));
-        JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(out);
-        JPEGEncodeParam param = encoder.getDefaultJPEGEncodeParam(thumbImage);
-        quality = Math.max(0, Math.min(quality, 100));
-        param.setQuality((float)quality / 100.0f, false);
-        encoder.setJPEGEncodeParam(param);
-        encoder.encode(thumbImage);
-        out.close();
-    }
-    
-#### Generate PDF using iText
-
-    import java.io.File;
-    import java.io.FileOutputStream;
-    import java.io.OutputStream;
-    import java.util.Date;
-    import com.lowagie.text.Document;
-    import com.lowagie.text.Paragraph;
-    import com.lowagie.text.pdf.PdfWriter;
-    public class GeneratePDF {
-        public static void main(String[] args) {
-            try {
-                OutputStream file = new FileOutputStream(new File("C:\\Test.pdf"));
-                Document document = new Document();
-                PdfWriter.getInstance(document, file);
-                document.open();
-                document.add(new Paragraph("Hello Kiran"));
-                document.add(new Paragraph(new Date().toString()));
-                document.close();
-                file.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
-    
-#### HTTP Proxy setting
-
-    System.getProperties().put("http.proxyHost", "someProxyURL");
-    System.getProperties().put("http.proxyPort", "someProxyPort");
-    System.getProperties().put("http.proxyUser", "someUserName");
-    System.getProperties().put("http.proxyPassword", "somePassword");
-    
-#### Capture Screenshot
-
-    import java.awt.Dimension;
-    import java.awt.Rectangle;
-    import java.awt.Robot;
-    import java.awt.Toolkit;
-    import java.awt.image.BufferedImage;
-    import javax.imageio.ImageIO;
-    import java.io.File;
-    public void captureScreen(String fileName) throws Exception {
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        Rectangle screenRectangle = new Rectangle(screenSize);
-        Robot robot = new Robot();
-        BufferedImage image = robot.createScreenCapture(screenRectangle);
-        ImageIO.write(image, "png", new File(fileName));
-    }
-    
-#### Files-Directory listing
-
-    File dir = new File("directoryName");
-    String[] children = dir.list();
-    if (children == null) {
-        // Either dir does not exist or is not a directory
-    } else {
-        for (int i=0; i < children.length; i++) {
-            // Get filename of file or directory
-            String filename = children[i];
-        }
-    }
-    // It is also possible to filter the list of returned files.
-    // This example does not return any files that start with `.'.
-    FilenameFilter filter = new FilenameFilter() {
-        public boolean accept(File dir, String name) {
-            return !name.startsWith(".");
-        }
-    };
-    children = dir.list(filter);
-    
-    // The list of files can also be retrieved as File objects
-    File[] files = dir.listFiles();
-    
-    // This filter only returns directories
-    FileFilter fileFilter = new FileFilter() {
-        public boolean accept(File file) {
-            return file.isDirectory();
-        }
-    };
-    files = dir.listFiles(fileFilter);
-    
-#### Create ZIP and JAR files
-
-    import java.util.zip.*;
-    import java.io.*;
-    public class ZipIt {
-        public static void main(String args[]) throws IOException {
-            if (args.length < 2) {
-                System.err.println("usage: java ZipIt Zip.zip file1 file2 file3");
-                System.exit(-1);
-            }
-            File zipFile = new File(args[0]);
-            if (zipFile.exists()) {
-                System.err.println("Zip file already exists, please try another");
-                System.exit(-2);
-            }
-            FileOutputStream fos = new FileOutputStream(zipFile);
-            ZipOutputStream zos = new ZipOutputStream(fos);
-            int bytesRead;
-            byte[] buffer = new byte[1024];
-            CRC32 crc = new CRC32();
-            for (int i=1, n=args.length; i < n; i++) {
-                String name = args[i];
-                File file = new File(name);
-                if (!file.exists()) {
-                    System.err.println("Skipping: " + name);
-                    continue;
-                }
-                BufferedInputStream bis = new BufferedInputStream(new FileInputStream(file));
-                crc.reset();
-                while ((bytesRead = bis.read(buffer)) != -1) {
-                    crc.update(buffer, 0, bytesRead);
-                }
-                bis.close();
-                // Reset to beginning of input stream
-                bis = new BufferedInputStream(new FileInputStream(file));
-                ZipEntry entry = new ZipEntry(name);
-                entry.setMethod(ZipEntry.STORED);
-                entry.setCompressedSize(file.length());
-                entry.setSize(file.length());
-                entry.setCrc(crc.getValue());
-                zos.putNextEntry(entry);
-                while ((bytesRead = bis.read(buffer)) != -1) {
-                    zos.write(buffer, 0, bytesRead);
-                }
-                bis.close();
-            }
-            zos.close();
-        }
-    }
-    
-#### Convert Array to Map
-
-    import java.util.Map;
-    import org.apache.commons.lang.ArrayUtils;
-    public class Main {
-        public static void main(String[] args) {
-            String[][] countries = { { "United States", "New York" }, { "United Kingdom", "London" }, { "Netherland", "Amsterdam" }, { "Japan", "Tokyo" }, { "France", "Paris" } };
-            Map countryCapitals = ArrayUtils.toMap(countries);
-            System.out.println("Capital of Japan is " + countryCapitals.get("Japan"));
-        }
-    }
-    
-#### Send Email
-
-    import javax.mail.*;
-    import javax.mail.internet.*;
-    import java.util.*;
-    public void postMail( String recipients[ ], String subject, String message , String from) throws MessagingException {
-        boolean debug = false;
-        Properties props = new Properties();
-        props.put("mail.smtp.host", "smtp.example.com");
-        Session session = Session.getDefaultInstance(props, null);
-        session.setDebug(debug);
-        Message msg = new MimeMessage(session);
-        InternetAddress addressFrom = new InternetAddress(from);
-        msg.setFrom(addressFrom);
-        InternetAddress[] addressTo = new InternetAddress[recipients.length];
-        for (int i = 0; i < recipients.length; i++) {
-            addressTo[i] = new InternetAddress(recipients[i]);
-        }
-        msg.setRecipients(Message.RecipientType.TO, addressTo);
-        msg.addHeader("MyHeaderName", "myHeaderValue");
-        msg.setSubject(subject);
-        msg.setContent(message, "text/plain");
-        Transport.send(msg);
-    }
-
-#### Send HTTP request and fetch data
-
-    import java.io.BufferedReader;
-    import java.io.InputStreamReader;
-    import java.net.URL;
-    public class Main {
-        public static void main(String[] args)  {
-            try {
-                URL my_url = new URL("http://www.viralpatel.net/blogs/");
-                BufferedReader br = new BufferedReader(new InputStreamReader(my_url.openStream()));
-                String strTemp = "";
-                while(null != (strTemp = br.readLine())){
-                    System.out.println(strTemp);
-                }
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-        }
-    }
+{
+  "public static void main(String[] args)": {
+    "description": "main",
+    "prefix": "main",
+    "body": "public static void main(String[] args) {\n\t$0\n}"
+  },
+  "public static final": {
+    "description": "public static final",
+    "prefix": "psf",
+    "body": "public static final $1 $2 = $3;"
+  },
+  "private static final": {
+    "description": "private static final",
+    "prefix": "prsf",
+    "body": "private static final $1 $2 = $3;"
+  },
+  "public static final String": {
+    "description": "public static final String",
+    "prefix": "psfs",
+    "body": "public static final String $1 = \"$2\";"
+  },
+  "private static final String": {
+    "description": "private static final String",
+    "prefix": "prsfs",
+    "body": "private static final String $1 = \"$2\";"
+  },
+  "public static final int": {
+    "description": "public static final int",
+    "prefix": "psfi",
+    "body": "public static final int $1 = $2;"
+  },
+  "private static final int": {
+    "description": "private static final int",
+    "prefix": "prsfi",
+    "body": "private static final int $1 = $2;"
+  },
+  "public static final long": {
+    "description": "public static final long",
+    "prefix": "psfl",
+    "body": "public static final long $1 = $2L;"
+  },
+  "private static final long": {
+    "description": "private static final long",
+    "prefix": "prsfl",
+    "body": "private static final long $1 = $2L;"
+  },
+  "public static final double": {
+    "description": "public static final double",
+    "prefix": "psfd",
+    "body": "public static final double $1 = $2D;"
+  },
+  "private static final double": {
+    "description": "private static final double",
+    "prefix": "prsfd",
+    "body": "private static final double $1 = $2D;"
+  },
+  "public static final float": {
+    "description": "public static final float",
+    "prefix": "psff",
+    "body": "public static final float $1 = $2F;"
+  },
+  "private static final float": {
+    "description": "private static final float",
+    "prefix": "prsff",
+    "body": "private static final float $1 = $2F;"
+  },
+  "public static final boolean": {
+    "description": "public static final boolean",
+    "prefix": "psfb",
+    "body": "public static final boolean $1 = $2;"
+  },
+  "private static final boolean": {
+    "description": "private static final boolean",
+    "prefix": "prsfb",
+    "body": "private static final boolean $1 = $2;"
+  },
+  "public static final byte": {
+    "description": "public static final byte",
+    "prefix": "psfb",
+    "body": "public static final byte $1 = $2;"
+  },
+  "private static final byte": {
+    "description": "private static final byte",
+    "prefix": "prsfb",
+    "body": "private static final byte $1 = $2;"
+  },
+  "public static final char": {
+    "description": "public static final char",
+    "prefix": "psfc",
+    "body": "public static final char $1 = $2;"
+  },
+  "private static final char": {
+    "description": "private static final char",
+    "prefix": "prsfc",
+    "body": "private static final char $1 = $2;"
+  },
+  "public static final short": {
+    "description": "public static final short",
+    "prefix": "psfs",
+    "body": "public static final short $1 = $2;"
+  },
+  "private static final short": {
+    "description": "private static final short",
+    "prefix": "prsfs",
+    "body": "private static final short $1 = $2;"
+  },
+  "arrayList": {
+    "prefix": "al",
+    "body": "final List<$1> $2 = new ArrayList<>();",
+    "description": "ArrayList"
+  },
+  "String": {
+    "prefix": "s",
+    "body": "String",
+    "description": "String"
+  },
+  "StringBuilder": {
+    "prefix": "sb",
+    "body": "final StringBuilder $1 = new StringBuilder();",
+    "description": "StringBuilder"
+  },
+  "Java Class": {
+    "prefix": "jclass",
+    "body": ["public class ${1:ClassName} {", "  $0", "}"],
+    "description": "Create a new Java class"
+  },
+  "Main Method": {
+    "prefix": "main",
+    "body": ["public static void main(String[] args) {", "  $0", "}"],
+    "description": "Create a main method"
+  },
+  "System.out.println": {
+    "prefix": "sout",
+    "body": ["System.out.println(${1:message});"],
+    "description": "Print a message to the console"
+  },
+  "Constructor": {
+    "prefix": "constructor",
+    "body": ["public ${1:ClassName}(${2:parameters}) {", "  $0", "}"],
+    "description": "Create a constructor"
+  },
+  "Getter": {
+    "prefix": "getter",
+    "body": [
+      "public ${1:Type} get${2:Property}() {",
+      "  return ${3:property};",
+      "}"
+    ],
+    "description": "Create a getter method"
+  },
+  "Setter": {
+    "prefix": "setter",
+    "body": [
+      "public void set${1:Property}(${2:Type} ${3:property}) {",
+      "  this.${3:property} = ${3:property};",
+      "}"
+    ],
+    "description": "Create a setter method"
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": ["if (${1:condition}) {", "  $0", "}"],
+    "description": "Create an if statement"
+  },
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for (int ${1:i} = 0; ${1:i} < ${2:array}.length; ${1:i}++) {",
+      "  $0",
+      "}"
+    ],
+    "description": "Create a for loop"
+  },
+  "Enhanced For Loop": {
+    "prefix": "foreach",
+    "body": ["for (${1:Type} ${2:element} : ${3:collection}) {", "  $0", "}"],
+    "description": "Create an enhanced for loop"
+  },
+  "Try-Catch Block": {
+    "prefix": "trycatch",
+    "body": [
+      "try {",
+      "  $0",
+      "} catch (${1:Exception} ${2:e}) {",
+      "  ${3:e}.printStackTrace();",
+      "}"
+    ],
+    "description": "Create a try-catch block"
+  },
+  "String Format": {
+    "prefix": "strformat",
+    "body": [
+      "String formattedString = String.format(\"${1:format}\", ${2:args});",
+      "$0"
+    ],
+    "description": "Format a string using String.format"
+  },
+  "String Concatenation": {
+    "prefix": "strconcat",
+    "body": ["String concatenatedString = ${1:string1} + ${2:string2};", "$0"],
+    "description": "Concatenate two strings"
+  },
+  "StringBuilder Append": {
+    "prefix": "strbuilder",
+    "body": [
+      "StringBuilder sb = new StringBuilder();",
+      "sb.append(${1:string});",
+      "$0",
+      "String result = sb.toString();"
+    ],
+    "description": "Build a string using StringBuilder"
+  },
+  "String Join": {
+    "prefix": "strjoin",
+    "body": [
+      "String joinedString = String.join(\"${1:delimiter}\", ${2:elements});",
+      "$0"
+    ],
+    "description": "Join multiple strings with a delimiter"
+  },
+  "String format": {
+    "prefix": "strformat",
+    "body": "String.format(\"${1:format}\", ${2:args});",
+    "description": "Format a string using String.format"
+  },
+  "Null Check": {
+    "prefix": "ncheck",
+    "body": "if (${1:object} == null) {\n  ${2:System.out.println(\"Object is null\");}\n}",
+    "description": "Check if an object is null"
+  }
+}
