@@ -149,6 +149,34 @@
     "prefix": "prfs",
     "body": "private final short $1 = $2;"
   },
+  "public method": {
+    "prefix": "pm",
+    "body": [
+      "public ${1:void} ${2:methodName}(${3:parameters}) {",
+      "  $0",
+      "}"
+    ],
+    "description": "Create a method"
+  },
+  "private method": {
+    "prefix": "prm",
+    "body": [
+      "private ${1:void} ${2:methodName}(${3:parameters}) {",
+      "  $0",
+      "}"
+    ],
+    "description": "Create a private method"
+  },
+  "bean prop": {
+    "prefix": "beanprop",
+    "body": [
+      "private ${1:String} ${2:propertyName};",
+      "public ${1:String} get${2:Property}() {",
+      "  return ${2:Property};",
+      "}"
+    ],
+    "description": "Create a getter method"
+  },
   "arrayList": {
     "prefix": "al",
     "body": "final List<$1> $2 = new ArrayList<>();",
