@@ -6,103 +6,148 @@
   },
   "public static final": {
     "description": "public static final",
-    "prefix": "psf",
+    "prefix": "pstf",
     "body": "public static final $1 $2 = $3;"
   },
   "private static final": {
     "description": "private static final",
-    "prefix": "prsf",
+    "prefix": "prstf",
     "body": "private static final $1 $2 = $3;"
   },
   "public static final String": {
     "description": "public static final String",
-    "prefix": "psfs",
+    "prefix": "pstfs",
     "body": "public static final String $1 = \"$2\";"
   },
   "private static final String": {
     "description": "private static final String",
-    "prefix": "prsfs",
+    "prefix": "prstfs",
     "body": "private static final String $1 = \"$2\";"
   },
   "public static final int": {
     "description": "public static final int",
-    "prefix": "psfi",
+    "prefix": "pstfi",
     "body": "public static final int $1 = $2;"
   },
   "private static final int": {
     "description": "private static final int",
-    "prefix": "prsfi",
+    "prefix": "prstfi",
     "body": "private static final int $1 = $2;"
   },
   "public static final long": {
     "description": "public static final long",
-    "prefix": "psfl",
+    "prefix": "pstfl",
     "body": "public static final long $1 = $2L;"
   },
   "private static final long": {
     "description": "private static final long",
-    "prefix": "prsfl",
+    "prefix": "prstfl",
     "body": "private static final long $1 = $2L;"
   },
   "public static final double": {
     "description": "public static final double",
-    "prefix": "psfd",
+    "prefix": "pstfd",
     "body": "public static final double $1 = $2D;"
   },
   "private static final double": {
     "description": "private static final double",
-    "prefix": "prsfd",
+    "prefix": "prstfd",
     "body": "private static final double $1 = $2D;"
   },
   "public static final float": {
     "description": "public static final float",
-    "prefix": "psff",
+    "prefix": "pstff",
     "body": "public static final float $1 = $2F;"
   },
   "private static final float": {
     "description": "private static final float",
-    "prefix": "prsff",
+    "prefix": "prstff",
     "body": "private static final float $1 = $2F;"
   },
   "public static final boolean": {
     "description": "public static final boolean",
-    "prefix": "psfb",
+    "prefix": "pstfb",
     "body": "public static final boolean $1 = $2;"
   },
   "private static final boolean": {
     "description": "private static final boolean",
-    "prefix": "prsfb",
+    "prefix": "prstfb",
     "body": "private static final boolean $1 = $2;"
   },
   "public static final byte": {
     "description": "public static final byte",
-    "prefix": "psfb",
+    "prefix": "pstfb",
     "body": "public static final byte $1 = $2;"
   },
   "private static final byte": {
     "description": "private static final byte",
-    "prefix": "prsfb",
+    "prefix": "prstfb",
     "body": "private static final byte $1 = $2;"
   },
   "public static final char": {
     "description": "public static final char",
-    "prefix": "psfc",
+    "prefix": "pstfc",
     "body": "public static final char $1 = $2;"
   },
   "private static final char": {
     "description": "private static final char",
-    "prefix": "prsfc",
+    "prefix": "prstfc",
     "body": "private static final char $1 = $2;"
   },
   "public static final short": {
     "description": "public static final short",
-    "prefix": "psfs",
+    "prefix": "pstfs",
     "body": "public static final short $1 = $2;"
   },
   "private static final short": {
     "description": "private static final short",
-    "prefix": "prsfs",
+    "prefix": "prstfs",
     "body": "private static final short $1 = $2;"
+  },
+  "private final String": {
+    "description": "private final String",
+    "prefix": "prfs",
+    "body": "private final String $1 = \"$2\";"
+  },
+  "private final int": {
+    "description": "private final int",
+    "prefix": "prfi",
+    "body": "private final int $1 = $2;"
+  },
+  "private final long": {
+    "description": "private final long",
+    "prefix": "prfl",
+    "body": "private final long $1 = $2L;"
+  },
+  "private final double": {
+    "description": "private final double",
+    "prefix": "prfd",
+    "body": "private final double $1 = $2D;"
+  },
+  "private final float": {
+    "description": "private final float",
+    "prefix": "prff",
+    "body": "private final float $1 = $2F;"
+  },
+  "private final boolean": {
+    "description": "private final boolean",
+    "prefix": "prfb",
+    "body": "private final boolean $1 = $2;"
+  },
+  "private final byte": {
+    "description": "private final byte",
+    "prefix": "prfb",
+    "body": "private final byte $1 = $2;"
+  },
+  "private final char": {
+    "description": "private final char",
+    "prefix": "prfc",
+    "body": "private final char $1 = $2;"
+  },
+  "private final short": {
+    "description": "private final short",
+    "prefix": "prfs",
+    "body": "private final short $1 = $2;"
   },
   "arrayList": {
     "prefix": "al",
