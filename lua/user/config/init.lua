@@ -262,7 +262,7 @@ _G.user.tailwindcss = {
 --[[ Indent blankline settings ]]
 _G.user.indent_blankline = {
     enable = true,
-    scope = false,
+    scope = true,
     color = true, -- color the background of indentlines
     color_background = true, -- color the background of indentlines
     hide_first_indent_level = false, -- hide first indent level
