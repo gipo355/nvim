@@ -63,6 +63,11 @@ Wrap the whole message in code block with language gitcommit.
 Also Make sure the subject starts with lowercase and the scope is the app name.
 Follow commitlint rules. Add breaking change note only if necessary.
 ]],
+                        -- INTELLIJ commit message prompt
+                        -- Avoid overly verbose descriptions or unnecessary details.
+                        -- Start with a short sentence in imperative form, no more than 50 characters long.
+                        -- Then leave an empty line and continue with a more detailed explanation.
+                        -- Write only one sentence for the first part, and two or three sentences at most for the detailed explanation.
                         selection = function(source)
                             return select.gitdiff(source, true)
                         end,
