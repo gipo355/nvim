@@ -140,12 +140,12 @@ return {
                 },
                 renderer = {
                     add_trailing = false,
-                    group_empty = false,
+                    group_empty = true, --   good for java
                     highlight_git = true,
                     full_name = false,
                     highlight_opened_files = 'all',
                     root_folder_label = ':t',
-                    indent_width = 3,
+                    indent_width = 2,
                     indent_markers = {
                         enable = true,
                         inline_arrows = true,
