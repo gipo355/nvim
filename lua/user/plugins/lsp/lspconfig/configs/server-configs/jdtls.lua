@@ -68,6 +68,7 @@ M.setup = function(capabilities)
                 referenceCodeLens = {
                     enabled = false,
                 },
+                -- https://github.com/eclipse-jdtls/eclipse.jdt.ls/issues/2948
                 inlayHints = {
                     parameterNames = {
                         ---@type "none" | "literals" | "all"
