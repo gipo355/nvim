@@ -79,6 +79,9 @@ _G.user.ai = {
     aider = {
         enable = false,
     },
+    chatgpt = {
+        enabled = false,
+    },
 }
 
 --------------------------------
@@ -120,7 +123,7 @@ _G.user.mini.animate_scroll = {
 
 -- enable bufferline (bufferline plugin)
 _G.user.bufferline = {
-    enable = false,
+    enable = true,
 }
 -- lualine plugin
 _G.user.lualine = {
@@ -130,17 +133,17 @@ _G.user.lualine = {
 -- disable builtin statusline
 -- avante overrides this
 _G.user.statusline = {
-    disable_builtin = true,
+    disable_builtin = false,
 }
 -- disable status line in tmux to recover space
 _G.user.tmux = {
-    disable_statusline = true,
+    disable_statusline = false,
 }
 -- show function scope at the top of the window (nvim-treesitter)
 _G.user.treesitter_context = {
     enable = true,
     max_lines = 4, -- maximum number of lines to show
-    multiline_threshold = 1, -- max n of lines for single context
+    multiline_threshold = 3, -- max n of lines for single context
 }
 
 --------------------------------
@@ -243,16 +246,21 @@ _G.user.lsp = {
 --------------------------------
 
 --------------------------------
---[[ HEAVY PLUGINS ]]
+--[[ HEAVY SLOW PLUGINS ]]
+
+-- [[ DAP ]]
+_G.user.dap = {
+    enable = false,
+}
 
 -- [[ TAILWIND ]]
 -- enable tailwindcss lspconfig start (huge lag)
 -- enabling tailwind requires didChangeWatchedFiles capabilities to false to work (lspconfig)
 -- NOTE: looks like it's fixed
 _G.user.tailwindcss = {
-    enable_lsp = true,
+    enable_lsp = false,
     tailwind_tools = {
-        enable = true,
+        enable = false,
         enable_conceal = false,
         -- plugin highligh colors can do the same thing
         enable_colors = false,
@@ -367,9 +375,9 @@ _G.user.theme = function()
 
     -- return 'vague'
     -- return 'monokai-pro'
-    return 'gruvbox-baby'
+    -- return 'gruvbox-baby'
     -- return 'kanagawa'
-    -- return 'gruvbox-material'
+    return 'gruvbox-material'
     -- return 'rose-pine'
     -- return 'ares'
     -- return 'onedark'
@@ -513,7 +521,7 @@ _G.user.root_patterns = {
 
 --------------------------------
 --[[
-  Enable java plugin, pretty heavy
+  Enable java plugin, pretty heavy and slow
 ]]
 _G.user.java = {
     enable = true,

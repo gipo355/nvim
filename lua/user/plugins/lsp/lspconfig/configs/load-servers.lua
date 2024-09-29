@@ -166,9 +166,10 @@ M.load_servers = function(capabilities)
         --[[ JAVA ]]
         -- "java_language_server",
         -- "java",
-        jdtls = {}, -- manual require it at the end, no autoinstall (java plugin)
         lemminx = {}, -- xml
         ['sonarlint-language-server'] = {},
+
+        -- jdtls = {}, -- manual require it at the end, no autoinstall (java plugin), in lspconfig.lua
     }
 end
 

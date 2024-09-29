@@ -193,7 +193,10 @@ M.merge_tables = function(...) -- BUG: doesn't work on keymaps
 end
 
 M.toggle_hints = function()
-    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+    vim.cmd(
+        'lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())'
+    )
+    -- vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end
 
 M.toggle_diagnostics = function()

@@ -114,6 +114,10 @@ return {
                         remap = false,
                     },
                     { '<leader>b_', hidden = true, remap = false },
+
+                    { '<leader>mk', group = '[a]vante', remap = false },
+                    { '<leader>mk_', hidden = true, remap = false },
+
                     { '<leader>d', group = '[d]ebug', remap = false },
                     { '<leader>d_', hidden = true, remap = false },
                     { '<leader>g', group = '[g]it', remap = false },

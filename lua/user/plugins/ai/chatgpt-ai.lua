@@ -2,6 +2,7 @@ local set_desc = require('user.utils.functions').set_keymap_desc
 return {
     'jackMort/ChatGPT.nvim',
     event = 'VeryLazy',
+    enabled = _G.user.ai.chatgpt.enabled,
     dependencies = {
         'MunifTanjim/nui.nvim',
         'nvim-lua/plenary.nvim',

@@ -9,6 +9,7 @@ return {
     config = function()
         require('bufferline').setup({
             options = {
+                mode = 'tabs', -- "buffers" | "tabs" | "buffers+tabs" | "tabs+buffers"
                 tab_size = 10,
                 diagnostics = 'nvim_lsp', -- false | "nvim_lsp" | "coc"
                 hover = {

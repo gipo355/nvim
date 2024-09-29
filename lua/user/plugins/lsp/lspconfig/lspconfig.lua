@@ -34,8 +34,9 @@ return {
 
     { -- LSP Configuration & Plugins
         'neovim/nvim-lspconfig',
-        event = 'BufEnter',
-        lazy = false,
+        -- event = 'BufEnter',
+        event = 'VeryLazy',
+        -- lazy = false,
         dependencies = {
             -- Automatically install LSPs and related tools to stdpath for neovim
             { 'williamboman/mason.nvim', config = true, lazy = false },
@@ -45,7 +46,7 @@ return {
             -- LSP completion plugin ( schemas )
             'b0o/schemastore.nvim',
 
-            { 'nvim-java/nvim-java' },
+            { 'nvim-java/nvim-java', enabled = _G.user.java.enable },
 
             -- Useful status updates for LSP.
             -- this shows lsp loadings in the bottom right corner, quite obnoxious
@@ -179,8 +180,34 @@ return {
                     -- TODO: refactor this
                     -- java
                     jdtls = function()
+                        if not _G.user.java.enable then
+                            return nil
+                        end
+
                         require('java').setup({
                             -- Your custom jdtls settings goes here
+                            -- load java test plugins
+                            java_test = {
+                                enable = false,
+                            },
+                            -- load java debugger plugins
+                            java_debug_adapter = {
+                                enable = _G.user.dap.enable,
+                            },
+
+                            spring_boot_tools = {
+                                enable = true,
+                            },
+
+                            jdk = {
+                                -- install jdk using mason.nvim
+                                auto_install = false, -- setup in jdtls config
+                            },
+
+                            notifications = {
+                                -- enable 'Configuring DAP' & 'DAP configured' messages on start up
+                                dap = true,
+                            },
                         })
 
                         -- NOTE: document symbols not working

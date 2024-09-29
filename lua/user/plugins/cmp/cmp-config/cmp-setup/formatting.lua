@@ -3,7 +3,7 @@ local cmp_format_fns = require(
     'user.plugins.cmp.cmp-config.cmp-setup.cmp-formatters.cmp-format-fns'
 )
 local icons = require('user.utils.icons')
-local tailwind_tools = require('tailwind-tools.cmp')
+local tw_ok, tailwind_tools = pcall(require, 'tailwind-tools.cmp')
 
 local M = {}
 
@@ -68,6 +68,7 @@ M.setup = function()
                             -- if name is 'tailwindcss', format it
                             if
                                 _G.user.tailwindcss.enable_lsp
+                                and tw_ok
                                 and lspserver_name == 'tailwindcss'
                             then
                                 vim_item = tailwind_tools.lspkind_format(

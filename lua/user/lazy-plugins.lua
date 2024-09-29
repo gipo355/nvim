@@ -113,9 +113,11 @@ require('lazy').setup({
         { import = 'user.plugins.lsp.formatters' },
         { import = 'user.plugins.lsp.lspconfig' },
 
-        { import = 'user.plugins.runners' },
+        -- { import = 'user.plugins.runners' },
 
         { import = 'user.plugins.lua-dev' },
+
+        { import = 'user.plugins.images' },
 
         -- other ways
         -- 'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically

@@ -151,35 +151,6 @@ return {
         },
     },
 
-    -- create beautiful images :Silicon
-    {
-        'segeljakt/vim-silicon',
-        event = 'BufReadPre',
-        -- TODO: why doesn't this set the key in visual mode?
-        -- keys = {
-        --     {
-        --         '<leader>hs',
-        --         ':Silicon<cr>',
-        --         { 'n', 'v' },
-        --         desc = 'Silicon',
-        --     },
-        -- },
-        config = function()
-            vim.keymap.set(
-                'n',
-                '<leader>hs',
-                '<cmd>Silicon<cr>',
-                set_desc('Take code snapshot')
-            )
-            vim.keymap.set(
-                'v',
-                '<leader>hs',
-                ':Silicon<cr>',
-                set_desc('Take visual code snapshot')
-            )
-        end,
-    },
-
     -- caddyfile syntax
     { 'isobit/vim-caddyfile', event = 'BufReadPre Caddyfile' },
 
@@ -215,28 +186,6 @@ return {
         -- dependencies = { "nvim-treesitter/nvim-treesitter" },
         config = function()
             require('wildfire').setup()
-        end,
-    },
-
-    -- alternative to clipboard-image.nvim
-    {
-        'HakonHarnes/img-clip.nvim',
-        event = 'BufEnter',
-        config = function()
-            require('img-clip').setup({
-                -- add options here
-                -- or leave it empty to use the default settings
-                default = {
-                    dir_path = 'assets/imgs/nvim', -- directory path to save images to, can be relative (cwd or current file) or absolute
-                    url_encode_path = true, --
-                },
-            })
-            vim.keymap.set(
-                'n',
-                '<leader>hp',
-                '<cmd>PasteImage<cr>',
-                set_desc('paste image')
-            )
         end,
     },
 
