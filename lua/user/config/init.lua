@@ -123,7 +123,7 @@ _G.user.mini.animate_scroll = {
 
 -- enable bufferline (bufferline plugin)
 _G.user.bufferline = {
-    enable = true,
+    enable = false,
 }
 -- lualine plugin
 _G.user.lualine = {
