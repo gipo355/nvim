@@ -190,7 +190,10 @@ o.shell = '/usr/bin/zsh'
 -- ## from lazyvim
 -- ################# from lazyvim
 
-o.autowrite = true -- Enable auto write
+o.autoread = true -- Enable auto read see :h 'autoread'
+o.autowrite = true -- Enable auto write see :h 'autowrite'
+-- o.autowriteall = true -- Enable auto write for everything see :h 'autowriteall'
+
 o.completeopt = 'menu,menuone,noinsert'
 o.confirm = true -- Confirm to save changes before exiting modified buffer
 o.formatoptions = 'jcroqlnt' -- tcqj
