@@ -120,7 +120,8 @@ vim.keymap.set('n', '<C-q>', '<cmd>norm @q<cr>', set_desc('exec q macro'))
 
 -- save
 vim.keymap.set('n', '<leader>w', '<cmd>w<cr><cmd>wa<cr>', set_desc('Save all'))
-vim.keymap.set('n', '<c-s>', '<cmd>w<cr><cmd>wa<cr>', set_desc('Save all'))
+-- vim.keymap.set('n', '<c-s>', '<cmd>w<cr><cmd>wa<cr>', set_desc('Save all'))
+vim.keymap.set('n', '<c-s>', '<cmd>wa<cr>', set_desc('Save all'))
 vim.keymap.set(
     'n',
     '<leader>W',
