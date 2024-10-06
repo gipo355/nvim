@@ -45,7 +45,7 @@ return {
             null_ls.builtins.formatting.buf,
 
             -- markdown
-            -- null_ls.builtins.formatting.markdownlint,
+            null_ls.builtins.formatting.markdownlint,
 
             -- go
             -- NOTE: possible conflicts with conform and go plugin?
@@ -227,7 +227,7 @@ return {
             null_ls.builtins.diagnostics.tidy,
 
             -- markdown
-            -- null_ls.builtins.diagnostics.markdownlint,
+            null_ls.builtins.diagnostics.markdownlint,
 
             -- markdown
             -- null_ls.builtins.diagnostics.codespell.with({
