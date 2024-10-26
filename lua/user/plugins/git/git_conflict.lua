@@ -5,4 +5,9 @@
 -- GitConflictNextConflict — Move to the next conflict.
 -- GitConflictPrevConflict — Move to the previous conflict.
 -- GitConflictListQf — Get all conflict to quickfix
-return { 'akinsho/git-conflict.nvim', version = '*', config = true }
+return {
+    'akinsho/git-conflict.nvim',
+    version = '*',
+    config = true,
+    event = 'BufReadPre',
+}

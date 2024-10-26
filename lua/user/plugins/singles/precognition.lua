@@ -2,7 +2,7 @@ return {
     'tris203/precognition.nvim',
     enabled = _G.user.precognition.enable,
     event = 'VeryLazy',
-    config = {
+    opts = {
         -- startVisible = true,
         showBlankVirtLine = false,
         -- highlightColor = { link = "Comment" },

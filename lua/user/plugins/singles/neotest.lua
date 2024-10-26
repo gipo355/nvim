@@ -1,6 +1,7 @@
 local set_desc = require('user.utils.functions').set_keymap_desc
 return {
     'nvim-neotest/neotest',
+    enabled = _G.user.neotest.enable,
     event = 'BufReadPre',
     dependencies = {
         'nvim-lua/plenary.nvim',

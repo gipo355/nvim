@@ -27,8 +27,8 @@ end
 M.setup = function(capabilities)
     return {
         -- Your custom nvim-java configuration goes here
-        -- capabilities = capabilities,
-        capabilities = setup_capabilities(capabilities),
+        capabilities = capabilities,
+        -- capabilities = setup_capabilities(),
 
         -- on_attach = function(client, bufnr)
         --     if ok then

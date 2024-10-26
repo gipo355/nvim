@@ -60,6 +60,10 @@ return {
             typescriptreact = { 'biomejs' },
             javascriptreact = { 'biomejs' },
 
+            zsh = { 'shellcheck' },
+            sh = { 'shellcheck' },
+            bash = { 'shellcheck' },
+
             -- go = { 'snyk_iac' },
             --
             -- java = {

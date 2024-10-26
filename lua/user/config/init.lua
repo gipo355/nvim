@@ -74,7 +74,7 @@ _G.user.ai = {
     -- Also check aider AI
     -- https://github.com/joshuavial/aider.nvim
     avante = {
-        enable = true,
+        enable = false,
     },
     aider = {
         enable = false,
@@ -82,6 +82,11 @@ _G.user.ai = {
     chatgpt = {
         enabled = false,
     },
+}
+
+-- NEOTEST
+_G.user.neotest = {
+    enable = false,
 }
 
 --------------------------------
@@ -131,13 +136,13 @@ _G.user.lualine = {
     show_lsp = true,
 }
 -- disable builtin statusline
--- avante overrides this
+-- avante overrides this - may clap with lualine
 _G.user.statusline = {
     disable_builtin = false,
 }
--- disable status line in tmux to recover space
+-- disable status line in tmux to recover space when entering nvim
 _G.user.tmux = {
-    disable_statusline = false,
+    disable_statusline = true,
 }
 -- show function scope at the top of the window (nvim-treesitter)
 _G.user.treesitter_context = {
@@ -524,5 +529,5 @@ _G.user.root_patterns = {
   Enable java plugin, pretty heavy and slow
 ]]
 _G.user.java = {
-    enable = true,
+    enable = false,
 }

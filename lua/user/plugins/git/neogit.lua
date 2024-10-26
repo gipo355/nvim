@@ -38,7 +38,8 @@ return {
                 -- fzf_lua = true,
             },
             disable_line_numbers = false,
-            graph_style = 'unicode',
+            -- graph_style = 'unicode',
+            graph_style = 'kitty',
         })
 
         vim.keymap.set(

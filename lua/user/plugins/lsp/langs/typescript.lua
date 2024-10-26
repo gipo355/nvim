@@ -12,7 +12,7 @@ return {
             {
                 'OlegGulevskyy/better-ts-errors.nvim',
                 dependencies = { 'MunifTanjim/nui.nvim' },
-                config = {
+                opts = {
                     keymaps = {
                         -- toggle = '<leader>vD', -- default '<leader>dd'
                         toggle = 'gj', -- default '<leader>dd'
