@@ -91,6 +91,8 @@ return {
                     'prettierd',
                     -- stop_after_first = false
                 },
+                -- when prettier has prettier-plugin-java
+                java = { 'prettierd' },
 
                 -- markdown = { { 'prettierd', 'prettier' } },
                 -- php = { { 'prettierd', 'prettier' } },
@@ -138,7 +140,8 @@ return {
                 -- typescript = { 'biome' },
                 -- typescriptreact = { 'biome' },
 
-                java = { 'google-java-format' },
+                -- disable because smi has random formatting rules
+                -- java = { 'google-java-format' },
 
                 --         go = {
                 --             {

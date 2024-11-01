@@ -86,7 +86,7 @@ _G.user.ai = {
 
 -- NEOTEST
 _G.user.neotest = {
-    enable = false,
+    enable = true,
 }
 
 --------------------------------

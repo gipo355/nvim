@@ -15,14 +15,15 @@ return {
         event = 'BufReadPre',
         enabled = _G.user.ai.copilot.chat.enable,
         branch = 'canary',
+        build = 'make tiktoken', -- Only on MacOS or Linux
         dependencies = {
             { 'zbirenbaum/copilot.lua' }, -- or github/copilot.vim
             { 'nvim-lua/plenary.nvim' }, -- for curl, log wrapper
         },
-        opts = {
-            debug = true, -- Enable debugging
-            -- See Configuration section for rest
-        },
+        -- opts = {
+        --     debug = true, -- Enable debugging
+        --     -- See Configuration section for rest
+        -- },
         config = function()
             local chat = require('CopilotChat')
             local select = require('CopilotChat.select')
@@ -32,6 +33,7 @@ return {
             -- at 72 characters. Wrap the whole message in code block with language gitcommit.'
 
             chat.setup({
+                debug = false,
                 -- yank_diff_register = '"',
                 -- to allow unnamed register
                 -- yank_diff_register = { '"', '+', '*' },
