@@ -206,7 +206,7 @@ return {
 
                             notifications = {
                                 -- enable 'Configuring DAP' & 'DAP configured' messages on start up
-                                dap = false,
+                                dap = true,
                             },
                         })
 

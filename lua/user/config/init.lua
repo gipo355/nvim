@@ -74,7 +74,7 @@ _G.user.ai = {
     -- Also check aider AI
     -- https://github.com/joshuavial/aider.nvim
     avante = {
-        enable = false,
+        enable = true,
     },
     aider = {
         enable = false,
@@ -529,5 +529,5 @@ _G.user.root_patterns = {
   Enable java plugin, pretty heavy and slow
 ]]
 _G.user.java = {
-    enable = false,
+    enable = true,
 }
