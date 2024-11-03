@@ -73,6 +73,7 @@ _G.user.ai = {
     -- into editor.
     -- Also check aider AI
     -- https://github.com/joshuavial/aider.nvim
+    -- WARN: avanta overrides vim.opt.splitkeep and vim.opt.laststatus
     avante = {
         enable = true,
     },
@@ -136,13 +137,14 @@ _G.user.lualine = {
     show_lsp = true,
 }
 -- disable builtin statusline
--- avante overrides this - may clap with lualine
+-- avante overrides this? - may clap with lualine
+-- uses vim.opt.laststatus
 _G.user.statusline = {
-    disable_builtin = false,
+    disable_statusline = false,
 }
 -- disable status line in tmux to recover space when entering nvim
 _G.user.tmux = {
-    disable_statusline = true,
+    disable_tmux_statusline = false,
 }
 -- show function scope at the top of the window (nvim-treesitter)
 _G.user.treesitter_context = {
@@ -255,7 +257,7 @@ _G.user.lsp = {
 
 -- [[ DAP ]]
 _G.user.dap = {
-    enable = false,
+    enable = true,
 }
 
 -- [[ TAILWIND ]]

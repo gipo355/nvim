@@ -1,3 +1,5 @@
+local set_desc = require('user.utils.functions').set_keymap_desc
+
 return {
     'supermaven-inc/supermaven-nvim',
     event = 'BufReadPre',
@@ -19,5 +21,12 @@ return {
             -- disable_inline_completion = false, -- disables inline completion for use with cmp
             -- disable_keymaps = false, -- disables built in keymaps for more manual control
         })
+
+        vim.keymap.set(
+            'n',
+            '<leader>vS',
+            '<cmd>SupermavenToggle<cr>',
+            set_desc('Toggle Supermaven')
+        )
     end,
 }

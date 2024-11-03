@@ -149,7 +149,7 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
 })
 
 -- disable statusline too if lualine is disabled to get all space back
-if _G.user.tmux.disable_statusline then
+if _G.user.tmux.disable_tmux_statusline then
     local cmd = vim.api.nvim_command
 
     if os.getenv('TMUX') then

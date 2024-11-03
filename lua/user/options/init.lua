@@ -221,7 +221,9 @@ g.loaded_matchit = 1 -- for vim matchup (also matchparen)
 -- value range [0,100]
 -- vim.opt.pumblend = 0
 
--- disable builtin statusline
-if _G.user.statusline.disable_builtin then
+-- disable builtin statusline (also disables lualine) -- avante overrides this
+if _G.user.statusline.disable_statusline then
     vim.opt.laststatus = 0
 end
+-- splitkeep screen -- avante overrides this
+vim.opt.splitkeep = 'screen'
