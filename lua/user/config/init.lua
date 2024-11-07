@@ -612,4 +612,6 @@ _G.user.additional_plugins = {
     glance = true, -- lsp references preview
     telescope_frecency = false, -- frecency telescope
     smart_open = false, -- smart open frecency telescope
+    sql_dadbod_plugin = false,
+    kotlin_udalov_plugin = false,
 }

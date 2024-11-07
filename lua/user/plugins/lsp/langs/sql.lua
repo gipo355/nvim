@@ -3,6 +3,7 @@ return {
     {
         'tpope/vim-dadbod',
         event = 'BufRead *.sql',
+        enabled = _G.user.sql_dadbod_plugin,
         ft = 'sql',
         -- lazy = true,
         dependencies = {
