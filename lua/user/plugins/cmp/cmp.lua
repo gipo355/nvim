@@ -146,6 +146,7 @@ return {
 
     {
         'Jezda1337/nvim-html-css',
+        branch = 'v2',
         event = 'BufRead *.html',
         dependencies = {
             'nvim-treesitter/nvim-treesitter',

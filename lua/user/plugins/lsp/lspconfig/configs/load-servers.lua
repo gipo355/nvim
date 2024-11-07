@@ -116,7 +116,10 @@ M.load_servers = function(capabilities)
 
         helm_ls = {},
         stylua = {},
-        bufls = {},
+
+        -- buf_ls = {},
+        -- bufls = {},
+
         -- groovyls = {},
         -- pylsp = {},
         -- gradle_ls = {},
