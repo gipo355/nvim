@@ -50,7 +50,10 @@ local set_desc = require('user.utils.functions').set_keymap_desc
 -- TODO: improve gist and octo mappings
 
 return {
-    { 'rhysd/conflict-marker.vim', event = 'VeryLazy' },
+    {
+        'rhysd/conflict-marker.vim',
+        event = 'VeryLazy',
+    },
 
     {
         'rbong/vim-flog',

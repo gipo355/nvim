@@ -83,6 +83,9 @@ _G.user.ai = {
     chatgpt = {
         enabled = false,
     },
+    ollama = {
+        enable = false,
+    },
 }
 
 -- NEOTEST
@@ -112,6 +115,7 @@ _G.user.autosave = {
 
 -- enable sessions autoload with alpha - neovim-session-manager, buggy
 _G.user.session_manager = {
+    enable = true,
     enable_autoload = false,
 }
 
@@ -543,4 +547,11 @@ _G.user.additional_plugins = {
     bookmarks = false,
     treesitter_playground = false,
     pug = false,
+    silicon = false,
+    img_clip = false,
+    hurl = false, -- http client
+    rest = false, -- http client
+    git_conflict = false,
+    octo = false, -- github
+    ranger = false,
 }

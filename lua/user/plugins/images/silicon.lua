@@ -4,6 +4,7 @@ local set_desc = utils.set_keymap_desc
 -- create beautiful images :Silicon
 return {
     'segeljakt/vim-silicon',
+    enabled = _G.user.additional_plugins.silicon,
     event = 'BufReadPre',
     -- TODO: why doesn't this set the key in visual mode?
     -- keys = {

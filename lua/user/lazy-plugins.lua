@@ -92,7 +92,6 @@ require('lazy').setup({
         { import = 'user.plugins.singles' },
 
         -- { import = 'user.plugins.notes' },
-        { import = 'user.plugins.comments' },
         { import = 'user.plugins.mini' },
         { import = 'user.plugins.file-browsers' },
         { import = 'user.plugins.sessions-welcome' },

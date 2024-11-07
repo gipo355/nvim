@@ -4,6 +4,7 @@ local set_desc = utils.set_keymap_desc
 -- alternative to clipboard-image.nvim
 return {
     'HakonHarnes/img-clip.nvim',
+    enabled = _G.user.additional_plugins.img_clip,
     event = 'VeryLazy',
     config = function()
         require('img-clip').setup({

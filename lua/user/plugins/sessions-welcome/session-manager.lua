@@ -3,6 +3,7 @@ local set_desc = require('user.utils.functions').set_keymap_desc
 return {
     'Shatur/neovim-session-manager',
     event = 'VimEnter',
+    enabled = _G.user.session_manager.enable,
     config = function()
         local config = require('session_manager.config')
         local session_manager = require('session_manager')

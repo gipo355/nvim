@@ -1,5 +1,6 @@
 return {
     'jellydn/hurl.nvim',
+    enabled = _G.user.additional_plugins.hurl,
     dependencies = {
         'MunifTanjim/nui.nvim',
         'nvim-lua/plenary.nvim',

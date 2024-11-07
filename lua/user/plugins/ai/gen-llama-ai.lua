@@ -16,7 +16,7 @@ return {
 
     -- enable if command ollama is in path
     enabled = function()
-        return vim.fn.executable('ollama') == 1
+        return _G.user.ai.ollama.enable and vim.fn.executable('ollama') == 1
     end,
 
     event = 'VeryLazy',

@@ -7,6 +7,7 @@
 -- GitConflictListQf — Get all conflict to quickfix
 return {
     'akinsho/git-conflict.nvim',
+    enabled = _G.user.additional_plugins.git_conflict,
     version = '*',
     config = true,
     event = 'BufReadPre',

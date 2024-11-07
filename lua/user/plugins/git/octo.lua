@@ -4,6 +4,8 @@ return {
     'pwntester/octo.nvim', -- :octo
     -- event = "BufRead",
 
+    enabled = _G.user.additional_plugins.octo,
+
     event = 'VeryLazy',
 
     dependencies = {
