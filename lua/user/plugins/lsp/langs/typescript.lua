@@ -1,3 +1,10 @@
+-- TODO: check perormance https://github.com/sublimelsp/LSP-typescript/issues/129#issuecomment-1281643371
+-- https://www.reddit.com/r/neovim/comments/10ecg3z/lsp_server_with_tsserver_extremely_slow_and/
+-- https://www.reddit.com/r/neovim/comments/1437dcw/cannot_beat_vscode_tsserver_lsp_speed/
+-- Use this lsp instead?
+-- https://github.com/yioneko/nvim-vtsls
+-- https://github.com/neoclide/coc-tsserver
+-- https://www.reddit.com/r/neovim/comments/1437dcw/cannot_beat_vscode_tsserver_lsp_speed/
 return {
     {
         -- ### REPLASEMENT FOR tsserver
