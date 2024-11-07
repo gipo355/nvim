@@ -210,7 +210,7 @@ _G.user.aerial = {
 
 --[[ NOICE ]]
 _G.user.noice = {
-    enable = false,
+    enable = true,
     message = true,
     notify = true,
 }

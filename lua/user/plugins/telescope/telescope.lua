@@ -639,9 +639,16 @@ return {
 
             vim.keymap.set(
                 'n',
-                '<leader>lf',
+                '<leader>lr',
                 '<cmd>Telescope lsp_references<cr>',
                 set_desc('[T]elescope [L]SP [F]ind References')
+            )
+
+            vim.keymap.set(
+                'n',
+                '<leader>li',
+                '<cmd>Telescope lsp_implementations<cr>',
+                set_desc('[T]elescope [L]SP [F]ind Implementations')
             )
 
             vim.keymap.set(

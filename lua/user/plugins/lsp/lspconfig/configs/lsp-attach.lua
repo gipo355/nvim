@@ -25,7 +25,7 @@ M.callback = function(event)
     -- )
     vim.keymap.set(
         'n',
-        '<leader>lr',
+        '<leader>lR',
         '<cmd>LspRestart<cr>',
         { buffer = event.buf, desc = 'Lsp restart' }
     )
@@ -134,7 +134,7 @@ M.callback = function(event)
     -- f = { "<cmd>lua require('lvim.lsp.utils').format()<cr>", "Format" },
     map('n', '<leader>lF', vim.lsp.buf.format, 'format')
     -- i = { "<cmd>LspInfo<cr>", "Info" },
-    map('n', '<leader>li', '<cmd>LspInfo<cr>', 'lspinfo')
+    map('n', '<leader>lI', '<cmd>LspInfo<cr>', 'lspinfo')
     -- I = { "<cmd>Mason<cr>", "Mason Info" },
     -- map('n', '<leader>lI', '<cmd>Mason<cr>', 'mason info')
     -- j = {
