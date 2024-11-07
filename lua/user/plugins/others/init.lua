@@ -80,6 +80,7 @@ return {
     {
         'ThePrimeagen/git-worktree.nvim',
         event = 'VeryLazy',
+        enabled = _G.user.additional_plugins.git_worktree,
         config = function()
             local worktree_ok, git_worktree = pcall(require, 'git-worktree')
             local telescope_ok, telescope = pcall(require, 'telescope')
@@ -152,14 +153,22 @@ return {
     },
 
     -- caddyfile syntax
-    { 'isobit/vim-caddyfile', event = 'BufReadPre Caddyfile' },
+    {
+        'isobit/vim-caddyfile',
+        event = 'BufReadPre Caddyfile',
+        enabled = _G.user.additional_plugins.caddyfile,
+    },
 
     -- multicursor
     -- this sets m-\ a-\ keybind \\\\\\
-    { 'mg979/vim-visual-multi', event = 'BufReadPre' },
+    {
+        'mg979/vim-visual-multi',
+        event = 'BufReadPre',
+    },
 
     {
         'barrett-ruth/live-server.nvim',
+        enabled = _G.user.additional_plugins.live_server,
         config = true,
         keys = {
             {
@@ -172,295 +181,34 @@ return {
     },
 
     -- auto indent width based on file
-    { 'tpope/vim-sleuth', event = 'BufReadPre' },
+    {
+        'tpope/vim-sleuth',
+        event = 'BufReadPre',
+    },
 
     -- status column on right
 
     -- search and replace on steroids
-    { 'dstein64/vim-startuptime', event = 'VimEnter' },
-
     {
-        -- incremental selection with cr and backspace, can also use flash.nvim S
-        'sustech-data/wildfire.nvim',
-        event = 'VeryLazy',
-        -- dependencies = { "nvim-treesitter/nvim-treesitter" },
-        config = function()
-            require('wildfire').setup()
-        end,
+        'dstein64/vim-startuptime',
+        enabled = _G.user.additional_plugins.startuptime,
+        event = 'VimEnter',
     },
 
-    -- preview markdown with :MarkdownPreview :MarkdownPreviewStop ( in browser )
     {
-        'iamcco/markdown-preview.nvim',
+        'nvim-treesitter/playground',
+        enabled = _G.user.additional_plugins.treesitter_playground,
+        event = 'BufEnter',
+    },
+
+    {
+        'bennypowers/nvim-regexplainer',
         event = 'BufReadPre',
-        keys = {
-            {
-                '<leader>hm',
-                '<cmd>MarkdownPreviewToggle<cr>',
-                'n',
-                desc = 'Markdown preview',
-            },
-        },
-        cmd = {
-            'MarkdownPreviewToggle',
-            'MarkdownPreview',
-            'MarkdownPreviewStop',
-        },
-        build = 'cd app && yarn install',
-        init = function()
-            vim.g.mkdp_filetypes = { 'markdown' }
-        end,
-        ft = { 'markdown' },
     },
 
     {
-        'MattesGroeger/vim-bookmarks',
-        event = 'VeryLazy',
-        keys = {
-            {
-                '<leader>Bd',
-                '<cmd>BookmarkClear<cr>',
-                'n',
-                desc = 'Clear bookmark',
-            },
-            {
-                '<leader>BD',
-                '<cmd>BookmarkClearAll<cr>',
-                'n',
-                desc = 'Clear all bookmark',
-            },
-            {
-                '<leader>Ba',
-                '<cmd>BookmarkToggle<cr>',
-                'n',
-                desc = 'Bookmark toggle',
-            },
-            {
-                '<leader>Bt',
-                '<cmd>BookmarkAnnotate<cr>',
-                'n',
-                desc = 'Bookmark annotate',
-            },
-            {
-                '<leader>Bv',
-                '<cmd>BookmarkShowAll<cr>',
-                'n',
-                desc = 'Show all bookmark',
-            },
-            {
-                '<leader>BT',
-                '<cmd>TodoTelescope<cr>',
-                'n',
-                desc = 'Todo Telescope',
-            },
-        },
-        config = function()
-            -- highlight BookmarkSign ctermbg=NONE ctermfg=160
-            -- highlight BookmarkLine ctermbg=194 ctermfg=NONE
-            -- local icons = require "user.icons"
-            vim.g.bookmark_sign = ''
-            vim.g.bookmark_annotation_sign = ''
-            vim.g.bookmark_no_default_key_mappings = 1
-            vim.g.bookmark_auto_close = 0
-            vim.g.bookmark_manage_per_buffer = 0
-            vim.g.bookmark_save_per_working_dir = 0
-            -- vim.g.bookmark_highlight_lines = 1
-            vim.g.bookmark_show_warning = 0
-            vim.g.bookmark_center = 1
-            vim.g.bookmark_location_list = 0
-            vim.g.bookmark_disable_ctrlp = 1
-            vim.g.bookmark_display_annotation = 0
-            -- vim.g.bookmark_auto_save_file = '~/.config/lvim/bookmarks'
-            vim.g.bookmark_auto_save = 0
-        end,
-    },
-
-    {
-        'mbbill/undotree',
-        event = 'VeryLazy',
-        config = function()
-            vim.keymap.set(
-                'n',
-                '<leader>u',
-                '<cmd>UndotreeToggle<cr>',
-                { desc = 'undo tree' }
-            )
-        end,
-    },
-
-    -- # better % navigation - BUGGED for now treesitter 2024-03-08
-    {
-        'andymass/vim-matchup', -- improved % jumping, activate on treesitter
-        event = 'BufReadPre',
-        dependencies = 'nvim-treesitter/nvim-treesitter',
-        lazy = false,
-        -- commit = '55e3330436784fb8ccc35a5cfeb13e48bab9dcd2',
-        -- version = '0.7.2'
-        config = function()
-            vim.g.matchup_matchparen_offscreen = { method = 'popup' }
-            -- vim.g.matchup_matchparen_offscreen = { method = 'popup', fullwidth = 1, syntax_hl = 1 }
-        end,
-    },
-
-    { 'nvim-treesitter/playground', event = 'BufEnter' },
-
-    {
-        'windwp/nvim-ts-autotag',
-        event = 'BufReadPre',
-        dependencies = 'nvim-treesitter/nvim-treesitter',
-        config = function()
-            require('nvim-ts-autotag').setup({
-                aliases = {
-                    ['angular.html'] = 'html',
-                },
-                opts = {
-                    -- Defaults
-                    enable_close = true, -- Auto close tags
-                    enable_rename = true, -- Auto rename pairs of tags
-                    enable_close_on_slash = false, -- Auto close on trailing </
-                },
-                -- filetypes = {
-                --     'html',
-                --     'javascript',
-                --     'typescript',
-                --     'javascriptreact',
-                --     'typescriptreact',
-                --     'svelte',
-                --     'vue',
-                --     'tsx',
-                --     'jsx',
-                --     'rescript',
-                --     'xml',
-                --     'php',
-                --     'markdown',
-                --     'astro',
-                --     'glimmer',
-                --     'handlebars',
-                --     'hbs',
-                --     'angular.html',
-                --     'templ',
-                -- },
-            })
-        end,
-    },
-
-    { 'bennypowers/nvim-regexplainer', event = 'BufReadPre' },
-
-    {
-        'lambdalisue/suda.vim',
-        event = 'BufReadPre',
-        config = function()
-            -- vim.g.suda_smart_edit = 1
-        end,
-    },
-
-    { 'digitaltoad/vim-pug', ft = '*.pug' },
-
-    {
-        'ellisonleao/glow.nvim',
-        event = 'BufReadPre',
-        keys = {
-            {
-                '<leader>hg',
-                '<cmd>Glow<cr>',
-                'n',
-                desc = 'Glow markdown',
-            },
-        },
-        cmd = 'Glow',
-        config = function()
-            require('glow').setup({
-                width_ratio = 0.9, -- maximum width of the Glow window compared to the nvim window size (overrides `width`)
-                height_ratio = 0.9,
-            })
-        end,
-    },
-
-    {
-        'ThePrimeagen/refactoring.nvim',
-        event = 'BufReadPre',
-        dependencies = {
-            { 'nvim-lua/plenary.nvim' },
-            { 'nvim-treesitter/nvim-treesitter' },
-        },
-        config = function()
-            vim.keymap.set(
-                { 'v', 'n' },
-                '<C-x>',
-                ':lua require("refactoring").select_refactor()<cr>',
-                set_desc('Primeagen refactor')
-            )
-            require('refactoring').setup()
-        end,
-    },
-
-    {
-        'kkoomen/vim-doge',
-        event = 'BufReadPre',
-        build = ':call doge#install()',
-        keys = {
-            {
-                '<leader>vG',
-                '<cmd>DogeGenerate<cr>',
-                'n',
-                desc = 'generate type docs',
-            },
-        },
-        config = function()
-            vim.g.doge_enable_mappings = 0
-            -- vim.g.doge_javascript_settings = {
-            -- destructuring_props = 0,
-            -- omit_redunant_param_types = 1,
-            -- }
-        end,
-    },
-
-    {
-        'cbochs/portal.nvim',
-        keys = {
-            {
-                '<leader>o',
-                '<cmd>Portal jumplist backward<cr>',
-                'n',
-                desc = 'Portal jumplist backward',
-            },
-            {
-                '<leader>i',
-                '<cmd>Portal jumplist forward<cr>',
-                'n',
-                desc = 'Portal jumplist forward',
-            },
-        },
-        -- Optional dependencies
-        dependencies = { 'cbochs/grapple.nvim' },
-        opts = {},
-    },
-
-    {
-        'folke/zen-mode.nvim',
-        keys = {
-            {
-                '<s-z>',
-                '<cmd>ZenMode<cr>',
-                { 'n', 'x', 'v' },
-                desc = 'Zen mode',
-            },
-        },
-        config = function()
-            require('zen-mode').setup({
-                window = {
-                    width = 100,
-                },
-                -- plugins = {
-                --     tmux = { enabled = true },
-                --     wezterm = {
-                --         enabled = true,
-                --         font = '17'
-                --     }
-                -- },
-            })
-            -- ######## zen mode plugin
-            -- vim.keymap.set({ 'n', 'x', 'v' }, '<s-z>', '<cmd>ZenMode<cr>', opts) -- bbye plugin
-        end,
+        'digitaltoad/vim-pug',
+        enabled = _G.user.additional_plugins.pug,
+        ft = '*.pug',
     },
 }

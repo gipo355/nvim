@@ -533,3 +533,14 @@ _G.user.root_patterns = {
 _G.user.java = {
     enable = true,
 }
+
+_G.user.additional_plugins = {
+    git_worktree = false,
+    caddyfile = false,
+    live_server = false,
+    startuptime = false,
+    markdown_preview = false,
+    bookmarks = false,
+    treesitter_playground = false,
+    pug = false,
+}
