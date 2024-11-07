@@ -257,7 +257,7 @@ _G.user.lsp = {
 
 -- [[ DAP ]]
 _G.user.dap = {
-    enable = true,
+    enable = false,
 }
 
 -- [[ TAILWIND ]]
@@ -279,7 +279,7 @@ _G.user.indent_blankline = {
     enable = true,
     scope = true,
     color = true, -- color the background of indentlines
-    color_background = true, -- color the background of indentlines
+    color_background = false, -- color the background of indentlines
     hide_first_indent_level = false, -- hide first indent level
 }
 _G.user.mini.indentscope = {

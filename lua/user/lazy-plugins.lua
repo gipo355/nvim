@@ -89,7 +89,6 @@ require('lazy').setup({
         -- i prefer this method so i can just add files without manually requiring all of them
         -- this imports the folders and loads all files with return {} in them (also subfolders with init.lua)
 
-        { import = 'user.plugins.others' },
         { import = 'user.plugins.singles' },
 
         -- { import = 'user.plugins.notes' },
