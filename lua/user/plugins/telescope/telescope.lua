@@ -1,4 +1,5 @@
 local set_desc = require('user.utils.functions').set_keymap_desc
+local constants = require('user.utils.constants')
 -- NOTE: Plugins can specify dependencies.
 
 -- The dependencies are proper plugin specifications as well - anything
@@ -347,11 +348,11 @@ return {
                             -- '--exclude',
                             -- '^((?!/home/wolf/Programming|/home/wolf/tests|/home/wolf/.dotfiles|/home/wolf/.oh-my-zsh|/home/wolf/tmp).)*$',
                             '.',
-                            '/home/wolf/Programming',
-                            '/home/wolf/tests',
-                            '/home/wolf/.dotfiles',
-                            '/home/wolf/.oh-my-zsh',
-                            '/home/wolf/tmp',
+                            constants.USER_HOME .. '/Programming',
+                            constants.USER_HOME .. '/tests',
+                            constants.USER_HOME .. '/.dotfiles',
+                            constants.USER_HOME .. '/.oh-my-zsh',
+                            constants.USER_HOME .. '/tmp',
                         },
                     },
                 },

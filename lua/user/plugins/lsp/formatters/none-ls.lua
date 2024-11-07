@@ -1,3 +1,4 @@
+local constants = require('user.utils.constants')
 --[[
 This file is for setting up none-ls, a plugin that provides formatters, linters, and code actions for languages that don't have a language server.
 
@@ -78,7 +79,7 @@ return {
             -- null_ls.builtins.formatting.stylua, -- using conform
 
             -- csharp
-            null_ls.builtins.formatting.csharpier, -- requires dotnet-csharpier
+            -- null_ls.builtins.formatting.csharpier, -- requires dotnet-csharpier
 
             -- ts,js
             -- null_ls.builtins.formatting.eslint_d,
@@ -131,22 +132,22 @@ return {
             -- }), -- trying to format markdown
 
             -- sql
-            null_ls.builtins.formatting.sqlfluff.with({
-                extra_args = { '--dialect', 'postgres' },
-            }),
+            -- null_ls.builtins.formatting.sqlfluff.with({
+            --     extra_args = { '--dialect', 'postgres' },
+            -- }),
 
             -- java
             -- null_ls.builtins.formatting.google_java_format, -- conform
 
             -- php
-            null_ls.builtins.formatting.phpcsfixer, -- conform
+            -- null_ls.builtins.formatting.phpcsfixer, -- conform
 
             -- yaml -conform
             -- null_ls.builtins.formatting.yamlfmt,
 
             -- python
-            null_ls.builtins.formatting.isort,
-            null_ls.builtins.formatting.black,
+            -- null_ls.builtins.formatting.isort,
+            -- null_ls.builtins.formatting.black,
 
             -- ###
             -- DIAGNOSTICS
@@ -163,9 +164,9 @@ return {
             }),
 
             -- sql
-            null_ls.builtins.diagnostics.sqlfluff.with({
-                extra_args = { '--dialect', 'postgres' },
-            }),
+            -- null_ls.builtins.diagnostics.sqlfluff.with({
+            --     extra_args = { '--dialect', 'postgres' },
+            -- }),
 
             -- git
             null_ls.builtins.diagnostics.commitlint,
@@ -190,18 +191,18 @@ return {
             }),
 
             -- python
-            null_ls.builtins.diagnostics.pylint.with({
-                diagnostics_postprocess = function(diagnostic)
-                    diagnostic.code = diagnostic.message_id
-                end,
-            }),
+            -- null_ls.builtins.diagnostics.pylint.with({
+            --     diagnostics_postprocess = function(diagnostic)
+            --         diagnostic.code = diagnostic.message_id
+            --     end,
+            -- }),
 
             -- php
-            null_ls.builtins.diagnostics.phpcs,
-            null_ls.builtins.diagnostics.phpstan,
+            -- null_ls.builtins.diagnostics.phpcs,
+            -- null_ls.builtins.diagnostics.phpstan,
 
             -- docker
-            null_ls.builtins.diagnostics.hadolint,
+            -- null_ls.builtins.diagnostics.hadolint, -- in nvim-lint
 
             -- java
             --
@@ -210,17 +211,17 @@ return {
                 extra_args = {
                     '-c',
                     -- '/home/wolf/checkstyle/intellij_google_style.xml',
-                    '/home/wolf/checkstyle/google_checks.xml',
+                    constants.USER_HOME .. '/checkstyle/google_checks.xml',
                 }, -- or "/sun_checks.xml" or path to self written rules
             }),
 
             -- groovy gradle
-            null_ls.builtins.formatting.npm_groovy_lint.with({
-                filetypes = { 'groovy', 'gradle' },
-            }),
-            null_ls.builtins.diagnostics.npm_groovy_lint.with({
-                filetypes = { 'groovy', 'gradle' },
-            }),
+            -- null_ls.builtins.formatting.npm_groovy_lint.with({
+            --     filetypes = { 'groovy', 'gradle' },
+            -- }),
+            -- null_ls.builtins.diagnostics.npm_groovy_lint.with({
+            --     filetypes = { 'groovy', 'gradle' },
+            -- }),
 
             -- XML
             -- null_ls.builtins.formatting.tidy,
@@ -300,24 +301,24 @@ return {
 
         -- NOTE: we use conform to format, none-ls for diagnostics
         --
-        local format_filter = require(
-            'user.plugins.lsp.formatters.utils.formatting'
-        ).format_filter
-        local format =
-            require('user.plugins.lsp.formatters.utils.formatting').format
+        -- local format_filter = require(
+        --     'user.plugins.lsp.formatters.utils.formatting'
+        -- ).format_filter
+        -- local format =
+        --     require('user.plugins.lsp.formatters.utils.formatting').format
 
         -- conform
-        local eslint_languages = {
-            ['javascript'] = true,
-            ['typescript'] = true,
-            ['javascriptreact'] = true,
-            ['typescriptreact'] = true,
-            ['astro'] = true,
-            ['svelte'] = true,
-            ['vue'] = true,
-            ['html'] = true,
-            ['angular.html'] = true,
-        }
+        -- local eslint_languages = {
+        --     ['javascript'] = true,
+        --     ['typescript'] = true,
+        --     ['javascriptreact'] = true,
+        --     ['typescriptreact'] = true,
+        --     ['astro'] = true,
+        --     ['svelte'] = true,
+        --     ['vue'] = true,
+        --     ['html'] = true,
+        --     ['angular.html'] = true,
+        -- }
 
         -- TODO: fix overlapping double save with conform
         -- vim.api.nvim_create_autocmd('BufWritePre', {
