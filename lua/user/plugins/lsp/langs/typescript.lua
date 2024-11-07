@@ -11,6 +11,7 @@ return {
         -- must change: keybinds, automatic preinstall of tsserver, comment out nvim-lsp-ts-utils
         -- setup below
         'pmizio/typescript-tools.nvim',
+        enabled = _G.user.tsserver == 'typescript-tools',
         event = 'BufEnter',
         -- enabled = not _G.user.use_deno_disable_ts,
         dependencies = {
