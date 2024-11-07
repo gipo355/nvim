@@ -307,8 +307,9 @@ _G.user.cursor_modes = {
 }
 
 -- enable CSS intellisense (nvim-html-css plugin) pretty heavy, only when needed
+-- TODO: check v2
 _G.user.htmlcss_intellisense = {
-    enable = true,
+    enable = false,
 }
 
 -- enable git blame in line (gitsigns plugin)

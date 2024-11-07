@@ -11,19 +11,11 @@ local preferred_sources = {
         option = {
             enable_on = {
                 'html',
-                -- 'css',
-                -- 'scss',
                 'angular.html',
             },
-            dir_to_exclude = _G.user.ignore_patterns,
-            -- set the local filetypes from which you want to derive classes
-            file_extensions = {
-                -- 'html',
-                'css',
-                'scss',
-                'sass',
-                'less',
-                -- 'angular.html',
+            spa = {
+                enable = false,
+                entry_file = 'index.html',
             },
             style_sheets = {
                 -- example of remote styles, only css no js for now

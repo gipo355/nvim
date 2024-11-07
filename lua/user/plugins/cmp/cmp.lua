@@ -73,6 +73,12 @@ return {
                 enabled = _G.user.cmp.buffer_intellisense.enable,
             },
 
+            {
+                'Jezda1337/nvim-html-css',
+                branch = 'v2',
+                enabled = _G.user.htmlcss_intellisense.enable,
+            },
+
             -- If you want to add a bunch of pre-configured snippets,
             --    you can use this plugin to help you. It even has snippets
             --    for various frameworks/libraries/etc. but you will have to
@@ -144,17 +150,17 @@ return {
         end,
     },
 
-    {
-        'Jezda1337/nvim-html-css',
-        branch = 'v2',
-        event = 'BufRead *.html',
-        dependencies = {
-            'nvim-treesitter/nvim-treesitter',
-            'nvim-lua/plenary.nvim',
-        },
-        enabled = _G.user.htmlcss_intellisense.enable,
-        config = function()
-            require('html-css'):setup()
-        end,
-    },
+    -- {
+    --     'Jezda1337/nvim-html-css',
+    --     branch = 'v2',
+    --     event = 'BufRead *.html',
+    --     dependencies = {
+    --         'nvim-treesitter/nvim-treesitter',
+    --         'nvim-lua/plenary.nvim',
+    --     },
+    --     enabled = _G.user.htmlcss_intellisense.enable,
+    --     config = function()
+    --         require('html-css'):setup()
+    --     end,
+    -- },
 }

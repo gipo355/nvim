@@ -117,6 +117,7 @@ M.load_servers = function(capabilities)
         helm_ls = {},
         stylua = {},
 
+        -- TODO: enabled deprecated
         -- buf_ls = {},
         -- bufls = {},
 
