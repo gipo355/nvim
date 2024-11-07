@@ -110,6 +110,7 @@ require('lazy').setup({
         { import = 'user.plugins.lsp.langs' },
         { import = 'user.plugins.lsp.formatters' },
         { import = 'user.plugins.lsp.lspconfig' },
+        { import = 'user.plugins.lsp.coc' },
 
         -- { import = 'user.plugins.runners' },
 

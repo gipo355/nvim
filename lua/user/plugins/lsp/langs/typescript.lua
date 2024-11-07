@@ -12,7 +12,7 @@ return {
         -- setup below
         'pmizio/typescript-tools.nvim',
         enabled = _G.user.tsserver == 'typescript-tools',
-        event = 'BufEnter',
+        event = 'BufReadPre',
         -- enabled = not _G.user.use_deno_disable_ts,
         dependencies = {
             'nvim-lua/plenary.nvim',
