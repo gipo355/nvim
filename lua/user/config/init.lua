@@ -235,8 +235,8 @@ _G.user.lsp = {
     },
     -- enable format on save
     format_on_save = true,
-    ---@type "typescript-tools" | "deno" | "coc"
-    tsserver = 'coc',
+    ---@type "typescript-tools" | "deno" | "coc" -- WARN: coc is broken
+    tsserver = 'typescript-tools',
     -- this is a list of lsp formatters passed to a filter function
     -- in conform to prevent autoformatting on save from those sources
     skipped_lsp_formatters = {
