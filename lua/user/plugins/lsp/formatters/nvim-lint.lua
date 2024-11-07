@@ -65,7 +65,8 @@ return {
             bash = { 'shellcheck' },
 
             -- go = { 'snyk_iac' },
-            --
+
+            -- here or nonels?
             -- java = {
             --     -- 'snyk_iac',
             --     'checkstyle',

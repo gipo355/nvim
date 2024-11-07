@@ -1,6 +1,6 @@
+local constants = require('user.utils.constants')
 local M = {}
 M.setup = function()
-    local ok, env = pcall(require, 'user.env')
     if not ok then
         -- vim.print('Error loading user.env, snyk_ls will not work properly.')
         -- print error message to user
@@ -16,14 +16,14 @@ M.setup = function()
     return {
         init_options = {
             -- token = '',
-            token = env.SNYK_TOKEN,
+            token = constants.SNYK_TOKEN,
             activateSnykOpenSource = 'true',
             activateSnykIac = 'true',
             enableTrustedFoldersFeature = 'false',
             integrationName = 'NEOVIM',
             -- additionalParams = '--all-projects', -- Any extra params for the Snyk CLI, separated by spaces
             scanningMode = 'auto',
-            organization = 'gipo355',
+            organization = constants.SNYK_ORG,
             authenticationMethod = 'token',
             activateSnykCodeSecurity = 'true',
             activateSnykCodeQuality = 'true',
