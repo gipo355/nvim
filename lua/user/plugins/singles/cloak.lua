@@ -2,6 +2,7 @@ local set_desc = require('user.utils.functions').set_keymap_desc
 return {
     'laytan/cloak.nvim',
     ft = '.env*',
+    enabled = _G.user.additional_plugins.cloak,
     config = function()
         local ok, cloak = pcall(require, 'cloak')
         if not ok then

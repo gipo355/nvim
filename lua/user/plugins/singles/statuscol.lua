@@ -1,6 +1,7 @@
 -- gutter sign column
 return {
     'luukvbaal/statuscol.nvim',
+    enabled = _G.user.additional_plugins.statuscol,
     event = 'BufReadPre',
     config = function()
         local builtin = require('statuscol.builtin')

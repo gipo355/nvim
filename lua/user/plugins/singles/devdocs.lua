@@ -1,6 +1,7 @@
 local set_desc = require('user.utils.functions').set_keymap_desc
 return {
     'luckasRanarison/nvim-devdocs',
+    enabled = _G.user.additional_plugins.devdocs,
     dependencies = {
         'nvim-lua/plenary.nvim',
         'ellisonleao/glow.nvim',

@@ -1,6 +1,7 @@
 local set_desc = require('user.utils.functions').set_keymap_desc
 return {
     'nvimdev/lspsaga.nvim',
+    enabled = _G.user.additional_plugins.lspsaga,
     event = 'BufReadPre',
     -- event = 'LspAttach',
     dependencies = {

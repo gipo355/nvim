@@ -137,7 +137,7 @@ _G.user.bufferline = {
 }
 -- lualine plugin
 _G.user.lualine = {
-    enable = true,
+    enable = false,
     show_lsp = true,
 }
 -- disable builtin statusline
@@ -555,4 +555,14 @@ _G.user.additional_plugins = {
     octo = false, -- github
     ranger = false,
     obsidian = false,
+    cloak = false,
+    devdocs = false,
+    helm = false,
+    kubectl = false,
+    lspsaga = false,
+    markdown_styling = false,
+    marks = false, -- marks < . etc
+    speedtyper = false,
+    statuscol = true,
+    suda = false,
 }

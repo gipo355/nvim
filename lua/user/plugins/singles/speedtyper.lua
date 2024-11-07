@@ -1,5 +1,6 @@
 return {
     'NStefan002/speedtyper.nvim',
+    enabled = _G.user.additional_plugins.speedtyper,
     keys = {
         {
             '<leader>hT',

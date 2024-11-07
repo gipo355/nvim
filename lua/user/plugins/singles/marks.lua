@@ -2,6 +2,7 @@ local set_desc = require('user.utils.functions').set_keymap_desc
 return {
     'chentoast/marks.nvim',
     event = 'BufReadPre',
+    enabled = _G.user.additional_plugins.marks,
     config = function()
         require('marks').setup({
             -- whether to map keybinds or not. default true
