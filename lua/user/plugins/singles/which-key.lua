@@ -120,6 +120,10 @@ return {
 
                     { '<leader>d', group = '[d]ebug', remap = false },
                     { '<leader>d_', hidden = true, remap = false },
+
+                    { '<leader>x', group = 'Trouble', remap = false },
+                    { '<leader>x_', hidden = true, remap = false },
+
                     { '<leader>D', group = '[d]ocker', remap = false },
                     { '<leader>D_', hidden = true, remap = false },
                     { '<leader>g', group = '[g]it', remap = false },
