@@ -1,4 +1,5 @@
 local set_desc = require('user.utils.functions').set_keymap_desc
+-- show preview of symbol under cursor
 return {
     'dnlhc/glance.nvim', -- substitute lspsaga finder
     event = 'BufReadPre',

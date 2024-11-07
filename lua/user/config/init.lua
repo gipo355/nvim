@@ -559,10 +559,13 @@ _G.user.additional_plugins = {
     devdocs = false,
     helm = false,
     kubectl = false,
-    lspsaga = false,
+    lspsaga = false, -- lsp utils, also breadcrumbs
     markdown_styling = false,
     marks = false, -- marks < . etc
     speedtyper = false,
-    statuscol = true,
+    statuscol = true, -- statuscolumn and gutter
     suda = false,
+    glance = true, -- lsp references preview
+    telescope_frecency = false, -- frecency telescope
+    smart_open = false, -- smart open frecency telescope
 }

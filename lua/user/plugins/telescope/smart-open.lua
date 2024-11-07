@@ -1,7 +1,9 @@
 local set_desc = require('user.utils.functions').set_keymap_desc
 
+-- smart open frecency smart file finder
 return {
     'danielfalk/smart-open.nvim',
+    enabled = _G.user.additional_plugins.smart_open,
     branch = '0.2.x',
     event = 'VeryLazy',
     config = function()

@@ -2,6 +2,7 @@
 -- bug treesitter 2024-03-08 13:40
 return {
     'nvim-telescope/telescope-frecency.nvim',
+    enabled = _G.user.additional_plugins.telescope_frecency,
     opts = {
         db_safe_mode = false,
     },
