@@ -360,6 +360,9 @@ _G.user.cmp = {
 -- TODO: finish this, must alternate between deno and typescript tools
 -- use denolsp
 -- _G.user.use_deno_disable_ts = false
+_G.user.deno = {
+    enable = false,
+}
 
 --------------------------------
 

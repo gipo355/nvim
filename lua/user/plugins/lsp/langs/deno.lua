@@ -2,6 +2,7 @@
 return {
     'sigmasd/deno-nvim',
     event = 'BufRead',
+    enabled = _G.user.deno.enable,
     dependencies = {
         'neovim/nvim-lspconfig',
     },
