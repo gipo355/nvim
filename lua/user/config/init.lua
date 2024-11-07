@@ -75,7 +75,7 @@ _G.user.ai = {
     -- https://github.com/joshuavial/aider.nvim
     -- WARN: avanta overrides vim.opt.splitkeep and vim.opt.laststatus
     avante = {
-        enable = true,
+        enable = false,
     },
     aider = {
         enable = false,
@@ -90,7 +90,7 @@ _G.user.ai = {
 
 -- NEOTEST
 _G.user.neotest = {
-    enable = true,
+    enable = false,
 }
 
 --------------------------------
@@ -115,7 +115,7 @@ _G.user.autosave = {
 
 -- enable sessions autoload with alpha - neovim-session-manager, buggy
 _G.user.session_manager = {
-    enable = true,
+    enable = false,
     enable_autoload = false,
 }
 
@@ -210,7 +210,7 @@ _G.user.aerial = {
 
 --[[ NOICE ]]
 _G.user.noice = {
-    enable = true,
+    enable = false,
     message = true,
     notify = true,
 }
@@ -254,7 +254,6 @@ _G.user.lsp = {
         end,
     },
 }
---------------------------------
 
 --------------------------------
 --[[ HEAVY SLOW PLUGINS ]]
@@ -369,13 +368,14 @@ _G.user.cmp = {
 
 -- use mini.colors for customizations on any theme
 _G.user.mini.colors = {
-    enable = true,
+    enable = false,
 }
 
-_G.user.transparent_background = set_transparent_bg(false) -- transparent background
+-- transparent background - hack to allow transparency set after all vars are set
+_G.user.transparent_background = set_transparent_bg(false)
 
 _G.user.background = 'dark' -- dark or light
--- allows to call this later after all vars are set
+-- allows to call this later after all vars are set - hack
 _G.user.theme = function()
     -- return _G.user.themes.rose_pine
     -- return _G.user.themes.gruvbox_material
@@ -535,7 +535,7 @@ _G.user.root_patterns = {
   Enable java plugin, pretty heavy and slow
 ]]
 _G.user.java = {
-    enable = true,
+    enable = false,
 }
 
 _G.user.additional_plugins = {
