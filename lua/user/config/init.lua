@@ -554,4 +554,5 @@ _G.user.additional_plugins = {
     git_conflict = false,
     octo = false, -- github
     ranger = false,
+    obsidian = false,
 }

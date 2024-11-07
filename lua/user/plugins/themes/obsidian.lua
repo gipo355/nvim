@@ -1,6 +1,7 @@
 -- TODO: find other ways to do notes, (neorg, notes nvim, vimwiki etc?)
 return {
     'epwalsh/obsidian.nvim',
+    enabled = _G.user.additional_plugins.obsidian,
     -- version = '*', -- recommended, use latest release instead of latest commit
     lazy = true,
     ft = 'markdown',
