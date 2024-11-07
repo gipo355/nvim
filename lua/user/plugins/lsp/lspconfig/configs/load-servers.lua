@@ -10,9 +10,9 @@ M.load_servers = function(capabilities)
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
 
-        unocss = require(
-            'user.plugins.lsp.lspconfig.configs.server-configs.unocss'
-        ).setup(),
+        -- unocss = require(
+        --     'user.plugins.lsp.lspconfig.configs.server-configs.unocss'
+        -- ).setup(),
 
         cssls = require(
             'user.plugins.lsp.lspconfig.configs.server-configs.cssls'
@@ -22,13 +22,13 @@ M.load_servers = function(capabilities)
             'user.plugins.lsp.lspconfig.configs.server-configs.cssmodules'
         ).setup(),
 
-        snyk_ls = require(
-            'user.plugins.lsp.lspconfig.configs.server-configs.snyk_ls'
-        ).setup(),
+        -- snyk_ls = require(
+        --     'user.plugins.lsp.lspconfig.configs.server-configs.snyk_ls'
+        -- ).setup(),
 
-        omnisharp = require(
-            'user.plugins.lsp.lspconfig.configs.server-configs.omnisharp'
-        ).setup(capabilities),
+        -- omnisharp = require(
+        --     'user.plugins.lsp.lspconfig.configs.server-configs.omnisharp'
+        -- ).setup(capabilities),
 
         html = require(
             'user.plugins.lsp.lspconfig.configs.server-configs.html'
@@ -49,13 +49,13 @@ M.load_servers = function(capabilities)
         --     'user.plugins.lsp.lspconfig.configs.server-configs.golangci_lint'
         -- ).setup(),
 
-        intelephense = require(
-            'user.plugins.lsp.lspconfig.configs.server-configs.intelephense'
-        ).setup(),
+        -- intelephense = require(
+        --     'user.plugins.lsp.lspconfig.configs.server-configs.intelephense'
+        -- ).setup(),
 
-        phpactor = require(
-            'user.plugins.lsp.lspconfig.configs.server-configs.phpactor'
-        ).setup(),
+        -- phpactor = require(
+        --     'user.plugins.lsp.lspconfig.configs.server-configs.phpactor'
+        -- ).setup(),
 
         eslint = require(
             'user.plugins.lsp.lspconfig.configs.server-configs.eslint'
@@ -79,9 +79,9 @@ M.load_servers = function(capabilities)
         ).setup(),
 
         -- kotlin
-        kotlin_language_server = require(
-            'user.plugins.lsp.lspconfig.configs.server-configs.kotlin_language_server'
-        ).setup(),
+        -- kotlin_language_server = require(
+        --     'user.plugins.lsp.lspconfig.configs.server-configs.kotlin_language_server'
+        -- ).setup(),
 
         -- vuels = {
         --     root_dir = require('lspconfig').util.root_pattern('vue.config.js'),
@@ -117,18 +117,18 @@ M.load_servers = function(capabilities)
         helm_ls = {},
         stylua = {},
         bufls = {},
-        groovyls = {},
-        pylsp = {},
-        gradle_ls = {},
-        templ = {},
+        -- groovyls = {},
+        -- pylsp = {},
+        -- gradle_ls = {},
+        -- templ = {},
         svelte = {},
         rustywind = {},
         astro = {},
         vimls = {},
         bashls = {},
         -- tsserver = {},
-        ts_ls = {},
-        pyright = {},
+        ts_ls = {}, -- new tsserver
+        -- pyright = {},
         -- clangd = {},
         dockerls = {},
         dotls = {},
@@ -137,7 +137,7 @@ M.load_servers = function(capabilities)
         marksman = {}, -- markdown
         prismals = {},
         -- prosemd_lsp = {}, -- markdown
-        sqlls = {},
+        -- sqlls = {},
         autotools_ls = {},
 
         -- not sure which one
@@ -166,6 +166,7 @@ M.load_servers = function(capabilities)
         --[[ JAVA ]]
         -- "java_language_server",
         -- "java",
+
         lemminx = {}, -- xml
         ['sonarlint-language-server'] = {},
 
