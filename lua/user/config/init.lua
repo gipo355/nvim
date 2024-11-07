@@ -532,6 +532,41 @@ _G.user.root_patterns = {
     'settings.gradle',
     '.git',
 }
+-- sharable ignore patterns
+_G.user.ignore_patterns = {
+    'node_modules',
+    'vendor',
+    '.project',
+    'dist',
+    '.git',
+    '*.iml',
+    '.cache',
+    '.angular',
+    '.idea',
+    '.svn',
+    '.hg',
+    '.DS_Store',
+    '.vscode',
+    '__pycache__',
+    '.pytest_cache',
+    '.mypy_cache',
+    '*.egg-info',
+    '*.egg',
+    '*.pyc',
+    '*.pyo',
+    '.venv',
+    '.env',
+    '.direnv',
+    '.envrc',
+    '.flaskenv',
+    '.tox',
+    '.pytype',
+    '.pytest_cache',
+    '__pycache__',
+    '*.sqlite3',
+    '*.ipynb_checkpoints',
+    'venv',
+}
 
 --------------------------------
 --[[
