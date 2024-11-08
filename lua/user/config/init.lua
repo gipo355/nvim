@@ -255,6 +255,9 @@ _G.user.lsp = {
         ['typescript-tools'] = function()
             vim.cmd('TSToolsFixAll')
         end,
+        ['vtsls'] = function()
+            vim.cmd('VtsExec fix_all')
+        end,
     },
 }
 

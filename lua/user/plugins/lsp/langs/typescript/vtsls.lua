@@ -59,13 +59,13 @@ return {
         )
         vim.keymap.set(
             'n',
-            '<leader>tk',
+            '<leader>tj',
             '<cmd>VtsExec source_actions<cr>',
             set_desc('source actions')
         )
         vim.keymap.set(
             'n',
-            '<leader>tR',
+            '<leader>tk',
             '<cmd>VtsExec remove_unused<cr>',
             set_desc('remove unused')
         )
@@ -75,6 +75,18 @@ return {
             '<leader>tj',
             '<cmd>VtsExec rename_file<cr>',
             set_desc('rename file')
+        )
+        vim.keymap.set(
+            'n',
+            '<leader>tX',
+            '<cmd>VtsExec restart_tsserver<cr>',
+            set_desc('restart tsserver')
+        )
+        vim.keymap.set(
+            'n',
+            '<leader>to',
+            '<cmd>VtsExec fix_all<cr>',
+            set_desc('fix all')
         )
     end,
 }
