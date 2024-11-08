@@ -53,13 +53,19 @@ return {
         )
         vim.keymap.set(
             'n',
-            '<leader>tr',
+            '<leader>ti',
             '<cmd>VtsExec remove_unused_imports<cr>',
             set_desc('remove unused imports')
         )
         vim.keymap.set(
             'n',
             '<leader>tj',
+            '<cmd>VtsExec source_actions<cr>',
+            set_desc('source actions')
+        )
+        vim.keymap.set(
+            'n',
+            '<C-x>',
             '<cmd>VtsExec source_actions<cr>',
             set_desc('source actions')
         )
@@ -72,7 +78,7 @@ return {
         -- rename file
         vim.keymap.set(
             'n',
-            '<leader>tj',
+            '<leader>tR',
             '<cmd>VtsExec rename_file<cr>',
             set_desc('rename file')
         )

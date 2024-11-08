@@ -10,7 +10,7 @@ return {
     config = function()
         vim.keymap.set(
             { 'v', 'n' },
-            '<C-x>',
+            '<M-c>',
             ':lua require("refactoring").select_refactor()<cr>',
             set_desc('Primeagen refactor')
         )
