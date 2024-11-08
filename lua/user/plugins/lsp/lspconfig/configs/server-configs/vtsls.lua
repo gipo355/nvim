@@ -1,32 +1,8 @@
 local M = {}
 M.setup = function()
     return {
-        on_attach = function(client, bufnr)
-            vim.keymap.set({ 'n', 'v' }, '<C-c>', function()
-                vim.lsp.buf.code_action({
-                    context = {
-                        diagnostics = {
-                            enable = true,
-                        },
-                        only = {
-                            'source',
-                            'quickfix',
-                            'refactor',
-                            'notebook',
-                            'source.fixAll',
-                            'source.organizeImports',
-                            'refactor.move',
-                            'refactor.inline',
-                            'refactor.extract',
-                            'refactor.rewrite',
-                        },
-                    },
-                })
-            end, {
-                buffer = bufnr,
-                desc = 'lsp code action',
-            })
-        end,
+        -- on_attach = function(client, bufnr) end,
+
         settings = {
             complete_function_calls = true,
             vtsls = {
