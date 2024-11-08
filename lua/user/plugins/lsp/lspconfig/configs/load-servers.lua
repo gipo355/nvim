@@ -132,6 +132,7 @@ M.load_servers = function(capabilities)
         bashls = {},
         -- tsserver = {},
         ts_ls = {}, -- new tsserver
+        -- https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/extras/lang/typescript.lua
         vtsls = {
             on_attach = function(client, bufnr)
                 vim.keymap.set(
@@ -157,6 +158,32 @@ M.load_servers = function(capabilities)
                     -- }
                 )
             end,
+            settings = {
+                complete_function_calls = true,
+                vtsls = {
+                    enableMoveToFileCodeAction = true,
+                    autoUseWorkspaceTsdk = true,
+                    experimental = {
+                        completion = {
+                            enableServerSideFuzzyMatch = true,
+                        },
+                    },
+                },
+                typescript = {
+                    updateImportsOnFileMove = { enabled = 'always' },
+                    suggest = {
+                        completeFunctionCalls = true,
+                    },
+                    inlayHints = {
+                        enumMemberValues = { enabled = true },
+                        functionLikeReturnTypes = { enabled = true },
+                        parameterNames = { enabled = 'literals' },
+                        parameterTypes = { enabled = true },
+                        propertyDeclarationTypes = { enabled = true },
+                        variableTypes = { enabled = false },
+                    },
+                },
+            },
         },
         -- pyright = {},
         -- clangd = {},
