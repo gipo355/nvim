@@ -74,6 +74,8 @@ M.callback = function(event)
     --     '[G]oto [D]efinition'
     -- )
 
+    map('n', '<leader>r', vim.lsp.buf.rename, '[r]ename')
+
     -- Find references for the word under your cursor.
     -- map(
     --     'gr',
@@ -123,8 +125,12 @@ M.callback = function(event)
 
     -- Execute a code action, usually your cursor needs to be on top of an error
     -- or a suggestion from your LSP for this to activate.
-    map('n', '<leader>vA', vim.lsp.buf.code_action, '[V] Code [A]ctions')
-    map('v', '<leader>vA', vim.lsp.buf.code_action, '[V] [A]ctions')
+    map(
+        { 'n', 'v' },
+        '<leader>va',
+        vim.lsp.buf.code_action,
+        '[V] Code [A]ctions'
+    )
 
     -- from lvim
 

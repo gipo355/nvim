@@ -132,6 +132,32 @@ M.load_servers = function(capabilities)
         bashls = {},
         -- tsserver = {},
         ts_ls = {}, -- new tsserver
+        vtsls = {
+            on_attach = function(client, bufnr)
+                vim.keymap.set(
+                    { 'n', 'v' },
+                    '<C-c>',
+                    function()
+                        vim.lsp.buf.code_action({
+                            context = {
+                                -- diagnostics = {
+                                --     enable = true,
+                                -- },
+                                only = {
+                                    'source',
+                                    'quickfix',
+                                    'refactor',
+                                },
+                            },
+                        })
+                    end
+                    --     {
+                    --     buffer = event.buf,
+                    --     desc = 'lsp code action',
+                    -- }
+                )
+            end,
+        },
         -- pyright = {},
         -- clangd = {},
         dockerls = {},

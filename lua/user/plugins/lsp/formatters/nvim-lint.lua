@@ -35,30 +35,30 @@ return {
             html = {
                 -- 'snyk_iac',
                 'htmlhint',
-                'biomejs',
+                -- 'biomejs',
             },
 
             ['angular.html'] = {
                 -- 'snyk_iac',
                 'htmlhint',
-                'biomejs',
+                -- 'biomejs',
             },
 
             -- groovy = { 'npm-groovy-lint' },
 
-            astro = { 'biomejs' },
-            vue = { 'biomejs' },
-            json = { 'biomejs' },
-            jsonc = { 'biomejs' },
-            css = { 'biomejs' },
+            -- astro = { 'biomejs' },
+            -- json = { 'biomejs' },
+            -- vue = { 'biomejs' },
+            -- jsonc = { 'biomejs' },
+            -- css = { 'biomejs' },
 
-            typescript = {
-                -- 'snyk_iac',
-                'biomejs',
-            },
-            javascript = { 'biomejs' },
-            typescriptreact = { 'biomejs' },
-            javascriptreact = { 'biomejs' },
+            -- typescript = {
+            --     -- 'snyk_iac',
+            --     'biomejs',
+            -- },
+            -- javascript = { 'biomejs' },
+            -- typescriptreact = { 'biomejs' },
+            -- javascriptreact = { 'biomejs' },
 
             zsh = { 'shellcheck' },
             sh = { 'shellcheck' },

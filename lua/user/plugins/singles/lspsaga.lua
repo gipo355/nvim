@@ -65,7 +65,7 @@ return {
 
         vim.keymap.set(
             'n',
-            '<leader>va',
+            '<leader>vA',
             '<cmd>Lspsaga code_action<cr>',
             set_desc('Lsp code action')
         )

@@ -6,6 +6,8 @@ local set_desc = require('user.utils.functions').set_keymap_desc
 return {
     -- { 'JoosepAlviste/nvim-ts-context-commentstring', event = 'BufReadPre' },
 
+    -- provides comment string for typescript blocks in react
+    -- TODO: check if better
     {
         'folke/ts-comments.nvim',
         opts = {},

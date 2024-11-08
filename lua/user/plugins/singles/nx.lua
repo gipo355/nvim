@@ -1,7 +1,7 @@
 return {
     {
         'gipo355/nx.nvim',
-
+        enabled = _G.user.additional_plugins.nx,
         dependencies = {
             'nvim-telescope/telescope.nvim',
         },

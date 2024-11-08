@@ -235,12 +235,13 @@ _G.user.lsp = {
     },
     -- enable format on save
     format_on_save = true,
-    ---@type "typescript-tools" | "deno" | "coc" -- WARN: coc is broken
-    tsserver = 'typescript-tools',
+    ---@type "typescript-tools" | "deno" | "coc" | "vtsls" -- WARN: coc is broken
+    tsserver = 'vtsls',
     -- this is a list of lsp formatters passed to a filter function
     -- in conform to prevent autoformatting on save from those sources
     skipped_lsp_formatters = {
         ['typescript-tools'] = true, -- conflicts with prettier and eslint
+        ['vtsls'] = true, -- conflicts with prettier and eslint
         ['html'] = true, -- conflicts with prettier
         ['cssls'] = true, -- conflicts with prettier and stylelint
         ['biome'] = true, -- conflicts with prettier and eslint
@@ -300,7 +301,8 @@ _G.user.rainbow_parens = {
 -- css, tailwind colors, color #hex etc..
 _G.user.highlight_colors = {
     enable = true,
-    render = 'virtual', -- 'virtual' or 'background' or 'foreground'
+    ---@type "virtual" | "background" | "foreground"
+    render = 'background',
 }
 
 -- cursor modes colors
@@ -333,7 +335,7 @@ _G.user.pickers = {
 --[[ enable ufo folding plugin
 --BUG: bugs diffview difftool ]]
 _G.user.ufo = {
-    enable = true,
+    enable = false,
 }
 
 --------------------------------
@@ -584,16 +586,23 @@ _G.user.additional_plugins = {
     caddyfile = false,
     live_server = false,
     startuptime = false,
+    -- markdown
     markdown_preview = false,
     bookmarks = false,
     treesitter_playground = false,
     pug = false,
+    -- images
     silicon = false,
     img_clip = false,
-    hurl = false, -- http client
-    rest = false, -- http client
+    -- http clients
+    hurl = false,
+    rest = false,
+    -- git
     git_conflict = false,
-    octo = false, -- github
+    -- github
+    octo = false,
+
+    nx = false,
     ranger = false,
     obsidian = false,
     cloak = false,

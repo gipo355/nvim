@@ -40,11 +40,13 @@ return {
         dependencies = {
             -- Automatically install LSPs and related tools to stdpath for neovim
             { 'williamboman/mason.nvim', config = true, lazy = false },
-            'williamboman/mason-lspconfig.nvim',
-            'WhoIsSethDaniel/mason-tool-installer.nvim',
+            { 'williamboman/mason-lspconfig.nvim' },
+            { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
+
+            { 'yioneko/nvim-vtsls', enabled = _G.user.lsp.tsserver == 'vtsls' },
 
             -- LSP completion plugin ( schemas )
-            'b0o/schemastore.nvim',
+            { 'b0o/schemastore.nvim' },
 
             { 'nvim-java/nvim-java', enabled = _G.user.java.enable },
 
@@ -134,6 +136,13 @@ return {
             --
             --  You can press `g?` for help in this menu
             require('mason').setup()
+
+            -- ADD VTSLS SERVER HERE
+            -- provides more commands
+            -- https://github.com/yioneko/nvim-vtsls
+            if _G.user.lsp.tsserver == 'vtsls' then
+                require('lspconfig.configs').vtsls = require('vtsls').lspconfig -- set default server config, optional but recommended
+            end
 
             -- You can add other tools here that you want Mason to install
             -- for you, so that they are available from within Neovim.

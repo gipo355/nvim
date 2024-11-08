@@ -158,8 +158,13 @@ return {
                     { '<leader>r_', hidden = true, remap = false },
                     { '<leader>s', group = '[s]earch', remap = false },
                     { '<leader>s_', hidden = true, remap = false },
-                    { '<leader>t', group = '[t]ests', remap = false },
+
+                    -- { '<leader>t', group = '[t]ests', remap = false },
+                    -- { '<leader>t_', hidden = true, remap = false },
+
+                    { '<leader>t', group = '[t]ypescript', remap = false },
                     { '<leader>t_', hidden = true, remap = false },
+
                     { '<leader>v', group = '[v] lsp', remap = false },
                     { '<leader>v_', hidden = true, remap = false },
                     -- { 'cv', group = 'flash and surround', remap = false },
