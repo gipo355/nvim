@@ -158,12 +158,13 @@ return {
             -- NOTE: lsps added here will not be automatically setup and started
             local skipped_automatic_setups = {
                 tailwindcss = not _G.user.tailwindcss.enable_lsp, -- too laggy, requires special setting (hint, grep the global var to check where it's used)
-                -- tsserver = true, -- using typescript-tools, not setting up but needed installed
+                tsserver = true, -- using typescript-tools, not setting up but needed installed
                 ts_ls = true, -- using typescript-tools, not setting up but needed installed
                 rust_analyzer = true, -- using rustacean plugin, not setting up but needed installed
                 ['rust-analyzer'] = true, -- using rustacean plugin, not setting up but needed installed
                 jdtls = true, -- using nvim-java plugin, not setting up but needed installed
                 sqlls = true, -- buggy as hell
+                vtsls = _G.user.lsp.tsserver ~= 'vtsls', -- don't setup vtsls if not used
             }
 
             require('mason-lspconfig').setup({
