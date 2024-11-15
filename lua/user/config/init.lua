@@ -30,7 +30,9 @@ _G.user = {}
 -- prepare obj for themes. add them here to have intellisense on the installed
 _G.user.themes = {}
 
-_G.user.mini = {}
+_G.user.mini = {
+    diff = true,
+}
 
 --[[
 for single use variables is to use the vim.g object
