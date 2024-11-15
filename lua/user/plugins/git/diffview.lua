@@ -3,11 +3,21 @@ return {
     'sindrets/diffview.nvim',
     event = 'VeryLazy',
     config = function()
+        local actions = require("diffview.actions")
+
         require('diffview').setup({
             enhanced_diff_hl = true,
             view = {
                 x = {
                     layout = 'diff3_mixed',
+                },
+            },
+            keymaps = {
+                view = {
+                    { "n", "<leader>e", actions.toggle_files, { desc = "Toggle the file panel." } },
+                },
+                file_panel = {
+                    { "n", "<leader>e", actions.toggle_files, { desc = "Toggle the file panel." } },
                 },
             },
             hooks = {
@@ -54,6 +64,7 @@ return {
                 end,
             },
         })
+
         vim.keymap.set(
             'n',
             '<leader>gdc',

@@ -1,3 +1,4 @@
+local set_desc = require('user.utils.functions').set_keymap_desc
 local format_filter =
     require('user.plugins.lsp.formatters.utils.formatting').format_filter
 
@@ -272,81 +273,95 @@ return {
             --
             -- local print_table = require('user.utils.functions').print_table
 
-            if _G.user.lsp.format_on_save then
-                local lsp_callbacks = _G.user.lsp.lsp_callbacks
+            local lsp_callbacks = _G.user.lsp.lsp_callbacks
+            local format_function = function(event)
+                local bufnr = nil
+                if event ~= nil and event.buf ~= nil then
+                    bufnr = event.buf
+                else
+                    bufnr = vim.api.nvim_get_current_buf()
+                end
+                -- local filetype = vim.bo.filetype
 
+                -- don't format if no formatter is set
+                -- if formatters_by_ft[vim.bo.filetype] == nil then
+                --     return
+                -- end
+
+                -- if
+                --     #vim.lsp.get_clients({
+                --         name = 'eslint',
+                --     }) > 0
+                -- then
+                --         NOTE: this is not in vim.lsp.buf.format()
+                --     vim.cmd('EslintFixAll')
+                -- end
+
+                local clients = vim.lsp.get_clients({
+                    bufnr = bufnr
+                })
+
+                -- for _, client in pairs(clients) do
+                --     if _G.user.lsp.lsp_callbacks[client.name] then
+                --         _G.user.lsp.lsp_callbacks[client.name]()
+                --     end
+                -- end
+
+                -- if
+                --     #vim.lsp.get_clients({
+                --         name = 'typescript-tools',
+                --     }) > 0
+                -- then
+                --     vim.cmd('TSToolsFixAll')
+                -- end
+
+                -- NOTE: chatgpt performance improvement
+                for i = 1, #clients do
+                    local client = clients[i]
+                    local callback = lsp_callbacks[client.name]
+                    if callback then
+                        callback()
+                    end
+                end
+
+                -- vim.lsp.buf.format({
+                --     bufnr = event.buf,
+                --     -- this filter skips typescript-tools (conflicts with eslint)
+                --     filter = format_filter,
+                -- })
+
+                conform.format(
+                    {
+                        bufnr = bufnr,
+                        -- async = true,
+                        -- lsp_format = 'never',
+                        lsp_format = 'first',
+                        stop_after_first = false,
+                        -- this filter skips typescript-tools (conflicts with eslint)
+                        filter = format_filter,
+                        -- id
+                        -- name
+                        -- undojoin
+                        -- lsp_fallback = true,
+                    }
+                -- , function(err) end
+                )
+            end
+
+            if _G.user.lsp.format_on_save then
                 vim.api.nvim_create_autocmd('BufWritePre', {
                     group = lsp_format_on_save_group,
                     pattern = '*',
-                    callback = function(event)
-                        -- local filetype = vim.bo.filetype
-
-                        -- don't format if no formatter is set
-                        -- if formatters_by_ft[vim.bo.filetype] == nil then
-                        --     return
-                        -- end
-
-                        -- if
-                        --     #vim.lsp.get_clients({
-                        --         name = 'eslint',
-                        --     }) > 0
-                        -- then
-                        --         NOTE: this is not in vim.lsp.buf.format()
-                        --     vim.cmd('EslintFixAll')
-                        -- end
-
-                        local clients = vim.lsp.get_clients({
-                            bufnr = event.buf,
-                        })
-
-                        -- for _, client in pairs(clients) do
-                        --     if _G.user.lsp.lsp_callbacks[client.name] then
-                        --         _G.user.lsp.lsp_callbacks[client.name]()
-                        --     end
-                        -- end
-
-                        -- if
-                        --     #vim.lsp.get_clients({
-                        --         name = 'typescript-tools',
-                        --     }) > 0
-                        -- then
-                        --     vim.cmd('TSToolsFixAll')
-                        -- end
-
-                        -- NOTE: chatgpt performance improvement
-                        for i = 1, #clients do
-                            local client = clients[i]
-                            local callback = lsp_callbacks[client.name]
-                            if callback then
-                                callback()
-                            end
-                        end
-
-                        -- vim.lsp.buf.format({
-                        --     bufnr = event.buf,
-                        --     -- this filter skips typescript-tools (conflicts with eslint)
-                        --     filter = format_filter,
-                        -- })
-
-                        conform.format(
-                            {
-                                bufnr = event.buf,
-                                -- async = true,
-                                -- lsp_format = 'never',
-                                lsp_format = 'first',
-                                stop_after_first = false,
-                                -- this filter skips typescript-tools (conflicts with eslint)
-                                filter = format_filter,
-                                -- id
-                                -- name
-                                -- undojoin
-                                -- lsp_fallback = true,
-                            }
-                            -- , function(err) end
-                        )
-                    end,
+                    callback = format_function,
                 })
             end
+
+            vim.keymap.set(
+                'n',
+                '<leader>lf',
+                format_function,
+                set_desc('format')
+            )
         end,
     },
 }
