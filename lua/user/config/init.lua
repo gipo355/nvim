@@ -77,7 +77,7 @@ _G.user.ai = {
     -- https://github.com/joshuavial/aider.nvim
     -- WARN: avanta overrides vim.opt.splitkeep and vim.opt.laststatus
     avante = {
-        enable = false,
+        enable = true,
     },
     aider = {
         enable = false,
@@ -610,8 +610,8 @@ _G.user.additional_plugins = {
     nx = false,
     ranger = false,
     obsidian = false,
-    cloak = false,
-    devdocs = false,
+    cloak = true,
+    devdocs = true,
     helm = false,
     kubectl = false,
     lspsaga = true, -- lsp utils, also breadcrumbs
@@ -622,7 +622,8 @@ _G.user.additional_plugins = {
     suda = false,
     glance = true, -- lsp references preview
     telescope_frecency = false, -- frecency telescope
-    smart_open = false, -- smart open frecency telescope
+    smart_open = true, -- smart open frecency telescope
     sql_dadbod_plugin = false,
     kotlin_udalov_plugin = false,
+    better_ts_errors = true,
 }
