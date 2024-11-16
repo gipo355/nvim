@@ -667,7 +667,7 @@ return {
 
             vim.keymap.set(
                 'n',
-                '<leader>lW',
+                '<leader>lw',
                 '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>',
                 set_desc('[T]elescope dynamic [W]orkspace [S]ymbols')
             )
