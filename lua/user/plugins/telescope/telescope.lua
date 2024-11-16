@@ -660,9 +660,16 @@ return {
 
             vim.keymap.set(
                 'n',
-                '<leader>lD',
+                '<leader>lW',
                 '<cmd>Telescope lsp_workspace_symbols<cr>',
-                set_desc('[T]elescope [L]SP [S]ymbols')
+                set_desc('[T]elescope [W]orkspace [S]ymbols')
+            )
+
+            vim.keymap.set(
+                'n',
+                '<leader>lW',
+                '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>',
+                set_desc('[T]elescope dynamic [W]orkspace [S]ymbols')
             )
 
             vim.keymap.set(
