@@ -70,8 +70,6 @@ return {
                 -- templ = { 'templ', 'gofumpt', 'goimports-reviser' },
 
                 markdown = { 'prettierd' },
-                css = { 'prettierd' },
-                scss = { 'prettierd' },
                 html = { 'prettierd' },
                 ['angular.html'] = { 'prettierd' },
                 yaml = {
@@ -82,16 +80,21 @@ return {
                 astro = { 'prettierd' },
                 svelte = { 'prettierd' },
                 vue = { 'prettierd' },
-                less = { 'prettierd' },
-                json = { 'prettierd' },
-                jsonc = { 'prettierd' },
-                javascript = { 'prettierd' },
-                javascriptreact = { 'prettierd' },
-                typescript = { 'prettierd' },
-                typescriptreact = {
-                    'prettierd',
-                    -- stop_after_first = false
-                },
+
+                -- BIOME
+                -- less = { 'prettierd' },
+                -- css = { 'prettierd' },
+                -- scss = { 'prettierd' },
+                -- json = { 'prettierd' },
+                -- jsonc = { 'prettierd' },
+                -- javascript = { 'prettierd' },
+                -- javascriptreact = { 'prettierd' },
+                -- typescript = { 'prettierd' },
+                -- typescriptreact = {
+                --     'prettierd',
+                --     -- stop_after_first = false
+                -- },
+
                 -- when prettier has prettier-plugin-java
                 java = { 'prettierd' },
 

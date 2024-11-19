@@ -246,7 +246,7 @@ _G.user.lsp = {
         ['vtsls'] = true, -- conflicts with prettier and eslint
         ['html'] = true, -- conflicts with prettier
         ['cssls'] = true, -- conflicts with prettier and stylelint
-        ['biome'] = true, -- conflicts with prettier and eslint
+        -- ['biome'] = true, -- conflicts with prettier and eslint, using this instead of prettier for supported files, lsp is much faster
         ['jsonls'] = true, -- conflicts with prettier
         ['lua_ls'] = true, -- conflicts with stylua
         ['yamlls'] = true, -- conflicts with stylua
@@ -583,7 +583,7 @@ _G.user.ignore_patterns = {
   Enable java plugin, pretty heavy and slow
 ]]
 _G.user.java = {
-    enable = false,
+    enable = true,
 }
 
 _G.user.additional_plugins = {

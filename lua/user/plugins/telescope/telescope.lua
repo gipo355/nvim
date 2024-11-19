@@ -454,7 +454,7 @@ return {
                 end, set_desc('[S]earch [F]iles GIT'))
 
                 vim.keymap.set(
-                    'n',
+                    {'n', 'v'},
                     '<leader>sw',
                     builtin.grep_string,
                     set_desc('[S]earch current [W]ord')
