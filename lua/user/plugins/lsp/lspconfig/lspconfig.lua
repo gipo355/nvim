@@ -48,7 +48,11 @@ return {
             -- LSP completion plugin ( schemas )
             { 'b0o/schemastore.nvim' },
 
-            { 'nvim-java/nvim-java', enabled = _G.user.java.enable },
+            {
+                'nvim-java/nvim-java',
+                enabled = _G.user.java.enable,
+                config = function() end,
+            },
 
             -- Useful status updates for LSP.
             -- this shows lsp loadings in the bottom right corner, quite obnoxious
