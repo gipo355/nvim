@@ -64,7 +64,7 @@ return {
             set_desc('source actions')
         )
         vim.keymap.set(
-            'n',
+            { 'n', 'v' },
             '<C-x>',
             '<cmd>VtsExec source_actions<cr>',
             set_desc('source actions')
@@ -78,7 +78,7 @@ return {
         -- rename file
         vim.keymap.set(
             'n',
-            '<leader>tR',
+            '<leader>tr',
             '<cmd>VtsExec rename_file<cr>',
             set_desc('rename file')
         )
