@@ -22,9 +22,9 @@ M.load_servers = function(capabilities)
             'user.plugins.lsp.lspconfig.configs.server-configs.cssmodules'
         ).setup(),
 
-        snyk_ls = require(
-            'user.plugins.lsp.lspconfig.configs.server-configs.snyk_ls'
-        ).setup(),
+        -- snyk_ls = require(
+        --     'user.plugins.lsp.lspconfig.configs.server-configs.snyk_ls'
+        -- ).setup(),
 
         -- omnisharp = require(
         --     'user.plugins.lsp.lspconfig.configs.server-configs.omnisharp'
