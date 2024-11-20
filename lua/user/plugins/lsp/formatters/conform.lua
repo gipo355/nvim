@@ -301,7 +301,7 @@ return {
                 -- end
 
                 local clients = vim.lsp.get_clients({
-                    bufnr = bufnr
+                    bufnr = bufnr,
                 })
 
                 -- for _, client in pairs(clients) do
@@ -336,18 +336,18 @@ return {
                 conform.format(
                     {
                         bufnr = bufnr,
+                        -- id
+                        -- name
+                        -- undojoin
+                        -- lsp_fallback = true,
                         -- async = true,
                         -- lsp_format = 'never',
                         lsp_format = 'first',
                         stop_after_first = false,
                         -- this filter skips typescript-tools (conflicts with eslint)
                         filter = format_filter,
-                        -- id
-                        -- name
-                        -- undojoin
-                        -- lsp_fallback = true,
                     }
-                -- , function(err) end
+                    -- , function(err) end
                 )
             end
 

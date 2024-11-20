@@ -1,18 +1,24 @@
 local constants = require('user.utils.constants')
 local M = {}
 M.setup = function()
-    if not ok then
-        -- vim.print('Error loading user.env, snyk_ls will not work properly.')
-        -- print error message to user
-        -- print('Error loading user.env, snyk_ls will not work properly.')
-        -- throw an error to stop the execution of the function
-        -- error('Error loading user.env, snyk_ls will not work properly.')
-        -- throw a warning instead
-        -- vim.api.nvim_err_writeln(
-        --     'Error loading user.env, snyk_ls will not work properly.'
-        -- )
-        return
+    -- if not ok then
+    -- vim.print('Error loading user.env, snyk_ls will not work properly.')
+    -- print error message to user
+    -- print('Error loading user.env, snyk_ls will not work properly.')
+    -- throw an error to stop the execution of the function
+    -- error('Error loading user.env, snyk_ls will not work properly.')
+    -- throw a warning instead
+    -- vim.api.nvim_err_writeln(
+    --     'Error loading user.env, snyk_ls will not work properly.'
+    -- )
+    --     return
+    -- end
+
+    if constants.SNYK_TOKEN == nil then
+        vim.print('Error loading user.env, snyk_ls will not work properly.')
+        return nil
     end
+
     return {
         init_options = {
             -- token = '',
