@@ -51,7 +51,6 @@ return {
             {
                 'nvim-java/nvim-java',
                 enabled = _G.user.java.enable,
-                config = function() end,
             },
 
             -- Useful status updates for LSP.
@@ -210,17 +209,17 @@ return {
                             },
 
                             spring_boot_tools = {
-                                enable = true,
+                                enable = false,
                             },
 
                             jdk = {
                                 -- install jdk using mason.nvim
-                                auto_install = false, -- setup in jdtls config
+                                auto_install = true, -- setup in jdtls config
                             },
 
                             notifications = {
                                 -- enable 'Configuring DAP' & 'DAP configured' messages on start up
-                                dap = true,
+                                dap = false,
                             },
                         })
 
