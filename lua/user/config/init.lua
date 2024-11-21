@@ -583,7 +583,7 @@ _G.user.ignore_patterns = {
   Enable java plugin, pretty heavy and slow
 ]]
 _G.user.java = {
-    enable = false,
+    enable = true,
 }
 
 _G.user.additional_plugins = {
