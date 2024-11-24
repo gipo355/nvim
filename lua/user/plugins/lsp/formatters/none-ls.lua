@@ -64,12 +64,13 @@ return {
             --     filetypes = { 'go', 'gomod', 'gowork', 'templ' },
             -- }), -- used in golines already
 
+            -- golang
             -- NOTE: this may conflict with go plugin and gopls lsp
             null_ls.builtins.formatting.goimports_reviser.with({
                 filetypes = { 'go', 'gomod', 'gowork', 'templ' },
             }),
 
-            -- go
+            -- golang
             null_ls.builtins.formatting.golines.with({
                 filetypes = { 'go', 'gomod', 'gowork', 'templ' },
                 -- extra_args = { '--base-formatter gofumpt' },

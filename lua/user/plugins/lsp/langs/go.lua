@@ -21,7 +21,6 @@ return {
                 -- goimports = 'gopls', -- if set to 'gopls' will use golsp format
                 goimports = 'goimports-reviser', -- if set to 'gopls' will use golsp format
                 comment_placeholder = '   ',
-                -- gofmt = 'gopls', -- if set to gopls will use golsp format
                 gofmt = 'gopls', -- if set to gopls will use golsp format
                 lsp_cfg = false, -- buggy, disabled and copied directly into lspconfig. false = use your own lspconfig
                 -- lsp_gofumpt = true, -- true = set default gofmt in gopls format to gofumpt, not needed if lsp_cfg = false
