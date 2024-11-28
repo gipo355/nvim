@@ -190,7 +190,7 @@ _G.user.mini.map = {
 -- alternative minimap and scrollbar, satellite (good with arrow.nvim)
 -- lighter than mini map
 _G.user.satellite_scrollbar = {
-    enable = true,
+    enable = false,
 }
 -- there is another option: aerial.nvim, lspsaga symbols-outline, trouble symbols, minimap.nvim, codewindow.nvim, neominimap.nvim
 -- they can all function as symbols minimap
@@ -385,7 +385,7 @@ _G.user.mini.colors = {
 }
 
 -- transparent background - hack to allow transparency set after all vars are set
-_G.user.transparent_background = set_transparent_bg(false)
+_G.user.transparent_background = set_transparent_bg(true)
 
 _G.user.background = 'dark' -- dark or light
 -- allows to call this later after all vars are set - hack
