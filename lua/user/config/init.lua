@@ -235,6 +235,12 @@ _G.user.lsp = {
     diagnostics = {
         enable = true,
     },
+    formatters = {
+        -- BUG: broken
+        none_ls = {
+            enable = false,
+        },
+    },
     -- enable format on save
     format_on_save = true,
     ---@type "typescript-tools" | "deno" | "coc" | "vtsls" -- WARN: coc is broken

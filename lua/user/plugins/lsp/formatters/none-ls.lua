@@ -23,6 +23,8 @@ return {
 
     event = 'BufReadPre',
 
+    enabled = _G.user.lsp.formatters.none_ls.enable,
+
     config = function()
         -- ### prefer LSP if available ( have to insall null-ls formatters individually )
 
@@ -34,10 +36,10 @@ return {
             -- ###
 
             -- spelling
-            --null_ls.builtins.formatting.codespell,
+            --null_ls.builtins.formatting.codespell, -- too noisy
 
             -- css, scss
-            -- null_ls.builtins.formatting.stylelint,
+            -- null_ls.builtins.formatting.stylelint, -- lsp
 
             -- shell
             -- null_ls.builtins.formatting.shfmt, -- conform
@@ -53,29 +55,29 @@ return {
 
             -- null_ls.builtins.formatting.gofmt.with({
             --     filetypes = { 'go', 'gomod', 'gowork', 'templ' },
-            -- }), -- using gofumpt
+            -- }), -- using gofumpt and goimports_reviser from gopls
 
             -- NOTE: this is builtin gopls (and go plugin)
             -- null_ls.builtins.formatting.gofumpt.with({
             --     filetypes = { 'go', 'gomod', 'gowork', 'templ' },
-            -- }), -- in gopls
+            -- }), -- using gofumpt and goimports_reviser from gopls
 
             -- null_ls.builtins.formatting.goimports.with({
             --     filetypes = { 'go', 'gomod', 'gowork', 'templ' },
-            -- }), -- used in golines already
+            -- }), -- used in golines already, in gopls
 
             -- golang
             -- NOTE: this may conflict with go plugin and gopls lsp
             -- using gopls instead
             -- null_ls.builtins.formatting.goimports_reviser.with({
             --     filetypes = { 'go', 'gomod', 'gowork', 'templ' },
-            -- }),
+            -- }), -- lsp gopls?
 
             -- golang
             -- null_ls.builtins.formatting.golines.with({
             --     filetypes = { 'go', 'gomod', 'gowork', 'templ' },
             --     -- extra_args = { '--base-formatter gofumpt' },
-            -- }),
+            -- }), -- conform
 
             -- lua
             -- null_ls.builtins.formatting.stylua, -- using conform
@@ -84,7 +86,7 @@ return {
             -- null_ls.builtins.formatting.csharpier, -- requires dotnet-csharpier
 
             -- ts,js
-            -- null_ls.builtins.formatting.eslint_d,
+            -- null_ls.builtins.formatting.eslint_d, -- lsp
             -- null_ls.builtins.formatting.prettierd.with({ -- using conform
             --     filetypes = {
             --         'pug',

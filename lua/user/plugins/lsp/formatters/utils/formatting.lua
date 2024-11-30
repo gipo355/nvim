@@ -14,12 +14,16 @@ M.format_filter = function(client)
         return false
     end
 
-    local n = require('null-ls')
-    local s = require('null-ls.sources')
-    local method = n.methods.FORMATTING
+    local available_formatters = {}
 
-    local filetype = vim.bo.filetype
-    local available_formatters = s.get_available(filetype, method)
+    if _G.user.lsp.formatters.none_ls.enable then
+        local n = require('null-ls')
+        local s = require('null-ls.sources')
+        local method = n.methods.FORMATTING
+
+        local filetype = vim.bo.filetype
+        available_formatters = s.get_available(filetype, method)
+    end
 
     if #available_formatters > 0 then
         return client.name == 'null-ls'
