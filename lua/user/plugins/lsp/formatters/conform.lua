@@ -60,16 +60,29 @@ return {
                 -- php = { 'php_cs_fixer', 'prettier' },
                 -- php = { 'prettierd','biome' },
 
-                -- go = {
-                --     -- 'gofumpt', -- already in gopls
-                --     'goimports-reviser',
-                -- },
-                -- gomod = { 'gofumpt', 'goimports-reviser' },
-                -- gowork = { 'gofumpt', 'goimports-reviser' },
+                go = {
+                    'golines',
+                    -- 'goimports-reviser', -- lsp gopls?
+                    -- 'gofumpt', -- lsp gopls?
+                },
+                gomod = {
+                    'golines',
+                    -- 'goimports-reviser', -- lsp gopls?
+                    -- 'gofumpt', -- lsp gopls?
+                },
+                gowork = {
+                    'golines',
+                    -- 'goimports-reviser', -- lsp gopls?
+                    -- 'gofumpt', -- lsp gopls?
+                },
                 -- templ = { 'gofumpt', 'goimports-reviser' },
                 -- templ = { 'templ', 'gofumpt', 'goimports-reviser' },
 
-                markdown = { 'prettierd' },
+                sh = { 'shfmt' },
+
+                proto = { 'buf' },
+
+                markdown = { 'prettierd', 'markdownlint' },
                 html = { 'prettierd' },
                 ['angular.html'] = { 'prettierd' },
                 yaml = {
@@ -301,7 +314,7 @@ return {
                 -- end
 
                 local clients = vim.lsp.get_clients({
-                    bufnr = bufnr
+                    bufnr = bufnr,
                 })
 
                 -- for _, client in pairs(clients) do
@@ -347,7 +360,7 @@ return {
                         -- undojoin
                         -- lsp_fallback = true,
                     }
-                -- , function(err) end
+                    -- , function(err) end
                 )
             end
 

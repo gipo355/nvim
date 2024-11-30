@@ -40,13 +40,13 @@ return {
             -- null_ls.builtins.formatting.stylelint,
 
             -- shell
-            null_ls.builtins.formatting.shfmt,
+            -- null_ls.builtins.formatting.shfmt, -- conform
 
             -- protobuf
-            null_ls.builtins.formatting.buf,
+            -- null_ls.builtins.formatting.buf, -- conform
 
             -- markdown
-            null_ls.builtins.formatting.markdownlint,
+            -- null_ls.builtins.formatting.markdownlint, -- conform
 
             -- go
             -- NOTE: possible conflicts with conform and go plugin?
@@ -66,15 +66,16 @@ return {
 
             -- golang
             -- NOTE: this may conflict with go plugin and gopls lsp
-            null_ls.builtins.formatting.goimports_reviser.with({
-                filetypes = { 'go', 'gomod', 'gowork', 'templ' },
-            }),
+            -- using gopls instead
+            -- null_ls.builtins.formatting.goimports_reviser.with({
+            --     filetypes = { 'go', 'gomod', 'gowork', 'templ' },
+            -- }),
 
             -- golang
-            null_ls.builtins.formatting.golines.with({
-                filetypes = { 'go', 'gomod', 'gowork', 'templ' },
-                -- extra_args = { '--base-formatter gofumpt' },
-            }),
+            -- null_ls.builtins.formatting.golines.with({
+            --     filetypes = { 'go', 'gomod', 'gowork', 'templ' },
+            --     -- extra_args = { '--base-formatter gofumpt' },
+            -- }),
 
             -- lua
             -- null_ls.builtins.formatting.stylua, -- using conform
