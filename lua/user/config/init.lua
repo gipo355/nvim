@@ -238,7 +238,7 @@ _G.user.lsp = {
     formatters = {
         -- BUG: broken
         none_ls = {
-            enable = false,
+            enable = true,
         },
     },
     -- enable format on save
