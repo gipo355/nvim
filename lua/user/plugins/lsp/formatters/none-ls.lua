@@ -262,11 +262,11 @@ return {
             null_ls.builtins.code_actions.gitrebase,
 
             -- go
-            null_ls.builtins.code_actions.gomodifytags,
-            null_ls.builtins.code_actions.impl,
+            null_ls.builtins.code_actions.gomodifytags, -- already in gopls and go plugin, :GoAddTag, GotModifyTags
+            null_ls.builtins.code_actions.impl, -- in goplugin :GoImpl
 
             -- many
-            null_ls.builtins.code_actions.refactoring,
+            null_ls.builtins.code_actions.refactoring, -- commands in :Refactor
         }
 
         -- Golang from go plugin
