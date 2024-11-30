@@ -40,7 +40,7 @@ return {
     -- Autoformat
     {
         'stevearc/conform.nvim',
-        event = 'BufEnter',
+        event = 'BufReadPre',
         -- opts = {},
         init = function()
             -- If you want the formatexpr, here is the place to set it

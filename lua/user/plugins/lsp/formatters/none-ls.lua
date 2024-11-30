@@ -21,7 +21,7 @@ In addition, elf can be used for custom lsps
 return {
     'nvimtools/none-ls.nvim',
 
-    event = 'BufEnter',
+    event = 'BufReadPre',
 
     config = function()
         -- ### prefer LSP if available ( have to insall null-ls formatters individually )
