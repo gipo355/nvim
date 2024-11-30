@@ -160,9 +160,9 @@ return {
             -- GO
             -- here or lspconfig or go plugin or nvim-lint
             -- only works here
-            null_ls.builtins.diagnostics.golangci_lint.with({ -- lspconfig doesn't work
-                filetypes = { 'go', 'gomod', 'gowork', 'templ', 'gotempl' },
-            }),
+            -- null_ls.builtins.diagnostics.golangci_lint.with({ -- lspconfig doesn't work
+            --     filetypes = { 'go', 'gomod', 'gowork', 'templ', 'gotempl' },
+            -- }),
 
             -- sql
             -- null_ls.builtins.diagnostics.sqlfluff.with({
