@@ -21,6 +21,7 @@ return {
                 -- goimports = 'gopls', -- if set to 'gopls' will use golsp format
                 goimports = 'goimports-reviser', -- if set to 'gopls' will use golsp format
                 comment_placeholder = '   ',
+                -- gofmt = 'gopls', -- if set to gopls will use golsp format
                 gofmt = 'gopls', -- if set to gopls will use golsp format
                 lsp_cfg = false, -- buggy, disabled and copied directly into lspconfig. false = use your own lspconfig
                 -- lsp_gofumpt = true, -- true = set default gofmt in gopls format to gofumpt, not needed if lsp_cfg = false
@@ -66,67 +67,67 @@ return {
 
             vim.api.nvim_set_keymap(
                 'n',
-                '<leader>Gc',
+                '<leader>tc',
                 '<cmd>GoCmt<CR>',
                 set_desc('GoCmt')
             )
             vim.api.nvim_set_keymap(
                 'n',
-                '<leader>Ga',
+                '<leader>ta',
                 '<cmd>GoAddTag<CR>',
                 set_desc('GoAddTag')
             )
             vim.api.nvim_set_keymap(
                 'n',
-                '<leader>Gr',
+                '<leader>tr',
                 '<cmd>GoRmTag<CR>',
                 set_desc('GoRmTag')
             )
             vim.api.nvim_set_keymap(
                 'n',
-                '<leader>Gt',
+                '<leader>tt',
                 '<cmd>GoClearTag<CR>',
                 set_desc('GoClearTag')
             )
             vim.api.nvim_set_keymap(
                 'n',
-                '<leader>Gs',
+                '<leader>ts',
                 '<cmd>GoFillStruct<CR>',
                 set_desc('GoFillStruct')
             )
             vim.api.nvim_set_keymap(
                 'n',
-                '<leader>Gw',
+                '<leader>tw',
                 '<cmd>GoFillSwitch<CR>',
                 set_desc('GoFillSwitch')
             )
             vim.api.nvim_set_keymap(
                 'n',
-                '<leader>Gi',
+                '<leader>ti',
                 '<cmd>GoIfErr<CR>',
                 set_desc('GoIfErr')
             )
             vim.api.nvim_set_keymap(
                 'n',
-                '<leader>Gf',
+                '<leader>tf',
                 '<cmd>GoFixPlurals<CR>',
                 set_desc('GoFixPlurals')
             )
             vim.api.nvim_set_keymap(
                 'n',
-                '<leader>Gm',
+                '<leader>tm',
                 '<cmd>GoImpl<CR>',
                 set_desc('GoImpl')
             )
             vim.api.nvim_set_keymap(
                 'n',
-                '<leader>Gg',
+                '<leader>tg',
                 '<cmd>GoGenReturn<CR>',
                 set_desc('GoGenReturn')
             )
             vim.api.nvim_set_keymap(
                 'n',
-                '<leader>Gv',
+                '<leader>tv',
                 '<cmd>Gomvp<CR>',
                 set_desc('Gomvp')
             )

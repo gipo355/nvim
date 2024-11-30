@@ -2,7 +2,22 @@ local set_desc = require('user.utils.functions').set_keymap_desc
 return {
     'yioneko/nvim-vtsls',
     enabled = _G.user.lsp.tsserver == 'vtsls',
-    event = 'BufReadPre',
+    ft = {
+        'typescript',
+        'typescriptreact',
+        'javascript',
+        'javascriptreact',
+        'typescript.tsx',
+        'javascript.jsx',
+        'html',
+        'svelte',
+        'vue',
+        'astro',
+        'tsx',
+        'jsx',
+        'angular.html',
+    },
+    -- event = 'BufReadPre',
     -- OPTIONAL
     config = function()
         require('vtsls').config({
