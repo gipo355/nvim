@@ -158,7 +158,7 @@ return {
             -- ###
 
             -- protobuf
-            null_ls.builtins.diagnostics.buf,
+            -- null_ls.builtins.diagnostics.buf, -- nvim-lint
 
             -- GO
             -- here or lspconfig or go plugin or nvim-lint
@@ -173,17 +173,17 @@ return {
             -- }),
 
             -- git
-            null_ls.builtins.diagnostics.commitlint,
+            -- null_ls.builtins.diagnostics.commitlint, -- nvim-lint
 
             -- null_ls.builtins.diagnostics.eslint_d, // using lsp instead
 
             -- yaml
-            null_ls.builtins.diagnostics.yamllint,
+            -- null_ls.builtins.diagnostics.yamllint, -- nvim-lint
 
             -- shell
-            null_ls.builtins.diagnostics.zsh.with({
-                filetypes = { 'zsh', 'sh', 'bash' },
-            }),
+            -- null_ls.builtins.diagnostics.zsh.with({
+            --     filetypes = { 'zsh', 'sh', 'bash' },
+            -- }), -- nvim-lint
 
             -- markdown
             -- null_ls.builtins.diagnostics.proselint, -- markdown
@@ -227,10 +227,10 @@ return {
 
             -- XML
             -- null_ls.builtins.formatting.tidy,
-            null_ls.builtins.diagnostics.tidy,
+            -- null_ls.builtins.diagnostics.tidy, -- nvim-lint
 
             -- markdown
-            null_ls.builtins.diagnostics.markdownlint,
+            -- null_ls.builtins.diagnostics.markdownlint, -- nvim-lint
 
             -- markdown
             -- null_ls.builtins.diagnostics.codespell.with({

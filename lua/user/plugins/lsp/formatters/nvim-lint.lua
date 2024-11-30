@@ -35,12 +35,23 @@ return {
             html = {
                 -- 'snyk_iac',
                 'htmlhint',
+                'tidy',
                 -- 'biomejs',
             },
+            xml = { 'tidy' },
+
+            markdown = { 'markdownlint' },
+
+            yaml = { 'yamllint' },
+
+            gitcommit = { 'commitlint' },
+
+            proto = { 'buf_lint' },
 
             ['angular.html'] = {
                 -- 'snyk_iac',
                 'htmlhint',
+                'tidy',
                 -- 'biomejs',
             },
 
@@ -60,9 +71,9 @@ return {
             -- typescriptreact = { 'biomejs' },
             -- javascriptreact = { 'biomejs' },
 
-            zsh = { 'shellcheck' },
-            sh = { 'shellcheck' },
-            bash = { 'shellcheck' },
+            zsh = { 'shellcheck', 'zsh' },
+            sh = { 'shellcheck', 'zsh' },
+            bash = { 'shellcheck', 'zsh' },
 
             -- go = { 'snyk_iac' },
 
