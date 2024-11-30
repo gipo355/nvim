@@ -45,9 +45,9 @@ M.load_servers = function(capabilities)
             'user.plugins.lsp.lspconfig.configs.server-configs.gopls'
         ).setup(),
 
-        -- golangci_lint_ls = require(
-        --     'user.plugins.lsp.lspconfig.configs.server-configs.golangci_lint'
-        -- ).setup(),
+        golangci_lint_ls = require(
+            'user.plugins.lsp.lspconfig.configs.server-configs.golangci_lint'
+        ).setup(),
 
         -- intelephense = require(
         --     'user.plugins.lsp.lspconfig.configs.server-configs.intelephense'
