@@ -19,7 +19,8 @@ return {
                 -- go = 'go',
 
                 -- goimports = 'gopls', -- if set to 'gopls' will use golsp format
-                goimports = 'goimports-reviser', -- if set to 'gopls' will use golsp format
+                -- goimports = 'goimports-reviser', -- if set to 'gopls' will use golsp format
+                goimports = 'goimports', -- if set to 'gopls' will use golsp format
                 comment_placeholder = '   ',
                 -- gofmt = 'gopls', -- if set to gopls will use golsp format
                 gofmt = 'gopls', -- if set to gopls will use golsp format
