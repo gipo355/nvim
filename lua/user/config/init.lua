@@ -126,6 +126,10 @@ _G.user.mini.animate_scroll = {
     enable = false,
 }
 
+_G.user.neoscroll = {
+    enable = true,
+}
+
 --------------------------------
 --[[ VERTICAL SPACE
 
