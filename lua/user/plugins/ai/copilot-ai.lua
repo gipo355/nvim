@@ -14,7 +14,7 @@ return {
         'CopilotC-Nvim/CopilotChat.nvim',
         event = 'BufReadPre',
         enabled = _G.user.ai.copilot.chat.enable,
-        branch = 'canary',
+        -- branch = 'canary',
         build = 'make tiktoken', -- Only on MacOS or Linux
         dependencies = {
             { 'zbirenbaum/copilot.lua' }, -- or github/copilot.vim
