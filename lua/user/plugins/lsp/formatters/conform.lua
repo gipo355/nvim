@@ -90,23 +90,24 @@ return {
                     -- 'yamlfmt'
                 },
                 pug = { 'prettierd' },
-                astro = { 'prettierd' },
-                svelte = { 'prettierd' },
-                vue = { 'prettierd' },
+
+                -- astro = { 'prettierd' },
+                -- svelte = { 'prettierd' },
+                -- vue = { 'prettierd' },
 
                 -- BIOME
-                less = { 'prettierd' },
-                css = { 'prettierd' },
-                scss = { 'prettierd' },
-                json = { 'prettierd' },
-                jsonc = { 'prettierd' },
-                javascript = { 'prettierd' },
-                javascriptreact = { 'prettierd' },
-                typescript = { 'prettierd' },
-                typescriptreact = {
-                    'prettierd',
-                    -- stop_after_first = false
-                },
+                -- less = { 'prettierd' },
+                -- css = { 'prettierd' },
+                -- scss = { 'prettierd' },
+                -- json = { 'prettierd' },
+                -- jsonc = { 'prettierd' },
+                -- javascript = { 'prettierd' },
+                -- javascriptreact = { 'prettierd' },
+                -- typescript = { 'prettierd' },
+                -- typescriptreact = {
+                --     'prettierd',
+                --     -- stop_after_first = false
+                -- },
 
                 -- when prettier has prettier-plugin-java
                 java = { 'prettierd' },
