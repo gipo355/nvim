@@ -145,9 +145,10 @@ return {
         },
 
         --- The below is optional, make sure to setup it properly if you have lazy=true
-        {
-            'MeanderingProgrammer/render-markdown.nvim',
-        },
+        -- {
+        --     'MeanderingProgrammer/render-markdown.nvim',
+        --     enabled = _G.user.additional_plugins.render_markdown,
+        -- },
     },
     config = function()
         local avante = require('avante')
