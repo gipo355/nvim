@@ -5,6 +5,11 @@
 -- chan_add('saturation', -2,  { filter = 'fg' })
 -- chan_add('lightness', 2,  { filter = 'bg' })
 -- chan_add('temperature', 10,  { filter = 'bg' })
+--
+-- chan_add('saturation', -5,  { filter = 'bg' })
+-- -- chan_add('saturation', -2,  { filter = 'fg' })
+-- chan_add('lightness', 1,  { filter = 'bg' })
+-- chan_add('temperature', 5,  { filter = 'bg' })
 return {
     'vague2k/vague.nvim',
     enabled = _G.user.theme() == 'vague',
