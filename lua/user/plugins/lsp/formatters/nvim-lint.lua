@@ -34,7 +34,7 @@ return {
             -- gitcommit = { 'commitlint' },
             html = {
                 -- 'snyk_iac',
-                'htmlhint',
+                -- 'htmlhint',
                 'tidy',
                 -- 'biomejs',
             },
@@ -50,7 +50,7 @@ return {
 
             ['angular.html'] = {
                 -- 'snyk_iac',
-                'htmlhint',
+                -- 'htmlhint',
                 'tidy',
                 -- 'biomejs',
             },
