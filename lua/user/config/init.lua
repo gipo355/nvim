@@ -391,7 +391,7 @@ _G.user.deno = {
 
 -- use mini.colors for customizations on any theme
 _G.user.mini.colors = {
-    enable = false,
+    enable = true,
 }
 
 -- transparent background - hack to allow transparency set after all vars are set
@@ -407,9 +407,9 @@ _G.user.theme = function()
 
     -- my favorites
 
-    -- return 'vague'
+    return 'vague'
     -- return 'monokai-pro'
-    return 'gruvbox-baby'
+    -- return 'gruvbox-baby'
     -- return 'kanagawa'
     -- return 'gruvbox-material'
     -- return 'rose-pine'
