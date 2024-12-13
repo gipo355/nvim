@@ -1,4 +1,9 @@
 -- TODO: highlight telescope grep search results, check gruvbox-material
+ -- chan_add('saturation', -15,  { filter = 'bg' })
+ -- chan_add('saturation', -3,  { filter = 'fg' })
+ -- chan_add('lightness', 4,  { filter = 'bg' })
+ -- chan_add('lightness', -5,  { filter = 'fg' })
+ -- chan_add('temperature', 10,  { filter = 'bg' })
 return {
     'rose-pine/neovim',
     name = 'rose-pine',
