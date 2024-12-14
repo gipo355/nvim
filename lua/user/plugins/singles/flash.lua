@@ -62,7 +62,7 @@ return {
         -- the 'o' conflicts with ds command from nvim surround
         -- and prevents mini.surround from working
         -- so i map it to 'ss' instead
-        vim.keymap.set({ 'n', 'o', 'x' }, 'ss', function()
+        vim.keymap.set({ 'n', 'o', 'x' }, 'sk', function()
             require('flash').jump()
         end, set_desc('Flash jump'))
 
