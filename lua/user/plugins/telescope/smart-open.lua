@@ -15,12 +15,13 @@ return {
         vim.keymap.set('n', '<leader>sk', function()
             require('telescope').extensions.smart_open.smart_open()
         end, set_desc('smart open'))
-        vim.keymap.set('n', '<c-p>', function()
+        vim.keymap.set('n', 'so', function()
             require('telescope').extensions.smart_open.smart_open()
         end, set_desc('smart open'))
     end,
     dependencies = {
         'kkharji/sqlite.lua',
+        'nvim-telescope/telescope.nvim',
         -- Only required if using match_algorithm fzf
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
         -- Optional.  If installed, native fzy will be used when match_algorithm is fzy

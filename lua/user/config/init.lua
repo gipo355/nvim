@@ -194,7 +194,7 @@ _G.user.mini.map = {
 -- alternative minimap and scrollbar, satellite (good with arrow.nvim)
 -- lighter than mini map
 _G.user.satellite_scrollbar = {
-    enable = false,
+    enable = true,
 }
 -- there is another option: aerial.nvim, lspsaga symbols-outline, trouble symbols, minimap.nvim, codewindow.nvim, neominimap.nvim
 -- they can all function as symbols minimap
@@ -246,7 +246,7 @@ _G.user.lsp = {
         },
     },
     -- enable format on save
-    format_on_save = false,
+    format_on_save = true,
     ---@type "typescript-tools" | "deno" | "coc" | "vtsls" -- WARN: coc is broken
     tsserver = 'vtsls',
     -- this is a list of lsp formatters passed to a filter function
@@ -296,8 +296,9 @@ _G.user.tailwindcss = {
 }
 
 --[[ Indent blankline settings ]]
+--  replaced by snacks
 _G.user.indent_blankline = {
-    enable = true,
+    enable = false,
     scope = true,
     color = true, -- color the background of indentlines
     color_background = false, -- color the background of indentlines
@@ -636,4 +637,6 @@ _G.user.additional_plugins = {
     sql_dadbod_plugin = false,
     kotlin_udalov_plugin = false,
     better_ts_errors = true,
+    multi_cursor = false,
+    snacks = false, -- statuscolumn not disabled, broken BUG
 }
