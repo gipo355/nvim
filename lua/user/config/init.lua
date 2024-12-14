@@ -298,7 +298,7 @@ _G.user.tailwindcss = {
 --[[ Indent blankline settings ]]
 --  replaced by snacks
 _G.user.indent_blankline = {
-    enable = false,
+    enable = true,
     scope = true,
     color = true, -- color the background of indentlines
     color_background = false, -- color the background of indentlines
