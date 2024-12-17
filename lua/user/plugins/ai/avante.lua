@@ -157,7 +157,7 @@ return {
             -- provider = 'openai',
             vendors = vendors,
             ---@type "openai" | "claude" | "azure"  | "copilot" | "perplexity" | "groq" | "deepseek"
-            provider = 'deepseek',
+            provider = 'copilot',
             auto_suggestions_provider = 'copilot',
             mappings = {
                 --- @class AvanteConflictMappings
