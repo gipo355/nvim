@@ -1,5 +1,6 @@
 return {
     'hrsh7th/cmp-emoji',
+    enabled = _G.user.completion == 'cmp',
     event = 'InsertEnter',
     config = function(_, opts)
         -- extend the sources only if plugin exists

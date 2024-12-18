@@ -25,6 +25,7 @@ return {
 
     { -- Autocompletion
         'hrsh7th/nvim-cmp',
+        enabled = _G.user.completion == 'cmp',
         event = 'InsertEnter',
         dependencies = {
 

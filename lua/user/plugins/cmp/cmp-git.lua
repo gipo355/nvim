@@ -1,6 +1,7 @@
 return {
     'petertriho/cmp-git',
     event = 'InsertEnter',
+    enabled = _G.user.completion == 'cmp',
     dependencies = 'nvim-lua/plenary.nvim',
     config = function()
         local status_ok, cmp_git = pcall(require, 'cmp_git')

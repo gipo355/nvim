@@ -1,5 +1,6 @@
 return {
     'windwp/nvim-autopairs',
+    enabled = _G.user.completion == 'cmp',
     event = 'InsertEnter',
     -- Optional dependency
     dependencies = { 'hrsh7th/nvim-cmp' },
