@@ -343,7 +343,7 @@ _G.user.gitsigns = {
 _G.user.pickers = {
     -- this disables telescope for most used keymaps and uses fzf-lua instead
     fzf_lua = {
-        enable = false,
+        enable = true,
     },
 }
 
@@ -355,7 +355,7 @@ _G.user.ufo = {
 }
 
 --------------------------------
-_G.user.completion = 'blink' -- blink, cmp
+_G.user.completion = 'cmp' -- blink, cmp
 --[[
 CMP heavy sources
 ripgrep and buffer
