@@ -641,4 +641,5 @@ _G.user.additional_plugins = {
     better_ts_errors = true,
     multi_cursor = false,
     snacks = false, -- statuscolumn not disabled, broken BUG
+    gv = false, -- git view junegunn
 }

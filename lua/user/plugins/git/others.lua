@@ -73,6 +73,7 @@ return {
 
     {
         'junegunn/gv.vim',
+        enabled = _G.user.additional_plugins.gv,
         event = 'VeryLazy',
         -- 'tpope/vim-fugitive',
         dependencies = { 'tpope/vim-fugitive' },
