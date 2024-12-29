@@ -10,6 +10,13 @@ vim.lsp.set_log_level('off') -- off, error, warn, info, debug, trace
 require('user.plugins.lsp.lspconfig.configs.global-config').setup()
 
 return {
+
+    {
+        'nvim-java/nvim-java',
+        event = 'VeryLazy',
+        enabled = _G.user.java.enable,
+    },
+
     {
         'williamboman/mason.nvim',
         event = 'VeryLazy',
@@ -47,11 +54,6 @@ return {
 
             -- LSP completion plugin ( schemas )
             { 'b0o/schemastore.nvim' },
-
-            {
-                'nvim-java/nvim-java',
-                enabled = _G.user.java.enable,
-            },
 
             -- Useful status updates for LSP.
             -- this shows lsp loadings in the bottom right corner, quite obnoxious
@@ -197,6 +199,7 @@ return {
                             return nil
                         end
 
+                        -- require('java').setup({})
                         require('java').setup({
                             -- Your custom jdtls settings goes here
                             -- load java test plugins
@@ -224,6 +227,7 @@ return {
                         })
 
                         -- NOTE: document symbols not working
+                        -- require('lspconfig').jdtls.setup({})
                         require('lspconfig').jdtls.setup(
                             -- Your custom nvim-java configuration goes here
                             require(

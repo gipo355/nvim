@@ -278,7 +278,7 @@ _G.user.lsp = {
 
 -- [[ DAP ]]
 _G.user.dap = {
-    enable = false,
+    enable = true,
 }
 
 -- [[ TAILWIND ]]
@@ -595,7 +595,7 @@ _G.user.ignore_patterns = {
   Enable java plugin, pretty heavy and slow
 ]]
 _G.user.java = {
-    enable = false,
+    enable = true,
 }
 
 _G.user.additional_plugins = {
