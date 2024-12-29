@@ -642,4 +642,5 @@ _G.user.additional_plugins = {
     multi_cursor = false,
     snacks = false, -- statuscolumn not disabled, broken BUG
     gv = false, -- git view junegunn
+    flog = false, -- vim-flog rbong
 }

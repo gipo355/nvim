@@ -57,6 +57,7 @@ return {
 
     {
         'rbong/vim-flog',
+        enabled = _G.user.additional_plugins.flog,
         event = 'VeryLazy',
         cmd = {
             'Flog',
