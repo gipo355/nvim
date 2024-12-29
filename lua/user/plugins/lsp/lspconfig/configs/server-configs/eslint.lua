@@ -3,7 +3,13 @@ M.setup = function(capabilities)
     return {
 
         capabilities = capabilities,
-        flags = { debounce_text_changes = 500 },
+        flags = {
+            -- https://www.reddit.com/r/neovim/comments/1guifug/comment/lxuzjhn/
+            -- https://github.com/gonstoll/dotfiles/blob/master/.config/nvim/lua/plugins/lsp/servers/eslint.lua#L11-L14
+            -- debounce_text_changes = 500
+            allow_incremental_sync = false,
+            debounce_text_changes = 1000,
+        },
         on_attach = function(client, bufnr)
             -- [https://www.reddit.com/r/neovim/comments/ultmx0/how_to_setup_eslint_to_format_on_save_with_nvims/]
             client.server_capabilities.documentFormattingProvider = true
@@ -18,6 +24,7 @@ M.setup = function(capabilities)
             --   })
             -- end
         end,
+
         --need autocmd at the end
         --root_dir = require("lspconfig").util.root_pattern { ".git" },
         filetypes = {
