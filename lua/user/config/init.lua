@@ -229,8 +229,8 @@ _G.user.lsp = {
     },
     -- use signatures when entering a function (pretty laggy), we are using mini.completion, faster
     function_signature = {
-        ---@type "lsp_signature" | "mini" | "noice"| "none"
-        source = 'lsp_signature',
+        ---@type "lsp_signature" | "mini" | "noice"| "none" | "blink"
+        source = 'noice',
     },
     lsp_progress = {
         ---@type "fidget" | "noice"| "none"
@@ -343,7 +343,7 @@ _G.user.gitsigns = {
 _G.user.pickers = {
     -- this disables telescope for most used keymaps and uses fzf-lua instead
     fzf_lua = {
-        enable = false,
+        enable = true,
     },
 }
 
@@ -355,7 +355,7 @@ _G.user.ufo = {
 }
 
 --------------------------------
-_G.user.completion = 'cmp' -- blink, cmp
+_G.user.completion = 'blink' -- blink, cmp
 --[[
 CMP heavy sources
 ripgrep and buffer

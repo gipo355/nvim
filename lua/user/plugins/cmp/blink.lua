@@ -1,11 +1,16 @@
+-- https://www.reddit.com/r/neovim/comments/1hlnv7x/blinkcmp_i_finally_have_a_configuration_that/?share_id=LcUXP-XVhzAKFhrQErdSs&utm_medium=android_app&utm_name=androidcss&utm_source=share&utm_term=3
+
 return {
     'saghen/blink.cmp',
     enabled = _G.user.completion == 'blink',
     -- optional: provides snippets for the snippet source
-    dependencies = 'rafamadriz/friendly-snippets',
+    dependencies = {
+        { 'rafamadriz/friendly-snippets' },
+        { 'onsails/lspkind.nvim' },
+    },
     event = 'InsertEnter',
     -- use a release tag to download pre-built binaries
-    version = 'v0.*',
+    version = '*',
     -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
     -- build = 'cargo build --release',
     -- If you use nix, you can build from source using latest nightly rust with:
@@ -25,7 +30,8 @@ return {
             ['<C-j>'] = { 'select_next', 'fallback' }, -- snippets
             ['<C-k>'] = { 'select_prev', 'fallback' },
             ['<C-y>'] = { 'accept', 'fallback' },
-            ['<Tab>'] = { 'accept', 'fallback' },
+            -- ['<Tab>'] = { 'accept', 'fallback' },
+            ['<CR>'] = { 'accept', 'fallback' },
         },
 
         appearance = {
@@ -41,17 +47,54 @@ return {
         -- default list of enabled providers defined so that you can extend it
         -- elsewhere in your config, without redefining it, via `opts_extend`
         sources = {
-            compat = {},
-            default = { 'lsp', 'path', 'snippets', 'buffer' },
+            default = { 'lsp', 'path', 'snippets', 'buffer', 'cmdline' },
             -- optionally disable cmdline completions
-            cmdline = {},
+            -- cmdline = {},
+            cmdline = function()
+                local type = vim.fn.getcmdtype()
+                -- Search forward and backward
+                if type == '/' or type == '?' then
+                    return { 'buffer' }
+                end
+                -- Commands
+                if type == ':' then
+                    return { 'cmdline' }
+                end
+                return {}
+            end,
+            -- compat = {},
+            providers = {
+                -- lsp = {
+                --     min_keyword_length = 2, -- Number of characters to trigger porvider
+                --     score_offset = 0, -- Boost/penalize the score of the items
+                -- },
+                path = {
+                    min_keyword_length = 1,
+                    max_items = 4,
+                },
+                snippets = {
+                    min_keyword_length = 2,
+                    max_items = 4,
+                },
+                buffer = {
+                    min_keyword_length = 4,
+                    max_items = 4,
+                },
+            },
         },
 
         completion = {
             list = {
-                selection = 'auto_insert',
+                selection = 'preselect',
             },
+            -- list = {
+            --     selection = function(ctx)
+            --         return ctx.mode == 'cmdline' and 'auto_insert'
+            --             or 'preselect'
+            --     end,
+            -- },
             accept = {
+                -- disable if using cmp - in nvim autopairs
                 auto_brackets = {
                     enabled = true,
                 },
@@ -59,22 +102,56 @@ return {
             documentation = {
                 auto_show = true,
                 auto_show_delay_ms = 0,
+                treesitter_highlighting = true,
+                window = { border = 'rounded' },
             },
+
             ghost_text = {
                 enabled = false,
             },
             menu = {
+                -- can use telescope https://www.reddit.com/r/neovim/comments/1hlnv7x/comment/m3q5din/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+                border = 'rounded',
                 draw = {
+                    -- columns = {
+                    --     { 'label', 'label_description', gap = 1 },
+                    --     { 'kind' },
+                    -- },
                     columns = {
-                        { 'label', 'label_description', gap = 1 },
+                        { 'kind_icon', 'label', gap = 1 },
                         { 'kind' },
+                    },
+                    components = {
+                        kind_icon = {
+                            text = function(item)
+                                local kind = require('lspkind').symbol_map[item.kind]
+                                    or ''
+                                return kind .. ' '
+                            end,
+                            highlight = 'CmpItemKind',
+                        },
+                        label = {
+                            text = function(item)
+                                return item.label
+                            end,
+                            highlight = 'CmpItemAbbr',
+                        },
+                        kind = {
+                            text = function(item)
+                                return item.kind
+                            end,
+                            highlight = 'CmpItemKind',
+                        },
                     },
                 },
             },
         },
 
         -- experimental signature help support
-        signature = { enabled = true },
+        signature = {
+            enabled = _G.user.lsp.function_signature.source == 'blink',
+            window = { border = 'rounded' },
+        },
     },
     -- allows extending the providers array elsewhere in your config
     -- without having to redefine it
