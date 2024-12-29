@@ -578,6 +578,20 @@ return {
                     builtin.resume,
                     set_desc('[S]earch [L]ast')
                 )
+
+                vim.keymap.set(
+                    'n',
+                    '<leader>ls',
+                    '<cmd>Telescope lsp_document_symbols<cr>',
+                    set_desc('[T]elescope [L]SP [S]ymbols')
+                )
+
+                vim.keymap.set(
+                    'n',
+                    '<leader>le',
+                    '<cmd>Telescope diagnostics<cr>',
+                    set_desc('[T]elescope [L]SP [D]iagnostics')
+                )
             end
 
             -- ## OTHERS
@@ -675,13 +689,6 @@ return {
 
             vim.keymap.set(
                 'n',
-                '<leader>ls',
-                '<cmd>Telescope lsp_document_symbols<cr>',
-                set_desc('[T]elescope [L]SP [S]ymbols')
-            )
-
-            vim.keymap.set(
-                'n',
                 '<leader>la',
                 '<cmd>Telescope treesitter<cr>',
                 set_desc('Telescope treesitter Symbols')
@@ -692,13 +699,6 @@ return {
                 '<leader>lt',
                 '<cmd>Telescope lsp_type_definitions<cr>',
                 set_desc('[T]elescope [L]SP [T]ype Definitions')
-            )
-
-            vim.keymap.set(
-                'n',
-                '<leader>le',
-                '<cmd>Telescope diagnostics<cr>',
-                set_desc('[T]elescope [L]SP [D]iagnostics')
             )
 
             -- Also possible to pass additional configuration options.

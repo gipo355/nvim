@@ -275,9 +275,22 @@ M.fzflua = {
                 '<leader>le',
                 -- '<CMD>FzfLua diagnostics_workspace<CR>',
                 function()
-                    require('fzf-lua').diagnostics_workspace({
+                    require('fzf-lua').lsp_document_diagnostics({
                         cwd = vim.fn.getcwd(),
-                        previewer = false,
+                        -- previewer = false,
+                    })
+                end,
+                set_desc('Fzf diagnostics document')
+            )
+
+            vim.keymap.set(
+                'n',
+                '<leader>lE',
+                -- '<CMD>FzfLua diagnostics_workspace<CR>',
+                function()
+                    require('fzf-lua').lsp_workspace_diagnostics({
+                        cwd = vim.fn.getcwd(),
+                        -- previewer = false,
                     })
                 end,
                 set_desc('Fzf diagnostics workspace')
