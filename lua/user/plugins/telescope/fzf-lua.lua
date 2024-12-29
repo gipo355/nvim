@@ -185,7 +185,7 @@ M.fzflua = {
                 require('fzf-lua').jumps()
             end, set_desc('fzf jumps'))
 
-            vim.keymap.set('n', '<leader>i', function()
+            vim.keymap.set('n', '<leader>ht', function()
                 require('fzf-lua').helptags()
             end, set_desc('fzf jumps'))
 
