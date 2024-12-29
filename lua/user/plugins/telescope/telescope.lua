@@ -629,6 +629,13 @@ return {
                     '<cmd>Telescope git_branches<cr>',
                     set_desc('Git Branches checkout')
                 )
+
+                vim.keymap.set(
+                    'n',
+                    '<leader>gsc',
+                    '<cmd>Telescope git_commits cwd_only=true<cr>',
+                    set_desc('Git [C]ommits')
+                )
             end
 
             -- ## OTHERS
@@ -713,13 +720,6 @@ return {
                 '<leader>sb',
                 builtin.buffers,
                 set_desc('[S]earch [B]uffers')
-            )
-
-            vim.keymap.set(
-                'n',
-                '<leader>gsc',
-                '<cmd>Telescope git_commits cwd_only=true<cr>',
-                set_desc('Git [C]ommits')
             )
 
             ------
