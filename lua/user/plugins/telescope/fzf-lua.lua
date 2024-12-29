@@ -67,7 +67,7 @@ M.fzflua = {
                 },
             },
             files = {
-                path_shorten = 3,
+                path_shorten = 5,
                 --     actions = {
                 --
                 --     },
