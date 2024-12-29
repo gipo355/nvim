@@ -117,6 +117,7 @@ return {
                     --     { 'label', 'label_description', gap = 1 },
                     --     { 'kind' },
                     -- },
+                    treesitter = { 'lsp' },
                     columns = {
                         { 'kind_icon', 'label', gap = 1 },
                         { 'kind' },
