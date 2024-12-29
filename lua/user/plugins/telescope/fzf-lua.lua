@@ -208,16 +208,14 @@ M.fzflua = {
                 require('fzf-lua').git_branches()
             end, set_desc('fzf git branches'))
 
+            vim.keymap.set('n', '<leader>lc', function()
+                require('fzf-lua').changes({})
+            end, set_desc('Fzf Lsp references'))
+
             -- ## LSP
             vim.keymap.set(
                 'n',
                 '<leader>lr',
-                '<CMD>FzfLua lsp_references<CR>',
-                set_desc('Fzf Lsp references')
-            )
-            vim.keymap.set(
-                'n',
-                'gr',
                 '<CMD>FzfLua lsp_references<CR>',
                 set_desc('Fzf Lsp references')
             )
@@ -234,31 +232,13 @@ M.fzflua = {
 
             vim.keymap.set(
                 'n',
-                'gd',
-                '<CMD>FzfLua lsp_definitions<CR>',
-                set_desc('Fzf Lsp definitions')
-            )
-            vim.keymap.set(
-                'n',
                 '<leader>lD',
                 '<CMD>FzfLua lsp_declarations<CR>',
                 set_desc('Fzf Lsp declarations')
             )
             vim.keymap.set(
                 'n',
-                'gD',
-                '<CMD>FzfLua lsp_declarations<CR>',
-                set_desc('Fzf Lsp declarations')
-            )
-            vim.keymap.set(
-                'n',
                 '<leader>li',
-                '<CMD>FzfLua lsp_implementations<CR>',
-                set_desc('Fzf Lsp implementations')
-            )
-            vim.keymap.set(
-                'n',
-                'gi',
                 '<CMD>FzfLua lsp_implementations<CR>',
                 set_desc('Fzf Lsp implementations')
             )

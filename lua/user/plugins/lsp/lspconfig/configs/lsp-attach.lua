@@ -77,10 +77,10 @@ M.callback = function(event)
     map('n', '<leader>r', vim.lsp.buf.rename, '[r]ename')
 
     -- using telescope or fzf-lua
-    -- map('n', 'gr', vim.lsp.buf.references, '[g] [r]eferences')
-    -- map('n', 'gd', vim.lsp.buf.definition, 'Go to [D]efinition')
-    -- map('n', 'gD', vim.lsp.buf.declaration, 'Go to [D]eclaration')
-    -- map('n', 'gi', vim.lsp.buf.implementation, '[g] [i]mplementation')
+    map('n', 'gr', vim.lsp.buf.references, 'Go to [r]eferences')
+    map('n', 'gd', vim.lsp.buf.definition, 'Go to [d]efinitions')
+    map('n', 'gD', vim.lsp.buf.declaration, 'Go to [D]eclarations')
+    map('n', 'gi', vim.lsp.buf.implementation, 'Go to [i]mplementations')
 
     -- Jump to the type of the word under your cursor.
     --  Useful when you're not sure what type a variable is and you want to see
