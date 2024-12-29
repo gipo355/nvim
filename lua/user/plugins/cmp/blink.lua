@@ -8,7 +8,7 @@ return {
         { 'rafamadriz/friendly-snippets' },
         { 'onsails/lspkind.nvim' },
     },
-    event = 'InsertEnter',
+    event = 'VeryLazy',
     -- use a release tag to download pre-built binaries
     version = '*',
     -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
@@ -47,7 +47,7 @@ return {
         -- default list of enabled providers defined so that you can extend it
         -- elsewhere in your config, without redefining it, via `opts_extend`
         sources = {
-            default = { 'lsp', 'path', 'snippets', 'buffer', 'cmdline' },
+            default = { 'lsp', 'path', 'snippets', 'buffer' },
             -- optionally disable cmdline completions
             -- cmdline = {},
             cmdline = function()

@@ -454,7 +454,7 @@ return {
                 end, set_desc('[S]earch [F]iles GIT'))
 
                 vim.keymap.set(
-                    {'n', 'v'},
+                    { 'n', 'v' },
                     '<leader>sw',
                     builtin.grep_string,
                     set_desc('[S]earch current [W]ord')
@@ -536,6 +536,48 @@ return {
                     end,
                     set_desc('[S]earch [f] grep CWD')
                 )
+
+                vim.keymap.set(
+                    'n',
+                    '<leader>lr',
+                    '<cmd>Telescope lsp_references<cr>',
+                    set_desc('[T]elescope [L]SP [F]ind References')
+                )
+
+                vim.keymap.set(
+                    'n',
+                    '<leader>li',
+                    '<cmd>Telescope lsp_implementations<cr>',
+                    set_desc('[T]elescope [L]SP [F]ind Implementations')
+                )
+
+                vim.keymap.set(
+                    'n',
+                    '<leader>ld',
+                    '<cmd>Telescope lsp_definitions<cr>',
+                    set_desc('[T]elescope [L]SP [D]efinitions')
+                )
+
+                vim.keymap.set(
+                    'n',
+                    '<leader>lW',
+                    '<cmd>Telescope lsp_workspace_symbols<cr>',
+                    set_desc('[T]elescope [W]orkspace [S]ymbols')
+                )
+
+                vim.keymap.set(
+                    'n',
+                    '<leader>lw',
+                    '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>',
+                    set_desc('[T]elescope dynamic [W]orkspace [S]ymbols')
+                )
+
+                vim.keymap.set(
+                    'n',
+                    '<leader>sl',
+                    builtin.resume,
+                    set_desc('[S]earch [L]ast')
+                )
             end
 
             -- ## OTHERS
@@ -611,12 +653,6 @@ return {
             )
             vim.keymap.set(
                 'n',
-                '<leader>sl',
-                builtin.resume,
-                set_desc('[S]earch [L]ast')
-            )
-            vim.keymap.set(
-                'n',
                 '<leader>hh',
                 builtin.man_pages,
                 set_desc('[S]earch [M]an pages')
@@ -636,41 +672,6 @@ return {
             )
 
             ------
-
-            vim.keymap.set(
-                'n',
-                '<leader>lr',
-                '<cmd>Telescope lsp_references<cr>',
-                set_desc('[T]elescope [L]SP [F]ind References')
-            )
-
-            vim.keymap.set(
-                'n',
-                '<leader>li',
-                '<cmd>Telescope lsp_implementations<cr>',
-                set_desc('[T]elescope [L]SP [F]ind Implementations')
-            )
-
-            vim.keymap.set(
-                'n',
-                '<leader>ld',
-                '<cmd>Telescope lsp_definitions<cr>',
-                set_desc('[T]elescope [L]SP [D]efinitions')
-            )
-
-            vim.keymap.set(
-                'n',
-                '<leader>lW',
-                '<cmd>Telescope lsp_workspace_symbols<cr>',
-                set_desc('[T]elescope [W]orkspace [S]ymbols')
-            )
-
-            vim.keymap.set(
-                'n',
-                '<leader>lw',
-                '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>',
-                set_desc('[T]elescope dynamic [W]orkspace [S]ymbols')
-            )
 
             vim.keymap.set(
                 'n',

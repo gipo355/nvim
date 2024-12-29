@@ -141,9 +141,9 @@ M.fzflua = {
             )
 
             -- old files
-            vim.keymap.set('n', '<leader>sr', function()
-                require('fzf-lua').oldfiles()
-            end, set_desc('fzf oldfiles'))
+            -- vim.keymap.set('n', '<leader>sr', function()
+            --     require('fzf-lua').oldfiles()
+            -- end, set_desc('fzf oldfiles'))
             vim.keymap.set('n', '<c-j>', function()
                 require('fzf-lua').oldfiles({
                     cwd = vim.fn.getcwd(),
@@ -193,7 +193,13 @@ M.fzflua = {
             -- ## LSP
             vim.keymap.set(
                 'n',
-                '<leader>lf',
+                '<leader>lr',
+                '<CMD>FzfLua lsp_references<CR>',
+                set_desc('Fzf Lsp references')
+            )
+            vim.keymap.set(
+                'n',
+                'gr',
                 '<CMD>FzfLua lsp_references<CR>',
                 set_desc('Fzf Lsp references')
             )
@@ -205,15 +211,45 @@ M.fzflua = {
             )
             vim.keymap.set(
                 'n',
+                'gd',
+                '<CMD>FzfLua lsp_definitions<CR>',
+                set_desc('Fzf Lsp definitions')
+            )
+            vim.keymap.set(
+                'n',
                 '<leader>lD',
                 '<CMD>FzfLua lsp_declarations<CR>',
                 set_desc('Fzf Lsp declarations')
             )
             vim.keymap.set(
                 'n',
+                'gD',
+                '<CMD>FzfLua lsp_declarations<CR>',
+                set_desc('Fzf Lsp declarations')
+            )
+            vim.keymap.set(
+                'n',
+                '<leader>li',
+                '<CMD>FzfLua lsp_implementations<CR>',
+                set_desc('Fzf Lsp implementations')
+            )
+            vim.keymap.set(
+                'n',
+                'gi',
+                '<CMD>FzfLua lsp_implementations<CR>',
+                set_desc('Fzf Lsp implementations')
+            )
+            vim.keymap.set(
+                'n',
                 '<leader>ls',
                 '<CMD>FzfLua lsp_document_symbols<CR>',
                 set_desc('Fzf Lsp document symbols')
+            )
+            vim.keymap.set(
+                'n',
+                '<leader>lw',
+                '<CMD>FzfLua lsp_live_workspace_symbols<CR>',
+                set_desc('Fzf Lsp workspace symbols')
             )
             vim.keymap.set(
                 'n',
@@ -229,7 +265,7 @@ M.fzflua = {
 
             vim.keymap.set(
                 'n',
-                '<leader>lr',
+                '<leader>sl',
                 '<CMD>FzfLua resume<CR>',
                 set_desc('Fzf resume')
             )

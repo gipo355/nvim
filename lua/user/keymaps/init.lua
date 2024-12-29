@@ -270,13 +270,6 @@ vim.keymap.set(
     set_desc('Show diagnostic [L]ist')
 )
 
-vim.keymap.set(
-    'n',
-    'gd',
-    '<cmd>lua vim.lsp.buf.definition()<cr>',
-    set_desc('Go to [D]efinition')
-)
-
 -- #### chris keymaps (lvim)
 
 -- Resize with arrows

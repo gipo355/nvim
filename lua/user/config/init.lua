@@ -355,6 +355,7 @@ _G.user.ufo = {
 }
 
 --------------------------------
+---@type "blink" | "cmp"
 _G.user.completion = 'blink' -- blink, cmp
 --[[
 CMP heavy sources
@@ -632,7 +633,7 @@ _G.user.additional_plugins = {
     speedtyper = false,
     statuscol = true, -- statuscolumn and gutter
     suda = false,
-    glance = true, -- lsp references preview
+    glance = false, -- lsp references preview
     telescope_frecency = false, -- frecency telescope
     smart_open = true, -- smart open frecency telescope
     sql_dadbod_plugin = false,

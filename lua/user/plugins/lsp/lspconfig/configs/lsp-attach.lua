@@ -76,22 +76,11 @@ M.callback = function(event)
 
     map('n', '<leader>r', vim.lsp.buf.rename, '[r]ename')
 
-    -- Find references for the word under your cursor.
-    -- map(
-    --     'gr',
-    --     require('telescope.builtin').lsp_references,
-    --     '[G]oto [R]eferences'
-    -- )
-    map('n', 'gr', vim.lsp.buf.references, '[g] [r]eferences')
-
-    -- Jump to the implementation of the word under your cursor.
-    --  Useful when your language has ways of declaring types without an actual implementation.
-    -- map(
-    --     'gI',
-    --     require('telescope.builtin').lsp_implementations,
-    --     '[G]oto [I]mplementation'
-    -- )
-    map('n', 'gi', vim.lsp.buf.implementation, '[g] [i]mplementation')
+    -- using telescope or fzf-lua
+    -- map('n', 'gr', vim.lsp.buf.references, '[g] [r]eferences')
+    -- map('n', 'gd', vim.lsp.buf.definition, 'Go to [D]efinition')
+    -- map('n', 'gD', vim.lsp.buf.declaration, 'Go to [D]eclaration')
+    -- map('n', 'gi', vim.lsp.buf.implementation, '[g] [i]mplementation')
 
     -- Jump to the type of the word under your cursor.
     --  Useful when you're not sure what type a variable is and you want to see
