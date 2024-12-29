@@ -79,20 +79,14 @@ return {
         -- depencencies = { { 'junegunn/gv.vim' } },
         config = function()
             vim.keymap.set(
-                'v',
-                '<leader>gco',
+                { 'n', 'v' },
+                '<leader>gcO',
                 '<cmd>GV<cr>',
                 set_desc('Browse git commits')
             )
             vim.keymap.set(
                 'n',
-                '<leader>gco',
-                '<cmd>GV<cr>',
-                set_desc('Browse git commits')
-            )
-            vim.keymap.set(
-                'n',
-                '<leader>gcf',
+                '<leader>gcF',
                 '<cmd>GV!<cr>',
                 set_desc('Browse commits current file')
             )

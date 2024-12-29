@@ -186,9 +186,25 @@ M.fzflua = {
             -- fzf.marks()
 
             -- fzf.git_commits()
-            vim.keymap.set('n', '<leader>gcs', function()
+            vim.keymap.set('n', '<leader>gcc', function()
                 require('fzf-lua').git_commits()
             end, set_desc('fzf git commits'))
+
+            vim.keymap.set('n', '<leader>gcs', function()
+                require('fzf-lua').git_bcommits()
+            end, set_desc('fzf git commits file'))
+
+            vim.keymap.set('n', '<leader>gt', function()
+                require('fzf-lua').git_tags()
+            end, set_desc('fzf git tags'))
+
+            vim.keymap.set('n', '<leader>go', function()
+                require('fzf-lua').git_status()
+            end, set_desc('fzf git status'))
+
+            vim.keymap.set('n', '<leader>gb', function()
+                require('fzf-lua').git_branches()
+            end, set_desc('fzf git branches'))
 
             -- ## LSP
             vim.keymap.set(

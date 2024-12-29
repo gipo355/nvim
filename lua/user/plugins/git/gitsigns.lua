@@ -157,37 +157,6 @@ return {
                 set_desc('Undo Stage Hunk')
             )
 
-            vim.keymap.set(
-                'n',
-                '<leader>go',
-                '<cmd>Telescope git_status<cr>',
-                set_desc('Git Status')
-            )
-
-            vim.keymap.set(
-                'n',
-                '<leader>gb',
-                '<cmd>Telescope git_branches<cr>',
-                set_desc('Git Branches checkout')
-            )
-
-            -- TODO: add keybindings opts to everything like this
-            vim.keymap.set(
-                'n',
-                '<leader>gcc',
-                '<cmd>Telescope git_commits<cr>',
-                set_desc('Checkout commit')
-            )
-            -- C = {
-            --   "<cmd>Telescope git_bcommits<cr>",
-            --   "Checkout commit(for current file)",
-            -- },
-            vim.keymap.set(
-                'n',
-                '<leader>gcC',
-                '<cmd>Telescope git_bcommits<cr>',
-                set_desc('Checkout commit (for current file)')
-            )
             -- d = {
             --   "<cmd>Gitsigns diffthis HEAD<cr>",
             --   "Git Diff",
