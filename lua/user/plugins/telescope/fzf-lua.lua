@@ -66,11 +66,13 @@ M.fzflua = {
                     ['ctrl-e'] = fzf.actions.grep_lgrep, -- check manual for fzf-lua.txt, grep ctrl-g
                 },
             },
-            -- files = {
-            --     path_shorten = 3,
-            --     --     actions = {
-            --     --     },
-            -- },
+            files = {
+                path_shorten = 3,
+                --     actions = {
+                --
+                --     },
+                formatter = 'path.filename_first',
+            },
             diagnostics = {
                 cwd_only = true,
             },
