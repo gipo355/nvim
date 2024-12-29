@@ -155,14 +155,14 @@ o.guicursor = ''
 --[[ if a file is being edited by another program
  (or was written to file while editing with another program),
  it is not allowed to be edited = false for this ]]
-o.writebackup = false -- true = "Make backup before overwriting the current buffer
+o.writebackup = true -- true = "Make backup before overwriting the current buffer
 
-o.backup = false -- true = "Make a backup before overwriting a file
+o.backup = true -- true = "Make a backup before overwriting a file
 -- TODO: set backupdir or it clutters current folder, change from cache to state
 o.backupdir = vim.fn.stdpath('cache') .. '/backup' -- ~/.local/state/nvim/backup
 
 -- "Overwrite the original backup file
-o.backupcopy = 'no'
+o.backupcopy = 'auto'
 
 --  ## UNDO
 --  not needed, by default saved in app data folder under
