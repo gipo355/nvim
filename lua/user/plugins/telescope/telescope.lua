@@ -636,6 +636,14 @@ return {
                     '<cmd>Telescope git_commits cwd_only=true<cr>',
                     set_desc('Git [C]ommits')
                 )
+
+                -- ## open code actions
+                vim.keymap.set(
+                    { 'n', 'v' },
+                    '<C-c>',
+                    ':lua vim.lsp.buf.code_action()<cr>',
+                    set_desc('lsp code actions')
+                )
             end
 
             -- ## OTHERS

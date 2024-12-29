@@ -231,14 +231,6 @@ vim.keymap.set(
 --     set_desc('Refresh code lens')
 -- )
 
--- ## open code actions
-vim.keymap.set(
-    { 'n', 'v' },
-    '<C-c>',
-    ':lua vim.lsp.buf.code_action()<cr>',
-    set_desc('lsp code actions')
-)
-
 -- keymap("n", "<leader>vi", "<cmd>lua vim.lsp.inlay_hint()<cr>", { noremap = true, silent = true, desc = 'hints' })
 
 -- ##### toggle diagnostics  virtual text wit ctrl-v #####

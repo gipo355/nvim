@@ -227,6 +227,11 @@ M.fzflua = {
                 '<CMD>FzfLua lsp_definitions<CR>',
                 set_desc('Fzf Lsp definitions')
             )
+
+            vim.keymap.set('n', '<leader>lf', function()
+                require('fzf-lua').lsp_finder()
+            end, set_desc('fzf lsp finder'))
+
             vim.keymap.set(
                 'n',
                 'gd',
@@ -320,6 +325,14 @@ M.fzflua = {
             --     '<CMD>FzfLua lsp_finder<CR>',
             --     set_desc('Fzf Lsp finder')
             -- )
+
+            -- ## open code actions
+            vim.keymap.set({ 'n', 'v' }, '<C-c>', function()
+                require('fzf-lua').lsp_code_actions({
+                    -- cwd = vim.fn.getcwd(),
+                    -- previewer = false,
+                })
+            end, set_desc('fzf lsp code actions'))
         end
     end,
 }

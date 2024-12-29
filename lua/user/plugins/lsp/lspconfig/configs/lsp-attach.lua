@@ -213,13 +213,22 @@ M.callback = function(event)
     -- end
 
     -- override to map and provide refactoring functions
-    vim.keymap.set(
-        { 'n', 'v' },
-        '<C-c>',
-        -- ':Lspsaga code_action<cr>',
-        vim.lsp.buf.code_action,
-        { buffer = event.buf, desc = 'lsp code action' }
-    )
+    if _G.user.pickers.fzf_lua.enable then
+        vim.keymap.set({ 'n', 'v' }, '<C-c>', function()
+            require('fzf-lua').lsp_code_actions({
+                -- cwd = vim.fn.getcwd(),
+                -- previewer = false,
+            })
+        end, { buffer = event.buf, desc = 'fzf lsp code action' })
+    else
+        vim.keymap.set(
+            { 'n', 'v' },
+            '<C-c>',
+            -- ':Lspsaga code_action<cr>',
+            vim.lsp.buf.code_action,
+            { buffer = event.buf, desc = 'lsp code action' }
+        )
+    end
 end
 
 return M
