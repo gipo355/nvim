@@ -497,7 +497,7 @@ return {
                 vim.keymap.set(
                     'n',
                     -- '<leader>k',
-                    '<leader>F',
+                    '<leader>K',
                     -- builtin.live_grep,
                     -- '<cmd>Telescope live_grep cwd_only=true sort_lastused=true hidden=true<cr>',
                     function()
@@ -515,7 +515,7 @@ return {
                             },
                         })
                     end,
-                    set_desc('[F]uzzy grep CWD')
+                    set_desc('Telescope grep CWD')
                 )
 
                 -- normal grep cwd
@@ -644,33 +644,35 @@ return {
                     ':lua vim.lsp.buf.code_action()<cr>',
                     set_desc('lsp code actions')
                 )
-            end
+
+                vim.keymap.set(
+                    'n',
+                    '<leader>ht',
+                    builtin.help_tags,
+                    set_desc('[S]earch Help [T]ags')
+                )
+
+                vim.keymap.set(
+                    'n',
+                    '<leader>sK',
+                    builtin.keymaps,
+                    set_desc('[S]earch [K]eymaps')
+                )
+
+                vim.keymap.set(
+                    'n',
+                    '<leader>la',
+                    '<cmd>Telescope treesitter<cr>',
+                    set_desc('Telescope treesitter Symbols')
+                )
+            end -- not fzf-lua
 
             -- ## OTHERS
-            vim.keymap.set(
-                'n',
-                '<leader>st',
-                '<cmd>Telescope treesitter<cr>',
-                set_desc('[S]earch [t]reesitter')
-            )
             vim.keymap.set(
                 'n',
                 '<leader>sc',
                 '<cmd>Telescope colorscheme<cr>',
                 set_desc('[S]earch [C]olorscheme')
-            )
-
-            vim.keymap.set(
-                'n',
-                '<leader>ht',
-                builtin.help_tags,
-                set_desc('[S]earch Help [T]ags')
-            )
-            vim.keymap.set(
-                'n',
-                '<leader>sK',
-                builtin.keymaps,
-                set_desc('[S]earch [K]eymaps')
             )
 
             vim.keymap.set(
@@ -731,13 +733,6 @@ return {
             )
 
             ------
-
-            vim.keymap.set(
-                'n',
-                '<leader>la',
-                '<cmd>Telescope treesitter<cr>',
-                set_desc('Telescope treesitter Symbols')
-            )
 
             -- Also possible to pass additional configuration options.
             --  See `:help telescope.builtin.live_grep()` for information about particular keys

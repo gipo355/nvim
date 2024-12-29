@@ -640,6 +640,7 @@ _G.user.additional_plugins = {
     kotlin_udalov_plugin = false,
     better_ts_errors = true,
     multi_cursor = false,
+    portal = false, -- use fzf-lua jumps for this instead
     snacks = false, -- statuscolumn not disabled, broken BUG
     gv = false, -- git view junegunn
     flog = false, -- vim-flog rbong

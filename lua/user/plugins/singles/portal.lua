@@ -1,5 +1,8 @@
 return {
     'cbochs/portal.nvim',
+    -- use fzf-lua jumps for this instead
+    enabled = _G.user.additional_plugins.portal
+        and not _G.user.pickers.fzf_lua.enable,
     keys = {
         {
             '<leader>o',

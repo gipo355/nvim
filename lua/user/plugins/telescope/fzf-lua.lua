@@ -159,12 +159,35 @@ M.fzflua = {
             end, set_desc('fzf cwd'))
 
             -- fzf.grep()
-            vim.keymap.set('n', '<leader>F', function()
+            vim.keymap.set('n', '<leader>K', function()
                 require('fzf-lua').live_grep({
                     cwd = vim.fn.getcwd(),
                     -- previewer = 'bat',
                 })
             end, set_desc('fzf grep all'))
+
+            vim.keymap.set('n', '<leader>F', function()
+                require('fzf-lua').complete_file({
+                    cwd = vim.fn.getcwd(),
+                    -- previewer = 'bat',
+                })
+            end, set_desc('fzf complete file'))
+
+            vim.keymap.set('n', '<leader>L', function()
+                require('fzf-lua').complete_line({
+                    cwd = vim.fn.getcwd(),
+                    -- previewer = 'bat',
+                })
+            end, set_desc('fzf complete line'))
+
+            -- alternative to portal.nvim
+            vim.keymap.set('n', '<leader>i', function()
+                require('fzf-lua').jumps()
+            end, set_desc('fzf jumps'))
+
+            vim.keymap.set('n', '<leader>i', function()
+                require('fzf-lua').helptags()
+            end, set_desc('fzf jumps'))
 
             vim.keymap.set('n', '<leader>k', function()
                 require('fzf-lua').live_grep_glob({
@@ -178,6 +201,18 @@ M.fzflua = {
             vim.keymap.set('n', '<leader>sw', function()
                 require('fzf-lua').grep_cword()
             end, set_desc('fzf grep cword'))
+
+            vim.keymap.set('n', '<leader>sK', function()
+                require('fzf-lua').keymaps()
+            end, set_desc('fzf keymaps'))
+
+            vim.keymap.set('n', '<leader>sh', function()
+                require('fzf-lua').command_history()
+            end, set_desc('fzf command history'))
+
+            vim.keymap.set('n', '<leader>sh', function()
+                require('fzf-lua').treesitter()
+            end, set_desc('fzf treesitter'))
 
             -- fzf.quickfix()
 
