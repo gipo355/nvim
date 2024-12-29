@@ -127,7 +127,7 @@ _G.user.mini.animate_scroll = {
 }
 
 _G.user.neoscroll = {
-    enable = true,
+    enable = false,
 }
 
 --------------------------------

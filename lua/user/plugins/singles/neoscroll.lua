@@ -6,7 +6,7 @@ return {
         require('neoscroll').setup({
             mappings = { -- Keys to be mapped to their corresponding default scrolling animation
                 '<C-u>',
-                -- '<C-d>',
+                '<C-d>',
                 -- '<C-b>',
                 -- '<C-f>',
                 '<C-y>',
