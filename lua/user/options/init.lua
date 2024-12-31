@@ -120,7 +120,7 @@ vim.opt.incsearch = false -- possible conflicts with flash nvim? incremental sea
 -- color max width columt
 
 -- Show which line your cursor is on (kanagawa overrides this too, grep for 'cursorline')
-o.cursorline = false
+o.cursorline = true
 
 -- columns
 -- vim.opt.colorcolumn = '81' -- paint a column at 81 characters

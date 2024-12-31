@@ -246,7 +246,7 @@ _G.user.lsp = {
         },
     },
     -- enable format on save
-    format_on_save = true,
+    format_on_save = false,
     ---@type "typescript-tools" | "deno" | "coc" | "vtsls" -- WARN: coc is broken
     tsserver = 'vtsls',
     -- this is a list of lsp formatters passed to a filter function

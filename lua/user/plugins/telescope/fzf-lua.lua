@@ -210,7 +210,7 @@ M.fzflua = {
                 require('fzf-lua').command_history()
             end, set_desc('fzf command history'))
 
-            vim.keymap.set('n', '<leader>sh', function()
+            vim.keymap.set('n', '<leader>la', function()
                 require('fzf-lua').treesitter()
             end, set_desc('fzf treesitter'))
 
@@ -295,11 +295,6 @@ M.fzflua = {
                 '<CMD>FzfLua lsp_typedefs<CR>',
                 set_desc('Fzf Lsp typedefs')
             )
-
-            -- missing in telescope
-            vim.keymap.set({ 'n', 'v' }, '<leader>la', function()
-                require('fzf-lua').lsp_code_actions()
-            end, set_desc('fzf grep code actions'))
 
             vim.keymap.set(
                 'n',
