@@ -140,7 +140,7 @@ return {
                 },
                 renderer = {
                     add_trailing = false,
-                    group_empty = true, --   good for java
+                    group_empty = false, --   good for java
                     highlight_git = true,
                     full_name = false,
                     highlight_opened_files = 'all',
