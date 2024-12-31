@@ -66,13 +66,13 @@ M.fzflua = {
                     ['ctrl-e'] = fzf.actions.grep_lgrep, -- check manual for fzf-lua.txt, grep ctrl-g
                 },
             },
-            files = {
-                path_shorten = 5,
-                --     actions = {
-                --
-                --     },
-                formatter = 'path.filename_first',
-            },
+            -- files = {
+            --     -- path_shorten = 5,
+            --     --     actions = {
+            --     --
+            --     --     },
+            --     formatter = 'path.filename_first',
+            -- },
             diagnostics = {
                 cwd_only = true,
             },
@@ -155,7 +155,10 @@ M.fzflua = {
 
             -- fzf.files({ cwd = vim.fn.expand('%:p:h') })
             vim.keymap.set('n', '<leader>f', function()
-                require('fzf-lua').files({ cwd = vim.fn.getcwd() })
+                require('fzf-lua').files({
+                    previewer = false,
+                    cwd = vim.fn.getcwd(),
+                })
             end, set_desc('fzf cwd'))
 
             -- fzf.grep()
