@@ -38,7 +38,7 @@ return {
             -- Sets the fallback highlight groups to nvim-cmp's highlight groups
             -- Useful for when your theme doesn't support blink.cmp
             -- will be removed in a future release
-            use_nvim_cmp_as_default = true,
+            -- use_nvim_cmp_as_default = true,
             -- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
             -- Adjusts spacing to ensure icons are aligned
             nerd_font_variant = 'mono',
@@ -103,7 +103,7 @@ return {
                 auto_show = true,
                 auto_show_delay_ms = 0,
                 treesitter_highlighting = true,
-                window = { border = 'rounded' },
+                -- window = { border = 'rounded' },
             },
 
             ghost_text = {
@@ -111,7 +111,7 @@ return {
             },
             menu = {
                 -- can use telescope https://www.reddit.com/r/neovim/comments/1hlnv7x/comment/m3q5din/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
-                border = 'rounded',
+                -- border = 'rounded',
                 draw = {
                     -- columns = {
                     --     { 'label', 'label_description', gap = 1 },
@@ -151,7 +151,7 @@ return {
         -- experimental signature help support
         signature = {
             enabled = _G.user.lsp.function_signature.source == 'blink',
-            window = { border = 'rounded' },
+            -- window = { border = 'rounded' },
         },
     },
     -- allows extending the providers array elsewhere in your config
