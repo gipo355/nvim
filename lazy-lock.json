@@ -36,7 +36,6 @@
   "glance.nvim": { "branch": "master", "commit": "cf91734f28fcd35bd60a5a87b6d768faafb73268" },
   "glow.nvim": { "branch": "main", "commit": "238070a686c1da3bccccf1079700eb4b5e19aea4" },
   "go.nvim": { "branch": "master", "commit": "c6d5ca26377d01c4de1f7bff1cd62c8b43baa6bc" },
-  "grapple.nvim": { "branch": "main", "commit": "b41ddfc1c39f87f3d1799b99c2f0f1daa524c5f7" },
   "grug-far.nvim": { "branch": "main", "commit": "c88435b825a35bfa468b47159709b3221976ecd1" },
   "gruvbox-baby": { "branch": "main", "commit": "bd52e62d8134647090108189e69c8b3cd18bdbbf" },
   "gruvbox-material": { "branch": "master", "commit": "1d0222181879f98fe782f6ed61f1ad922393b005" },
