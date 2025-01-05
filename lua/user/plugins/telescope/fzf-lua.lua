@@ -6,7 +6,7 @@ M.fzflua = {
     event = 'VimEnter',
     -- optional for icon support
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-
+    enabled = _G.user.pickers.fzf_lua.enable,
     config = function()
         -- local img_previewer = vim.fn.executable("ueberzug") == 1 and { "ueberzug" } or { "viu", "-b" }
         -- local img_previewer = vim.fn.executable("chafa") == 1 and { "chafa" } or { "viu", "-b" }
@@ -248,7 +248,7 @@ M.fzflua = {
 
             vim.keymap.set('n', '<leader>lc', function()
                 require('fzf-lua').changes({})
-            end, set_desc('Fzf Lsp references'))
+            end, set_desc('Fzf Lsp changes'))
 
             -- ## LSP
             vim.keymap.set(
@@ -349,9 +349,10 @@ M.fzflua = {
         end
     end,
 }
+return M.fzflua
 -- faster telescope
-if _G.user.pickers.fzf_lua.enable then
-    return M.fzflua
-else
-    return {}
-end
+-- if _G.user.pickers.fzf_lua.enable then
+--     return M.fzflua
+-- else
+--     return {}
+-- end

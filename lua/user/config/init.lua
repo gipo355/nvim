@@ -343,7 +343,7 @@ _G.user.gitsigns = {
 _G.user.pickers = {
     -- this disables telescope for most used keymaps and uses fzf-lua instead
     fzf_lua = {
-        enable = true,
+        enable = false,
     },
 }
 

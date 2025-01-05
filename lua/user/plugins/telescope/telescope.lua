@@ -602,17 +602,13 @@ return {
                 -- TODO: add keybindings opts to everything like this
                 vim.keymap.set(
                     'n',
-                    '<leader>gcc',
+                    '<leader>gc',
                     '<cmd>Telescope git_commits<cr>',
                     set_desc('Checkout commit')
                 )
-                -- C = {
-                --   "<cmd>Telescope git_bcommits<cr>",
-                --   "Checkout commit(for current file)",
-                -- },
                 vim.keymap.set(
                     'n',
-                    '<leader>gcf',
+                    '<leader>gf',
                     '<cmd>Telescope git_bcommits<cr>',
                     set_desc('Checkout commit (for current file)')
                 )
@@ -627,7 +623,7 @@ return {
                     'n',
                     '<leader>gb',
                     '<cmd>Telescope git_branches<cr>',
-                    set_desc('Git Branches checkout')
+                    set_desc('Git Branches')
                 )
 
                 vim.keymap.set(
@@ -657,6 +653,20 @@ return {
                     '<leader>sK',
                     builtin.keymaps,
                     set_desc('[S]earch [K]eymaps')
+                )
+
+                vim.keymap.set(
+                    'n',
+                    '<leader>i',
+                    builtin.jumplist,
+                    set_desc('[S]earch [J]umplist')
+                )
+
+                vim.keymap.set(
+                    'n',
+                    '<leader>sh',
+                    builtin.command_history,
+                    set_desc('[S]earch cmd [H]istory')
                 )
 
                 vim.keymap.set(
@@ -715,10 +725,11 @@ return {
 
             vim.keymap.set(
                 'n',
-                '<leader>sd',
+                '<leader>le',
                 builtin.diagnostics,
                 set_desc('[S]earch [D]iagnostics')
             )
+
             vim.keymap.set(
                 'n',
                 '<leader>hh',
