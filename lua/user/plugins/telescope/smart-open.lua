@@ -12,9 +12,9 @@ return {
             return
         end
         telescope.load_extension('smart_open')
-        vim.keymap.set('n', '<leader>sk', function()
-            require('telescope').extensions.smart_open.smart_open()
-        end, set_desc('smart open'))
+        -- vim.keymap.set('n', '<leader>sk', function()
+        --     require('telescope').extensions.smart_open.smart_open()
+        -- end, set_desc('smart open'))
         vim.keymap.set('n', 'so', function()
             require('telescope').extensions.smart_open.smart_open()
         end, set_desc('smart open'))
