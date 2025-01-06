@@ -88,6 +88,9 @@ _G.user.ai = {
     ollama = {
         enable = false,
     },
+    codecompanion = {
+        enable = true,
+    },
 }
 
 -- NEOTEST
