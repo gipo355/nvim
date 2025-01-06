@@ -171,7 +171,7 @@ return {
         )
         vim.keymap.set(
             'n',
-            '<leader>dT',
+            '<leader>dB',
             dap.clear_breakpoints,
             { desc = '[d]ap clear all breakpoints' }
         )
