@@ -105,6 +105,17 @@ return {
                         sourceMaps = true,
                     },
                     {
+                        type = 'pwa-chrome',
+                        request = 'launch',
+                        name = 'Launch Chrome against localhost vite project HTTPS',
+                        url = 'https://localhost:4200',
+                        webRoot = '${workspaceFolder}/src',
+                        runtimeArgs = {
+                            '--remote-debugging-port=9222',
+                        },
+                        sourceMaps = true,
+                    },
+                    {
                         type = 'pwa-node',
                         request = 'launch',
                         name = 'Launch file',
