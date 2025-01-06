@@ -163,6 +163,11 @@ return {
             telescope_dap.variables,
             { desc = '[d]ap [v]ariables' }
         )
+
+        vim.keymap.set('n', '<leader>da', function()
+            require('dapui').float_element()
+        end, { desc = '[d]ap all' })
+
         vim.keymap.set(
             'n',
             '<leader>dF',
