@@ -1,5 +1,6 @@
 -- can add the same plugin twice with different configurations
 -- they get merged together
+-- https://www.reddit.com/r/neovim/comments/18ukebs/lazyvim_dap_and_launching_chrome/
 return {
     'mfussenegger/nvim-dap',
     optional = true,
@@ -32,14 +33,42 @@ return {
                 },
             }
         end
-        for _, language in ipairs({
+        if not dap.adapters['pwa-chrome'] then
+            dap.adapters['pwa-chrome'] = {
+                type = 'server',
+                host = 'localhost',
+                port = '${port}',
+                executable = {
+                    command = 'node',
+                    args = {
+                        require('mason-registry')
+                            .get_package('js-debug-adapter')
+                            :get_install_path()
+                            .. '/js-debug/src/dapDebugServer.js',
+                        '${port}',
+                    },
+                },
+            }
+        end
+        for _, lang in ipairs({
             'typescript',
             'javascript',
             'typescriptreact',
             'javascriptreact',
         }) do
-            if not dap.configurations[language] then
-                dap.configurations[language] = {
+            if not dap.configurations[lang] then
+                dap.configurations[lang] = {
+                    {
+                        type = 'pwa-chrome',
+                        request = 'launch',
+                        name = 'Launch Chrome 4200',
+                        url = 'http://localhost:4200',
+                        sourceMaps = true,
+                        webRoot = '${workspaceFolder}/src',
+                        runtimeArgs = {
+                            '--remote-debugging-port=9222',
+                        },
+                    },
                     {
                         type = 'pwa-node',
                         request = 'launch',

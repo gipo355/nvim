@@ -71,6 +71,21 @@ return {
         config = function()
             local _, dapjs = pcall(require, 'dap-vscode-js')
             local dap = require('dap')
+
+            dap.adapters['pwa-node'] = {
+                type = 'server',
+                host = 'localhost',
+                port = '${port}',
+                executable = {
+                    command = 'node',
+                    -- 💀 Make sure to update this path to point to your installation
+                    args = {
+                        '/path/to/js-debug/src/dapDebugServer.js',
+                        '${port}',
+                    },
+                },
+            }
+
             dapjs.setup({
                 adapters = {
                     'pwa-node',
