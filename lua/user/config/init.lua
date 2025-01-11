@@ -401,7 +401,7 @@ _G.user.mini.colors = {
 }
 
 -- transparent background - hack to allow transparency set after all vars are set
-_G.user.transparent_background = set_transparent_bg(false)
+_G.user.transparent_background = set_transparent_bg(true)
 
 _G.user.background = 'dark' -- dark or light
 -- allows to call this later after all vars are set - hack
@@ -413,7 +413,8 @@ _G.user.theme = function()
 
     -- my favorites
 
-    return 'vague'
+    -- return 'vague'
+    return 'gruvbox'
     -- return 'rose-pine'
     -- return 'monokai-pro'
     -- return 'gruvbox-baby'

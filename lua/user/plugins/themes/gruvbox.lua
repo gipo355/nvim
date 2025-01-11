@@ -2,6 +2,7 @@ return {
     'ellisonleao/gruvbox.nvim',
     lazy = false,
     priority = 1000,
+    enabled = _G.user.theme() == 'gruvbox',
     config = function()
         _G.user.themes.gruvbox = 'gruvbox'
         local ok, gruvbox = pcall(require, 'gruvbox')
@@ -30,7 +31,7 @@ return {
                 folds = true,
             },
             strikethrough = true,
-            contrast = '', -- can be "hard", "soft" or empty string
+            contrast = 'hard', -- can be "hard", "soft" or empty string
             -- palette_overrides = {},
             overrides = {
                 --     -- GruvboxBg0 = { bg = '#1d1d1d' },
@@ -47,15 +48,18 @@ return {
                 --     -- Conditional = { link = "GruvboxRed" },
                 -- Comment = { fg = '#666662' },
                 -- Comment = { bg = '#928374' },
-                Comment = {
-                    fg = '#665c54',
-                    -- bg = '#282828',
-                    -- bg = '#282811',
-                    -- bg = '#343434',
-                    -- bg = '#2b2b2b',
-                    bg = '#2d2d2d',
-                    italic = true,
-                },
+
+                -- change comment
+                -- Comment = {
+                --     fg = '#665c54',
+                --     -- bg = '#282828',
+                --     -- bg = '#282811',
+                --     -- bg = '#343434',
+                --     -- bg = '#2b2b2b',
+                --     bg = '#2d2d2d',
+                --     italic = true,
+                -- },
+
                 LspInlayHint = { fg = '#665c54', bg = '#202020', italic = true },
                 -- CursorColumn = {
                 --     -- fg = '#242424',
