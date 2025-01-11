@@ -120,7 +120,7 @@ _G.user.autosave = {
 
 -- enable sessions autoload with alpha - neovim-session-manager, buggy
 _G.user.session_manager = {
-    enable = false,
+    enable = true,
     enable_autoload = false,
 }
 
@@ -614,7 +614,7 @@ _G.user.additional_plugins = {
     treesitter_playground = false,
     pug = false,
     -- images
-    silicon = false,
+    silicon = true,
     img_clip = false,
     -- http clients
     hurl = false,
