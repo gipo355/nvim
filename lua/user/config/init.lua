@@ -251,7 +251,7 @@ _G.user.lsp = {
     -- enable format on save
     format_on_save = false,
     ---@type "typescript-tools" | "deno" | "coc" | "vtsls" -- WARN: coc is broken
-    tsserver = 'vtsls',
+    tsserver = 'typescript-tools',
     -- this is a list of lsp formatters passed to a filter function
     -- in conform to prevent autoformatting on save from those sources
     skipped_lsp_formatters = {
@@ -359,7 +359,7 @@ _G.user.ufo = {
 
 --------------------------------
 ---@type "blink" | "cmp"
-_G.user.completion = 'blink' -- blink, cmp
+_G.user.completion = 'cmp' -- blink, cmp
 --[[
 CMP heavy sources
 ripgrep and buffer
