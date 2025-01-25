@@ -10,7 +10,7 @@ return {
         require('oil').setup({
             -- vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
             delete_to_trash = true,
-            trash_command = 'trash-put',
+            -- trash_command = 'trash-put',
             default_file_explorer = true,
             skip_confirm_for_simple_edits = false,
             lsp_file_methods = {
