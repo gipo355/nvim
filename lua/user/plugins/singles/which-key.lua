@@ -149,11 +149,6 @@ return {
                         group = 'Ai [C]opilot Chat',
                         remap = false,
                     },
-                    {
-                        '<leader>mc',
-                        group = 'Ai [C]ode Companion',
-                        remap = false,
-                    },
                     { '<leader>mc_', hidden = true, remap = false },
                     { '<leader>ml', group = 'Ai [l]lama', remap = false },
                     { '<leader>ml_', hidden = true, remap = false },
@@ -163,6 +158,12 @@ return {
                     { '<leader>r_', hidden = true, remap = false },
                     { '<leader>s', group = '[s]earch', remap = false },
                     { '<leader>s_', hidden = true, remap = false },
+                    {
+                        '<leader>mf',
+                        group = 'Ai [C]ode Companion',
+                        remap = false,
+                    },
+                    { '<leader>mf_', hidden = true, remap = false },
 
                     -- { '<leader>t', group = '[t]ests', remap = false },
                     -- { '<leader>t_', hidden = true, remap = false },
