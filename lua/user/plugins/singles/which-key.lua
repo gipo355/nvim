@@ -149,6 +149,11 @@ return {
                         group = 'Ai [C]opilot Chat',
                         remap = false,
                     },
+                    {
+                        '<leader>mc',
+                        group = 'Ai [C]ode Companion',
+                        remap = false,
+                    },
                     { '<leader>mc_', hidden = true, remap = false },
                     { '<leader>ml', group = 'Ai [l]lama', remap = false },
                     { '<leader>ml_', hidden = true, remap = false },
