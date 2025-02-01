@@ -157,7 +157,7 @@ return {
             -- provider = 'openai',
             vendors = vendors,
             ---@type "openai" | "claude" | "azure"  | "copilot" | "perplexity" | "groq" | "deepseek"
-            provider = 'deepseek',
+            provider = 'copilot',
             auto_suggestions_provider = 'deepseek',
             mappings = {
                 --- @class AvanteConflictMappings
@@ -193,6 +193,7 @@ return {
                 auto_set_keymaps = true,
                 auto_apply_diff_after_generation = true,
                 support_paste_from_clipboard = true,
+                minimize_diff = true
             },
             hints = {
                 enabled = true,

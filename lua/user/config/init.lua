@@ -77,7 +77,7 @@ _G.user.ai = {
     -- https://github.com/joshuavial/aider.nvim
     -- WARN: avanta overrides vim.opt.splitkeep and vim.opt.laststatus
     avante = {
-        enable = false,
+        enable = true,
     },
     aider = {
         enable = false,
@@ -417,9 +417,9 @@ _G.user.theme = function()
     -- return 'gruvbox'
     -- return 'rose-pine'
     -- return 'monokai-pro'
-    -- return 'gruvbox-baby'
+    return 'gruvbox-baby'
     -- return 'oldworld'
-    return 'darkbox'
+    -- return 'darkbox'
     -- return 'kanagawa'
     -- return 'gruvbox-material'
     -- return 'ares'
