@@ -11,9 +11,9 @@ return {
     config = function()
         require('codecompanion').setup {}
 
-        vim.keymap.set({'n', 'v'}, '<leader>mfl', '<cmd>CodeCompanion<CR>', set_desc('CodeCompanion'))
-        vim.keymap.set({'n', 'v'}, '<leader>mfj', '<cmd>CodeCompanionChat<CR>', set_desc('CodeCompanion Chat'))
-        vim.keymap.set({'n', 'v'}, '<leader>mfk', '<cmd>CodeCompanionActions<CR>', set_desc('CodeCompanion Actions'))
+        vim.keymap.set({'n', 'v'}, '<leader>mfl', ':CodeCompanion<CR>', set_desc('CodeCompanion'))
+        vim.keymap.set({'n', 'v'}, '<leader>mfj', ':CodeCompanionChat<CR>', set_desc('CodeCompanion Chat'))
+        vim.keymap.set({'n', 'v'}, '<leader>mfk', ':CodeCompanionActions<CR>', set_desc('CodeCompanion Actions'))
 
     end
 }
