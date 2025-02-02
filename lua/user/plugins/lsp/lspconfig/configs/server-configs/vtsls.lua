@@ -3,13 +3,13 @@ M.setup = function()
     return {
         -- on_attach = function(client, bufnr) end,
 
-        flags = {
-            -- https://www.reddit.com/r/neovim/comments/1guifug/comment/lxuzjhn/
-            -- https://github.com/gonstoll/dotfiles/blob/master/.config/nvim/lua/plugins/lsp/servers/eslint.lua#L11-L14
-            -- debounce_text_changes = 500
-            allow_incremental_sync = false,
-            debounce_text_changes = 1000,
-        },
+        -- flags = {
+        --     -- https://www.reddit.com/r/neovim/comments/1guifug/comment/lxuzjhn/
+        --     -- https://github.com/gonstoll/dotfiles/blob/master/.config/nvim/lua/plugins/lsp/servers/eslint.lua#L11-L14
+        --     -- debounce_text_changes = 500
+        --     allow_incremental_sync = false,
+        --     debounce_text_changes = 1000,
+        -- },
 
         settings = {
             complete_function_calls = true,
@@ -33,7 +33,7 @@ M.setup = function()
                     parameterNames = { enabled = 'literals' },
                     parameterTypes = { enabled = true },
                     propertyDeclarationTypes = { enabled = true },
-                    variableTypes = { enabled = false },
+                    variableTypes = { enabled = true },
                 },
             },
         },

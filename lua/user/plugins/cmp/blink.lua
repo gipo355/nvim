@@ -7,8 +7,15 @@ return {
     dependencies = {
         { 'rafamadriz/friendly-snippets' },
         { 'onsails/lspkind.nvim' },
+        {
+            'saghen/blink.compat',
+            optional = true, -- make optional so it's only enabled if any extras need it
+            opts = {},
+            version = not vim.g.lazyvim_blink_main and '*',
+        },
     },
-    event = 'VeryLazy',
+    lazy = false,
+    -- event = 'VeryLazy',
     -- use a release tag to download pre-built binaries
     version = '*',
     -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
