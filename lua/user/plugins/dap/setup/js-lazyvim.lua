@@ -73,7 +73,7 @@ return {
                         type = 'pwa-chrome',
                         request = 'attach',
                         name = 'attach Chrome 4200',
-                        -- program = '${file}',
+                        program = '${file}',
                         port = 9222,
                         cwd = vim.fn.getcwd(),
                         sourceMaps = true,
