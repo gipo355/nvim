@@ -70,6 +70,15 @@ return {
                         },
                     },
                     {
+                        type = 'pwa-chrome',
+                        request = 'attach',
+                        name = 'attach Chrome 4200',
+                        port = 9222,
+                        sourceMaps = true,
+                        protocol = 'inspector',
+                        webRoot = '${workspaceFolder}/src',
+                    },
+                    {
                         type = 'pwa-node',
                         request = 'launch',
                         name = 'Launch file',
