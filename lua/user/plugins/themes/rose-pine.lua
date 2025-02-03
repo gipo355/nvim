@@ -13,7 +13,7 @@ return {
     config = function()
         require('rose-pine').setup({
             -- 'auto' | 'main'|'moon'|'dawn'
-            variant = 'auto',
+            variant = 'moon',
             -- 'main'|'moon'|'dawn'
             dark_variant = 'main',
 
