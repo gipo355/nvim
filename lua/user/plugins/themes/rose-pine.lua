@@ -1,9 +1,9 @@
 -- TODO: highlight telescope grep search results, check gruvbox-material
- -- chan_add('saturation', -15,  { filter = 'bg' })
- -- chan_add('saturation', -3,  { filter = 'fg' })
- -- chan_add('lightness', 4,  { filter = 'bg' })
- -- chan_add('lightness', -5,  { filter = 'fg' })
- -- chan_add('temperature', 10,  { filter = 'bg' })
+-- chan_add('saturation', -15,  { filter = 'bg' })
+-- chan_add('saturation', -3,  { filter = 'fg' })
+-- chan_add('lightness', 4,  { filter = 'bg' })
+-- chan_add('lightness', -5,  { filter = 'fg' })
+-- chan_add('temperature', 10,  { filter = 'bg' })
 return {
     'rose-pine/neovim',
     name = 'rose-pine',
@@ -42,15 +42,18 @@ return {
             groups = {
                 comment = 'muted',
                 -- comment = '#171717',
+                -- background = '#000000',
                 -- background = '#171717',
                 -- background_nc = '#171717',
                 -- panel = '#171717',
                 -- panel_nc = '#171717',
             },
             highlight_groups = {
-                FloatBorder = { fg = 'rose' },
+                -- FloatBorder = { fg = 'rose' },
                 -- LspInlayHint = { bg = "_experimental_nc", fg = "muted" },
                 -- Comment = { fg = "#39364a" },
+                Normal = { bg = '#000000' },
+                NormalNC = { bg = '#000000' },
                 Comment = { fg = '#3f3c52' },
                 TelescopeMatching = {
                     -- fg = 'rose'
