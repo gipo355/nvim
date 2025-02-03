@@ -32,7 +32,8 @@ return {
             -- These are the default colors, but they are overideable.
             -- Different highlights which may be non related share some colors, so expirement.
             colors = {
-                bg = '#18191a',
+                -- bg = '#18191a',
+                bg = '#000000',
                 fg = '#cdcdcd',
                 floatBorder = '#878787',
                 line = '#282830',
