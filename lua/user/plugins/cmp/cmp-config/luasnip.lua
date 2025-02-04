@@ -43,6 +43,25 @@ M.setup_luasnip = function()
         histofy = true,
         delete_check_events = 'TextChanged',
     })
+
+    local function uuid()
+        local id, _ = vim.fn.system('uuidgen'):gsub('\n', '')
+        return id
+    end
+
+    local s, sn = luasnip.snippet, luasnip.snippet_node
+    local t, i, d = luasnip.text_node, luasnip.insert_node, luasnip.dynamic_node
+    luasnip.add_snippets('global', {
+        s({
+            trig = 'uuid',
+            name = 'UUID',
+            dscr = 'Generate a unique UUID',
+        }, {
+            d(1, function()
+                return sn(nil, i(1, uuid()))
+            end),
+        }),
+    })
 end
 
 return M
