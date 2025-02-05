@@ -82,6 +82,8 @@ return {
                     silent = true,
                     noremap = true,
 
+                    { '<leader>o', group = 'multi-cursor', remap = false },
+                    { '<leader>o_', hidden = true, remap = false },
                     { '<leader><tab>', group = '[tab]s', remap = false },
                     { '<leader><tab>_', hidden = true, remap = false },
                     {
@@ -182,6 +184,8 @@ return {
                     buffer = nil,
                     silent = true,
                     noremap = true,
+                    { '<leader>o', group = 'multi-cursor', remap = false },
+                    { '<leader>o_', hidden = true, remap = false },
                     { '<leader>g', group = '[g]it', remap = false },
                     { '<leader>gL', group = '[g]it [L]inker', remap = false },
                     { '<leader>gL_', hidden = true, remap = false },

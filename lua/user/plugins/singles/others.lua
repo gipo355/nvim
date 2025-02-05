@@ -159,13 +159,6 @@ return {
         enabled = _G.user.additional_plugins.caddyfile,
     },
 
-    -- multicursor
-    -- this sets m-\ a-\ keybind \\\\\\
-    {
-        'mg979/vim-visual-multi',
-        event = 'BufReadPre',
-    },
-
     {
         'barrett-ruth/live-server.nvim',
         enabled = _G.user.additional_plugins.live_server,
