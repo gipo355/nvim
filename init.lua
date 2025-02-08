@@ -36,30 +36,30 @@ require('user.lazy-bootstrap')
 load only what you want
  (the vscode extension sets the global var vim.g.vscode) ]]
 --
--- if vim.g.vscode then
---     -- [[ VSCODE Neovim extension ]] load only what you want
---     require('user.vscode')
--- else
--- [[ Configure and install plugins ]]
--- TODO: this takes 88% of startup time
-require('user.lazy-plugins')
+if vim.g.vscode then
+    -- [[ VSCODE Neovim extension ]] load only what you want
+    require('user.vscode')
+else
+    -- [[ Configure and install plugins ]]
+    -- TODO: this takes 88% of startup time
+    require('user.lazy-plugins')
 
--- [[ autocommands ]]
-require('user.auto-commands')
+    -- [[ autocommands ]]
+    require('user.auto-commands')
 
---[[ theme settings 
+    --[[ theme settings 
     outside of vscode, after plugins 
     set them on the individual theme setup inside _G global obj
     so as to have intellisense of whats available ]]
 
--- don't change here, change _G in globals.lua under
--- _G.user.background = 'dark' or 'light'
-vim.opt.background = _G.user.background
+    -- don't change here, change _G in globals.lua under
+    -- _G.user.background = 'dark' or 'light'
+    vim.opt.background = _G.user.background
 
--- change in globals.lua under _G.user.theme = _G.user.themes.<theme>
--- Set here: G.user.themes.<theme>
-vim.cmd.colorscheme(_G.user.theme())
--- end
+    -- change in globals.lua under _G.user.theme = _G.user.themes.<theme>
+    -- Set here: G.user.themes.<theme>
+    vim.cmd.colorscheme(_G.user.theme())
+end
 
 if vim.g.neovide then
     require('user.neovide')
