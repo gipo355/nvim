@@ -11,7 +11,7 @@ return {
     config = function()
         require('zen-mode').setup({
             window = {
-                width = 100,
+                width = 140,
             },
             -- plugins = {
             --     tmux = { enabled = true },
