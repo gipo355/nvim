@@ -153,11 +153,11 @@ _G.user.lualine = {
 -- avante overrides this? - may clap with lualine
 -- uses vim.opt.laststatus
 _G.user.statusline = {
-    disable_statusline = false,
+    disable_statusline = true,
 }
 -- disable status line in tmux to recover space when entering nvim
 _G.user.tmux = {
-    disable_tmux_statusline = false,
+    disable_tmux_statusline = true,
 }
 -- show function scope at the top of the window (nvim-treesitter)
 _G.user.treesitter_context = {
