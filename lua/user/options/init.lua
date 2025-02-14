@@ -226,4 +226,7 @@ if _G.user.statusline.disable_statusline then
     vim.opt.laststatus = 0
 end
 -- splitkeep screen -- avante overrides this
-vim.opt.splitkeep = 'screen'
+o.splitkeep = 'screen'
+
+-- better diff view in diffview
+o.diffopt = 'internal,filler,closeoff,indent-heuristic,linematch:60,algorithm:histogram'
