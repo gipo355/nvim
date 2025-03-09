@@ -77,7 +77,7 @@ _G.user.ai = {
     -- https://github.com/joshuavial/aider.nvim
     -- WARN: avanta overrides vim.opt.splitkeep and vim.opt.laststatus
     avante = {
-        enable = true,
+        enable = false,
     },
     aider = {
         enable = false,
