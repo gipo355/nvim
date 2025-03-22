@@ -8,7 +8,7 @@ return {
     },
     keys = {
         {
-            '<leader>K',
+            '<leader>P',
             '<cmd>Telescope frecency initial_mode=normal<cr>',
             'n',
             desc = 'Telescope Frecency',
