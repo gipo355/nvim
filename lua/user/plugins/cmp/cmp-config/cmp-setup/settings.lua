@@ -31,11 +31,13 @@ M.setup = function(cmp)
             -- completion = cmp_window.bordered(),
             completion = {
                 border = 'single',
+                -- border = 'rounded',
                 -- winhighlight = 'NormalFloat:NormalFloat,FloatBorder:NormalFloat',
                 -- winhighlight = cmp_window.bordered().winhighlight,
             },
             documentation = {
                 border = 'single',
+                -- border = 'rounded',
                 -- winhighlight = 'NormalFloat:NormalFloat,FloatBorder:NormalFloat',
                 -- winhighlight = cmp_window.bordered().winhighlight,
             },
