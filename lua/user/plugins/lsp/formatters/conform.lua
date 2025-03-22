@@ -329,7 +329,7 @@ return {
 
             vim.keymap.set(
                 'n',
-                '<leader>lF',
+                '<leader>lf',
                 format_function,
                 set_desc('format')
             )
