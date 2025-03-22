@@ -110,10 +110,9 @@ return {
                 },
 
                 -- when prettier has prettier-plugin-java
-                java = { 'prettierd' },
-
+                -- java = { 'prettierd' },
                 -- disable because smi has random formatting rules
-                -- java = { 'google-java-format' },
+                java = { 'google-java-format' },
 
                 --         go = {
                 --             {
