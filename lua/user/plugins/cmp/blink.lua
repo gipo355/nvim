@@ -116,7 +116,7 @@ return {
                 auto_show = true,
                 auto_show_delay_ms = 0,
                 treesitter_highlighting = true,
-                -- window = { border = 'rounded' },
+                window = { border = 'rounded' },
             },
 
             ghost_text = {
@@ -124,7 +124,7 @@ return {
             },
             menu = {
                 -- can use telescope https://www.reddit.com/r/neovim/comments/1hlnv7x/comment/m3q5din/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
-                -- border = 'rounded',
+                border = 'rounded',
                 draw = {
                     -- columns = {
                     --     { 'label', 'label_description', gap = 1 },
@@ -164,7 +164,7 @@ return {
         -- experimental signature help support
         signature = {
             enabled = _G.user.lsp.function_signature.source == 'blink',
-            -- window = { border = 'rounded' },
+            window = { border = 'rounded' },
         },
     },
     -- allows extending the providers array elsewhere in your config
