@@ -264,7 +264,7 @@ M.fzflua = {
                 set_desc('Fzf Lsp definitions')
             )
 
-            vim.keymap.set('n', '<leader>lf', function()
+            vim.keymap.set('n', '<leader>la', function()
                 require('fzf-lua').lsp_finder()
             end, set_desc('fzf lsp finder'))
 
