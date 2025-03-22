@@ -359,7 +359,7 @@ _G.user.ufo = {
 
 --------------------------------
 ---@type "blink" | "cmp"
-_G.user.completion = 'cmp' -- blink, cmp
+_G.user.completion = 'blink' -- blink, cmp
 --[[
 CMP heavy sources
 ripgrep and buffer
