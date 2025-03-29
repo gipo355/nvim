@@ -12,9 +12,10 @@ M.callback = function(event)
     -- Enable completion triggered by <c-x><c-o>
     vim.bo[event.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
-    -- add border to hover window
-    vim.lsp.handlers['textDocument/hover'] =
-        vim.lsp.with(vim.lsp.handlers.hover, { border = 'single' })
+    -- add border to hover window DEPRECATED
+    --https://gpanders.com/blog/whats-new-in-neovim-0-11/#lsp
+    -- vim.lsp.handlers['textDocument/hover'] =
+    --     vim.lsp.with(vim.lsp.handlers.hover, { border = 'single' })
 
     -- set keymap to open lspinfo and mason
     -- vim.keymap.set(

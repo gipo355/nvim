@@ -229,4 +229,8 @@ end
 o.splitkeep = 'screen'
 
 -- better diff view in diffview
-o.diffopt = 'internal,filler,closeoff,indent-heuristic,linematch:60,algorithm:histogram'
+o.diffopt =
+    'internal,filler,closeoff,indent-heuristic,linematch:60,algorithm:histogram'
+
+-- border rounded
+-- o.winborder = 'rounded'
