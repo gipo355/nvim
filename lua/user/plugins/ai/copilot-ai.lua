@@ -212,7 +212,7 @@ Follow commitlint rules. Add breaking change note only if necessary.
                 suggestion = {
                     enabled = _G.user.ai.autocomplete == 'copilot',
                     auto_trigger = true,
-                    debounce = 75,
+                    debounce = 25,
                     keymap = {
                         -- accept = '<c-l>',
                         accept = '<C-l>',
