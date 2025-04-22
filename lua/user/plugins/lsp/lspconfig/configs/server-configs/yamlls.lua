@@ -21,7 +21,12 @@ M.setup = function()
                         },
                         {
                             description = 'kubernetes',
-                            fileMatch = { '*.k8s.yaml' },
+                            fileMatch = {
+                                '*.k8.yaml',
+                                '*.k8.yml',
+                                '*.k8s.yaml',
+                                '*.k8s.yml',
+                            },
                             name = 'kubernetes',
                             url = 'https://kubernetesjsonschema.dev/master-standalone-strict/all.json',
                         },
