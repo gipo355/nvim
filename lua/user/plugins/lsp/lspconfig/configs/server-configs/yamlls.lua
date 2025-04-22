@@ -11,6 +11,17 @@ M.setup = function()
                     -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
                     url = '',
                 },
+                -- schemaStore = {
+                --     url = 'https://www.schemastore.org/api/json/catalog.json',
+                --     enable = true,
+                -- },
+                format = {
+                    enable = true,
+                    singleQuote = true,
+                },
+                validate = true,
+                hover = true,
+                completion = true,
                 schemas = require('schemastore').yaml.schemas({
                     extra = {
                         {
@@ -32,6 +43,9 @@ M.setup = function()
                             },
                             name = 'kubernetes',
                             url = 'https://kubernetesjsonschema.dev/master-standalone-strict/all.json',
+                            -- url = 'https://kubernetesjsonschema.dev/v1.10.3-standalone/service-v1.json',
+                            -- url = 'https://kubernetesjsonschema.dev/v1.14.0/deployment-apps-v1.json',
+                            -- url = 'https://github.com/yannh/kubernetes-json-schema/blob/master/v1.32.3/all.json',
                         },
                         {
                             description = 'github-action',
@@ -68,13 +82,6 @@ M.setup = function()
                 --     ['https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json'] = '*compose*.{yml,yaml}',
                 --     ['https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json'] = '*flow*.{yml,yaml}',
                 -- },
-                format = {
-                    enable = true,
-                    singleQuote = true,
-                },
-                yaml = {
-                    validate = true,
-                },
             },
         },
     }
