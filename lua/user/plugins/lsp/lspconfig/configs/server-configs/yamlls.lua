@@ -15,7 +15,10 @@ M.setup = function()
                     extra = {
                         {
                             description = 'compose',
-                            fileMatch = { '*compose*.yml' },
+                            fileMatch = {
+                                '*compose*.yml',
+                                '*compose*.yaml',
+                            },
                             name = 'docker-compose',
                             url = 'https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json',
                         },
@@ -32,13 +35,19 @@ M.setup = function()
                         },
                         {
                             description = 'github-action',
-                            fileMatch = { 'action.yml' },
+                            fileMatch = {
+                                'action.yml',
+                                'action.yaml',
+                            },
                             name = 'github-action',
                             url = 'https://json.schemastore.org/github-action',
                         },
                         {
                             description = 'github-workflow',
-                            fileMatch = { 'workflows/*.yml' },
+                            fileMatch = {
+                                'workflows/*.yml',
+                                'workflows/*.yaml',
+                            },
                             name = 'github-workflow',
                             url = 'https://json.schemastore.org/github-workflow',
                         },
