@@ -11,6 +11,16 @@ M.setup = function()
                             name = 'biomejs',
                             url = 'https://biomejs.dev/schemas/1.8.3/schema.json',
                         },
+                        {
+                            description = 'kubernetes',
+                            fileMatch = {
+                                '*.k8.json',
+                                '*.k8s.json',
+                            },
+                            name = 'kubernetes',
+                            -- url = 'https://kubernetesjsonschema.dev/master-standalone-strict/all.json',
+                            url = 'https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.26.0-standalone/all.json',
+                        },
                     },
                 }),
                 validate = { enable = true },

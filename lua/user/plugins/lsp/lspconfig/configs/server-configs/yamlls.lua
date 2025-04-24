@@ -42,10 +42,8 @@ M.setup = function()
                                 '*.k8s.yml',
                             },
                             name = 'kubernetes',
-                            url = 'https://kubernetesjsonschema.dev/master-standalone-strict/all.json',
-                            -- url = 'https://kubernetesjsonschema.dev/v1.10.3-standalone/service-v1.json',
-                            -- url = 'https://kubernetesjsonschema.dev/v1.14.0/deployment-apps-v1.json',
-                            -- url = 'https://github.com/yannh/kubernetes-json-schema/blob/master/v1.32.3/all.json',
+                            -- url = 'https://kubernetesjsonschema.dev/master-standalone-strict/all.json',
+                            url = 'https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.26.0-standalone/all.json',
                         },
                         {
                             description = 'github-action',
