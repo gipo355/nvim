@@ -12,16 +12,30 @@ return {
         require('codecompanion').setup({
             strategies = {
                 chat = {
-                    adapter = "copilot",
+                    adapter = 'copilot',
                 },
                 inline = {
-                    adapter = "copilot",
+                    adapter = 'copilot',
                 },
-            }
+            },
         })
-
-        vim.keymap.set({ 'n', 'v' }, '<leader>mfl', ':CodeCompanion<CR>', set_desc('CodeCompanion'))
-        vim.keymap.set({ 'n', 'v' }, '<leader>mfj', ':CodeCompanionChat<CR>', set_desc('CodeCompanion Chat'))
-        vim.keymap.set({ 'n', 'v' }, '<leader>mfk', ':CodeCompanionActions<CR>', set_desc('CodeCompanion Actions'))
-    end
+        vim.keymap.set(
+            { 'n', 'v' },
+            '<leader>mfl',
+            ':CodeCompanion<CR>',
+            set_desc('CodeCompanion')
+        )
+        vim.keymap.set(
+            { 'n', 'v' },
+            '<leader>mfj',
+            ':CodeCompanionChat<CR>',
+            set_desc('CodeCompanion Chat')
+        )
+        vim.keymap.set(
+            { 'n', 'v' },
+            '<leader>mfk',
+            ':CodeCompanionActions<CR>',
+            set_desc('CodeCompanion Actions')
+        )
+    end,
 }
