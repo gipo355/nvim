@@ -1,5 +1,8 @@
 local set_desc = require('user.utils.functions').set_keymap_desc
 
+-- or this
+-- https://github.com/GeorgesAlkhouri/nvim-aider
+
 return {
     'joshuavial/aider.nvim',
     event = 'VeryLazy',
