@@ -84,6 +84,7 @@ return {
         local docker_client = Terminal:new({
             cmd = docker_tui,
             -- dir = 'git_dir',
+            close_on_exit = false,
             hidden = true,
             -- direction = "tab",
             direction = 'float',
@@ -104,6 +105,27 @@ return {
             docker_client_toggle,
             set_desc('docker client')
         )
+
+        -- ## lazydocker client keymap
+        local k9s_tui = 'k9s'
+        local k9s_client = Terminal:new({
+            cmd = k9s_tui,
+            close_on_exit = false,
+            -- dir = 'git_dir',
+            hidden = true,
+            -- direction = "tab",
+            direction = 'float',
+            float_opts = {
+                -- border = "double",
+                border = 'none',
+                width = 10000,
+                height = 10000,
+            },
+        })
+        local function k9s_client_toggle()
+            k9s_client:toggle()
+        end
+        vim.keymap.set('n', '<A-f>', k9s_client_toggle, set_desc('k9s client'))
 
         -- ## OLLAMA client keymap
         local function loadToggleTermProgram(executable, args, mapping)
