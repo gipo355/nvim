@@ -59,13 +59,13 @@ return {
 
         vim.keymap.set(
             'n',
-            '<leader>E',
+            '<A-e>',
             '<cmd>ToggleTermSendCurrentLine<cr>',
             set_desc('[E]xec sh line')
         )
         vim.keymap.set(
             'v',
-            '<leader>E',
+            '<A-e>',
             '<cmd>ToggleTermSendVisualLines<cr>',
             set_desc('[E]xec sh line')
         )
@@ -219,6 +219,7 @@ return {
             -- dir = 'git_dir',
             hidden = true,
             -- direction = "tab",
+            close_on_exit = false,
             direction = 'float',
             float_opts = {
                 -- border = "double",
@@ -245,7 +246,7 @@ return {
             btop_client:toggle()
         end
         -- TODO: overriding something!!
-        vim.keymap.set('n', '<M-5>', btop_client_toggle, set_desc('btop'))
+        vim.keymap.set('n', '<A-s>', btop_client_toggle, set_desc('btop'))
 
         -- ## lazygit keymap client
         -- vim.keymap.set('n', '<c-g>', function()
@@ -283,6 +284,7 @@ return {
         local lazygit_client = Terminal:new({
             cmd = lazygit_tui,
             -- dir = 'git_dir',
+            close_on_exit = true,
             hidden = true,
             -- direction = "tab",
             direction = 'float',
@@ -348,38 +350,6 @@ return {
         vim.keymap.set('n', '<M-6>', termshark_toggle, set_desc('termshark'))
 
         -- K9s
-        local k9s_client = Terminal:new({
-            cmd = 'k9s',
-            -- dir = 'git_dir',
-            hidden = true,
-            -- direction = "tab",
-            direction = 'float',
-            float_opts = {
-                -- border = "double",
-                border = 'none',
-                width = 10000,
-                height = 10000,
-            },
-            -- on_open = function(term)
-            --     -- vim.cmd('startinsert!')
-            --     vim.api.nvim_buf_set_keymap(
-            --         term.bufnr,
-            --         'n',
-            --         'q',
-            --         '<cmd>close<CR>',
-            --         { noremap = true, silent = true }
-            --     )
-            -- end,
-            -- on_close = function(_)
-            --     vim.cmd('startinsert!')
-            -- end,
-            -- count = 99,
-        })
-        local function k9s_client_toggle()
-            k9s_client:toggle()
-        end
-        -- TODO: overriding something!!
-        vim.keymap.set('n', '<M-4>', k9s_client_toggle, set_desc('k9s'))
 
         -- SERPL find and replace
         -- vim.keymap.set('n', '<leader>Af', function()
@@ -433,7 +403,7 @@ return {
         -- TODO: overriding something!!
         vim.keymap.set(
             'n',
-            '<M-3>',
+            '<A-r>',
             serpl_client_toggle,
             set_desc('serpl find and replace')
         )
@@ -472,6 +442,23 @@ return {
             '<M-1>',
             hori_term_toggle,
             set_desc('serpl find and replace')
+        )
+        local float_term = Terminal:new({
+            cmd = nil,
+            -- dir = 'git_dir',
+            hidden = true,
+            -- direction = "tab",
+            direction = 'float',
+        })
+        local function float_term_toggle()
+            float_term:toggle()
+        end
+        -- TODO: overriding something!!
+        vim.keymap.set(
+            'n',
+            '<M-3>',
+            float_term_toggle,
+            set_desc('float term toggle')
         )
     end,
 }
