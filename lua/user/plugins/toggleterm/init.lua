@@ -87,7 +87,7 @@ return {
         local docker_client = Terminal:new({
             cmd = docker_tui,
             -- dir = 'git_dir',
-            close_on_exit = false,
+            close_on_exit = true,
             hidden = true,
             -- direction = "tab",
             direction = 'float',
@@ -446,9 +446,12 @@ return {
             hori_term_toggle,
             set_desc('serpl find and replace')
         )
+
         local float_term = Terminal:new({
             cmd = nil,
             -- dir = 'git_dir',
+            close_on_exit = true,
+            -- dir = '%:p:h',
             hidden = true,
             -- direction = "tab",
             direction = 'float',
@@ -463,6 +466,7 @@ return {
             float_term_toggle,
             set_desc('float term toggle')
         )
+        -- vim.keymap.set('n', '<M-3>', '<cmd>ToggleTerm dir=%:p:h<CR>') -- open terminal in the directory of the file
 
         -- Function to prompt for a shell command and execute it with the current file
         local function execute_command_with_file()
@@ -473,29 +477,32 @@ return {
             end
 
             -- Prompt the user for a command
-            vim.ui.input({ prompt = 'Enter shell command: ' }, function(input)
-                if input and input ~= '' then
-                    local full_command = input .. ' ' .. file_path
-                    vim.notify(
-                        'Executing: ' .. full_command,
-                        vim.log.levels.INFO
-                    )
+            vim.ui.input(
+                { prompt = 'Enter shell command for curr file: ' },
+                function(input)
+                    if input and input ~= '' then
+                        local full_command = input .. ' ' .. file_path
+                        vim.notify(
+                            'Executing: ' .. full_command,
+                            vim.log.levels.INFO
+                        )
 
-                    -- Create and toggle a terminal to run the command
-                    local term = Terminal:new({
-                        cmd = full_command,
-                        hidden = true,
-                        direction = 'float',
-                        close_on_exit = false,
-                    })
-                    term:toggle()
-                else
-                    vim.notify(
-                        'Command input was empty. Aborting.',
-                        vim.log.levels.WARN
-                    )
+                        -- Create and toggle a terminal to run the command
+                        local term = Terminal:new({
+                            cmd = full_command,
+                            hidden = true,
+                            direction = 'float',
+                            close_on_exit = true,
+                        })
+                        term:toggle()
+                    else
+                        vim.notify(
+                            'Command input was empty. Aborting.',
+                            vim.log.levels.WARN
+                        )
+                    end
                 end
-            end)
+            )
         end
 
         -- Keybinding to execute a customizable shell command with the current file
