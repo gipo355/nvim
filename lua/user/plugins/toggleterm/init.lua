@@ -468,20 +468,119 @@ return {
         )
         -- vim.keymap.set('n', '<M-3>', '<cmd>ToggleTerm dir=%:p:h<CR>') -- open terminal in the directory of the file
 
+        -- KUBE
         -- Function to prompt for a shell command and execute it with the current file
-        local function execute_command_with_file()
+        -- local function execute_command_with_file()
+        --     local file_path = vim.fn.expand('%:p') -- Get the full path of the current file
+        --     if file_path == '' then
+        --         vim.notify('No file is currently open!', vim.log.levels.ERROR)
+        --         return
+        --     end
+        --
+        --     -- Prompt the user for a command
+        --     vim.ui.input(
+        --         { prompt = 'Enter kubectl shell command for curr file: ' },
+        --         function(input)
+        --             if input and input ~= '' then
+        --                 local full_command = 'kubectl '
+        --                     .. input
+        --                     .. ' '
+        --                     .. file_path
+        --                 vim.notify(
+        --                     'Executing: ' .. full_command,
+        --                     vim.log.levels.INFO
+        --                 )
+        --
+        --                 -- Create and toggle a terminal to run the command
+        --                 local term = Terminal:new({
+        --                     cmd = full_command,
+        --                     hidden = true,
+        --                     direction = 'float',
+        --                     close_on_exit = true,
+        --                 })
+        --                 term:toggle()
+        --             else
+        --                 vim.notify(
+        --                     'Command input was empty. Aborting.',
+        --                     vim.log.levels.WARN
+        --                 )
+        --             end
+        --         end
+        --     )
+        -- end
+        -- -- Keybinding to execute a customizable shell command with the current file
+        -- vim.keymap.set(
+        --     'n',
+        --     '<leader>ma',
+        --     execute_command_with_file,
+        --     { desc = 'Execute shell command with current file' }
+        -- )
+
+        -- local function execute_command_with_file()
+        --     local file_path = vim.fn.expand('%:p') -- Get the full path of the current file
+        --     if file_path == '' then
+        --         vim.notify('No file is currently open!', vim.log.levels.ERROR)
+        --         return
+        --     end
+        --
+        --     -- Prompt the user for a command
+        --     vim.ui.input(
+        --         { prompt = 'Enter kubectl shell command for curr file: ' },
+        --         function(input)
+        --             if input and input ~= '' then
+        --                 local full_command = 'kubectl '
+        --                     .. input
+        --                     .. ' '
+        --                     .. file_path
+        --                 vim.notify(
+        --                     'Executing: ' .. full_command,
+        --                     vim.log.levels.INFO
+        --                 )
+        --
+        --                 -- Create and toggle a terminal to run the command
+        --                 local term = Terminal:new({
+        --                     cmd = full_command,
+        --                     hidden = true,
+        --                     direction = 'float',
+        --                     close_on_exit = true,
+        --                 })
+        --                 term:toggle()
+        --             else
+        --                 vim.notify(
+        --                     'Command input was empty. Aborting.',
+        --                     vim.log.levels.WARN
+        --                 )
+        --             end
+        --         end
+        --     )
+        -- end
+        --
+        -- -- Keybinding to execute a customizable shell command with the current file
+        -- vim.keymap.set(
+        --     'n',
+        --     '<leader>ma',
+        --     execute_command_with_file,
+        --     { desc = 'Execute shell command with current file' }
+        -- )
+
+        local function apply_current_file_with_confirmation()
             local file_path = vim.fn.expand('%:p') -- Get the full path of the current file
             if file_path == '' then
                 vim.notify('No file is currently open!', vim.log.levels.ERROR)
                 return
             end
 
-            -- Prompt the user for a command
+            -- Prompt the user for confirmation
             vim.ui.input(
-                { prompt = 'Enter shell command for curr file: ' },
+                { prompt = 'Apply current file? (y/yes/blank to confirm): ' },
                 function(input)
-                    if input and input ~= '' then
-                        local full_command = input .. ' ' .. file_path
+                    if
+                        not input
+                        or input:lower() == 'y'
+                        or input:lower() == 'yes'
+                        or input == ''
+                    then
+                        local full_command = 'kubectl apply -f ' .. file_path
                         vim.notify(
                             'Executing: ' .. full_command,
                             vim.log.levels.INFO
@@ -496,21 +595,62 @@ return {
                         })
                         term:toggle()
                     else
-                        vim.notify(
-                            'Command input was empty. Aborting.',
-                            vim.log.levels.WARN
-                        )
+                        vim.notify('Aborted by user.', vim.log.levels.WARN)
                     end
                 end
             )
         end
-
-        -- Keybinding to execute a customizable shell command with the current file
+        -- Keybinding to apply the current file with confirmation
         vim.keymap.set(
             'n',
             '<leader>ma',
-            execute_command_with_file,
-            { desc = 'Execute shell command with current file' }
+            apply_current_file_with_confirmation,
+            { desc = 'Apply current file with confirmation' }
+        )
+
+        local function delete_current_file_with_confirmation()
+            local file_path = vim.fn.expand('%:p') -- Get the full path of the current file
+            if file_path == '' then
+                vim.notify('No file is currently open!', vim.log.levels.ERROR)
+                return
+            end
+
+            -- Prompt the user for confirmation
+            vim.ui.input(
+                { prompt = 'Delete current file? (y/yes/blank to confirm): ' },
+                function(input)
+                    if
+                        not input
+                        or input:lower() == 'y'
+                        or input:lower() == 'yes'
+                        or input == ''
+                    then
+                        local full_command = 'kubectl delete -f ' .. file_path
+                        vim.notify(
+                            'Executing: ' .. full_command,
+                            vim.log.levels.INFO
+                        )
+
+                        -- Create and toggle a terminal to run the command
+                        local term = Terminal:new({
+                            cmd = full_command,
+                            hidden = true,
+                            direction = 'float',
+                            close_on_exit = true,
+                        })
+                        term:toggle()
+                    else
+                        vim.notify('Aborted by user.', vim.log.levels.WARN)
+                    end
+                end
+            )
+        end
+        -- Keybinding to apply the current file with confirmation
+        vim.keymap.set(
+            'n',
+            '<leader>mw',
+            delete_current_file_with_confirmation,
+            { desc = 'Apply current file with confirmation' }
         )
     end,
 }
