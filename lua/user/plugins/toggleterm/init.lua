@@ -1,4 +1,7 @@
 local set_desc = require('user.utils.functions').set_keymap_desc
+-- function() vim.fn.setreg('+', vim.fn.expand('%:p:.')) end, desc = 'Copy file path' },
+-- function() vim.fn.setreg('+', vim.fn.expand('%:h')) end, desc = 'Copy directory path' },
+-- function() vim.fn.setreg('+', vim.fn.expand('%:t:r')) end, desc = 'Copy file name' },
 return {
     'akinsho/toggleterm.nvim',
     event = 'VeryLazy',
@@ -459,6 +462,48 @@ return {
             '<M-3>',
             float_term_toggle,
             set_desc('float term toggle')
+        )
+
+        -- Function to prompt for a shell command and execute it with the current file
+        local function execute_command_with_file()
+            local file_path = vim.fn.expand('%:p') -- Get the full path of the current file
+            if file_path == '' then
+                vim.notify('No file is currently open!', vim.log.levels.ERROR)
+                return
+            end
+
+            -- Prompt the user for a command
+            vim.ui.input({ prompt = 'Enter shell command: ' }, function(input)
+                if input and input ~= '' then
+                    local full_command = input .. ' ' .. file_path
+                    vim.notify(
+                        'Executing: ' .. full_command,
+                        vim.log.levels.INFO
+                    )
+
+                    -- Create and toggle a terminal to run the command
+                    local term = Terminal:new({
+                        cmd = full_command,
+                        hidden = true,
+                        direction = 'float',
+                        close_on_exit = false,
+                    })
+                    term:toggle()
+                else
+                    vim.notify(
+                        'Command input was empty. Aborting.',
+                        vim.log.levels.WARN
+                    )
+                end
+            end)
+        end
+
+        -- Keybinding to execute a customizable shell command with the current file
+        vim.keymap.set(
+            'n',
+            '<leader>ma',
+            execute_command_with_file,
+            { desc = 'Execute shell command with current file' }
         )
     end,
 }
